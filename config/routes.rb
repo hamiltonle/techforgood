@@ -12,6 +12,20 @@ Rails.application.routes.draw do
   get 'users/update'
 
   get 'users/destroy'
+  
+  get 'lessons/index'
+
+  get 'lessons/show'
+
+  get 'lessons/new'
+
+  get 'lessons/create'
+
+  get 'lessons/edit'
+
+  get 'lessons/update'
+
+  get 'lessons/destroy'
 
   devise_for :users
   root to: 'pages#home'
