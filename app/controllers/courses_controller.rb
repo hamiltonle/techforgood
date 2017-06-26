@@ -25,7 +25,7 @@ class CoursesController < ApplicationController
     # assigning the course to an organization
     @course.organization = @organization
     @course.save
- 
+
     redirect_to course_path
   end
 
@@ -33,18 +33,11 @@ class CoursesController < ApplicationController
   def edit
     @course = Course.find(params[:id])
   end
-
-  def update
-    @course = Course.find(params[:id])
-    @course.update(course_params)
-
-    redirect_to course_path
-  end
   
   def update
     # find the course from the edit form
     @course = Course.find(params[:id])
-     
+
     # updating and saving the course details
     @course.update(course_params)
     @course.save
