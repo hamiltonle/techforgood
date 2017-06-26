@@ -16,10 +16,16 @@ class CoursesController < ApplicationController
   end
 
   def create
+    # creating a new course with the parameters from the form
+    @course = Course.new(course_params)
+    
+    # find the organization the course is being made for
     @organization = Organization.find(params[:organization_id])
-    @course = @organization.course.new(course_params)
+    
+    # assigning the course to an organization
+    @course.organization = @organization
     @course.save
-
+ 
     redirect_to course_path
   end
 
@@ -34,6 +40,17 @@ class CoursesController < ApplicationController
 
     redirect_to course_path
   end
+  
+  def update
+    # find the course from the edit form
+    @course = Course.find(params[:id])
+     
+    # updating and saving the course details
+    @course.update(course_params)
+    @course.save
+
+    redirect_to course_path
+  end
 
   # To delete a course
   def destroy
@@ -44,6 +61,6 @@ class CoursesController < ApplicationController
   private
 
   def course_params
-    params.require(:course).permit(:title, :description)
+    params.require(:course).permit(:title, :description, :organization_id)
   end
 end
