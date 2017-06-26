@@ -33,11 +33,11 @@ class CoursesController < ApplicationController
   def edit
     @course = Course.find(params[:id])
   end
-
+  
   def update
     # find the course from the edit form
     @course = Course.find(params[:id])
-    
+
     # updating and saving the course details
     @course.update(course_params)
     @course.save
