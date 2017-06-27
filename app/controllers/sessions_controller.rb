@@ -1,4 +1,9 @@
 class SessionsController < ApplicationController
+  # Devise authentication exceptions for the following pages:
+  # skip_before_action :authenticate_user!, only: [:index, :show]
+
+  # Devise: whitelist all pages for testing
+  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   #shows the status of lessons on the user dashboard
   def show

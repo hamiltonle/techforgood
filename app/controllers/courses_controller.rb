@@ -1,4 +1,11 @@
 class CoursesController < ApplicationController
+  # Devise authentication exceptions for the following pages:
+  # skip_before_action :authenticate_user!, only: [:index, :show]
+
+  # Devise: whitelist all pages for testing
+  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+
+
   # Shows all courses on the home page
   def index
     @courses = Course.all
@@ -18,10 +25,10 @@ class CoursesController < ApplicationController
   def create
     # creating a new course with the parameters from the form
     @course = Course.new(course_params)
-    
+
     # find the organization the course is being made for
     @organization = Organization.find(params[:organization_id])
-    
+
     # assigning the course to an organization
     @course.organization = @organization
     @course.save
@@ -33,7 +40,7 @@ class CoursesController < ApplicationController
   def edit
     @course = Course.find(params[:id])
   end
-  
+
   def update
     # find the course from the edit form
     @course = Course.find(params[:id])
