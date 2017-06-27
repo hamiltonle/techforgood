@@ -11,19 +11,11 @@
   </div>
 
 <!-- Organization Information -->
-  <div class="organization-name">
+  <div class="organization-information">
     <h3>
       <%= @course.organization.name %>
       <%= link_to "Learn More", organization_path(@course.organization_id), class: "btn purple-banner-button btn-purple-filled button-top-margin" %>
     </h3>
-  </div>
-
-<!-- Course Description -->
-  <div class="course-description">
-    <h4>DESCRIPTION</h4>
-    <div>
-      <p><%= @course.description %></p>
-    </div>
   </div>
 
 <!-- Course Social Media -->
@@ -36,6 +28,25 @@
         <li><a href=""><i class="fa fa-facebook"></i></a></li>
         <li><a href=""><i class="fa fa-twitter"></i></a></li>
       </ul>
+    </div>
+  </div>
+
+<!-- Course Description -->
+  <div class="course-description">
+    <h4>DESCRIPTION</h4>
+    <div>
+      <p><%= @course.description %></p>
+    </div>
+  </div>
+
+<!-- Lesson Information -->
+  <div class="lesson-information">
+    <h4>LESSONS</h4>
+    <div>
+      <% @course.lessons.each do |lesson| %>
+        <h5><%= lesson.title %></h5>
+        <p><%= lesson.description %></p>
+      <% end %>
     </div>
   </div>
 
