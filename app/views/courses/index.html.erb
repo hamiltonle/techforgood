@@ -27,25 +27,21 @@
 <!-- Courses -->
 <div class="container padded">
   <div class="row">
-    <h3 align="center">Our Courses</h3>
+    <h3 align="center">Courses</h3>
     <br>
+
     <% @courses.each do |course| %>
-
-      <% if course.photos? %>
-        <% card_photo_path = course.photos.first.path %>
-      <% else %>
-        <% card_photo_path = ('banner.jpeg') %>
-      <% end %>
-
       <div class="col-xs-12 col-sm-6 col-md-4">
-       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path card_photo_path %>');">
+       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('banner.jpeg') %>);">
           <div class="card-description">
             <h2><%= course.title %></h2>
+            <p><%= course.organization.name %></p>
           </div>
           <%= link_to "", course_path(course), class: "card-link" %>
         </div>
       </div>
     <% end %>
+
   </div>
 </div>
 

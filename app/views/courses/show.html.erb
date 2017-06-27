@@ -1,6 +1,76 @@
 <!-- Banner  -->
-<!-- Checks if act has a photo.  if not, then will use beatles as placeholder -->
-test
+<div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('banner.jpeg') %>);">
+</div>
 
+<!-- Course Information -->
+<div class="container padded">
 
-<%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+<!-- Course Title -->
+  <div class="course-title">
+    <h1><%= @course.title %></h1>
+  </div>
+
+<!-- Organization Information -->
+  <div class="organization-name">
+    <h3>
+      <%= @course.organization.name %>
+      <%= link_to "Learn More", organization_path(@course.organization_id), class: "btn purple-banner-button btn-purple-filled button-top-margin" %>
+    </h3>
+  </div>
+
+<!-- Course Description -->
+  <div class="course-description">
+    <h4>DESCRIPTION</h4>
+    <div>
+      <p><%= @course.description %></p>
+    </div>
+  </div>
+
+<!-- Course Social Media -->
+  <div>
+    <h4>FOLLOW <%= @course.title.upcase %></h4>
+    <div class="socials">
+      <ul class="list-inline">
+        <li><a href=""><i class="fa fa-youtube"></i></a></li>
+        <li><a href=""><i class="fa fa-instagram"></i></a></li>
+        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+      </ul>
+    </div>
+  </div>
+
+<!-- Enroll Button -->
+  <div>
+    <div class="enroll-btn">
+      <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+    </div>
+  </div>
+
+<!-- Course Reviews -->
+  <div>
+    <h4>REVIEWS</h4>
+    <div class="reviews">
+    <div class="rating">
+      <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+    </div>
+      <p>
+        The guys were great! Such a hit, kept the dancefloor full, set up quickly, really well organised beforehand - can't fault them!
+      </p>
+      <br>
+    <div class="rating">
+      <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+    </div>
+      <p>
+      Hired these guys for my 30th birthday party and thought they were absolutely amazing.
+      </p>
+      <br>
+    <div class="rating">
+      <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+    </div>
+      <p>
+        I booked this band for my wedding in September. I have to say they were fantastic, the dance floor was full all night, they played a huge rage of music and made my night. Could not have wished for better. Thankyou so much to everyone involved in making my wedding day so enjoyable.
+      </p>
+    </div>
+  </div>
+
+</div>
