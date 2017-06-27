@@ -41,7 +41,8 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    # Add instance varibles which will be used in the user dashboard
+    # Add instance variables which will be used in the user dashboard
+    @user = current_user
   end
 
   private
