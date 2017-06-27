@@ -1,16 +1,26 @@
 class LessonsController < ApplicationController
+  # Devise authentication exceptions for the following pages:
+  # skip_before_action :authenticate_user!, only: [:index, :show]
+
+  # Devise: whitelist all pages for testing
+  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+
+  # Displays all lessons of a course
   def index
     @lessons = Lesson.all
   end
 
+  # Displays an individual lesson for a course
   def show
     @lesson = Lesson.find(params[:id])
   end
 
+  # 1st step of creating a lesson: displays form for creating a new lesson
   def new
     @lesson = Lesson.new
   end
 
+  # 2nd step of creating a lesson: grabs form values and creates lesson
   def create
     # do we need to add which course the lesson belongs to?
     # @course = Course.find(params[:oragnization_id])
@@ -22,10 +32,12 @@ class LessonsController < ApplicationController
     # redirect_to (admin dashboard)
   end
 
+  # 1st step of updating a lesson: displays form for updating a new lesson
   def edit
     @lesson = Lesson.find(params[:id])
   end
 
+  # 2nd step of updating a lesson: grabs form values and updates lesson
   def update
     @lesson = Lesson.find(params[:id])
     @lesson.update(lesson_params)
@@ -33,6 +45,7 @@ class LessonsController < ApplicationController
     # redirect_to (admin dashboard)
   end
 
+  # Deletes a lesson
   def destroy
     @lesson = Lesson.find(params[:id])
     @lesson.delete
@@ -40,6 +53,7 @@ class LessonsController < ApplicationController
 
   private
 
+  # Ensures that only the appropriate values are used to create a lesson
   def lesson_params
     params.require(:lesson).permit(:video, :text, :description, :title, :course_id)
   end
