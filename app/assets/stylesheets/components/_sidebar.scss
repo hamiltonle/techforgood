@@ -1,0 +1,106 @@
+.lesson-container {
+  width: 100%;
+  position: absolute;
+  background-color: #fff;
+  min-height: calc(100% - 54px);
+}
+
+
+// TAB CONTAINERS
+.lesson-tab {
+  background: #FFFFFF;
+  border: 1px solid #EDEDED;
+}
+
+.module-completed {
+  background: $success;
+  border: 1px solid $success;
+}
+
+
+// MODULE FLEXBOX
+.flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-item-title {
+  flex: 0 0 auto;
+  padding-left: 10px;
+  vertical-align: center;
+}
+
+.flex-item-week {
+  flex: 1 0 auto;
+  padding-left: 5px;
+  padding: 2px;
+}
+
+.flex-item-complete {
+  flex: 0 0 80px;
+  padding: 2px;
+}
+
+// LESSON TAB FLEXBOX
+
+.flex-item-image {
+  flex: 0 0 auto;
+  padding-left: 10px;
+  vertical-align: center;
+}
+
+.flex-item-lesson-title {
+  flex: 1 0 auto;
+  padding-left: 10px;
+  vertical-align: center;
+}
+
+.flex-item-time {
+  flex: 0 0 80px;
+  padding: 2px;
+}
+
+
+
+#sidebar {
+
+
+  // justify-content: space-between;
+  // align-items: center;
+  width: 280px;
+  background-color: #f0f0f0;
+  position: absolute;
+  top: 70px;
+  overflow-y: none;
+  // overflow-x: hidden;
+  height: auto;
+  bottom: 0;
+  left: 0;
+}
+
+
+
+#lesson-content {
+  // position: relative;
+  padding: 20px;
+  margin: 0px;
+  // margin-left: 200px;
+  // width: 100%;
+  // margin: 0 auto;
+  // border-radius: 2px;
+  background: rgba(175, 175, 175, 0.1);
+
+  top: 70px;
+  bottom: 0;
+  left: 280px;
+  height: auto;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  position: absolute;
+  width: calc(100% - 280px);
+}
+
+
+
+

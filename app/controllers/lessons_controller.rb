@@ -5,9 +5,12 @@ class LessonsController < ApplicationController
   # Devise: whitelist all pages for testing
   skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
+  layout 'shared/footer', :except => [:index]
+
   # Displays all lessons of a course
   def index
     @lessons = Lesson.all
+    @skip_footer = true
   end
 
   # Displays an individual lesson for a course
