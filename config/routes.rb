@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  root to: "courses#index"
+
   mount Attachinary::Engine => "/attachinary"
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   devise_for :users
@@ -14,11 +15,9 @@ Rails.application.routes.draw do
 
   resources :courses do
     resources :lessons, shallow: true
-
+    resources :sessions, only: [:show, :create, :update]
     resources :enrollments, only: [:index, :new, :create, :destroy]
   end
 
   resources :organizations
-  resources :sessions, only: [:show, :create, :update]
-  root to: "courses#index"
 end

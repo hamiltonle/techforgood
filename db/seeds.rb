@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
 puts "creating fake students and courses"
 
@@ -251,6 +250,3 @@ session.user = User.find(3)
 session.status = "started"
 session.save!
 puts "saved a lesson"
-
-
-
