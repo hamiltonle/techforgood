@@ -1,5 +1,40 @@
-banner
+<!--
 features
 cards - links to individual courses
 flowchart - links to enroll?
 FAQs
+ -->
+
+<!-- Banner -->
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('banner.jpeg') %>);">
+  <div class="banner-content">
+    <h1>TechForGood</h1>
+    <p>Learn & Lend a Hand</p>
+  </div>
+</div>
+
+<!-- Characteristics -->
+<div class="grey-wrapper">
+  <div class="how_to_section padded">
+    <div class="row">
+      <div class="col-sm-4">
+        <%= link_to acts_path do %>
+          <%= image_tag "001-magnifying-glass.svg", size: "100x100" %>
+        <% end %>
+        <h4>Search through a wide variety of bands</h4>
+      </div>
+      <div class="col-sm-4">
+        <%= link_to acts_path do %>
+          <%= image_tag "003-band.svg", size: "100x100" %>
+        <% end %>
+        <h4>Book the perfect band</h4>
+      </div>
+      <div class="col-sm-4">
+        <%= link_to acts_path do %>
+          <%= image_tag "002-man-in-a-party-dancing-with-people.svg", size: "100x100" %>
+        <% end %>
+        <h4>Get your groove on</h4>
+      </div>
+    </div>
+  </div>
+</div>
