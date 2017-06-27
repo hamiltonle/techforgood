@@ -12,14 +12,11 @@ Rails.application.routes.draw do
 
   resources :courses do
     resources :lessons, shallow: true
+
+    resources :enrollments, only: [:index, :new, :create, :destroy]
   end
 
   resources :organizations
-
-  resources :enrollments, only: [:index, :new, :create, :destroy]
-
   resources :sessions, only: [:show, :create, :update]
-
   root to: "courses#index"
-
 end
