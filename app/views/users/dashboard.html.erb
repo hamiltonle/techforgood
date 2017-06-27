@@ -1,0 +1,62 @@
+<!-- Banner  -->
+<div class="dashboard-banner padded text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+      <% if @user.photo? %>
+        <%= cl_image_tag @user.photo.path, class: "dashboard-img-round" %>
+      <% else %>
+        <%= image_tag "https://placehold.it/200x200", class: "img-circle" %>
+      <% end %>
+      </div>
+
+      <div class="col-xs-12 col-sm-8 text-left text-white">
+      <h2><%= @user.first_name%> <%= @user.last_name %></h2>
+        <%= link_to "Edit profile", edit_user_path(current_user), class: "btn dashboard-btn-purple-fill" %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Current Course Information -->
+<div class="container padded">
+  <div class="row">
+    <h3 align="center">Current Courses</h3>
+    <br>
+
+    <% @user.courses.each do |course| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('banner.jpeg') %>);">
+          <div class="card-description">
+            <h2><%= course.title %></h2>
+            <p><%= course.organization.name %></p>
+          </div>
+          <%= link_to "", course_path(course), class: "card-link" %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
+<!-- Completed Course Information -->
+<div class="container padded">
+  <div class="row">
+    <h3 align="center">Completed Courses</h3>
+    <br>
+
+    <% @user.courses.each do |course| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('banner.jpeg') %>);">
+          <div class="card-description">
+            <h2><%= course.title %></h2>
+            <p><%= course.organization.name %></p>
+          </div>
+          <%= link_to "", course_path(course), class: "card-link" %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>
