@@ -3,7 +3,34 @@ features
 cards - links to individual courses
 flowchart - links to enroll?
 FAQs
- -->
+
+
+<div class="wrapper padded">
+  <div class="course-cards">
+    <div class="container">
+      <div class="row">
+        <h3 align="center">Our courses</h3>
+        <br>
+
+        <% @courses.each do |course| %>
+
+          <% if course.photos? %>
+            <% card_photo_path = course.photos.first.path %>
+          <% else %>
+            <% card_photo_path = ('banner.jpeg') %>
+          <% end %>
+
+          <div class="col-xs-12 col-sm-6 col-md-4">
+           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path card_photo_path %>');">
+              <div class="card-description">
+                <h2><%= course.name %></h2>
+              </div>
+              <%= link_to "", course_path(course), class: "card-link" %>
+            </div>
+          </div>
+        <% end %>
+
+
 
 <!-- Banner -->
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('banner.jpeg') %>);">
@@ -34,6 +61,7 @@ FAQs
           <%= image_tag "002-man-in-a-party-dancing-with-people.svg", size: "100x100" %>
         <% end %>
         <h4>Get your groove on</h4>
+
       </div>
     </div>
   </div>
