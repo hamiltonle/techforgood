@@ -10,17 +10,30 @@ class EnrollmentsController < ApplicationController
     @enrollments = Enrollment.all
   end
 
+  def new
+    @course = Course.find(params[:course_id])
+    @enrollment = Enrollment.new
+  end
+
   # creates a new enrollment once a student signs up to a course
   def create
     @course = Course.find(params[:course_id])
     @enrollment = @course.enrollments.new
     @enrollment.user = current_user
+    @enrollment.course = @course
     @enrollment.save
+    redirect_to courses_path
   end
 
   # deletes an enrollment if the student decides to cancel the class
   def destroy
     @enrollment = Enrollment.find(params[:id])
     @enrollment.delete
+  end
+
+  private
+
+  def enrollments_param
+    params.require(:enrollment).permit(:course_id, :user_id)
   end
 end
