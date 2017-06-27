@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: "courses#index"
 
+  mount Attachinary::Engine => "/attachinary"
+
   ActiveAdmin.routes(self)
 
   devise_for :users

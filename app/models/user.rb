@@ -9,4 +9,6 @@ class User < ApplicationRecord
 
   has_many :sessions
   has_many :lessons, through: :sessions
+
+  has_attachment :photo
 end

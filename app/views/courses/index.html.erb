@@ -1,2 +1,108 @@
+<!-- Banner -->
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('banner.jpg') %>);">
+  <div class="banner-content">
+    <h1>TechForGood</h1>
+    <p>Learn & Lend a Hand</p>
+  </div>
+</div>
 
+<!-- Characteristics -->
+<div class="container text-center padded">
+  <div class="row">
+    <div class="col-sm-4">
+      <%= image_tag "char1.png"%>
+      <h4>Search through a wide variety of bands</h4>
+    </div>
+    <div class="col-sm-4">
+      <%= image_tag "char2.png"%>
+      <h4>Book the perfect band</h4>
+    </div>
+    <div class="col-sm-4">
+      <%= image_tag "char3.png"%>
+      <h4>Get your grip on</h4>
+    </div>
+  </div>
+</div>
 
+<!-- Courses -->
+<div class="container padded">
+  <div class="row">
+    <h3 align="center">Courses</h3>
+    <br>
+
+    <% @courses.each do |course| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('banner.jpeg') %>);">
+          <div class="card-description">
+            <h2><%= course.title %></h2>
+            <p><%= course.organization.name %></p>
+          </div>
+          <%= link_to "", course_path(course), class: "card-link" %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
+<!-- Learning Process -->
+<div class="container course-cards padded">
+  <div class="row">
+  <h3 align="center">Learning Process</h3>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('boy.jpeg') %>);">
+        <div class="card-description">
+          <h2>step 1</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('boy.jpeg') %>);">
+        <div class="card-description">
+          <h2>step 2</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('boy.jpeg') %>);">
+        <div class="card-description">
+          <h2>step 3</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('boy.jpeg') %>);">
+        <div class="card-description">
+          <h2>step 4</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('boy.jpeg') %>);">
+        <div class="card-description">
+          <h2>step 5</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('boy.jpeg') %>);">
+        <div class="card-description">
+          <h2>step 6</h2>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="container faq-section padded">
+  <h3 class="text-center">FAQ</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut veniam dignissimos tempore, repellat eius. Ut quod eveniet quo numquam natus iusto molestiae, totam cum, enim blanditiis reprehenderit, perspiciatis aspernatur quaerat!</p>
+</div>
