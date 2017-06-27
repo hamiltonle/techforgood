@@ -4,7 +4,6 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
 development:
   <<: *default
   database: techforgood_development
@@ -12,12 +11,10 @@ development:
   port: "5432"
   username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
-
 test:
   <<: *default
   database: techforgood_test
   host: localhost
-
 production:
   <<: *default
   database: techforgood_production
