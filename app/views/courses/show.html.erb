@@ -1,9 +1,10 @@
+<div class="container">
 <!-- Banner  -->
 <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('banner.jpg') %>);">
 </div>
-
 <!-- Course Information -->
 <div class="container padded">
+<%= render :partial => 'courses/sidebar' %>
 
 <!-- Course Title -->
   <div class="course-title">
@@ -39,6 +40,7 @@
   </div>
 
 <!-- Course Description -->
+<a name = "description">
   <div class="course-description">
     <h4>DESCRIPTION</h4>
     <div>
@@ -47,41 +49,16 @@
   </div>
 
 <!-- Lesson Information -->
+<a name = "syllabus">
   <div class="lesson-information">
     <h4>LESSONS</h4>
     <div>
       <% @course.lessons.each do |lesson| %>
         <h5><%= lesson.title %></h5>
-        <p><%= lesson.description %></p>
       <% end %>
     </div>
   </div>
 
-<!-- Course Reviews -->
-  <div>
-    <h4>REVIEWS</h4>
-    <div class="reviews">
-    <div class="rating">
-      <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-    </div>
-      <p>
-        The guys were great! Such a hit, kept the dancefloor full, set up quickly, really well organised beforehand - can't fault them!
-      </p>
-      <br>
-    <div class="rating">
-      <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-    </div>
-      <p>
-      Hired these guys for my 30th birthday party and thought they were absolutely amazing.
-      </p>
-      <br>
-    <div class="rating">
-      <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-    </div>
-      <p>
-        I booked this band for my wedding in September. I have to say they were fantastic, the dance floor was full all night, they played a huge rage of music and made my night. Could not have wished for better. Thankyou so much to everyone involved in making my wedding day so enjoyable.
-      </p>
-    </div>
-  </div>
 
+</div>
 </div>
