@@ -41,12 +41,13 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    # Add instance varibles which will be used in the user dashboard
+    # Add instance variables which will be used in the user dashboard
+    @user = current_user
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :photo)
+    params.require(:user).permit(:first_name, :last_name, :group, :photo)
   end
 end
