@@ -35,7 +35,12 @@ class SessionsController < ApplicationController
   def update
     @course = Course.find(params[:course_id])
     @lesson = Lesson.find(params[:lesson_id])
+
+    # after we do unique session validations for unique user_id & lesson_id, then code should be
+    # @session = @lesson.session
+    # for now, we'll use this:
     @session = @lesson.sessions.last
+
     @session.status = "completed"
     @session.update(session_params)
   end

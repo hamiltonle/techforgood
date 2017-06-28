@@ -21,9 +21,21 @@
 
       <!-- Lesson Complete Button -->
       <div>
+
         <div class="">
-          <%= render :partial => 'sessions/sessioncomplete', locals: {course: @course, lesson: @lesson, session: @session } %>
-        </div>
+
+        <% if @session.status == "completed" %>
+          <%= simple_form_for [@course, @lesson, @session] do |f| %>
+            <%= f.input :status, input_html: { value: 'completed' }, as: :hidden  %>
+            <%= f.button :submit, 'Completed This Lesson', disabled: "disabled", class: 'btn btn-success text-center' %>
+          <% end %>
+        <% else %>
+            <%= simple_form_for [@course, @lesson, @session] do |f| %>
+              <%= f.input :status, input_html: { value: 'completed' }, as: :hidden  %>
+              <%= f.button :submit, 'Completed This Lesson', class: 'btn btn-success text-center' %>
+          <% end %>
+        <% end %>
+
       </div>
 
     </div>
