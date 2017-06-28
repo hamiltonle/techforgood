@@ -8,11 +8,13 @@ class LessonsController < ApplicationController
   # Displays all lessons of a course
   def index
     @lessons = Lesson.all
+    @skip_footer = true
   end
 
   # Displays an individual lesson for a course
   def show
     @lesson = Lesson.find(params[:id])
+    @skip_footer = true
   end
 
   # 1st step of creating a lesson: displays form for creating a new lesson

@@ -1,0 +1,144 @@
+.lesson-container {
+  width: 100%;
+  position: absolute;
+  background-color: #fff;
+  min-height: calc(100% - 54px);
+}
+
+
+// TAB CONTAINERS
+.lesson-tab {
+  background: #FFFFFF;
+  border: 1px solid #EDEDED;
+  position: relative;
+}
+
+.lesson-tab:hover {
+  opacity: 0.8;
+}
+
+.div-relative {
+  position: relative;
+}
+
+.module-completed {
+  background: $success;
+  // border: 1px solid $success;
+}
+
+.module-pending {
+  background: $blue2;
+  border: 1px solid $blue2;
+}
+
+.module-materials {
+  background: #FFFFFF;
+  border: 1px solid #EDEDED;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.lesson-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+
+
+// MODULE FLEXBOX
+.flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-item-title {
+  flex: 0 0 auto;
+  padding-left: 10px;
+  vertical-align: center;
+}
+
+.flex-item-week {
+  flex: 1 0 auto;
+  padding-left: 5px;
+  padding: 5px;
+  color: white;
+}
+
+.flex-item-complete {
+  flex: 0 0 80px;
+  padding: 2px;
+}
+
+
+// LESSON TAB FLEXBOX
+
+.flex-item-image {
+  flex: 0 0 auto;
+  padding-left: 10px;
+  vertical-align: center;
+}
+
+.flex-item-lesson-title {
+  flex: 1 0 auto;
+  padding-left: 10px;
+  vertical-align: center;
+}
+
+.flex-item-time {
+  flex: 0 0 80px;
+  padding: 2px;
+}
+
+
+.fa {
+  font-size: 22px;
+}
+
+
+#sidebar {
+
+
+  // justify-content: space-between;
+  // align-items: center;
+  width: 280px;
+  background-color: #f0f0f0;
+  position: absolute;
+  top: 70px;
+  overflow-y: none;
+  // overflow-x: hidden;
+  overflow-y: scroll;
+  height: auto;
+  bottom: 0;
+  left: 0;
+}
+
+
+// LESSON CONTENT AREA
+#lesson-content {
+  // position: relative;
+  padding: 20px;
+  margin: 0px;
+  // margin-left: 200px;
+  // width: 100%;
+  // margin: 0 auto;
+  // border-radius: 2px;
+  background: rgba(175, 175, 175, 0.1);
+
+  top: 70px;
+  bottom: 0;
+  left: 280px;
+  height: auto;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  position: absolute;
+  width: calc(100% - 280px);
+}
+
+
+
+
