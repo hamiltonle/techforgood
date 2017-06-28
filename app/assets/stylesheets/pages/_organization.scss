@@ -1,7 +1,3 @@
-.organization-title {
-  font-size: 2em;
-}
-
 .column-left {
   flex: 1 1 auto;
   padding: 20px;
@@ -11,6 +7,9 @@
   padding: 20px;
   align-self: stretch;
   // background: #F8F7F7;
+}
+
+.border-left {
   border-left: 1px solid $lightgray;
 }
 
