@@ -1,1 +1,49 @@
 @import "home";
+
+.course-card {
+  height: 400px;
+  color: black;
+  position: relative;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 5px lightgray;
+}
+
+.course-card-image {
+  position: absolute;
+  height: 200px;
+  background-size: cover !important;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 20px;
+}
+
+.course-card-description {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.course-card-description h2 {
+  font-size: 22px;
+}
+
+.course-card-description p {
+  font-size: 15px;
+}
+
+.course-card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+
+.course-card-link:hover{
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+}
