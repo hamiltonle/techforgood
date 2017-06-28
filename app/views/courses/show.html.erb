@@ -18,6 +18,13 @@
     </h3>
   </div>
 
+<!-- Enroll Button -->
+  <div>
+    <div class="enroll-btn">
+      <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+    </div>
+  </div>
+
 <!-- Course Social Media -->
   <div>
     <h4>FOLLOW <%= @course.title.upcase %></h4>
@@ -50,13 +57,6 @@
     </div>
   </div>
 
-<!-- Enroll Button -->
-  <div>
-    <div class="enroll-btn">
-      <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
-    </div>
-  </div>
-
 <!-- Course Reviews -->
   <div>
     <h4>REVIEWS</h4>
@@ -85,8 +85,3 @@
   </div>
 
 </div>
-
-<%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
-
-<%= cl_image_tag("uvbc6uubylawbsfubajl",
-      width: 400, height: 300, crop: :fill) %>
