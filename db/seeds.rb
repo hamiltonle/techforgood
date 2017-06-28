@@ -6,6 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Enrollment.destroy_all
+Lesson.destroy_all
+Session.destroy_all
+User.destroy_all
+Course.destroy_all
+Organization.destroy_all
+
 puts "creating fake students and courses"
 
 
@@ -15,6 +22,7 @@ puts "creating students"
 student1 = User.new(
   first_name: 'Amin',
   last_name: 'Malik',
+  group: 'Le Wagon',
   email: "amin@gmail.com",
   password: 'techforgood',
   password_confirmation: 'techforgood'
@@ -25,6 +33,7 @@ student1.save!
 student2 = User.new(
   first_name: 'Kiki',
   last_name: 'Judd',
+  group: 'All Blacks',
   email: "kiki@gmail.com",
   password: 'techforgood',
   password_confirmation: 'techforgood'
@@ -35,6 +44,7 @@ student2.save!
 student3 = User.new(
   first_name: 'Hamilton',
   last_name: 'Le',
+  group: 'Johnson & Johnson',
   email: "hamilton@gmail.com",
   password: 'techforgood',
   password_confirmation: 'techforgood'
