@@ -38,6 +38,7 @@
       <% @organization.courses.each do |course| %>
         <h5><%= course.title %></h5>
         <p><%= course.description %></p>
+        <%= link_to "Learn More", course_path %>
       <% end %>
     </div>
   </div>

@@ -22,7 +22,7 @@ class EnrollmentsController < ApplicationController
     @enrollment.user = current_user
     @enrollment.course = @course
     @enrollment.save
-    redirect_to courses_path
+    redirect_to course_lessons_path
   end
 
   # deletes an enrollment if the student decides to cancel the class
