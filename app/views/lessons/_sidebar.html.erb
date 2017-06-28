@@ -26,7 +26,8 @@
         <div class="lesson-text flex-item-time text-lightgray">
           <h6>15 mins</h6>
         </div>
-        <a class="lesson-link" href="/courses/1/lessons/1" ></a>
+        <a class="lesson-link" href="#" ></a>
+
       </div>
       <div class="text-left lesson-tab div-relative flexbox">
         <div class="lesson-text flex-item-image">
@@ -38,7 +39,7 @@
         <div class="lesson-text flex-item-time text-lightgray">
           <h6>15 mins</h6>
         </div>
-        <a class="lesson-link" href="/courses/1/lessons/2" ></a>
+        <a class="lesson-link" href="#" ></a>
       </div>
 
       <!-- WHAT MODULE -->
@@ -145,8 +146,28 @@
         <div class="lesson-text flex-item-title">
           <h5><strong>Materials &amp; Resources </strong></h5>
         </div>
-        <a class="lesson-link" href="#" ></a>
+
       </div>
+
+
+      <!-- Lesson Loop -->
+      <% @course.lessons.each do |lesson| %>
+      <div class="text-left lesson-tab div-relative flexbox">
+        <%= render :partial => 'sessions/sessionstart', locals: {course: @course, lesson: lesson, session: Session.new } %>
+        <div class="lesson-text flex-item-title">
+          <h5><strong><%= lesson.title %></strong></h5>
+        </div>
+
+        <div>
+        <%= lesson.id %>
+        </div>
+
+      </div>
+      <% end %>
+
+
+
+
 
     </div>
   </div>
