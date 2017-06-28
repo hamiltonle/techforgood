@@ -1,46 +1,79 @@
 <!-- Banner  -->
-<div class="organization-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('banner.jpg') %>);">
+<div class="organization-banner parallax text-white" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0,0) 0%, rgba(0,0,0,.2) 50%), url(<%= cl_image_path('madi-robson-113926_wqpmaf') %>);">
+  <div class="text-center text-white">
+    <h1 class="organization-title">Hands On</h1>
+    <h3>3D Prosthetics For Children Across China </h3>
+  </div>
 </div>
-
 <!-- Course Information -->
-<div class="container padded">
+<div class="container padded container-flexbox">
 
-<!-- Course Title -->
-  <div class="organization-title">
-    <h1><%= @organization.name %></h1>
-  </div>
+  <!-- Left Column -->
+  <div class="column-left">
 
-<!-- Organization Social Media -->
-  <div>
-    <h4>FOLLOW <%= @organization.name.upcase %></h4>
-    <div class="socials">
-      <ul class="list-inline">
-        <li><a href=""><i class="fa fa-youtube"></i></a></li>
-        <li><a href=""><i class="fa fa-instagram"></i></a></li>
-        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-      </ul>
+
+  <!-- Organization Description -->
+    <div class="">
+      <h4>DESCRIPTION</h4>
+      <div>
+        <p><%= @organization.description %>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh ultricies vehicula ut id elit.<br><br>
+
+        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.<br><br>
+
+        Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis.<br><br>
+
+        Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis.</p>
+      </div>
     </div>
-  </div>
 
-<!-- Organization Description -->
-  <div class="organization-description">
-    <h4>DESCRIPTION</h4>
+
+    <!-- Organization Social Media -->
     <div>
-      <p><%= @organization.description %></p>
+      <h4>FOLLOW <%= @organization.name.upcase %></h4>
+      <div class="">
+        <ul class="list-inline">
+          <li><a href=""><i class="fa fa-youtube"></i></a></li>
+          <li><a href=""><i class="fa fa-instagram"></i></a></li>
+          <li><a href=""><i class="fa fa-facebook"></i></a></li>
+          <li><a href=""><i class="fa fa-twitter"></i></a></li>
+        </ul>
+      </div>
     </div>
   </div>
 
-<!-- Course Information -->
-  <div class="course-information">
-    <h4>COURSES</h4>
-    <div>
-      <% @organization.courses.each do |course| %>
-        <h5><%= course.title %></h5>
-        <p><%= course.description %></p>
-        <%= link_to "Learn More", course_path %>
-      <% end %>
+  <!-- Right Column -->
+  <div class="column-right">
+    <!-- Course Information -->
+    <div class="">
+      <h4>COURSES</h4>
+      <div>
+        <% @organization.courses.each do |course| %>
+          <div class="col-xs-12">
+           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('banner.jpg') %>);">
+              <div class="card-description">
+                <h2><%= course.title %></h2>
+                <p><%= course.description %></p>
+              </div>
+              <%= link_to "", course_path(course), class: "card-link" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
+
   </div>
 
+
+
+
+
+<!-- End of course container -->
+</div>
+<!-- Banner  -->
+<div class="organization-banner parallax" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0,0) 0%, rgba(0,0,0,.2) 50%), url(<%= cl_image_path('zi-jian-lim-227847_j6rckn') %>);">
+  <div class="text-right text-white padded">
+    <h2>Impact Story #1</h2>
+    <h1>Roger's First Prosthetic</h1>
+    <h3> <em>"With help from Hands On, I was able to finally ride a bicycle</em> </h3>
+  </div>
 </div>

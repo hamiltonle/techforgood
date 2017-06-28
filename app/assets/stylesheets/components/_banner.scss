@@ -8,13 +8,11 @@
   align-items: center;
   justify-content: center;
   background-position: center;
-
   h1 {
   font-size: 60px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   }
-
   p {
   font-size: 30px;
   font-weight: lighter;
@@ -22,18 +20,32 @@
   margin-bottom: 20px;
   }
 }
-
+// COURSE SHOW PAGE
 .course-banner{
   height: 60vh;
   background-size: cover !important;
 }
-
-.organization-banner {
-  height: 60vh;
-  background-size: cover !important;
-}
+// USER DASHBOARD SHOW PAGE
 .dashboard-banner {
   height: 40vh;
   background-color: $blue5;
 }
-
+// ORGANIZATION SHOW PAGE
+.organization-banner {
+  height: 90vh;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.parallax {
+    // /* The image used */
+    // background-image: url("img_parallax.jpg");
+    /* Set a specific height */
+    min-height: 500px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
