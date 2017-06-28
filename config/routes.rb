@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :courses do
-    resources :lessons, shallow: true
+    resources :lessons
 
     resources :enrollments, only: [:index, :new, :create, :destroy]
   end

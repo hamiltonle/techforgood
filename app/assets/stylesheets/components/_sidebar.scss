@@ -10,6 +10,15 @@
 .lesson-tab {
   background: #FFFFFF;
   border: 1px solid #EDEDED;
+  position: relative;
+}
+
+.lesson-tab:hover {
+  opacity: 0.8;
+}
+
+.div-relative {
+  position: relative;
 }
 
 .module-completed {
@@ -27,6 +36,16 @@
   border: 1px solid #EDEDED;
   margin-top: 20px;
   margin-bottom: 30px;
+}
+
+.lesson-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
 }
 
 
@@ -99,7 +118,7 @@
 }
 
 
-
+// LESSON CONTENT AREA
 #lesson-content {
   // position: relative;
   padding: 20px;
