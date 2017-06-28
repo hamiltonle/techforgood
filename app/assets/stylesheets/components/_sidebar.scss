@@ -14,7 +14,19 @@
 
 .module-completed {
   background: $success;
-  border: 1px solid $success;
+  // border: 1px solid $success;
+}
+
+.module-pending {
+  background: $blue2;
+  border: 1px solid $blue2;
+}
+
+.module-materials {
+  background: #FFFFFF;
+  border: 1px solid #EDEDED;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 
@@ -34,13 +46,15 @@
 .flex-item-week {
   flex: 1 0 auto;
   padding-left: 5px;
-  padding: 2px;
+  padding: 5px;
+  color: white;
 }
 
 .flex-item-complete {
   flex: 0 0 80px;
   padding: 2px;
 }
+
 
 // LESSON TAB FLEXBOX
 
@@ -62,6 +76,10 @@
 }
 
 
+.fa {
+  font-size: 22px;
+}
+
 
 #sidebar {
 
@@ -74,6 +92,7 @@
   top: 70px;
   overflow-y: none;
   // overflow-x: hidden;
+  overflow-y: scroll;
   height: auto;
   bottom: 0;
   left: 0;
