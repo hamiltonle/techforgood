@@ -8,7 +8,29 @@
     <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('boy.jpg') %>);">
     <div class="banner-content">
       <h3><%= @course.title %></h3>
+      <p><%=  @course.tagline %></p>
     </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6">
+      <a name = "description"></a>
+        <div class="course-description text-left">
+          <div>
+            <p><strong>The Issue: </strong><%= @course.issue %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6">
+      <a name = "description"></a>
+        <div class="course-description text-left">
+          <div>
+            <p><strong>The Tech Solution: </strong><%= @course.tech_solution %></p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <hr>
