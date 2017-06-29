@@ -16,7 +16,7 @@
       <div class="text-left lesson-tab div-relative flexbox">
 
         <div class="lesson-text flex-item-image">
-          <h6><i class="fa fa-play-circle text-success" aria-hidden="true"></i></h6>
+          <h6><i class="fa fa-md fa-play-circle text-success" aria-hidden="true"></i></h6>
         </div>
 
         <div class="lesson-text flex-item-lesson-title">
@@ -26,11 +26,12 @@
         <div class="lesson-text flex-item-time text-lightgray">
           <h6>15 mins</h6>
         </div>
-        <a class="lesson-link" href="/courses/1/lessons/1" ></a>
+        <a class="lesson-link" href="#" ></a>
+
       </div>
       <div class="text-left lesson-tab div-relative flexbox">
         <div class="lesson-text flex-item-image">
-          <h6><i class="fa fa-rocket text-success" aria-hidden="true"></i></h6>
+          <h6><i class="fa fa-md fa-rocket text-success" aria-hidden="true"></i></h6>
         </div>
         <div class="lesson-text flex-item-lesson-title">
           <h6>Lesson Title</h6>
@@ -38,7 +39,7 @@
         <div class="lesson-text flex-item-time text-lightgray">
           <h6>15 mins</h6>
         </div>
-        <a class="lesson-link" href="/courses/1/lessons/2" ></a>
+        <a class="lesson-link" href="#" ></a>
       </div>
 
       <!-- WHAT MODULE -->
@@ -55,7 +56,7 @@
       </div>
       <div class="text-left lesson-tab div-relative flexbox">
         <div class="lesson-text flex-item-image">
-          <h6><i class="fa fa-play-circle text-lightgray" aria-hidden="true"></i></h6>
+          <h6><i class="fa fa-md fa-play-circle text-lightgray" aria-hidden="true"></i></h6>
         </div>
         <div class="lesson-text flex-item-lesson-title">
           <h6>Lesson Title</h6>
@@ -67,7 +68,7 @@
       </div>
       <div class="text-left lesson-tab div-relative flexbox">
         <div class="lesson-text flex-item-image">
-          <h6><i class="fa fa-rocket text-lightgray" aria-hidden="true"></i></h6>
+          <h6><i class="fa fa-md fa-rocket text-lightgray" aria-hidden="true"></i></h6>
         </div>
         <div class="lesson-text flex-item-lesson-title">
           <h6>Lesson Title</h6>
@@ -79,7 +80,7 @@
       </div>
       <div class="text-left lesson-tab div-relative flexbox">
         <div class="lesson-text flex-item-image">
-          <h6><i class="fa fa-pencil text-lightgray" aria-hidden="true"></i></h6>
+          <h6><i class="fa fa-md fa-pencil text-lightgray" aria-hidden="true"></i></h6>
         </div>
         <div class="lesson-text flex-item-lesson-title">
           <h6>Lesson Title</h6>
@@ -104,7 +105,7 @@
       </div>
       <div class="text-left lesson-tab div-relative flexbox">
         <div class="lesson-text flex-item-image">
-          <h6><i class="fa fa-play-circle text-lightgray" aria-hidden="true"></i></h6>
+          <h6><i class="fa fa-md fa-play-circle text-lightgray" aria-hidden="true"></i></h6>
         </div>
         <div class="lesson-text flex-item-lesson-title">
           <h6>Lesson Title</h6>
@@ -116,7 +117,7 @@
       </div>
       <div class="text-left lesson-tab div-relative flexbox">
         <div class="lesson-text flex-item-image">
-          <h6><i class="fa fa-rocket text-lightgray" aria-hidden="true"></i></h6>
+          <h6><i class="fa fa-md fa-rocket text-lightgray" aria-hidden="true"></i></h6>
         </div>
         <div class="lesson-text flex-item-lesson-title">
           <h6>Lesson Title</h6>
@@ -128,7 +129,7 @@
       </div>
       <div class="text-left lesson-tab div-relative flexbox">
         <div class="lesson-text flex-item-image">
-          <h6><i class="fa fa-comments-o text-lightgray" aria-hidden="true"></i></h6>
+          <h6><i class="fa fa-md fa-comments-o text-lightgray" aria-hidden="true"></i></h6>
         </div>
         <div class="lesson-text flex-item-lesson-title">
           <h6>Lesson Title</h6>
@@ -145,8 +146,28 @@
         <div class="lesson-text flex-item-title">
           <h5><strong>Materials &amp; Resources </strong></h5>
         </div>
-        <a class="lesson-link" href="#" ></a>
+
       </div>
+
+
+      <!-- Lesson Loop -->
+      <% @course.lessons.each do |lesson| %>
+      <div class="text-left lesson-tab div-relative flexbox">
+        <%= render :partial => 'sessions/sessionstart', locals: {course: @course, lesson: lesson, session: Session.new } %>
+        <div class="lesson-text flex-item-title">
+          <h5><strong><%= lesson.title %></strong></h5>
+        </div>
+
+        <div>
+        <%= lesson.id %>
+        </div>
+
+      </div>
+      <% end %>
+
+
+
+
 
     </div>
   </div>
