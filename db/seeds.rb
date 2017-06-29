@@ -58,21 +58,21 @@ puts "creating organizations"
 
 org = Organization.new(
   name: "Hands On",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue."
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi nam esse odit consequuntur officiis nesciunt eius deleniti sunt pariatur, molestiae obcaecati minima rem excepturi nulla ea, praesentium aspernatur voluptas, harum?"
   )
 org.save!
 puts "saved an org"
 
 org = Organization.new(
   name: "Microsoft",
-  description: "Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem aliquid voluptatum eum quam natus perferendis possimus nam voluptate, ducimus obcaecati alias fuga ab, omnis. Eaque pariatur accusamus quibusdam assumenda laudantium."
   )
 org.save!
 puts "saved an org"
 
 org = Organization.new(
   name: "Johnson & Johnson",
-  description: "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet non magna."
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum saepe, quisquam deleniti maxime unde, harum consequuntur cupiditate nobis quos ut, itaque est quas labore atque dolorem animi, voluptatibus expedita! Dicta?"
   )
 org.save!
 puts "saved an org"
@@ -82,8 +82,8 @@ puts "saved an org"
 puts "creating courses"
 
 course = Course.new(
-  title: "Computer Vision",
-  description: "Using Microsoft's computer vision technology to find missing children."
+  title: "3D Printing",
+  description: "3D printed prosthetics for children in need"
   )
 course.organization = Organization.find(1)
 course.save!
@@ -91,8 +91,8 @@ puts "saved a course"
 
 
 course = Course.new(
-  title: "Augmented Reality",
-  description: "Augmented Reality for vision-impaired people."
+  title: "Computer Vision",
+  description: "Using Microsoft's computer vision technology to find missing children"
   )
 course.organization = Organization.find(2)
 course.save!
@@ -100,8 +100,8 @@ puts "saved a course"
 
 
 course = Course.new(
-  title: "3D Printing",
-  description: "3D printed prosthetics for children in need"
+  title: "Augmented Reality",
+  description: "Augmented Reality for vision-impaired people"
   )
 course.organization = Organization.find(3)
 course.save!
