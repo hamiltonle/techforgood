@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20170629081621) do
     t.datetime "updated_at", null: false
     t.string "type"
     t.integer "minutes"
-    t.string "module"
+    t.string "module_name"
     t.index ["course_id"], name: "index_lessons_on_course_id"
   end
 

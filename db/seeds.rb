@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "deleting all current data"
+
 # Enrollment.destroy_all
 # Lesson.destroy_all
 # Session.destroy_all
@@ -156,7 +158,11 @@ lesson = Lesson.new(
 
 Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
   description: "Cras mattis consectetur purus sit amet fermentum.",
-  title: "How 3D printers work"
+  title: "How 3D printers work",
+  type:
+  minutes:
+  module_name:
+
   )
 lesson.course = Course.find(1)
 lesson.save!
