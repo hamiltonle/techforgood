@@ -116,6 +116,22 @@
   left: 0;
 }
 
+#course_sidebar {
+
+
+  // justify-content: space-between;
+  // align-items: center;
+  width: 280px;
+  background-color: #f0f0f0;
+  position: absolute;
+  top: 70px;
+  // overflow-x: hidden;
+  overflow-y: hidden;
+  height: auto;
+  bottom: 0;
+  left: 0;
+}
+
 
 // LESSON CONTENT AREA
 #lesson-content {
@@ -138,24 +154,6 @@
   width: calc(100% - 280px);
 }
 
-#course-content {
-  padding: 20px;
-  margin: 0px;
-  // margin-left: 200px;
-  // width: 100%;
-  // margin: 0 auto;
-  // border-radius: 2px;
-  background: rgba(175, 175, 175, 0.1);
-
-  top: 70px;
-  bottom: 0;
-  left: 280px;
-  height: auto;
-  overflow-y: scroll;
-  overflow-x: scroll;
-  position: absolute;
-  width: calc(100% - 280px);
-}
 
 
 

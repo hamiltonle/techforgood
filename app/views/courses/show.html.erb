@@ -5,84 +5,95 @@
   <!-- Course Information -->
   <div class="container">
     <div id="course-content">
-    <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('boy.jpg') %>);">
-    <div class="banner-content">
-      <h3><%= @course.title %></h3>
-      <p><%=  @course.tagline %></p>
-    </div>
-    </div>
+      <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('boy.jpg') %>);">
+      <div class="banner-content">
+        <h3><%= @course.title %></h3>
+        <p><%=  @course.tagline %></p>
+      </div>
+      </div>
 
-    <hr>
 
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-6">
-      <a name = "description"></a>
-        <div class="course-description text-left">
-          <div>
-            <p><strong>The Issue: </strong><%= @course.issue %></p>
+      <div class="row">
+        <div class="course_context">
+          <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-offset-1">
+            <a name = "issue"></a>
+                <div>
+                  <h3><strong>The Issue: </strong></h3>
+                  <p><%= @course.issue %></p>
+                </div>
+          </div>
+            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-offset-1">
+            <a name = "issue"></a>
+              <div>
+                <%= image_tag ("boy_missing_hand.jpg"), class:"img-rounded", alt:"Boy missing a hand", width:"304", height:"236" %>
+              </div>
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-6">
-      <a name = "description"></a>
-        <div class="course-description text-left">
-          <div>
-            <p><strong>The Tech Solution: </strong><%= @course.tech_solution %></p>
+
+      <div class="row">
+        <div class="course_context">
+          <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-offset-1">
+            <a name = "technology"></a>
+                <div>
+                  <h3><strong>The Technology: </strong></h3>
+                  <p><%= @course.tech_solution %></p>
+                </div>
+          </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+            <a name = "issue"></a>
+              <div>
+                <%= image_tag ("3dprintedhands.png"), class:"img-rounded", alt:"3D printed hands", width:"304", height:"236" %>
+              </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <hr>
+      <hr>
 
-  <!-- Course Description -->
-    <div class="row">
-      <div class="col-xs-12">
-      <a name = "description"></a>
-        <div class="course-description text-left">
-          <div>
-            <p><strong>Course Description: </strong><%= @course.description %></p>
+    <!-- Course Description -->
+      <div class="row">
+        <div class="col-xs-12">
+        <a name = "description"></a>
+          <div class="text-left">
+            <div>
+              <p><strong>Course Description: </strong><%= @course.description %></p>
+            </div>
           </div>
         </div>
       </div>
+
+      <hr>
+
+
+    <!-- Lesson Information -->
+        <div class="row">
+          <div class="col-xs-12">
+           <a name = "syllabus"></a>
+            <div class="text-left">
+              <p><strong>Syllabus: </strong></p>
+                <div>
+                  <ol>
+                    <% @course.lessons.each do |lesson| %>
+                      <li><%= lesson.title %></li>
+                    <% end %>
+                  </ol>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+      <hr>
+
+      <a name = "organization"></a>
+        <div class="course-description text-left">
+          <p><strong>Course by: </strong><%= @course.organization.name %></p>
+          <p>  <%= @course.organization.description %></p>
+
+        </div>
+
+
     </div>
-
-    <hr>
-
-    <!-- Organization Information -->
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="organization-information text-left">
-            <p><strong>Course by: </strong><%= link_to @course.organization.name, organization_path(@course.organization_id) %></p>
-        </div>
-      </div>
-    </div>
-
-    <hr>
-
-  <!-- Lesson Information -->
-    <a name = "syllabus"></a>
-      <div class="lesson-information text-left">
-        <p><strong>Syllabus: </strong></p>
-        <div>
-          <% @course.lessons.each do |lesson| %>
-            <p><%= lesson.title %></p>
-          <% end %>
-        </div>
-      </div>
-
-    <hr>
-
-    <a name = "course_resources"></a>
-      <div class="lesson-information text-left">
-        <p><strong>Resources: </strong></p>
-        <div>
-          <% @course.lessons.each do |lesson| %>
-            <p><%= lesson.title %></p>
-          <% end %>
-        </div>
-      </div>
-
-  </div>
   </div>
 </div>
