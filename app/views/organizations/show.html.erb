@@ -1,13 +1,3 @@
-<!-- Banner  -->
-<div class="organization-banner parallax text-white" style="background-image: linear-gradient(350deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 90%), url(<%= image_path('handsnotext.jpg') %>);">
-  <div class="text-center text-white">
-    <h1 class="text-double">Hands On</h1>
-    <h3>3D Prosthetics For Children Across China </h3>
-  </div>
-</div>
-
-
-
 <!-- Course Information -->
 <div class="container  ">
 
@@ -28,13 +18,14 @@
 
   <!-- Right Column -->
   <!-- Number of Students Enrolled -->
-    <div class="column-right">
-      <div class="padded">
-        <h4>TOTAL STUDENTS ENROLLED</h4>
+    <div class="column-right hidden-xs hidden-sm">
+    <div class="text-center padded">
+      <h4>Total students enrolled</h4>
         <div class="text-double text-center">
           <%= @total_students %>
           <i class="fa fa-xl fa-graduation-cap"></i>
         </div>
+
 
         <h4>Days till the next course begins</h4>
         <div class="text-double text-center">
@@ -95,31 +86,11 @@
         </div> -->
       <%# end %>
 
-      <!-- Organization Social Media -->
-      <div>
-        <h4>FOLLOW <%= @organization.name.upcase %></h4>
-        <div class="">
-          <ul class="list-inline">
-            <li><a href=""><i class="fa fa-youtube"></i></a></li>
-            <li><a href=""><i class="fa fa-instagram"></i></a></li>
-            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-          </ul>
-        </div>
-      </div>
+
     </div>
 
     <!-- Right Column -->
-    <div class="column-right border-left col-xs-12 hidden-xs">
-
-      <!-- Number of Students Enrolled -->
-<!--       <div class="">
-        <h4>TOTAL STUDENTS ENROLLED</h4>
-        <div class="text-double text-center">
-          <%#= @total_students %>
-          <i class="fa fa-xl fa-graduation-cap"></i>
-        </div>
-      </div> -->
+    <div class="column-right border-left col-xs-12 hidden-xs hidden-sm">
 
 
       <!-- Course Information -->
@@ -140,21 +111,39 @@
         </div>
       </div>
 
+      <!-- Organization Social Media -->
+      <div>
+        <h4>FOLLOW <%= @organization.name.upcase %></h4>
+        <div class="text-center">
+          <ul class="list-inline">
+            <li><a href=""><i class="fa fa-xl fa-youtube"></i></a></li>
+            <li><a href=""><i class="fa fa-xl fa-instagram"></i></a></li>
+            <li><a href=""><i class="fa fa-xl fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa fa-xl fa-twitter"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
     </div>
-
-
-
   </div>
 
   <!-- Mobile Column -->
-  <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+  <div class="col-xs-12 hidden-md hidden-lg">
 
     <!-- Number of Students Enrolled -->
-    <div class="">
-      <h4>TOTAL STUDENTS ENROLLED</h4>
+    <div class="text-center padded">
+      <h4>Total students enrolled</h4>
       <div class="text-double text-center">
         <%= @total_students %>
         <i class="fa fa-xl fa-graduation-cap"></i>
+      </div>
+
+
+      <h4>Days till the next course begins</h4>
+      <div class="text-double text-center">
+        <p>14 <i class="fa fa-xl fa-calendar"></i></p>
+        <%#= days till next coruse %>
+
       </div>
     </div>
 
@@ -177,62 +166,21 @@
       </div>
     </div>
 
+    <!-- Organization Social Media -->
+      <div>
+        <h4>FOLLOW <%= @organization.name.upcase %></h4>
+        <div class="text-center">
+          <ul class="list-inline">
+            <li><a href=""><i class="fa fa-youtube"></i></a></li>
+            <li><a href=""><i class="fa fa-instagram"></i></a></li>
+            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
   </div>
 <!-- End of course container -->
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="wrapper">
-      <h3>Push</h3>
-      <a href="#" class="fancy-button bg-gradient1"><span><i class="fa fa-ticket"></i>Tickets</span></a>
-      <a href="#" class="fancy-button bg-gradient2"><span><i class="fa fa-plus"></i></span></a>
-    <br><br>
-      <h3>Magnet</h3>
-      <a href="#" class="fancy-button pop-onhover bg-gradient1"><span>Publish</span></a>
-      <a href="#" class="fancy-button pop-onhover bg-gradient3"><span><i class="fa fa-pencil"></i>Edit</span></a>
-
-      <h3>Solid to gradient</h3>
-      <a href="#" target="_blank" class="fancy-button pop-onhover bg-gradient4"><span>Save</span></a>
-
-        <a href="#" class="btn btn-3 text-white">Hover</a>
-        <a href="#" class="btn btn-3 text-white">Hover</a>
-        <a href="#" class="btn btn-3 text-white">Hover</a>
-        <!--End of Button 3 -->
-
-
-
-    </div><!-- /.wrapper -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </div>
