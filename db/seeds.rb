@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Enrollment.destroy_all
-Lesson.destroy_all
-Session.destroy_all
-User.destroy_all
-Course.destroy_all
-Organization.destroy_all
+# Enrollment.destroy_all
+# Lesson.destroy_all
+# Session.destroy_all
+# User.destroy_all
+# Course.destroy_all
+# Organization.destroy_all
 
 puts "creating fake students and courses"
 
@@ -149,6 +149,126 @@ puts "saved an enrollment"
 
 # Lessons seeds
 puts "Creating lessons"
+
+lesson = Lesson.new(
+  video: "http://player.youku.com/embed/XMTY3NjE3ODIyOA==",
+  text: "Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
+
+Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+  description: "Cras mattis consectetur purus sit amet fermentum.",
+  title: "How 3D printers work"
+  )
+lesson.course = Course.find(1)
+lesson.save!
+puts "saved a lesson"
+
+lesson = Lesson.new(
+  video: "http://player.youku.com/embed/XMTY3NjE3ODIyOA==",
+  text: "Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
+
+Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+  description: "Cras mattis consectetur purus sit amet fermentum.",
+  title: "How 3D printers work"
+  )
+lesson.course = Course.find(1)
+lesson.save!
+puts "saved a lesson"
+
+lesson = Lesson.new(
+  video: "http://player.youku.com/embed/XMTY3NjE3ODIyOA==",
+  text: "Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
+
+Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+  description: "Cras mattis consectetur purus sit amet fermentum.",
+  title: "How 3D printers work"
+  )
+lesson.course = Course.find(1)
+lesson.save!
+puts "saved a lesson"
+
+lesson = Lesson.new(
+  video: "http://player.youku.com/embed/XMTY3NjE3ODIyOA==",
+  text: "Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
+
+Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+  description: "Cras mattis consectetur purus sit amet fermentum.",
+  title: "How 3D printers work"
+  )
+lesson.course = Course.find(1)
+lesson.save!
+puts "saved a lesson"
+
+lesson = Lesson.new(
+  video: "http://player.youku.com/embed/XMTY3NjE3ODIyOA==",
+  text: "Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
+
+Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+  description: "Cras mattis consectetur purus sit amet fermentum.",
+  title: "How 3D printers work"
+  )
+lesson.course = Course.find(1)
+lesson.save!
+puts "saved a lesson"
+
+lesson = Lesson.new(
+  video: "http://player.youku.com/embed/XMTY3NjE3ODIyOA==",
+  text: "Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
+
+Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+  description: "Cras mattis consectetur purus sit amet fermentum.",
+  title: "How 3D printers work"
+  )
+lesson.course = Course.find(1)
+lesson.save!
+puts "saved a lesson"
+
+lesson = Lesson.new(
+  video: "http://player.youku.com/embed/XMTY3NjE3ODIyOA==",
+  text: "Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
+
+Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+  description: "Cras mattis consectetur purus sit amet fermentum.",
+  title: "How 3D printers work"
+  )
+lesson.course = Course.find(1)
+lesson.save!
+puts "saved a lesson"
+
+lesson = Lesson.new(
+  video: "http://player.youku.com/embed/XMTY3NjE3ODIyOA==",
+  text: "Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
+
+Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+  description: "Cras mattis consectetur purus sit amet fermentum.",
+  title: "How 3D printers work"
+  )
+lesson.course = Course.find(1)
+lesson.save!
+puts "saved a lesson"
+
+lesson = Lesson.new(
+  video: "http://player.youku.com/embed/XMTY3NjE3ODIyOA==",
+  text: "Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
+
+Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+  description: "Cras mattis consectetur purus sit amet fermentum.",
+  title: "How 3D printers work"
+  )
+lesson.course = Course.find(1)
+lesson.save!
+puts "saved a lesson"
+
+lesson = Lesson.new(
+  video: "http://player.youku.com/embed/XMTY3NjE3ODIyOA==",
+  text: "Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
+
+Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+  description: "Cras mattis consectetur purus sit amet fermentum.",
+  title: "How 3D printers work"
+  )
+lesson.course = Course.find(1)
+lesson.save!
+puts "saved a lesson"
 
 lesson = Lesson.new(
   video: "http://player.youku.com/embed/XMTY3NjE3ODIyOA==",
