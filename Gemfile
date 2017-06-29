@@ -24,6 +24,9 @@ gem 'uglifier'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
+gem 'mina', '< 1', require: false
+gem 'mina-rsync', require: false
+gem 'mina-scp', require: false
 
 group :development, :test do
   gem 'better_errors'
