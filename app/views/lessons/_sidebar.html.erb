@@ -1,8 +1,8 @@
-<div id="sidebar" class="hidden-xs text-center">
+<div id="sidebar" class="text-center">
     <div class="">
 
       <!-- WHY MODULE -->
-      <div class="text-left module-completed flexbox">
+      <div class="text-left module-completed flexbox" data-toggle="collapse" data-target="#why">
         <div class="lesson-text flex-item-title text-white">
           <h5><strong>WHY </strong></h5>
         </div>
@@ -13,37 +13,33 @@
           <h6>Finished</h6>
         </div>
       </div>
-      <div class="text-left lesson-tab div-relative flexbox">
 
-        <div class="lesson-text flex-item-image">
-          <h6><i class="fa fa-md fa-play-circle text-success" aria-hidden="true"></i></h6>
-        </div>
+      <div id="why" class="collapse">
+        <% @why_lessons.each do |lesson| %>
 
-        <div class="lesson-text flex-item-lesson-title">
-          <h6>Lesson Title</h6>
-        </div>
+            <div class="text-left lesson-tab div-relative flexbox">
+              <%= simple_form_for [@course, lesson, Session.new] do |f| %>
+                <%#= f.input :status, input_html: { value: 'started' }, as: :hidden  %>
+                <%= f.button :submit, '', class: 'card-link', disabled: false  %>
+              <% end %>
+              <div class="lesson-text flex-item-image">
+                <h6><i class="fa fa-md <%= fontawesome_icon(lesson) %> text-success" aria-hidden="true"></i></h6>
+              </div>
+              <div class="lesson-text flex-item-lesson-title">
+                <h6><%= lesson.title %></h6>
+              </div>
+              <div class="lesson-text flex-item-time text-lightgray">
+                <h6><%= lesson.minutes %> mins</h6>
+              </div>
 
-        <div class="lesson-text flex-item-time text-lightgray">
-          <h6>15 mins</h6>
-        </div>
-        <a class="lesson-link" href="#" ></a>
+            </div>
 
+        <% end %>
       </div>
-      <div class="text-left lesson-tab div-relative flexbox">
-        <div class="lesson-text flex-item-image">
-          <h6><i class="fa fa-md fa-rocket text-success" aria-hidden="true"></i></h6>
-        </div>
-        <div class="lesson-text flex-item-lesson-title">
-          <h6>Lesson Title</h6>
-        </div>
-        <div class="lesson-text flex-item-time text-lightgray">
-          <h6>15 mins</h6>
-        </div>
-        <a class="lesson-link" href="#" ></a>
-      </div>
+
 
       <!-- WHAT MODULE -->
-      <div class="text-left module-pending flexbox">
+      <div class="text-left module-pending flexbox" data-toggle="collapse" data-target="#what">
         <div class="lesson-text flex-item-title text-white">
           <h5><strong>WHAT </strong></h5>
         </div>
@@ -54,45 +50,34 @@
           <h6>Missed</h6>
         </div>
       </div>
-      <div class="text-left lesson-tab div-relative flexbox">
-        <div class="lesson-text flex-item-image">
-          <h6><i class="fa fa-md fa-play-circle text-lightgray" aria-hidden="true"></i></h6>
-        </div>
-        <div class="lesson-text flex-item-lesson-title">
-          <h6>Lesson Title</h6>
-        </div>
-        <div class="lesson-text flex-item-time text-lightgray">
-          <h6>15 mins</h6>
-        </div>
-        <a class="lesson-link" href="#" ></a>
-      </div>
-      <div class="text-left lesson-tab div-relative flexbox">
-        <div class="lesson-text flex-item-image">
-          <h6><i class="fa fa-md fa-rocket text-lightgray" aria-hidden="true"></i></h6>
-        </div>
-        <div class="lesson-text flex-item-lesson-title">
-          <h6>Lesson Title</h6>
-        </div>
-        <div class="lesson-text flex-item-time text-lightgray">
-          <h6>15 mins</h6>
-        </div>
-        <a class="lesson-link" href="#" ></a>
-      </div>
-      <div class="text-left lesson-tab div-relative flexbox">
-        <div class="lesson-text flex-item-image">
-          <h6><i class="fa fa-md fa-pencil text-lightgray" aria-hidden="true"></i></h6>
-        </div>
-        <div class="lesson-text flex-item-lesson-title">
-          <h6>Lesson Title</h6>
-        </div>
-        <div class="lesson-text flex-item-time text-lightgray">
-          <h6>15 mins</h6>
-        </div>
-        <a class="lesson-link" href="#" ></a>
+
+
+      <div id="what" class="collapse">
+
+        <% @what_lessons.each do |lesson| %>
+
+            <div class="text-left lesson-tab div-relative flexbox">
+              <%= simple_form_for [@course, lesson, Session.new] do |f| %>
+                <%#= f.input :status, input_html: { value: 'started' }, as: :hidden  %>
+                <%= f.button :submit, '', class: 'card-link', disabled: false  %>
+              <% end %>
+              <div class="lesson-text flex-item-image">
+                <h6><i class="fa fa-md <%= fontawesome_icon(lesson) %> text-success" aria-hidden="true"></i></h6>
+              </div>
+              <div class="lesson-text flex-item-lesson-title">
+                <h6><%= lesson.title %></h6>
+              </div>
+              <div class="lesson-text flex-item-time text-lightgray">
+                <h6><%= lesson.minutes %> mins</h6>
+              </div>
+
+            </div>
+
+        <% end %>
       </div>
 
       <!-- HOW MODULE -->
-      <div class="text-left module-pending flexbox">
+      <div class="text-left module-pending flexbox" data-toggle="collapse" data-target="#how">
         <div class="lesson-text flex-item-title text-white">
           <h5><strong>HOW </strong></h5>
         </div>
@@ -103,68 +88,28 @@
           <h6>On Going</h6>
         </div>
       </div>
-      <div class="text-left lesson-tab div-relative flexbox">
-        <div class="lesson-text flex-item-image">
-          <h6><i class="fa fa-md fa-play-circle text-lightgray" aria-hidden="true"></i></h6>
-        </div>
-        <div class="lesson-text flex-item-lesson-title">
-          <h6>Lesson Title</h6>
-        </div>
-        <div class="lesson-text flex-item-time text-lightgray">
-          <h6>15 mins</h6>
-        </div>
-        <a class="lesson-link" href="#" ></a>
+
+      <div id="how" class="collapse">
+        <% @how_lessons.each do |lesson| %>
+
+            <div class="text-left lesson-tab div-relative flexbox">
+              <%= simple_form_for [@course, lesson, Session.new] do |f| %>
+                <%#= f.input :status, input_html: { value: 'started' }, as: :hidden  %>
+                <%= f.button :submit, '', class: 'card-link', disabled: false  %>
+              <% end %>
+              <div class="lesson-text flex-item-image">
+                <h6><i class="fa fa-md <%= fontawesome_icon(lesson) %> text-success" aria-hidden="true"></i></h6>
+              </div>
+              <div class="lesson-text flex-item-lesson-title">
+                <h6><%= lesson.title %></h6>
+              </div>
+              <div class="lesson-text flex-item-time text-lightgray">
+                <h6><%= lesson.minutes %> mins</h6>
+              </div>
+
+            </div>
+        <% end %>
       </div>
-      <div class="text-left lesson-tab div-relative flexbox">
-        <div class="lesson-text flex-item-image">
-          <h6><i class="fa fa-md fa-rocket text-lightgray" aria-hidden="true"></i></h6>
-        </div>
-        <div class="lesson-text flex-item-lesson-title">
-          <h6>Lesson Title</h6>
-        </div>
-        <div class="lesson-text flex-item-time text-lightgray">
-          <h6>15 mins</h6>
-        </div>
-        <a class="lesson-link" href="#" ></a>
-      </div>
-      <div class="text-left lesson-tab div-relative flexbox">
-        <div class="lesson-text flex-item-image">
-          <h6><i class="fa fa-md fa-comments-o text-lightgray" aria-hidden="true"></i></h6>
-        </div>
-        <div class="lesson-text flex-item-lesson-title">
-          <h6>Lesson Title</h6>
-        </div>
-        <div class="lesson-text flex-item-time text-lightgray">
-          <h6>15 mins</h6>
-        </div>
-        <a class="lesson-link" href="#" ></a>
-      </div>
-
-
-      <!-- MATERIALS & RESOURCES -->
-      <div class="text-left module-materials div-relative flexbox">
-        <div class="lesson-text flex-item-title">
-          <h5><strong>Materials &amp; Resources </strong></h5>
-        </div>
-
-      </div>
-
-
-      <!-- Lesson Loop -->
-      <% @course.lessons.each do |lesson| %>
-      <div class="text-left lesson-tab div-relative flexbox">
-        <%= render :partial => 'sessions/sessionstart', locals: {course: @course, lesson: lesson, session: Session.new } %>
-        <div class="lesson-text flex-item-title">
-          <h5><strong><%= lesson.title %></strong></h5>
-        </div>
-
-        <div>
-        <%= lesson.id %>
-        </div>
-
-      </div>
-      <% end %>
-
 
 
 

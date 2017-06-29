@@ -87,7 +87,7 @@ course = Course.new(
   title: "Computer Vision",
   description: "Using Microsoft's computer vision technology to find missing children."
   )
-course.organization = Organization.find(1)
+course.organization = Organization.find(3)
 course.save!
 puts "saved a course"
 
@@ -105,7 +105,7 @@ course = Course.new(
   title: "3D Printing",
   description: "3D printed prosthetics for children in need"
   )
-course.organization = Organization.find(3)
+course.organization = Organization.find(1)
 course.save!
 puts "saved a course"
 
