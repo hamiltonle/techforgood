@@ -27,25 +27,25 @@
               <div>
                 <%= image_tag ("boy_missing_hand.jpg"), class:"img-rounded", alt:"Boy missing a hand", width:"304", height:"236" %>
               </div>
-          </div>
+            </div>
         </div>
       </div>
 
 
       <div class="row">
         <div class="course_technology">
-          <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-offset-1">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-offset-1">
+            <a name = "issue"></a>
+              <div>
+                <%= image_tag ("3dprintedhands.png"), class:"img-rounded", alt:"3D printed hands", width:"304", height:"236" %>
+              </div>
+          </div>
+            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-offset-1">
             <a name = "technology"></a>
                 <div>
                   <h3 class="text-center"><strong>The Technology </strong></h3>
                   <p><%= @course.tech_solution %></p>
                 </div>
-          </div>
-            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-offset-1">
-            <a name = "issue"></a>
-              <div>
-                <%= image_tag ("3dprintedhands.png"), class:"img-rounded", alt:"3D printed hands", width:"304", height:"236" %>
-              </div>
           </div>
         </div>
       </div>
@@ -68,12 +68,12 @@
 
     <!-- Lesson Information -->
         <div class="row">
-          <div class="col-xs-12">
+          <div class="col-xs-8 col-xs-offset-2">
            <a name = "syllabus"></a>
             <div class="text-left">
-              <h3 class="text-center"><strong>Syllabus</strong></p>
+              <h3 class="text-center"><strong>What You'll Learn</strong></h3>
                 <div>
-                  <ol>
+                  <ol class="text-center">
                     <% @course.lessons.each do |lesson| %>
                       <li><%= lesson.title %></li>
                     <% end %>
@@ -87,11 +87,14 @@
       <hr>
 
       <a name = "organization"></a>
-        <div class="course-description text-left">
-          <p><strong>Course by: </strong><%= @course.organization.name %></p>
-          <p>  <%= @course.organization.description %></p>
-
+       <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+          <h3 class="text-center"><strong>Organization</strong></h3>
+          <p>This course is brought to you by: <%= @course.organization.name %></p>
+          <p><%= @course.organization.description %></p>
         </div>
+        </div>
+      </div>
 
 
     </div>
