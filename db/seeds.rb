@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Enrollment.destroy_all
-Lesson.destroy_all
-Session.destroy_all
-User.destroy_all
-Course.destroy_all
-Organization.destroy_all
+# Enrollment.destroy_all
+# Lesson.destroy_all
+# Session.destroy_all
+# User.destroy_all
+# Course.destroy_all
+# Organization.destroy_all
 
 puts "creating fake students and courses"
 
