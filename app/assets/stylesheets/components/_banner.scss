@@ -37,3 +37,27 @@
   background-color: $blue5;
 }
 
+.course-banner {
+  color: white;
+  text-align: center;
+  margin-top: 0px;
+  height: 30vh;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+
+  h1 {
+  font-size: 60px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  p {
+  font-size: 30px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+  }
+}

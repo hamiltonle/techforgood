@@ -1,64 +1,66 @@
 <div class="container">
-<!-- Banner  -->
-<div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('banner.jpg') %>);">
-</div>
-<!-- Course Information -->
-<div class="container padded">
-<%= render :partial => 'courses/sidebar' %>
 
-<!-- Course Title -->
-  <div class="course-title">
-    <h1><%= @course.title %></h1>
-  </div>
+  <%= render :partial => 'courses/sidebar' %>
 
-<!-- Organization Information -->
-  <div class="organization-information">
-    <h3>
-      <%= @course.organization.name %>
-      <%= link_to "Learn More", organization_path(@course.organization_id), class: "btn purple-banner-button btn-purple-filled button-top-margin" %>
-    </h3>
-  </div>
-
-<!-- Enroll Button -->
-  <div>
-    <div class="enroll-btn">
-      <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+  <!-- Course Information -->
+  <div class="container">
+    <div id="course-content">
+    <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('boy.jpg') %>);">
+    <div class="banner-content">
+      <h3><%= @course.title %></h3>
     </div>
-  </div>
-
-<!-- Course Social Media -->
-  <div>
-    <h4>FOLLOW <%= @course.title.upcase %></h4>
-    <div class="socials">
-      <ul class="list-inline">
-        <li><a href=""><i class="fa fa-youtube"></i></a></li>
-        <li><a href=""><i class="fa fa-instagram"></i></a></li>
-        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-      </ul>
     </div>
-  </div>
 
-<!-- Course Description -->
-<a name = "description">
-  <div class="course-description">
-    <h4>DESCRIPTION</h4>
-    <div>
-      <p><%= @course.description %></p>
+    <hr>
+
+  <!-- Course Description -->
+    <div class="row">
+      <div class="col-xs-12">
+      <a name = "description"></a>
+        <div class="course-description text-left">
+          <div>
+            <p><strong>Course Description: </strong><%= @course.description %></p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 
-<!-- Lesson Information -->
-<a name = "syllabus">
-  <div class="lesson-information">
-    <h4>LESSONS</h4>
-    <div>
-      <% @course.lessons.each do |lesson| %>
-        <h5><%= lesson.title %></h5>
-      <% end %>
+    <hr>
+
+    <!-- Organization Information -->
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="organization-information text-left">
+            <p><strong>Course by: </strong><%= link_to @course.organization.name, organization_path(@course.organization_id) %></p>
+        </div>
+      </div>
     </div>
+
+    <hr>
+
+  <!-- Lesson Information -->
+    <a name = "syllabus"></a>
+      <div class="lesson-information text-left">
+        <p><strong>Syllabus: </strong></p>
+        <div>
+          <% @course.lessons.each do |lesson| %>
+            <p><%= lesson.title %></p>
+          <% end %>
+        </div>
+      </div>
+
+    <hr>
+
+    <a name = "course_resources"></a>
+      <div class="lesson-information text-left">
+        <p><strong>Resources: </strong></p>
+        <div>
+          <% @course.lessons.each do |lesson| %>
+            <p><%= lesson.title %></p>
+          <% end %>
+        </div>
+      </div>
+
   </div>
-
-
-</div>
+  </div>
 </div>

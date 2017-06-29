@@ -1,10 +1,10 @@
-<div id="sidebar" class="hidden-xs text-center">
+<div id="sidebar" class="text-center">
     <div class="">
 
       <!-- WHY MODULE -->
       <div class="text-left module-completed flexbox">
         <div class="lesson-text flex-item-title text-white">
-          <h5 class><strong><%= @course.title %></strong></h5>
+          <h5 class><strong>About This Course:</strong></h5>
         </div>
       </div>
       <div class="text-left lesson-tab div-relative flexbox">
@@ -26,15 +26,14 @@
         </div>
         <%= link_to '', organization_path(@course.organization), class: "lesson-link" %>
       </div>
-
-
-      <!-- MATERIALS & RESOURCES -->
-      <div class="text-left module-materials div-relative flexbox">
-        <div class="lesson-text flex-item-title">
-          <h5><strong>Materials &amp; Resources </strong></h5>
+      <div class="text-left lesson-tab div-relative flexbox">
+        <div class="lesson-text flex-item-lesson-title">
+          <h6>Course Resources</h6>
         </div>
-        <a class="lesson-link" href="#" ></a>
+        <a class="lesson-link" href="#course_resources" ></a>
       </div>
+
+      <hr>
 
       <div>
         <div class="enroll-btn">
