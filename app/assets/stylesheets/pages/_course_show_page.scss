@@ -25,10 +25,28 @@
   list-style-type: disc !important;
 }
 
-.course_context {
+.course_technology {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  border-style: 1px solid grey;
+
+  img {
+    border-radius: 10px;
+  }
+
+}
+
+.course_issue {
+  background-color: $blue3;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-style: 1px solid grey;
+
+  img {
+    border-radius: 10px;
+  }
 
 }
