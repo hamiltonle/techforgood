@@ -7,18 +7,27 @@ class LessonsController < ApplicationController
 
   # Displays all lessons of a course
   def index
+    @course = Course.find(params[:course_id])
     @lessons = Lesson.all
     @skip_footer = true
   end
 
   # Displays an individual lesson for a course
   def show
+    @course = Course.find(params[:course_id])
     @lesson = Lesson.find(params[:id])
+
+    # after we do unique session validations for unique user_id & lesson_id, then code should be
+    # @session = @lesson.session
+    # for now, we'll use this:
+    @session = @lesson.sessions.last
+
     @skip_footer = true
   end
 
   # 1st step of creating a lesson: displays form for creating a new lesson
   def new
+    @course = Course.find(params[:id])
     @lesson = Lesson.new
   end
 
@@ -31,7 +40,6 @@ class LessonsController < ApplicationController
     @lesson.course_id = @course
     @lesson.save
 
-    # redirect_to (admin dashboard)
   end
 
   # 1st step of updating a lesson: displays form for updating a new lesson

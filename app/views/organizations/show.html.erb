@@ -1,46 +1,205 @@
-<!-- Banner  -->
-<div class="organization-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('banner.jpg') %>);">
+<!-- Course Information -->
+<div class="container  ">
+
+  <div class="text-center padded">
+    <h1 class="text-double">Hands On</h1>
+    <h3>3D Prosthetics For Children Across China </h3>
+  </div>
+
+
+  <div class="col-xs-12 container-flexbox">
+    <!-- Left Column -->
+    <div class="column-left">
+      <div class="text-left padded column-left">
+        <%#= image_tag "handsnotext.jpg", style: "width: 100%;" %>
+        <embed src='http://player.youku.com/player.php/sid/XMTY3NjE3ODIyOA==/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>
+      </div>
+    </div>
+
+  <!-- Right Column -->
+  <!-- Number of Students Enrolled -->
+    <div class="column-right hidden-xs hidden-sm">
+    <div class="text-center padded">
+      <h4>Total students enrolled</h4>
+        <div class="text-double text-center">
+          <%= @total_students %>
+          <i class="fa fa-xl fa-graduation-cap"></i>
+        </div>
+
+
+        <h4>Days till the next course begins</h4>
+        <div class="text-double text-center">
+          <p>14 <i class="fa fa-xl fa-calendar"></i></p>
+          <%#= days till next coruse %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- End of course container -->
 </div>
+
+
+
 
 <!-- Course Information -->
 <div class="container padded">
 
-<!-- Course Title -->
-  <div class="organization-title">
-    <h1><%= @organization.name %></h1>
-  </div>
 
-<!-- Organization Social Media -->
-  <div>
-    <h4>FOLLOW <%= @organization.name.upcase %></h4>
-    <div class="socials">
-      <ul class="list-inline">
-        <li><a href=""><i class="fa fa-youtube"></i></a></li>
-        <li><a href=""><i class="fa fa-instagram"></i></a></li>
-        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-      </ul>
+
+  <div class="col-xs-12 container-flexbox">
+    <!-- Left Column -->
+    <div class="column-left ">
+
+
+    <!-- Organization Description -->
+      <div class="">
+        <h4>DESCRIPTION</h4>
+        <div>
+          <p><%= @organization.description %>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh ultricies vehicula ut id elit.<br><br>
+
+          Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.<br><br>
+
+          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis.<br><br>
+
+          Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis.</p>
+        </div>
+      </div>
+
+
+      <!-- Gallery Section -->
+      <%# if @organization.photos? %>
+  <!--       <div class="">
+          <h4>GALLERY</h4>
+          <div class="gallery-section">
+            <div class="row gallery-padding"> -->
+
+              <!-- Loops through all the users photos -->
+              <%# @organization.photos.each do |photo| %>
+  <!--               <div class="col-xs-4 gallery-image">
+   -->                <%#= cl_image_tag photo.path, height: 200, width: 200, crop: :lfill %>
+  <!--               </div> -->
+              <%# end %>
+  <!--
+            </div>
+          </div>
+        </div> -->
+      <%# end %>
+
+
+    </div>
+
+    <!-- Right Column -->
+    <div class="column-right border-left col-xs-12 hidden-xs hidden-sm">
+
+
+      <!-- Course Information -->
+      <div class="">
+        <h4>COURSES</h4>
+        <div>
+          <% @organization.courses.each do |course| %>
+            <div class="col-xs-12">
+             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('banner.jpg') %>);">
+                <div class="card-description">
+                  <h2><%= course.title %></h2>
+                  <p><%= course.description %></p>
+                </div>
+                <%= link_to "", course_path(course), class: "card-link" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <!-- Organization Social Media -->
+      <div>
+        <h4>FOLLOW <%= @organization.name.upcase %></h4>
+        <div class="text-center">
+          <ul class="list-inline">
+            <li><a href=""><i class="fa fa-xl fa-youtube"></i></a></li>
+            <li><a href=""><i class="fa fa-xl fa-instagram"></i></a></li>
+            <li><a href=""><i class="fa fa-xl fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa fa-xl fa-twitter"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
     </div>
   </div>
 
-<!-- Organization Description -->
-  <div class="organization-description">
-    <h4>DESCRIPTION</h4>
-    <div>
-      <p><%= @organization.description %></p>
-    </div>
-  </div>
+  <!-- Mobile Column -->
+  <div class="col-xs-12 hidden-md hidden-lg">
 
-<!-- Course Information -->
-  <div class="course-information">
-    <h4>COURSES</h4>
-    <div>
-      <% @organization.courses.each do |course| %>
-        <h5><%= course.title %></h5>
-        <p><%= course.description %></p>
-        <%= link_to "Learn More", course_path %>
-      <% end %>
-    </div>
-  </div>
+    <!-- Number of Students Enrolled -->
+    <div class="text-center padded">
+      <h4>Total students enrolled</h4>
+      <div class="text-double text-center">
+        <%= @total_students %>
+        <i class="fa fa-xl fa-graduation-cap"></i>
+      </div>
 
+
+      <h4>Days till the next course begins</h4>
+      <div class="text-double text-center">
+        <p>14 <i class="fa fa-xl fa-calendar"></i></p>
+        <%#= days till next coruse %>
+
+      </div>
+    </div>
+
+
+    <!-- Course Information -->
+    <div class="">
+      <h4> Mobile COURSES</h4>
+      <div>
+        <% @organization.courses.each do |course| %>
+          <div class="col-xs-12">
+           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('banner.jpg') %>);">
+              <div class="card-description">
+                <h2><%= course.title %></h2>
+                <p><%= course.description %></p>
+              </div>
+              <%= link_to "", course_path(course), class: "card-link" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Organization Social Media -->
+      <div>
+        <h4>FOLLOW <%= @organization.name.upcase %></h4>
+        <div class="text-center">
+          <ul class="list-inline">
+            <li><a href=""><i class="fa fa-youtube"></i></a></li>
+            <li><a href=""><i class="fa fa-instagram"></i></a></li>
+            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+  </div>
+<!-- End of course container -->
+
+
+</div>
+
+
+
+
+<!-- Banner  -->
+<div class="organization-banner parallax" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0,0) 0%, rgba(0,0,0,.2) 50%), url(<%= cl_image_path('zi-jian-lim-227847_j6rckn', height: 1082, width: 1624, crop: :lfill) %>);">
+  <div class="text-right text-white padded">
+    <h2>Impact Story #1</h2>
+    <h1>Roger's First Prosthetic</h1>
+    <h3> <em>"With help from Hands On, I was able to finally ride a bicycle</em> </h3>
+  </div>
+</div>
+<div class="organization-banner parallax" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0,0) 0%, rgba(0,0,0,.2) 50%), url(<%= cl_image_path('zi-jian-lim-227847_j6rckn', height: 1082, width: 1624, crop: :lfill) %>);">
+  <div class="text-right text-white padded">
+    <h2>Impact Story #1</h2>
+    <h1>Roger's First Prosthetic</h1>
+    <h3> <em>"With help from Hands On, I was able to finally ride a bicycle</em> </h3>
+  </div>
 </div>

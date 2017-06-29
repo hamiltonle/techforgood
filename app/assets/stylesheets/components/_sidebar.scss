@@ -44,7 +44,6 @@
   bottom: 0;
   width: 100%;
   z-index:2;
-  background: black;
   opacity: 0;
 }
 
@@ -93,11 +92,11 @@
   flex: 0 0 80px;
   padding: 2px;
 }
-
-
-.fa {
-  font-size: 22px;
+.flex-button {
+  flex: 0 1 auto;
 }
+
+
 
 
 #sidebar {

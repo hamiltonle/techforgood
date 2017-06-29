@@ -1,0 +1,5 @@
+<%= simple_form_for [course, lesson, session] do |f| %>
+  <%#= f.input :session_id, input_html: { value: '48' }, as: :hidden  %>
+  <%= f.input :status, input_html: { value: 'complete' }, as: :hidden  %>
+  <%= f.button :submit, 'Completed This Lesson', class: 'btn btn-success text-center' %>
+<% end %>

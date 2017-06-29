@@ -13,6 +13,13 @@ class OrganizationsController < ApplicationController
   # Shows all the information for one organization
   def show
     @organization = Organization.find(params[:id])
+
+    # Calculating total students enrolled in courses created by this organization
+    @total_students = 0
+
+    @organization.courses.each do |course|
+      @total_students += course.enrollments.count
+    end
   end
 
   # To add a new course organization
