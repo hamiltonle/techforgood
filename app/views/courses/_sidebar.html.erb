@@ -1,14 +1,26 @@
-<div id="sidebar" class="text-center">
+<div id="course_sidebar" class="text-center">
     <div class="">
 
-      <!-- WHY MODULE -->
-      <div class="text-left module-completed flexbox">
+      <div class="text-left module-blue flexbox">
         <div class="lesson-text flex-item-title text-white">
           <h5 class><strong>About This Course:</strong></h5>
         </div>
       </div>
-      <div class="text-left lesson-tab div-relative flexbox">
+       <div class="text-left lesson-tab div-relative flexbox">
 
+        <div class="lesson-text flex-item-lesson-title">
+          <h6>The Issue</h6>
+        </div>
+        <a class="lesson-link" href="#issue" ></a>
+      </div>
+       <div class="text-left lesson-tab div-relative flexbox">
+
+        <div class="lesson-text flex-item-lesson-title">
+          <h6>The Technology</h6>
+        </div>
+        <a class="lesson-link" href="#issue" ></a>
+      </div>
+      <div class="text-left lesson-tab div-relative flexbox">
         <div class="lesson-text flex-item-lesson-title">
           <h6>Course Description</h6>
         </div>
@@ -24,7 +36,7 @@
         <div class="lesson-text flex-item-lesson-title">
           <h6>About the Organization</h6>
         </div>
-        <%= link_to '', organization_path(@course.organization), class: "lesson-link" %>
+        <a class="lesson-link" href="#organization" ></a>
       </div>
       <div class="text-left lesson-tab div-relative flexbox">
         <div class="lesson-text flex-item-lesson-title">
@@ -36,7 +48,7 @@
       <hr>
 
       <div>
-        <div class="enroll-btn">
+        <div>
           <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
         </div>
       </div>
