@@ -6,6 +6,7 @@ class LessonsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   helper_method :fontawesome_icon
+  helper_method :fontawesome_color
 
   # Displays all lessons of a course
   def index
@@ -33,7 +34,15 @@ class LessonsController < ApplicationController
     when "article"
       "fa-newspaper-o"
     end
+  end
 
+  def fontawesome_color(lesson)
+    case lesson.sessions.where(:user_id => current_user.id).last.status
+    when "completed"
+      "text-success"
+    else
+      "text-darkgray"
+    end
   end
 
 

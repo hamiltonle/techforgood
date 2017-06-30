@@ -17,10 +17,13 @@
       <div id="why" class="collapse">
         <% @why_lessons.each do |lesson| %>
 
+
+
+
             <div class="text-left lesson-tab div-relative flexbox">
               <%= link_to "", course_lesson_path(@course.id, lesson.id), class: "card-link" %>
               <div class="lesson-text flex-item-image">
-                <h6><i class="fa fa-md <%= fontawesome_icon(lesson) %> text-success" aria-hidden="true"></i></h6>
+                <h6><i class="fa fa-md <%= fontawesome_icon(lesson) %> <%= lesson.sessions.where(:user_id => current_user.id).exists? ? (fontawesome_color(lesson)) : "text-darkgray" %>" aria-hidden="true"></i></h6>
               </div>
               <div class="lesson-text flex-item-lesson-title">
                 <h6><%= lesson.title %></h6>
@@ -56,7 +59,9 @@
             <div class="text-left lesson-tab div-relative flexbox">
               <%= link_to "", course_lesson_path(@course.id, lesson.id), class: "card-link" %>
               <div class="lesson-text flex-item-image">
-                <h6><i class="fa fa-md <%= fontawesome_icon(lesson) %> text-success" aria-hidden="true"></i></h6>
+
+                <h6><i class="fa fa-md <%= fontawesome_icon(lesson) %> <%= lesson.sessions.where(:user_id => current_user.id).exists? ? (fontawesome_color(lesson)) : "text-darkgray" %>" aria-hidden="true"></i></h6>
+
               </div>
               <div class="lesson-text flex-item-lesson-title">
                 <h6><%= lesson.title %></h6>
@@ -86,10 +91,11 @@
       <div id="how" class="collapse">
         <% @how_lessons.each do |lesson| %>
 
+
             <div class="text-left lesson-tab div-relative flexbox">
               <%= link_to "", course_lesson_path(@course.id, lesson.id), class: "card-link" %>
               <div class="lesson-text flex-item-image">
-                <h6><i class="fa fa-md <%= fontawesome_icon(lesson) %> text-success" aria-hidden="true"></i></h6>
+                <h6><i class="fa fa-md <%= fontawesome_icon(lesson) %> <%= lesson.sessions.where(:user_id => current_user.id).exists? ? (fontawesome_color(lesson)) : "text-darkgray" %>" aria-hidden="true"></i></h6>
               </div>
               <div class="lesson-text flex-item-lesson-title">
                 <h6><%= lesson.title %></h6>
