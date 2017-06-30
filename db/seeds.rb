@@ -156,7 +156,7 @@ lesson = Lesson.new(
   title: "Crippling injustice",
   text: "f you judged the country by its laws alone, China would be a global leader on disability rights. The ‘Laws on the Protection of Persons with Disabilities’, introduced in 1990, offer strong and wide-ranging protection of the civil rights of the disabled, guaranteeing employment, education, welfare, and access. But despite the high concerns of the law, Chinese cities make little concession to disabled people. As the sociologist Yu Jianrong has documented, raised pathways for the blind often lead into dead ends, bollards, trees or open pits, or else spiral decoratively but misleadingly. Wheelchair access is non-existent, especially outside Beijing or Shanghai, and guide dogs are effectively forbidden from most public spaces, despite the authorities’ repeated promises of full access.",
   lesson_type: "lecture",
-  video: "<embed src='http://player.youku.com/player.php/sid/XMTU5OTM0MTIxMg==/v.swf' allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
+  video: "<embed src='http://player.youku.com/player.php/sid/XMTU5OTM0MTIxMg==/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
   minutes: 15,
   module_name: "why"
   )
@@ -201,7 +201,7 @@ They are people who have put aside their political, religious, cultural and pers
 
 The e-NABLE Community is made up of  teachers, students, engineers, scientists, medical professionals, tinkerers, designers, parents, children, scout troops, artists, philanthropists, dreamers, coders, makers and every day people who just want to make a difference and help to “Give The World A Helping Hand.”",
   lesson_type: "lecture",
-  video: "<embed src='http://player.youku.com/player.php/sid/XNTYzODA4Mzk2/v.swf' allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
+  video: "<embed src='http://player.youku.com/player.php/sid/XNTYzODA4Mzk2/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
   minutes: 15,
   module_name: "how"
   )
@@ -265,7 +265,7 @@ lesson = Lesson.new(
 
 This course was listed in the top 50 MOOC's of all time by Class-Central (https://www.class-central.com/report/top-moocs/)",
   lesson_type: "lecture",
-  video: "<embed src='http://player.youku.com/player.php/sid/XNjMxMTExMTQ0/v.swf' allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
+  video: "<embed src='http://player.youku.com/player.php/sid/XNjMxMTExMTQ0/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
   minutes: 20,
   module_name: "what"
 
@@ -305,7 +305,7 @@ lesson = Lesson.new(
   text: "This course will demonstrate how to use 3D printing software to create digital designs that can be turned into physical objects. It will also demonstrate how 3D scanners work to turn physical objects into digital designs. This course is hands-on in nature and will provide step-by-step instructions to guide you through two popular 3D modeling programs, Tinkercad and Fusion 360. Learners who complete this course will be able to use 3D software to design a wide variety of objects for both personal and professional use. In addition, learners who enroll in the course certificate will receive extended free access to Fusion 360 (provided by Autodesk).
 ",
   lesson_type: "lecture",
-  video: "<embed src='http://player.youku.com/player.php/sid/XNTAyOTcwMzgw/v.swf' allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
+  video: "<embed src='http://player.youku.com/player.php/sid/XNTAyOTcwMzgw/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
   minutes: 10,
   module_name: "what"
   )
@@ -348,7 +348,7 @@ lesson = Lesson.new(
     Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
   description: "Cras mattis consectetur purus sit amet fermentum.",
   lesson_type: "lecture",
-  video: "<embed src='http://player.youku.com/player.php/sid/XMTU5OTM0MTIxMg==/v.swf' allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
+  video: "<embed src='http://player.youku.com/player.php/sid/XMTU5OTM0MTIxMg==/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
   minutes: 30,
   module_name: "why"
   )
@@ -362,7 +362,7 @@ lesson = Lesson.new(
     Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
   description: "Cras mattis consectetur purus sit amet fermentum.",
   lesson_type: "lecture",
-  video: "<embed src='http://player.youku.com/player.php/sid/XMTU5OTM0MTIxMg==/v.swf' allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
+  video: "<embed src='http://player.youku.com/player.php/sid/XMTU5OTM0MTIxMg==/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
   minutes: 30,
   module_name: "how"
   )
@@ -376,7 +376,7 @@ lesson = Lesson.new(
     Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
   description: "Cras mattis consectetur purus sit amet fermentum.",
   lesson_type: "lecture",
-  video: "<embed src='http://player.youku.com/player.php/sid/XMTU5OTM0MTIxMg==/v.swf' allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
+  video: "<embed src='http://player.youku.com/player.php/sid/XMTU5OTM0MTIxMg==/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
   minutes: 30,
   module_name: "why"
   )
@@ -390,7 +390,7 @@ lesson = Lesson.new(
     Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
   description: "Cras mattis consectetur purus sit amet fermentum.",
   lesson_type: "lecture",
-  video: "<embed src='http://player.youku.com/player.php/sid/XMTU5OTM0MTIxMg==/v.swf' allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
+  video: "<embed src='http://player.youku.com/player.php/sid/XMTU5OTM0MTIxMg==/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
   minutes: 30,
   module_name: "why"
   )
