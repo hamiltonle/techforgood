@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
 
-    # redirect_to (user dashboard)
+    redirect_to (dashboard_users_path)
   end
 
   def destroy
