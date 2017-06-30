@@ -85,7 +85,16 @@ puts "creating courses"
 
 course = Course.new(
   title: "3D Printing",
-  description: "3D printed prosthetics for children in need"
+  tagline: "Learn how to make 3d printed prosthetics for children in need",
+  issue: "Prosthetics can involve a lot of work and expertise to produce and fit and the WHO says there is currently a shortage of 40,000 trained prosthetists in poorer countries. There is also the time and financial cost to patients, who may have to travel long distances to assess their need, produce a prosthesis and fit it to the residual limb. The result is that braces and artificial limbs are among the most desperately needed medical devices.",
+  tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
+  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).
+
+You will obtain a rich understanding of what 3D printing is, how 3D printers work, and how this new technology is being used by both individuals and firms to revolutionize our world. In addition, you will acquire a set of skills that will enable you to create digital designs that you can transform into physical objects. These skills can be used to help you launch a career in the growing field of 3D printing, be the 3D printing expert in your current firm, or just make the things you need.
+
+",
+
+
   )
 course.organization = Organization.find(3)
 course.save!
@@ -94,7 +103,7 @@ puts "saved a course"
 
 course = Course.new(
   title: "Computer Vision",
-  description: "Using Microsoft's computer vision technology to find missing children"
+  tagline: "Using Microsoft's computer vision technology to find missing children"
   )
 course.organization = Organization.find(2)
 course.save!
@@ -103,7 +112,7 @@ puts "saved a course"
 
 course = Course.new(
   title: "Augmented Reality",
-  description: "Augmented Reality for vision-impaired people"
+  tagline: "Augmented Reality for vision-impaired people"
   )
 course.organization = Organization.find(1)
 course.save!
