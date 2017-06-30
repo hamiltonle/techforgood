@@ -47,6 +47,161 @@
 .text-double {
   font-size: 400%;
 }
+.text-lg {
+  font-size: 80px !important;
+}
+
+.text-type-animation {
+  // steps splits animation to that many segments.
+  // alternate reverses. infinite goes on forever
+  animation: type 5s steps(17)infinite alternate, blink .8s infinite;
+  // animation-timing-function: ease, step-start, steps(17);
+  overflow: hidden;
+  white-space: nowrap;
+  margin-left: 10px;
+  padding-bottom: 10px;
+  // can do 'ch' for character width of a 0 in the font
+  // width: 19ch;
+  // makes border right look like a cursor
+  border-right: 3px solid;
+}
+
+.pvw-title span {
+  display: none;
+}
+.pvw-title:after {
+  animation: change 30s infinite;
+  animation-delay: 7.2s;
+  content: 'Learn & Lend a Hand......................';
+}
+
+
+
+@keyframes change2 {
+  0% {
+    content: 'Learn & Lend a Hand';
+    width: 235px;
+  }
+  11% {
+    content: 'Learn & Lend a Hand';
+    width: 630px;
+  }
+  22% {
+    content: 'Learn & Lend a Hand';
+    width: 630px;
+  }
+  33% {
+    content: 'Learn & Find a Missing Child';
+    width: 235px;
+  }
+  44% {
+    content: 'Learn & Find a Missing Child';
+    width:800px;
+  }
+  55% {
+    content: 'Learn & Find a Missing Child';
+    width:800px;
+  }
+  66% {
+    content: 'Learn & Find a Missing Child';
+    width:235px;
+  }
+  77% {
+    content: 'Learn & Identify Cataracts';
+    width: 700px;
+  }
+  88% {
+    content: 'Learn & Identify Cataracts';
+    width: 700px;
+  }
+  100% {
+    content: 'Learn & Identify Cataracts';
+    width: 700px
+  }
+
+}
+
+
+@keyframes change {
+  0% {
+    content: 'Learn & Lend a Hand........................';
+    // width: 630px;
+    width: 900px;
+  }
+  33% {
+    content: 'Learn & Find a Missing Child........';
+    width: 900px;
+  }
+  66% {
+    content: 'Learn & Identify Cataracts.........';
+    width: 900px;
+  }
+  100% {
+    content: 'Learn & Lend a Hand.....................';
+  }
+
+}
+
+@keyframes type {
+  0% {
+    width: 235px;
+  }
+
+  /* Finish changes by here */
+  50% {
+    width: 850px;
+  }
+
+  /* Between 20% and 100%, nothing changes */
+  100% {
+    width: 850px;
+  }
+}
+
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+.shape {
+    text-shadow: rgb(41, 128, 185) 1px 1px,
+    rgb(41, 128, 185) 2px 2px,
+    rgb(41, 128, 185) 3px 3px,
+    rgb(41, 128, 185) 4px 4px,
+    rgb(41, 128, 185) 5px 5px,
+    rgb(41, 128, 185) 6px 6px,
+    rgb(41, 128, 185) 7px 7px,
+    rgb(41, 128, 185) 8px 8px,
+    rgb(41, 128, 185) 9px 9px,
+    rgb(41, 128, 185) 10px 10px,
+    rgb(41, 128, 185) 11px 11px,
+    rgb(41, 128, 185) 12px 12px,
+    rgb(41, 128, 185) 13px 13px,
+    rgb(41, 128, 185) 14px 14px,
+    rgb(41, 128, 185) 15px 15px,
+    rgb(41, 128, 185) 16px 16px,
+    rgb(41, 128, 185) 17px 17px,
+    rgb(41, 128, 185) 18px 18px;
+    // rgb(20, 151, 126) 19px 19px,
+    // rgb(21, 152, 126) 20px 20px,
+    // rgb(21, 153, 127) 21px 21px,
+    // rgb(21, 154, 128) 22px 22px,
+    // rgb(21, 155, 129) 23px 23px,
+    // rgb(21, 156, 129) 24px 24px,
+    // rgb(21, 157, 130) 25px 25px,
+    // rgb(21, 158, 131) 26px 26px,
+    // rgb(21, 159, 132) 27px 27px,
+    // rgb(22, 160, 133) 28px 28px;
+
+
+}
+
+.fredoka{
+  font: normal 60px/1 "Fredoka One", Helvetica, sans-serif;
+}
 
 // FONT AWESOME
 .fa-md {
@@ -56,4 +211,21 @@
 .fa-xl {
   font-size: 50px
 }
+.fa-xxl {
+  font-size: 100px
+}
 
+.globe {
+  font-size: 55px;
+}
+
+// IMAGES
+.image-spin {
+
+    -webkit-animation:spin 60s linear infinite;
+    -moz-animation:spin 60s linear infinite;
+    animation:spin 60s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

@@ -2,7 +2,11 @@
 @import "organization";
 @import "course_show_page";
 
+.characteristics {
+  border-bottom: 1px solid rgba(0,0,0,0.1)
+}
 
+// Courses Section on Home Page
 .course-card {
   height: 400px;
   color: black;
@@ -14,16 +18,22 @@
 
 .course-card-image {
   position: absolute;
-  height: 200px;
+  height: 70%;
   background-size: cover !important;
   top: 0;
   right: 0;
   left: 0;
   bottom: 20px;
+  vertical-align: middle;
+}
+
+.course-card-mission {
+  color: white;
+  font-size: 22px;
+  padding-top: 30px;
 }
 
 .course-card-description {
-  display: flex;
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -35,19 +45,89 @@
 
 .course-card-description p {
   font-size: 15px;
+  margin: 0px;
 }
 
 .course-card-link {
   position: absolute;
   top: 0;
   bottom: 0;
+  right: 0;
   width: 100%;
-  z-index:2;
+  z-index: 2;
   background: black;
   opacity: 0;
+}
+
+
+.course-card {
+  transition: transform .5s;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 2s cubic-bezier(.165, .84, .44, 1);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15);
+    content: '';
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale3d(1.006, 1.006, 1);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+// Learning Process Section on Home Page
+.wrapper-learning-process {
+  background-size: cover !important;
+  h3 {
+    color: white;
+  }
+}
+
+.learning-process-card {
+  border-radius: 3px;
+  background-color: $blue6;
+  color: white;
+  position: relative;
+  height: 175px;
+  margin: 40px 40px;
+  opacity: 0.9;
+}
+
+.learning-process-description {
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+
+.learning-process-description h2 {
+  font-size: 22px;
+  z-index: 3;
+}
+
+.learning-process-description h1 {
+  font-size: 40px;
+   z-index: 3;
+}
+
+.learning-process-card:hover {
+  background-color: white;
+  color: $blue6;
+  opacity: 0.9;
 }
 
 .course-card-link:hover{
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
 }
+
 

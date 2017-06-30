@@ -7,6 +7,12 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+
+    <link async href="http://fonts.googleapis.com/css?family=Fredoka%20One" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+
+
+
+
   </head>
   <body>
     <%= render 'shared/navbar' %>
@@ -15,5 +21,6 @@
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %> <!-- Append this after the main `javascript_include_tag`. -->
     <%= render "shared/footer" unless @skip_footer %>
+
   </body>
 </html>

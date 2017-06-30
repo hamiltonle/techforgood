@@ -1,46 +1,73 @@
 <div class="container">
 
   <!-- Lessons Sidebar -->
-  <%= render :partial => 'lessons/sidebar' %>
+  <div class="hidden-xs">
+    <%= render :partial => 'lessons/sidebar'%>
+  </div>
+
+  <div id="mySidenav" class="sidenav ">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <%= render :partial => 'lessons/sidebar' %>
+  </div>
+
+  <!-- Use any element to open the sidenav -->
+
+  <span class="fixed-sidemenu hidden-sm hidden-md hidden-lg" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776</span>
+
+  <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+  <div id="main">
+
 
 
   <!-- Lesson Content -->
-  <div class="container">
-    <div id="lesson-content">
-      <h1 class="text-center">Lesson <%= @lesson.id %> Title</h1>
-      <h2 class="text-center">Tech For Good</h2>
-      <p>Lesson Text: Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor.<br><br>
 
-      Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br>
+    <div class="container hidden-xs">
+      <div id="lesson-content">
+        <p class="text-center">Lesson <%= @lesson.id %></p>
+        <h1 class="text-center"><%= @lesson.title %></h1>
+        <h4 class="text-center"><%= @lesson.description %></h4>
+        <p><%= @lesson.text %></p>
 
-      Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-
-      <p>Lesson Text: Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor.<br><br>
-
-      Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-
-      <!-- Lesson Complete Button -->
-      <div>
-
-        <div class="">
-
-        <% if @session.status == "completed" %>
-          <%= simple_form_for [@course, @lesson, @session] do |f| %>
-            <%= f.input :status, input_html: { value: 'completed' }, as: :hidden  %>
-            <%= f.button :submit, 'Completed This Lesson', disabled: "disabled", class: 'btn btn-success text-center' %>
-          <% end %>
-        <% else %>
+        <!-- Lesson Complete Button -->
+        <div>
+          <% if @session.status == "completed" %>
             <%= simple_form_for [@course, @lesson, @session] do |f| %>
               <%= f.input :status, input_html: { value: 'completed' }, as: :hidden  %>
-              <%= f.button :submit, 'Completed This Lesson', class: 'btn btn-success text-center' %>
+              <%= f.button :submit, 'Completed This Lesson', disabled: "disabled", class: 'btn btn-success text-center' %>
+            <% end %>
+          <% else %>
+              <%= simple_form_for [@course, @lesson, @session] do |f| %>
+                <%= f.input :status, input_html: { value: 'completed' }, as: :hidden  %>
+                <%= f.button :submit, 'Completed This Lesson', class: 'btn btn-success text-center' %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
 
       </div>
-
     </div>
-  </div>
 
 </div>
 
+    <div class="hidden-sm hidden-md hidden-lg">
 
+      <h5 class="text-center">Lesson <%= @lesson.id %></h5>
+      <h1 class="text-center"><%= @lesson.title %></h1>
+
+      <h4 class="text-center"><%= @lesson.description %></h4>
+      <p><%= @lesson.text %></p>
+      <!-- Lesson Complete Button -->
+        <div>
+          <% if @session.status == "completed" %>
+            <%= simple_form_for [@course, @lesson, @session] do |f| %>
+              <%= f.input :status, input_html: { value: 'completed' }, as: :hidden  %>
+              <%= f.button :submit, 'Completed This Lesson', disabled: "disabled", class: 'btn btn-success text-center' %>
+            <% end %>
+          <% else %>
+              <%= simple_form_for [@course, @lesson, @session] do |f| %>
+                <%= f.input :status, input_html: { value: 'completed' }, as: :hidden  %>
+                <%= f.button :submit, 'Completed This Lesson', class: 'btn btn-success text-center' %>
+            <% end %>
+          <% end %>
+        </div>
+    </div>

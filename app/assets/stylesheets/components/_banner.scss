@@ -21,11 +21,25 @@
   }
 }
 
+.top-margin {
+  margin-top: 70px;
+}
+
+.banner-graduation-cap {
+  color: white;
+  font-size: 70px;
+}
 
 // USER DASHBOARD SHOW PAGE
 .dashboard-banner {
   height: 40vh;
-  background-color: $blue5;
+  background-color: $blue6;
+  margin-top: 70px;
+}
+
+.dashboard-img-round {
+  width: 200px;
+  border-radius: 50%;
 }
 
 // COURSE SHOW PAGE
