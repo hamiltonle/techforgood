@@ -18,10 +18,7 @@
         <% @why_lessons.each do |lesson| %>
 
             <div class="text-left lesson-tab div-relative flexbox">
-              <%= simple_form_for [@course, lesson, Session.new] do |f| %>
-                <%#= f.input :status, input_html: { value: 'started' }, as: :hidden  %>
-                <%= f.button :submit, '', class: 'card-link', disabled: false  %>
-              <% end %>
+              <%= link_to "", course_lesson_path(@course.id, lesson.id), class: "card-link" %>
               <div class="lesson-text flex-item-image">
                 <h6><i class="fa fa-md <%= fontawesome_icon(lesson) %> text-success" aria-hidden="true"></i></h6>
               </div>
@@ -57,10 +54,7 @@
         <% @what_lessons.each do |lesson| %>
 
             <div class="text-left lesson-tab div-relative flexbox">
-              <%= simple_form_for [@course, lesson, Session.new] do |f| %>
-                <%#= f.input :status, input_html: { value: 'started' }, as: :hidden  %>
-                <%= f.button :submit, '', class: 'card-link', disabled: false  %>
-              <% end %>
+              <%= link_to "", course_lesson_path(@course.id, lesson.id), class: "card-link" %>
               <div class="lesson-text flex-item-image">
                 <h6><i class="fa fa-md <%= fontawesome_icon(lesson) %> text-success" aria-hidden="true"></i></h6>
               </div>
@@ -93,10 +87,7 @@
         <% @how_lessons.each do |lesson| %>
 
             <div class="text-left lesson-tab div-relative flexbox">
-              <%= simple_form_for [@course, lesson, Session.new] do |f| %>
-                <%#= f.input :status, input_html: { value: 'started' }, as: :hidden  %>
-                <%= f.button :submit, '', class: 'card-link', disabled: false  %>
-              <% end %>
+              <%= link_to "", course_lesson_path(@course.id, lesson.id), class: "card-link" %>
               <div class="lesson-text flex-item-image">
                 <h6><i class="fa fa-md <%= fontawesome_icon(lesson) %> text-success" aria-hidden="true"></i></h6>
               </div>

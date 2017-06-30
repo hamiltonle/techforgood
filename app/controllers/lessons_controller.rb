@@ -49,8 +49,11 @@ class LessonsController < ApplicationController
     @what_lessons = @course.lessons.where(:module_name => "what")
 
 
+    @session = Session.new
+    @current_session = current_user.sessions.where(:lesson_id => @lesson.id)
+
     # after we do unique session validations for unique user_id & lesson_id, then code should be
-    @session = @lesson.sessions.last
+    # @session = @lesson.sessions.last
     # for now, we'll use this:
     # @session = @lesson.sessions.last
 

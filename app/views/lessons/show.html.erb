@@ -31,16 +31,32 @@
 
         <!-- Lesson Complete Button -->
         <div>
-          <% if @session.status == "completed" %>
-            <%= simple_form_for [@course, @lesson, @session] do |f| %>
-              <%= f.input :status, input_html: { value: 'completed' }, as: :hidden  %>
-              <%= f.button :submit, 'Completed This Lesson', disabled: "disabled", class: 'btn btn-success text-center' %>
-            <% end %>
-          <% else %>
+        <% if @current_session.exists? %>
+            <div class="row">
+              <div class="col-xs-6">
               <%= simple_form_for [@course, @lesson, @session] do |f| %>
-                <%= f.input :status, input_html: { value: 'completed' }, as: :hidden  %>
-                <%= f.button :submit, 'Completed This Lesson', class: 'btn btn-success text-center' %>
+                <%= f.button :submit, 'Done with this Lesson! :)', disabled: "disabled", class: 'btn btn-success text-center' %>
+              <% end %>
+              </div>
+              <div class="col-xs-6 text-right">
+
+              <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+              </div>
+            </div>
+          <% else %>
+            <div class="row">
+              <div class="col-xs-6">
+              <%= simple_form_for [@course, @lesson, @session] do |f| %>
+              <%= f.button :submit, 'Just Finished the Lesson', class: 'btn btn-success text-center' %>
             <% end %>
+              </div>
+              <div class="col-xs-6 text-right">
+
+              <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+              </div>
+            </div>
+
+
           <% end %>
         </div>
 
@@ -58,16 +74,27 @@
       <p><%= @lesson.text %></p>
       <!-- Lesson Complete Button -->
         <div>
-          <% if @session.status == "completed" %>
-            <%= simple_form_for [@course, @lesson, @session] do |f| %>
-              <%= f.input :status, input_html: { value: 'completed' }, as: :hidden  %>
-              <%= f.button :submit, 'Completed This Lesson', disabled: "disabled", class: 'btn btn-success text-center' %>
-            <% end %>
-          <% else %>
+          <% if @current_session.exists? %>
+            <div class="row">
+              <div class="col-xs-4">
               <%= simple_form_for [@course, @lesson, @session] do |f| %>
-                <%= f.input :status, input_html: { value: 'completed' }, as: :hidden  %>
-                <%= f.button :submit, 'Completed This Lesson', class: 'btn btn-success text-center' %>
+                <%= f.button :submit, 'Lesson Completed', disabled: "disabled", class: 'btn btn-success text-center' %>
+              <% end %>
+              </div>
+              <div class="col-xs-1">
+
+              </div>
+              <div class="col-xs-4 text-left">
+
+              <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+              </div>
+            </div>
+          <% else %>
+            <%= simple_form_for [@course, @lesson, @session] do |f| %>
+              <%= f.button :submit, 'Just Finished the Lesson', class: 'btn btn-success text-center' %>
             <% end %>
+
+
           <% end %>
         </div>
     </div>
