@@ -11,7 +11,9 @@ require "mina/scp"
 set :domain, 'wagon'
 set :deploy_to, @root_path
 set :repository, 'https://github.com/amalik17/techforgood.git'
-set :branch, 'deploy'
+set :branch, 'master'
+
+set :term_mode, :nil
 
 set :rsync_options, %w[
   --recursive --delete --delete-excluded
