@@ -1,7 +1,7 @@
 <div id="course_sidebar" class="text-center">
     <div class="">
 
-      <div class="text-left module-completed flexbox">
+      <div class="text-left module-blue flexbox">
         <div class="lesson-text flex-item-title text-white">
           <h5 class><strong>About This Course:</strong></h5>
         </div>
@@ -48,7 +48,7 @@
       <hr>
 
       <div>
-        <div class="enroll-btn">
+        <div>
           <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
         </div>
       </div>
