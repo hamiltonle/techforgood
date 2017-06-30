@@ -6,6 +6,7 @@ class LessonsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   helper_method :fontawesome_icon
+  helper_method :fontawesome_color
 
   # Displays all lessons of a course
   def index
@@ -33,7 +34,15 @@ class LessonsController < ApplicationController
     when "article"
       "fa-newspaper-o"
     end
+  end
 
+  def fontawesome_color(lesson)
+    case lesson.sessions.where(:user_id => current_user.id).last.status
+    when "completed"
+      "text-success"
+    else
+      "text-darkgray"
+    end
   end
 
 
@@ -49,8 +58,11 @@ class LessonsController < ApplicationController
     @what_lessons = @course.lessons.where(:module_name => "what")
 
 
+    @session = Session.new
+    @current_session = current_user.sessions.where(:lesson_id => @lesson.id)
+
     # after we do unique session validations for unique user_id & lesson_id, then code should be
-    @session = @lesson.sessions.last
+    # @session = @lesson.sessions.last
     # for now, we'll use this:
     # @session = @lesson.sessions.last
 

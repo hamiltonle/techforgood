@@ -27,6 +27,19 @@
   background: white;
 }
 
+// DIV Background
+
+.div-blue {
+  background: $blue1 !important;
+}
+
+
+
+
+
+
+
+
 // TEXT
 .text-white {
   color: white;
@@ -41,6 +54,10 @@
 }
 
 .text-lightgray {
+  color: $lightgray;
+}
+
+.text-darkgray {
   color: $lightgray;
 }
 

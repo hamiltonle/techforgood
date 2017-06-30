@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     @session = @lesson.sessions.new
     @session.user = current_user
     @session.lesson = @lesson
-    @session.status = "started"
+    @session.status = "completed"
 
 
     begin
