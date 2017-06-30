@@ -2,22 +2,46 @@
 <div class="dashboard-banner padded text-center">
   <div class="container">
     <div class="row">
+
       <div class="col-xs-12 col-sm-4">
-      <% if @user.photo? %>
-        <%= cl_image_tag @user.photo.path, class: "dashboard-img-round" %>
-      <% else %>
-        <%= image_tag "https://placehold.it/200x200", class: "img-circle" %>
-      <% end %>
+        <% if @user.photo? %>
+          <%= cl_image_tag @user.photo.path, class: "dashboard-img-round" %>
+        <% else %>
+          <%= image_tag "https://placehold.it/200x200", class: "img-circle" %>
+        <% end %>
       </div>
 
       <div class="col-xs-12 col-sm-8 text-left text-white">
-      <h2><%= @user.first_name%> <%= @user.last_name %></h2>
-        <%= link_to "Edit profile", edit_user_path(current_user), class: "btn dashboard-btn-purple-fill" %>
+        <h2>Hello <%= @user.first_name%>!</h2>
+        <h4>What did you learn today?</h4>
+          <%= link_to "Edit profile", edit_user_path(current_user), class: "btn dashboard-btn-purple-fill" %>
       </div>
 
     </div>
   </div>
 </div>
+
+<!-- New Banner -->
+<!-- <div class="parallax top-margin" style="background-color: #3498DB;">
+  <div class="container text-left text-white padded">
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-4">
+        <% if @user.photo? %>
+          <%= cl_image_tag @user.photo.path, class: "dashboard-img-round" %>
+        <% else %>
+          <%= image_tag "https://placehold.it/200x200", class: "img-circle" %>
+        <% end %>
+      </div>
+
+      <div class="col-xs-12 col-sm-8 text-left text-white">
+        <h2><%= @user.first_name%> <%= @user.last_name %></h2>
+        <%= link_to "Edit profile", edit_user_path(current_user), class: "btn dashboard-btn-purple-fill" %>
+      </div>
+
+    </div>
+  </div>
+</div> -->
 
 <!-- Enroll Button -->
 <div class="dashboard-enroll-button text-center padded">
