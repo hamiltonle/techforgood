@@ -11,7 +11,11 @@ threads threads_count, threads_count
 #
 case ENV.fetch("RAILS_ENV")
 when 'production'
-  bind "unix:///var/www/techforgood/shared/tmp/sockets/puma.sock"
+  if ENV['BIND_TO_PORT']
+    port ENV.fetch("PORT") { 3000 }
+  else
+    bind "unix:///var/www/techforgood/shared/tmp/sockets/puma.sock"
+  end
 else
   port ENV.fetch("PORT") { 3000 }
 end
