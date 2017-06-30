@@ -58,6 +58,7 @@
   opacity: 0;
 }
 
+
 .course-card {
   transition: transform .5s;
 
@@ -123,3 +124,9 @@
   color: $blue5;
   opacity: 0.9;
 }
+
+.course-card-link:hover{
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+

@@ -5,22 +5,54 @@ class LessonsController < ApplicationController
   # Devise: whitelist all pages for testing
   skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
+  helper_method :fontawesome_icon
+
   # Displays all lessons of a course
   def index
     @course = Course.find(params[:course_id])
-    @lessons = Lesson.all
+    @lessons = @course.lessons.all
+
+    # passes these instances to the sidebar
+    @why_lessons = @course.lessons.where(:module_name => "why")
+    @how_lessons = @course.lessons.where(:module_name => "how")
+    @what_lessons = @course.lessons.where(:module_name => "what")
+
     @skip_footer = true
   end
+
+  def fontawesome_icon(lesson)
+    case lesson.lesson_type
+    when "lecture"
+      "fa-play-circle"
+    when "discussion"
+      "fa-comments-o"
+    when "quiz"
+      "fa-pencil"
+    when "assignment"
+      "fa-rocket"
+    when "article"
+      "fa-newspaper-o"
+    end
+
+  end
+
+
 
   # Displays an individual lesson for a course
   def show
     @course = Course.find(params[:course_id])
     @lesson = Lesson.find(params[:id])
 
+    # passes these instances to the sidebar
+    @why_lessons = @course.lessons.where(:module_name => "why")
+    @how_lessons = @course.lessons.where(:module_name => "how")
+    @what_lessons = @course.lessons.where(:module_name => "what")
+
+
     # after we do unique session validations for unique user_id & lesson_id, then code should be
-    # @session = @lesson.session
-    # for now, we'll use this:
     @session = @lesson.sessions.last
+    # for now, we'll use this:
+    # @session = @lesson.sessions.last
 
     @skip_footer = true
   end
@@ -29,6 +61,7 @@ class LessonsController < ApplicationController
   def new
     @course = Course.find(params[:id])
     @lesson = Lesson.new
+
   end
 
   # 2nd step of creating a lesson: grabs form values and creates lesson

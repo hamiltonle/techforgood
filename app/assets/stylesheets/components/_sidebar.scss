@@ -77,24 +77,108 @@
 // LESSON TAB FLEXBOX
 
 .flex-item-image {
-  flex: 0 0 auto;
+  flex: 0 0 10%;
   padding-left: 10px;
   vertical-align: center;
 }
 
 .flex-item-lesson-title {
-  flex: 1 0 auto;
+  flex: 0 0 60%;
   padding-left: 10px;
   vertical-align: center;
 }
 
 .flex-item-time {
-  flex: 0 0 80px;
+  flex: 0 0 25%;
   padding: 2px;
 }
 .flex-button {
   flex: 0 1 auto;
 }
+
+
+// COLLAPSIBLE MODULES
+.libreProfileSpan {
+  margin-left: 10px;
+}
+
+.librePanelHeading {
+  padding: 5px 10px;
+}
+
+.librePanelListGroupItem {
+  padding: 5px 15px;
+}
+
+.librePanelSubListGroupItem {
+  padding: 0px;
+}
+
+.libreMenuIcon {
+  padding: 5px 3px;
+}
+
+
+// MOBILE MENU
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+.fixed-sidemenu {
+  background-color: white;
+  position: fixed;
+  top: 75px;
+
+  left: 0;
+}
+
 
 
 
@@ -117,9 +201,30 @@
 }
 
 
+
+
 // LESSON CONTENT AREA
 #lesson-content {
   // position: relative;
+  padding: 20px;
+  margin: 5px;
+  // margin-left: 200px;
+  // width: 100%;
+  // margin: 0 auto;
+  // border-radius: 2px;
+  background: white;
+
+  top: 70px;
+  bottom: 0;
+  left: 280px;
+  height: auto;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  position: absolute;
+  width: calc(100% - 280px);
+}
+
+#course-content {
   padding: 20px;
   margin: 0px;
   // margin-left: 200px;
@@ -137,7 +242,6 @@
   position: absolute;
   width: calc(100% - 280px);
 }
-
 
 
 
