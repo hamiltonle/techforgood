@@ -17,36 +17,47 @@
   width: calc(100%-200px);
 }
 
-#course-content li {
-  display: block;
-  width: 33%;
-  float: left;
-  padding-bottom: 5px;
-  list-style-type: disc !important;
-}
-
 .course_technology {
   background-color: #D7FBFD;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   border-style: 1px solid grey;
-
-  img {
-    border-radius: 10px;
-  }
-
+  padding: 20px;
 }
 
 .course_issue {
   background-color: white;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   border-style: 1px solid grey;
+  padding: 20px;
+}
 
-  img {
-    border-radius: 10px;
-  }
+.course_description {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-style: 1px solid grey;
+  padding: 20px;
+}
 
+.course_syllabus {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-style: 1px solid grey;
+  padding: 20px;
+}
+
+.course_organization {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-style: 1px solid grey;
+  padding: 20px;
 }

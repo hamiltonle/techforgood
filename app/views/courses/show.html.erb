@@ -15,32 +15,32 @@
 
       <div class="row">
         <div class="course_issue">
-          <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-offset-1">
+            <div class="col-md-1">
+            <a name = "issue"></a>
+              <div>
+                <%= image_tag ("002-man-thinking.png"), class:"img-rounded", alt:"Problem", width:"128", height:"128" %>
+              </div>
+            </div>
+            <div class="col-md-8">
             <a name = "issue"></a>
                 <div>
                   <h3 class="text-center"><strong>The Issue </strong></h3>
                   <p><%= @course.issue %></p>
                 </div>
           </div>
-            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-offset-1">
-            <a name = "issue"></a>
-              <div>
-                <%= image_tag ("boy_missing_hand.jpg"), class:"img-rounded", alt:"Boy missing a hand", width:"304", height:"236" %>
-              </div>
-            </div>
         </div>
       </div>
 
 
       <div class="row">
         <div class="course_technology">
-        <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-offset-1">
+        <div class="col-md-1">
             <a name = "issue"></a>
               <div>
-                <%= image_tag ("3dprintedhands.png"), class:"img-rounded", alt:"3D printed hands", width:"304", height:"236" %>
+                <%= image_tag ("001-light-bulb-idea.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
               </div>
           </div>
-            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-offset-1">
+            <div class="col-md-8">
             <a name = "technology"></a>
                 <div>
                   <h3 class="text-center"><strong>The Technology </strong></h3>
@@ -52,47 +52,56 @@
 
     <!-- Course Description -->
       <div class="row">
-        <div class="col-xs-8 col-xs-offset-2">
         <a name = "description"></a>
-          <div class="text-left">
+        <div class="course_description">
+          <div class="col-md-1">
+            <a name = "issue"></a>
+              <div>
+                <%= image_tag ("002-online-course.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
+              </div>
+          </div>
+            <div class="col-md-8">
+                <div>
+                  <h3 class="text-center"><strong>The Course </strong></h3>
+                  <p><%= @course.description %></p>
+                </div>
+          </div>
+        </div>
+
+    <!-- Lesson Information -->
+      <div class="row">
+        <a name = "description"></a>
+        <div class="course_syllabus">
+          <div class="col-md-1">
+            <a name = "issue"></a>
             <div>
-              <h3 class="text-center"><strong>Course Description</strong></h3>
-              <p><%= @course.description %></p>
+              <%= image_tag ("001-thinking.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
             </div>
           </div>
+          <div class="col-md-8">
+            <h3 class="text-center"><strong>What You'll Learn</strong></h3>
+              <ol class="text-left">
+                <% @course.lessons.each do |lesson| %>
+                  <li><%= lesson.title %></li>
+                <% end %>
+              </ol>
+            </div>
         </div>
       </div>
 
-      <hr>
-
-
-    <!-- Lesson Information -->
-        <div class="row">
-          <div class="col-xs-8 col-xs-offset-2">
-           <a name = "syllabus"></a>
-            <div class="text-left">
-              <h3 class="text-center"><strong>What You'll Learn</strong></h3>
-                <div>
-                  <ol class="text-center">
-                    <% @course.lessons.each do |lesson| %>
-                      <li><%= lesson.title %></li>
-                    <% end %>
-                  </ol>
-                </div>
+      <div class="row">
+        <a name = "organization"></a>
+        <div class="course_organization">
+          <div class="col-md-1">
+            <a name = "issue"></a>
+            <div>
+              <%= image_tag ("group-of-people-in-a-formation.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
             </div>
           </div>
-        </div>
-
-
-      <hr>
-
-      <a name = "organization"></a>
-       <div class="row">
-          <div class="col-xs-8 col-xs-offset-2">
-          <h3 class="text-center"><strong>Organization</strong></h3>
-          <p>This course is brought to you by: <%= @course.organization.name %></p>
-          <p><%= @course.organization.description %></p>
-        </div>
+          <div class="col-md-8">
+            <h3 class="text-center"><strong>Course by: <%= @course.organization.name %></strong></h3>
+              <p><%= @course.organization.description %></p>
+            </div>
         </div>
       </div>
 
