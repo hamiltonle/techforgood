@@ -1,3 +1,20 @@
+
+.enroll-btn {
+  background-color: $success;
+  border: 1px solid #999999;
+  padding: 8px 8px;
+  border-radius: 10px;
+  font-weight: lighter;
+  opacity: 0.9;
+}
+#unstyled-btn {
+  background:none;
+  border:none;
+  font-size:1em;
+  color:white;
+}
+
+
 $neon: #00FFF8;
 
 /* Mixins */
@@ -204,39 +221,6 @@ $neon: #00FFF8;
   text-shadow: -1px -1px 0 darken($blue5, 9.5%);
   transition: all 250ms linear;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
