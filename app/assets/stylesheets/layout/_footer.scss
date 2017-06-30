@@ -1,7 +1,7 @@
 #footer {
-  background: #333333;
+  background: $blue6;
   padding: 20px 0;
-  color: #CCCCCC;
+  color: white;
 }
 #footer p {
   margin-top: 22px;
@@ -10,11 +10,11 @@
   margin-top: 10px;
 }
 #footer a {
-  color: #CCCCCC;
+  color: white;
   font-size: 30px;
   letter-spacing: 20px;
   transition: color 0.5s ease;
 }
 #footer a:hover{
-  color: white;
+  color: $blue2;
 }

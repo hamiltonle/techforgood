@@ -9,15 +9,14 @@
 </div> -->
 
 <!-- Banner -->
-<div class=" parallax" style="background-color: #3498DB;">
-  <div class="text-center"><%= cl_image_tag('Screen_Shot_2017-06-29_at_11.16.04_PM_g3hrk6', height: 1082, width: 1624, crop: :lfill) %></div>
+<div class="parallax top-margin" style="background-color: #3498DB;">
+  <div class="container text-left text-white padded">
 
-    <div class="container text-left text-white">
-
-  <span class="shape fredoka text-lg  ">TechForGo</span>
-  <i class="fa fa-xl fa-globe image-spin"></i>
+  <span class="shape fredoka text-lg">TechForGo</span>
+  <i class="fa fa-xl fa-globe globe image-spin"></i>
   <span class="shape fredoka text-lg  ">d</span>
   <h1 class="fredoka text-type-animation pvw-title"><span>Learn &amp; Lend a Hand</span></h1>
+
 <!--
 <div class="col-xs-3"><i class="fa fa-xxl image-spin fa-heart"></i><br><br><br><br></div>
 <div class="col-xs-3"><i class="fa fa-xxl image-spin fa-graduation-cap"></i><br><br><br><br></div>
@@ -28,9 +27,10 @@
 <div class="col-xs-3"><i class="fa fa-xxl image-spin fa-thumbs-o-up"></i><br><br><br><br></div>
 <div class="col-xs-3"><i class="fa fa-xxl image-spin fa-wrench"></i><br><br><br><br></div>
  -->
-
-
 </div>
+  <div class="text-center">
+    <i class="fa fa-graduation-cap banner-graduation-cap" aria-hidden="true"></i>
+  </div>
 </div>
 
 <!-- Banner -->
@@ -90,7 +90,7 @@
 </div>
 
 <!-- Learning Process -->
-<div class="wrapper-learning-process" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('homepage_banner.png') %>);" id="How does it work?">
+<div class="wrapper-learning-process parallax" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('homepage_banner.png') %>);" id="How does it work?">
   <div class="container padded">
     <div class="row">
     <h3 align="center">How does it work?</h3>
@@ -111,8 +111,8 @@
 </div>
 
 <!-- FAQ -->
-<div class="container faq-section padded">
-  <h3 class="text-center" id="FAQ">FAQ</h3>
+<div class="container faq-section padded" id="FAQ">
+  <h3 class="text-center">FAQ</h3>
   <h4>Do you only help children?</h4>
   <p>Our current Cyborg Beast is designed primarily for children, so it will be more targeted to help 3-14 year old children and adolescents. Prostheses also apply to adults, we are also developing more realistic appearance, but also the synthesis of human prosthetic products (such as Flexy Hand).</p><br>
 
