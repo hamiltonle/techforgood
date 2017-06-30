@@ -5,62 +5,107 @@
   <!-- Course Information -->
   <div class="container">
     <div id="course-content">
-    <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('boy.jpg') %>);">
-    <div class="banner-content">
-      <h3><%= @course.title %></h3>
-    </div>
-    </div>
+      <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('boy.jpg') %>);">
+      <div class="banner-content">
+        <h3><%= @course.title %></h3>
+        <p><%=  @course.tagline %></p>
+      </div>
+      </div>
 
-    <hr>
 
-  <!-- Course Description -->
-    <div class="row">
-      <div class="col-xs-12">
-      <a name = "description"></a>
-        <div class="course-description text-left">
-          <div>
-            <p><strong>Course Description: </strong><%= @course.description %></p>
+      <div class="row">
+        <div class="course_issue">
+            <div class="col-md-1">
+            <a name = "issue"></a>
+              <div>
+                <%= image_tag ("002-man-thinking.png"), class:"img-rounded", alt:"Problem", width:"128", height:"128" %>
+              </div>
+            </div>
+            <div class="col-md-8">
+            <a name = "issue"></a>
+                <div>
+                  <h3 class="text-center"><strong>The Issue </strong></h3>
+                  <p><%= @course.issue %></p>
+                </div>
           </div>
         </div>
       </div>
+
+
+      <div class="row">
+        <div class="course_technology">
+        <div class="col-md-1">
+            <a name = "issue"></a>
+              <div>
+                <%= image_tag ("001-light-bulb-idea.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
+              </div>
+          </div>
+            <div class="col-md-8">
+            <a name = "technology"></a>
+                <div>
+                  <h3 class="text-center"><strong>The Technology </strong></h3>
+                  <p><%= @course.tech_solution %></p>
+                </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Course Description -->
+      <div class="row">
+        <a name = "description"></a>
+        <div class="course_description">
+          <div class="col-md-1">
+            <a name = "issue"></a>
+              <div>
+                <%= image_tag ("002-online-course.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
+              </div>
+          </div>
+            <div class="col-md-8">
+                <div>
+                  <h3 class="text-center"><strong>The Course </strong></h3>
+                  <p><%= @course.description %></p>
+                </div>
+          </div>
+        </div>
+
+    <!-- Lesson Information -->
+      <div class="row">
+        <a name = "description"></a>
+        <div class="course_syllabus">
+          <div class="col-md-1">
+            <a name = "issue"></a>
+            <div>
+              <%= image_tag ("001-thinking.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <h3 class="text-center"><strong>What You'll Learn</strong></h3>
+              <ol class="text-left">
+                <% @course.lessons.each do |lesson| %>
+                  <li><%= lesson.title %></li>
+                <% end %>
+              </ol>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <a name = "organization"></a>
+        <div class="course_organization">
+          <div class="col-md-1">
+            <a name = "issue"></a>
+            <div>
+              <%= image_tag ("group-of-people-in-a-formation.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <h3 class="text-center"><strong>Course by: <%= @course.organization.name %></strong></h3>
+              <p><%= @course.organization.description %></p>
+            </div>
+        </div>
+      </div>
+
+
     </div>
-
-    <hr>
-
-    <!-- Organization Information -->
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="organization-information text-left">
-            <p><strong>Course by: </strong><%= link_to @course.organization.name, organization_path(@course.organization_id) %></p>
-        </div>
-      </div>
-    </div>
-
-    <hr>
-
-  <!-- Lesson Information -->
-    <a name = "syllabus"></a>
-      <div class="lesson-information text-left">
-        <p><strong>Syllabus: </strong></p>
-        <div>
-          <% @course.lessons.each do |lesson| %>
-            <p><%= lesson.title %></p>
-          <% end %>
-        </div>
-      </div>
-
-    <hr>
-
-    <a name = "course_resources"></a>
-      <div class="lesson-information text-left">
-        <p><strong>Resources: </strong></p>
-        <div>
-          <% @course.lessons.each do |lesson| %>
-            <p><%= lesson.title %></p>
-          <% end %>
-        </div>
-      </div>
-
-  </div>
   </div>
 </div>
