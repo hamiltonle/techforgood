@@ -20,6 +20,7 @@
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %> <!-- Append this after the main `javascript_include_tag`. -->
+
     <%= render "shared/footer" unless @skip_footer %>
 
   </body>

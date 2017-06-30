@@ -35,11 +35,22 @@
   height: 40vh;
   background-color: $blue6;
   margin-top: 70px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
 }
 
 .dashboard-img-round {
   width: 200px;
   border-radius: 50%;
+}
+
+#gradient {
+  width: 100%;
+  padding: 0px;
+  margin-top: 70px;
 }
 
 // COURSE SHOW PAGE
