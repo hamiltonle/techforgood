@@ -62,7 +62,7 @@
     <% @courses.each do |course| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="course-card">
-         <div class="course-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('banner.jpg') %>);">
+         <div class="course-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path('madi-robson-113926_wqpmaf', height: 582, width: 824, crop: :lfill) %>);">
            <h2 class="course-card-mission text-center"><%= course.tagline %></h2>
          </div>
             <div class="course-card-description">
@@ -79,7 +79,7 @@
 </div>
 
 <!-- Learning Process -->
-<div class="wrapper-learning-process parallax" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('homepage_banner.png') %>);" id="How does it work?">
+<div class="wrapper-learning-process parallax" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path('zi-jian-lim-227847_j6rckn', height: 1082, width: 1624, crop: :lfill) %>);" id="How does it work?">
   <div class="container padded">
     <div class="row">
     <h3 align="center">How does it work?</h3>
