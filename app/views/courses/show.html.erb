@@ -9,6 +9,7 @@
       <div class="banner-content">
         <h3><%= @course.title %></h3>
         <p><%=  @course.tagline %></p>
+        <%= link_to 'Sign up', new_user_registration_path, class: "btn-warning btn-lg" unless user_signed_in? %>
       </div>
       </div>
 

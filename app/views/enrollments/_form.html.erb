@@ -1,3 +1,5 @@
-<%= simple_form_for [course, enrollment], defaults: { input_html: { class: 'unstyled-btn' } } do |f| %>
-  <%= f.button :submit, 'Enroll', id: "unstyled-btn" %>
+<%= simple_form_for [course, enrollment] do |f| %>
+  <%= f.button :submit, 'Enroll Now', id:'enroll-btn' %>
 <% end %>
+
+
