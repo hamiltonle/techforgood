@@ -103,7 +103,7 @@ puts "saved a course"
 
 course = Course.new(
   title: "Computer Vision",
-  description: "Using Microsoft's computer vision technology to find missing children"
+  tagline: "Using Microsoft's computer vision technology to find missing children"
   )
 course.organization = Organization.find(2)
 course.save!
@@ -112,7 +112,7 @@ puts "saved a course"
 
 course = Course.new(
   title: "Augmented Reality",
-  description: "Augmented Reality for vision-impaired people"
+  tagline: "Augmented Reality for vision-impaired people"
   )
 course.organization = Organization.find(1)
 course.save!
