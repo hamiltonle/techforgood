@@ -7,6 +7,19 @@
   color: white;
   padding: 15px;
   border-radius: 15px;
+  &:hover {
+    color: #ffffff;
+    padding: 17px;
+
+    span {
+      filter: brightness(.9) contrast(1.2);
+      transform: scale(0.96);
+    }
+    &:before {
+      bottom: 3px;
+      filter: blur(6px) brightness(0.8);
+    }
+  }
   }
 
 $neon: #00FFF8;
