@@ -9,6 +9,15 @@ class CoursesController < ApplicationController
   # Shows all courses on the home page
   def index
     @courses = Course.all
+
+    @steps = {
+      "Choose courses" => "search",
+      "Create groups" => "users",
+      "Watch videos" => "play-circle",
+      "Build products" => "rocket",
+      "Get help" => "question",
+      "Do exercises" => "pencil"
+      }
   end
 
   # Shows all the information for one course
