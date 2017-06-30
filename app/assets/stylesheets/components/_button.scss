@@ -10,11 +10,16 @@
   &:hover {
     color: #ffffff;
     padding: 17px;
-
-
-.dashboard-enroll-button {
-  margin-top: 50px;
-}
+    span {
+      filter: brightness(.9) contrast(1.2);
+      transform: scale(0.96);
+    }
+    &:before {
+      bottom: 3px;
+      filter: blur(6px) brightness(0.8);
+    }
+  }
+  }
 
 .btn-primary-profile-banner {
   color: white;
@@ -27,17 +32,6 @@
   background-color: white;
   text-decoration: none;
 }
-    span {
-      filter: brightness(.9) contrast(1.2);
-      transform: scale(0.96);
-    }
-    &:before {
-      bottom: 3px;
-      filter: blur(6px) brightness(0.8);
-    }
-  }
-  }
-
 
 $neon: #00FFF8;
 
