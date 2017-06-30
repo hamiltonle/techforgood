@@ -22,9 +22,17 @@ class SessionsController < ApplicationController
     @session.user = current_user
     @session.lesson = @lesson
     @session.status = "started"
-    @session.save
 
-    redirect_to course_lesson_path(@course.id, @lesson.id)
+
+    begin
+      @session.save
+    rescue => error
+      redirect_to course_lesson_path(@course.id, @lesson.id)
+    end
+
+
+
+
   end
 
   def edit
