@@ -241,7 +241,26 @@
     visibility: hidden !important;
 }
 
+.parent-relative {
+  position: relative;
+}
 
+.child-absolute {
+  position: absolute;
+  z-index: 2;
+}
+
+.child-tobecovered{
+  z-index: 1;
+}
+
+.background-white {
+  background-color: white;
+  height: 20px;
+  bottom: 100px;
+  width: 90%;
+  margin-left: 10px;
+}
 
 // giving earth icon a shadow
 
