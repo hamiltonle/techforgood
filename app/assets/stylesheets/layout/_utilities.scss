@@ -237,6 +237,10 @@
 }
 
 
+#poweredby {
+    visibility: hidden !important;
+}
+
 
 
 // giving earth icon a shadow
@@ -269,6 +273,15 @@
 
 
 // IMAGES
+
+.img-double {
+  width: 200px;
+}
+.img-full-width {
+  width: 100%;
+}
+
+
 .image-spin {
 
     -webkit-animation:spin 60s linear infinite;
