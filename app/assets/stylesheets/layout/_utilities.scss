@@ -233,8 +233,40 @@
 }
 
 .globe {
-  font-size: 55px;
+  font-size: 52px;
 }
+
+
+
+
+// giving earth icon a shadow
+
+.menu {
+    text-align: center;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative
+}
+.menu_label {
+
+    margin-top: 21px;
+    z-index: 2;
+    position: absolute;
+
+
+}
+.photoStyle {
+    z-index: 1;
+    border: 0px;
+    margin: auto;
+    color: rgb(41, 128, 185);
+}
+
+
+
+
+
 
 // IMAGES
 .image-spin {
