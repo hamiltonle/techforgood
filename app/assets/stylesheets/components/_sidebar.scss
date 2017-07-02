@@ -213,6 +213,7 @@
   cursor:pointer;
   padding: 0px !important;
   border:none;
+  line-height: .8;
 
 
 
@@ -235,14 +236,16 @@
   background-color: white;
   color: $blue6;
   position: fixed;
-  padding: 5px;
+  padding: 1px;
   z-index: 0;
   left: 20px;
   font-size:60px;
   z-index:2;
   cursor: pointer;
-  top: -10px;
+  top: 0px;
   left: 0px;
+  line-height: .8;
+
 
 }
 
