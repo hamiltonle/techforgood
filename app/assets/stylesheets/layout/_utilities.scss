@@ -233,10 +233,78 @@
 }
 
 .globe {
-  font-size: 55px;
+  font-size: 52px;
 }
 
+
+#poweredby {
+    visibility: hidden !important;
+}
+
+.parent-relative {
+  position: relative;
+}
+
+.child-absolute {
+  position: absolute;
+  z-index: 2;
+}
+
+.child-tobecovered{
+  z-index: 1;
+}
+
+.background-white {
+  background-color: white;
+  height: 20px;
+  bottom: 100px;
+  width: 90%;
+  margin-left: 10px;
+}
+
+// giving earth icon a shadow
+
+.menu {
+    text-align: center;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative
+}
+.menu_label {
+
+    margin-top: 21px;
+    z-index: 2;
+    position: absolute;
+
+
+}
+.photoStyle {
+    z-index: 1;
+    border: 0px;
+    margin: auto;
+    color: rgb(41, 128, 185);
+}
+
+
+
+
+
+
 // IMAGES
+
+.img-double {
+  width: 200px;
+}
+.img-full-width {
+  width: 100%;
+}
+
+#desktop-image {
+  width: 30%;
+}
+
+
 .image-spin {
 
     -webkit-animation:spin 60s linear infinite;

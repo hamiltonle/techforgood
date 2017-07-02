@@ -1,5 +1,6 @@
 <div id="sidebar" class="text-center">
     <div class="">
+      <a href="javascript:void(0)" style="background-color: white; left:150px;" class="closebtn hidden-sm hidden-md hidden-lg" onclick="closeNav()">&times;</a>
 
       <!-- WHY MODULE -->
       <div class="text-left module-completed flexbox" data-toggle="collapse" data-target="#why">
@@ -11,6 +12,7 @@
         </div>
         <div class="lesson-text flex-item-complete">
           <h6>Finished</h6>
+
         </div>
       </div>
 
@@ -109,7 +111,29 @@
       </div>
 
 
+      <!-- PROFESSOR CHAT -->
+      <div class="text-left module-pending flexbox" data-toggle="collapse" data-target="#professor">
+        <div class="lesson-text flex-item-title text-white">
+          <h5><strong>Your Personal Teaching Assistant </strong></h5>
+        </div>
+      </div>
+
+      <div id="professor" class="collapse in parent-relative">
+
+        <iframe src="https://api.motion.ai/webchat/67253?color=62a8ea&sendBtn=SEND&inputBox=Type%20something...&token=966fad4dec093993a7e3a249eb397d0b" width="280" height="600" class="child-tobecovered"></iframe>
+
+        <div class="background-white child-absolute text-center">
+          <p> </p>
+        </div>
+
+
+      </div>
+
+
 
 
     </div>
   </div>
+
+
+  <script src="https://api.motion.ai/sdk/webchat.js"></script>
