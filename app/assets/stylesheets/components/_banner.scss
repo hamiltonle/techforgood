@@ -65,17 +65,16 @@
   justify-content: center;
   background-position: center;
   h3 {
-  font-size: 40px;
+  font-size: 40px !important;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   }
   p {
-  font-size: 20px;
+  font-size: 20px !important;
   font-weight: lighter;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
   }
-  margin-bottom: 15px;
 }
 
 

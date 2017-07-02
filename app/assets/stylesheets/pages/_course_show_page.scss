@@ -7,7 +7,7 @@
   // border-radius: 2px;
   background: rgba(175, 175, 175, 0.1);
 
-  top: 70px;
+  top: 50px;
   bottom: 0;
   left: 200px;
   height: auto;
@@ -15,6 +15,14 @@
   overflow-x: hidden;
   position: absolute;
   width: calc(100%-200px);
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 12px;
+  }
 }
 
 .course_technology {
@@ -45,7 +53,17 @@
 }
 
 .course_syllabus {
-  background-color: #DDDDDD;
+  background-color: #DDDDDDDDDDDD;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-style: 1px solid grey;
+  padding: 20px;
+  color:white;
+}
+
+.course_organization {
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -53,7 +71,16 @@
   padding: 20px;
 }
 
-.course_organization {
+.who_you_help_section {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-style: 1px solid grey;
+  padding: 20px;
+}
+
+.course_reviews_section {
   background-color: white;
   display: flex;
   align-items: center;
