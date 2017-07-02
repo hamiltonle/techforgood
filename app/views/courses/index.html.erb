@@ -96,11 +96,11 @@
          <div class="course-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path('madi-robson-113926_wqpmaf', height: 582, width: 824, crop: :lfill) %>);">
            <h2 class="course-card-mission text-center"><%= course.tagline %></h2>
          </div>
-            <div class="course-card-description">
-              <h2><%= course.title %></h2>
-              <p><%= course.organization.name %></p>
-              <div class="org-logos"></div>
-            </div>
+          <div class="course-card-description">
+            <h2><%= course.title %></h2>
+            <p><%= course.organization.name %></p>
+            <div class="org-logos"></div>
+          </div>
           <%= link_to "", course_path(course), class: "course-card-link" %>
         </div>
       </div>

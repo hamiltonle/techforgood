@@ -1,19 +1,15 @@
-<div class="container">
+<div class="">
 
   <!-- Lessons Sidebar -->
-  <div class="hidden-xs">
-    <%= render :partial => 'lessons/sidebar'%>
-  </div>
-
   <div id="mySidenav" class="sidenav ">
-
-
     <%= render :partial => 'lessons/sidebar' %>
   </div>
 
-  <!-- Use any element to open the sidenav -->
+  <!-- This is the button to open the sidenav -->
+  <!-- the button to close is on the _sidebar.html.erb file -->
 
-  <span class="fixed-sidemenu hidden-sm hidden-md hidden-lg" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776</span>
+
+  <span class="fixed-sidemenu " style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776</span>
 
   <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
   <div id="main">
@@ -22,11 +18,12 @@
 
   <!-- Lesson Content -->
 
-    <div class="container hidden-xs">
+
       <div id="lesson-content">
       <div class="row">
-        <div class="col-xs-6 text-left"><h1 class=""><%= @lesson.title %></h1></div>
-        <div class="col-xs-6 text-right"><p class="">Lesson <%= @lesson.id %></p></div>
+        <div class="col-xs-12 text-center "><em><p class="">Lesson <%= @lesson.id %></p></em><h1 class="fredoka"><strong><%= @lesson.title %></strong></h1>
+        </div>
+
       </div>
         <h4 class="text-center"><%= @lesson.description %></h4>
 
@@ -38,9 +35,29 @@
         <p><%= @lesson.text %></p>
 
 
+        <%= image_tag "handsnotext.jpg", class: "img-full-width img-padded"%>
+
+<p>Through the design, the production of economical simple 3D printing machinery prosthetics, and open source and dissemination of this technology, the wing plan hopes to help millions of children with physical disability in China.</p>
+
+
+        <pre class="section-margin">
+          <span class="attribute" style="font-size: 36px;">J(θ)=Cm∑i=1y(i) cost1(θTx(i))+(1−y(i)) cost0(θTx(i))+12n∑j=1Θ2j:</span>
+
+
+          <span class="selector">code</span> {
+            <span class="attribute">padding</span>: <span class="number">2</span>px <span class="number">4</span>px;
+            <span class="attribute">vertical-align</span>: text-bottom;
+          }
+
+          <span class="selector">pre</span> {
+            <span class="attribute">padding</span>: <span class="number">1</span>em;
+          }</pre>
+
+<p>Through the design, the production of economical simple 3D printing machinery prosthetics, and open source and dissemination of this technology, the wing plan hopes to help millions of children with physical disability in China.</p>
+
 
         <!-- Lesson Complete Button -->
-        <div>
+        <div class="section-margin">
         <% if @current_session.exists? %>
             <div class="row">
               <div class="col-xs-6">
@@ -71,40 +88,8 @@
         </div>
 
       </div>
-    </div>
+
+
+
 
 </div>
-
-    <div class="hidden-sm hidden-md hidden-lg">
-
-      <h5 class="text-center">Lesson <%= @lesson.id %></h5>
-      <h1 class="text-center"><%= @lesson.title %></h1>
-
-      <h4 class="text-center"><%= @lesson.description %></h4>
-      <p><%= @lesson.text %></p>
-      <!-- Lesson Complete Button -->
-        <div>
-          <% if @current_session.exists? %>
-            <div class="row">
-              <div class="col-xs-4">
-              <%= simple_form_for [@course, @lesson, @session] do |f| %>
-                <%= f.button :submit, 'Lesson Completed', disabled: "disabled", class: 'btn btn-success text-center' %>
-              <% end %>
-              </div>
-              <div class="col-xs-1">
-
-              </div>
-              <div class="col-xs-4 text-left">
-
-              <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
-              </div>
-            </div>
-          <% else %>
-            <%= simple_form_for [@course, @lesson, @session] do |f| %>
-              <%= f.button :submit, 'Just Finished the Lesson', class: 'btn btn-success text-center' %>
-            <% end %>
-
-
-          <% end %>
-        </div>
-    </div>

@@ -141,34 +141,20 @@
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
-}
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+
+    color: $blue6;
+    // font-size: 36px;
+    margin-left: 0px;
+    width: 100%;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: margin-left .5s;
-    padding: 20px;
+    padding: 0px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -182,7 +168,7 @@
   background-color: white;
   position: fixed;
   top: 75px;
-
+  z-index: 2;
   left: 0;
 }
 
@@ -222,27 +208,7 @@
   left: 0;
 }
 
-
-// LESSON CONTENT AREA
-#lesson-content {
-  // position: relative;
-  padding: 20px;
-  margin: 0px;
-  // margin-left: 200px;
-  // width: 100%;
-  // margin: 0 auto;
-  // border-radius: 2px;
-  background: rgba(175, 175, 175, 0.1);
-
-  top: 70px;
-  bottom: 0;
-  left: 280px;
-  height: auto;
-  overflow-y: scroll;
-  overflow-x: scroll;
-  position: absolute;
-  width: calc(100% - 280px);
-}
+// LESSON CONTENT AREA is in _lesson_show_page.scss
 
 
 
