@@ -7,7 +7,7 @@
   <!-- Course Information -->
   <div class="container">
     <div id="course-content">
-      <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('boy.jpg') %>);">
+      <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('ironboy.jpg') %>);">
       <div class="banner-content">
         <h3><%= @course.title %></h3>
         <p><%=  @course.tagline %></p>
@@ -27,7 +27,7 @@
             <div class="col-md-8">
             <a name = "issue"></a>
                 <div>
-                  <h3 class="text-center"><strong>The Issue </strong></h3>
+                  <h3 class="text-left"><strong>The Issue </strong></h3>
                   <p><%= @course.issue %></p>
                 </div>
           </div>
@@ -46,7 +46,7 @@
             <div class="col-md-8">
             <a name = "technology"></a>
                 <div>
-                  <h3 class="text-center"><strong>The Technology </strong></h3>
+                  <h3 class="text-left"><strong>The Technology </strong></h3>
                   <p><%= @course.tech_solution %></p>
                 </div>
           </div>
@@ -60,12 +60,12 @@
           <div class="col-md-1">
             <a name = "issue"></a>
               <div>
-                <%= image_tag ("002-online-course.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
+                <%= image_tag ("002-seo-training.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
               </div>
           </div>
             <div class="col-md-8">
                 <div>
-                  <h3 class="text-center"><strong>The Course </strong></h3>
+                  <h3 class="text-left"><strong>The Course </strong></h3>
                   <p><%= @course.description %></p>
                 </div>
           </div>
@@ -78,11 +78,11 @@
           <div class="col-md-1">
             <a name = "issue"></a>
             <div>
-              <%= image_tag ("001-thinking.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
+              <%= image_tag ("001-studying.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
             </div>
           </div>
           <div class="col-md-8">
-            <h3 class="text-center"><strong>What You'll Learn</strong></h3>
+            <h3 class="text-left"><strong>What You'll Learn</strong></h3>
               <ol class="text-left">
                 <% @course.lessons.each do |lesson| %>
                   <li><%= lesson.title %></li>
@@ -98,11 +98,11 @@
           <div class="col-md-1">
             <a name = "issue"></a>
             <div>
-              <%= image_tag ("group-of-people-in-a-formation.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
+              <%= image_tag ("003-group-of-people-in-a-formation.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
             </div>
           </div>
           <div class="col-md-8">
-            <h3 class="text-center"><strong>Course by: <%= @course.organization.name %></strong></h3>
+            <h3 class="text-left"><strong>Course by: <%= @course.organization.name %></strong></h3>
               <p><%= @course.organization.description %></p>
             </div>
         </div>
