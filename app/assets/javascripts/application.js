@@ -16,14 +16,18 @@ please make a specific require like above */
 function openNav() {
     document.getElementById("mySidenav").style.width = "280px";
     document.getElementById("main").style.marginLeft = "280px";
+
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
-    document.body.style.backgroundColor = "white";
+
 }
+
+
+
 
 
 // flat shadows

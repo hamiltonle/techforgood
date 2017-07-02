@@ -5,16 +5,44 @@
     <%= render :partial => 'lessons/sidebar' %>
   </div>
 
+
+  <!-- Profile picture and dropdown -->
+  <div class="dropdown lesson-avatar img-circle">
+    <%= image_tag "avatar_placeholder.png", class: "avatar-large dropdown-toggle ", id: "navbar-techforgood-menu", "data-toggle" => "dropdown" %>
+    <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
+      <li>
+        <%= link_to dashboard_users_path do %>
+          <i class="fa fa-side-padding fa-user"></i> <%= t(".profile", default: "Profile") %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to courses_path do %>
+          <i class="fa fa-side-padding fa-graduation-cap"></i> <%= t(".profile", default: "Browse Courses") %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fa fa-side-padding fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+
+
   <!-- This is the button to open the sidenav -->
   <!-- the button to close is on the _sidebar.html.erb file -->
 
 
-  <span class="fixed-sidemenu " style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776</span>
+
+
+
 
   <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
   <div id="main">
 
 
+  <span class="fixed-sidemenu" onclick="openNav()">&#9776<div class="text-right div-relative flexbox">
+  </div></span>
 
   <!-- Lesson Content -->
 
@@ -57,7 +85,7 @@
 
 
         <!-- Lesson Complete Button -->
-        <div class="section-margin">
+        <div class="section-margin hidden-xs">
         <% if @current_session.exists? %>
             <div class="row">
               <div class="col-xs-6">
@@ -68,6 +96,8 @@
               <div class="col-xs-6 text-right">
 
               <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+
+              <!-- mobile button -->
               </div>
             </div>
           <% else %>
@@ -80,6 +110,39 @@
               <div class="col-xs-6 text-right">
 
               <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+              </div>
+            </div>
+
+
+          <% end %>
+        </div>
+
+        <!-- mobile button -->
+        <div class="section-margin visible-xs">
+        <% if @current_session.exists? %>
+            <div class="row">
+              <div class="col-xs-6">
+              <%= simple_form_for [@course, @lesson, @session] do |f| %>
+                <%= f.button :submit, 'Done with this Lesson! :)', disabled: "disabled", class: 'btn btn-success text-center' %>
+              <% end %>
+              </div>
+              <div class="col-xs-6 text-right">
+
+              <%= link_to "Next Lesson", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+
+              <!-- mobile button -->
+              </div>
+            </div>
+          <% else %>
+            <div class="row">
+              <div class="col-xs-6">
+              <%= simple_form_for [@course, @lesson, @session] do |f| %>
+              <%= f.button :submit, 'Lesson Finished', class: 'btn btn-success text-center' %>
+            <% end %>
+              </div>
+              <div class="col-xs-6 text-right">
+
+              <%= link_to "Next Lesson", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
               </div>
             </div>
 

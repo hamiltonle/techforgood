@@ -50,12 +50,21 @@
 }
 .module-completed {
   background: $green;
+  border-right: 3px solid $green;
+  // border: 1px solid $success;
+}
+.module-completed:hover {
+  border-right: 3px solid lightgray;
   // border: 1px solid $success;
 }
 
 .module-pending {
-  background: $blue2;
-  border: 1px solid $blue2;
+  background: $blue6;
+  border-right: 3px solid $blue6;
+}
+
+.module-pending:hover {
+  border-right: 3px solid lightgray;
 }
 
 .module-materials {
@@ -76,18 +85,30 @@
 
 
 
+
+
+
+
 // lesson completion text color
 .lesson-completed {
   color: white;
 }
 .lesson-missed {
-  color: $orange;
+  color: $yellow;
 }
 .lesson-ongoing {
-  color: $orange;
+  color: white;
 }
 .lesson-upcoming {
-  color: $orange;
+  color: white;
+}
+
+
+
+// tab text
+
+.lesson-text h6 {
+  color: #566b78;
 }
 
 
@@ -166,25 +187,35 @@
 
 /* The side navigation menu */
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    left: 0;
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Stay on top */
+  top: 0;
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.7s; /* 0.5 second transition effect to slide in the sidenav */
+  border-right: 1px solid $lightgray;
+  box-shadow: 1px 0px 4px $lightgray;
 }
 
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
+  background-color: white;
+  color: $blue6;
+  font-size: 60px;
+  margin-left: 0px;
+  width: 100%;
+  text-decoration: none;
+  font-size: 60px;
+  cursor:pointer;
+  padding: 0px !important;
+  border:none;
 
-    color: $blue6;
-    // font-size: 36px;
-    margin-left: 0px;
-    width: 100%;
+
+
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -202,14 +233,26 @@
 
 .fixed-sidemenu {
   background-color: white;
+  color: $blue6;
   position: fixed;
-  top: 75px;
-  z-index: 2;
-  left: 0;
+  padding: 5px;
+  z-index: 0;
+  left: 20px;
+  font-size:60px;
+  z-index:2;
+  cursor: pointer;
+  top: -10px;
+  left: 0px;
+
 }
 
 
-
+iframe {
+    border:none;
+  // top: -2px;
+  // left: -2px;
+  // right: -2px;
+}
 
 
 #sidebar {
@@ -220,13 +263,14 @@
   width: 280px;
   background-color: #f0f0f0;
   position: absolute;
-  top: 70px;
+  top: 0px;
   overflow-y: none;
   // overflow-x: hidden;
   overflow-y: scroll;
   height: auto;
   bottom: 0;
   left: 0;
+
 }
 
 #course_sidebar {
