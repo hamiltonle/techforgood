@@ -9,6 +9,8 @@ gem 'puma'
 gem 'rails', '5.1.1'
 gem 'redis'
 
+gem 'active_admin_flat_skin'
+
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', git: 'https://github.com/assembler/attachinary.git'
 gem 'jquery-fileupload-rails'
