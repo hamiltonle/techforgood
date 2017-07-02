@@ -9,15 +9,37 @@
 // TAB CONTAINERS
 .lesson-tab {
   background: #FFFFFF;
-  border: 1px solid #EDEDED;
+  border-bottom: 1px solid #EDEDED;
+  border-right: 3px solid white;
+
+}
+.lesson-tab:hover {
+  opacity: 1;
+  border-right: 3px solid $blue7;
 }
 .position-relative {
   position: relative;
 }
 
-.lesson-tab:hover {
-  opacity: 0.8;
+
+.lesson-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  background: $blue7;
+  opacity: 0;
 }
+.lesson-link:hover{
+  opacity: 0.00;
+
+
+  transition: opacity 0.3s ease;
+}
+
 
 .div-relative {
   position: relative;
@@ -27,7 +49,7 @@
   // border: 1px solid $success;
 }
 .module-completed {
-  background: $success;
+  background: $green;
   // border: 1px solid $success;
 }
 
@@ -53,6 +75,20 @@
 }
 
 
+
+// lesson completion text color
+.lesson-completed {
+  color: white;
+}
+.lesson-missed {
+  color: $orange;
+}
+.lesson-ongoing {
+  color: $orange;
+}
+.lesson-upcoming {
+  color: $orange;
+}
 
 
 // MODULE FLEXBOX
