@@ -1,0 +1,103 @@
+
+// LESSON CONTENT AREA
+#lesson-content {
+  background: white;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  position: relative;
+  z-index: 1;
+
+
+// lesson margins
+  margin: 0 auto;
+  max-width: 720px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 100%;
+
+// Spacing
+  line-height: 1.5;
+  padding: 4em 1em;
+
+
+// letter-spacing: .2px;
+  -webkit-font-smoothing: antialiased;
+
+
+// Soft Accent Colors
+  color: #566b78;
+  font-size: 18px;
+
+  h1, h2, strong {
+  // color: #333;
+  color: $blue7;
+  }
+
+  h2 {
+  margin-top: 1em;
+  padding-top: 1em;
+  }
+
+  embed {
+  margin: 3em 0em;
+  }
+
+}
+
+
+
+// for padded sections
+
+.img-padded {
+    padding-top: 2em;
+    padding-bottom: 4em;
+}
+
+.section-margin {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+
+
+
+// for any markdown, code, or forumalas
+
+code, pre {
+  background: #f5f7f9;
+  border: none;
+  border-bottom: 1px solid #d8dee9;
+  color: #a7adba;
+}
+
+code {
+  padding: 2px 4px;
+  vertical-align: text-bottom;
+}
+
+pre {
+  padding: 1em;
+  border-left: 2px solid $blue7;
+
+  .attribute {
+    // softening the body text
+  color: #5fb3b3;
+
+  }
+
+}
+
+
+
+// avatar on top right
+.lesson-avatar {
+  cursor: pointer;
+  position: fixed;
+  top: 3px;
+  right: 5px;
+  box-shadow: 3px 6px 7px grey;
+  z-index: 3;
+}
+
