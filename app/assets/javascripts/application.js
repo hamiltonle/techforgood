@@ -1,5 +1,7 @@
+
 //= require jquery
 //= require jquery_ujs
+//= require jquery.easing
 //= require bootstrap-sprockets
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
@@ -168,35 +170,34 @@ setInterval(updateGradient,10);
 
 // ScrollSpy for smooth scrolling
 
-$("#nav a").on('click', function(e) {
+// $("#nav a").on('click', function(e) {
 
-   // prevent default anchor click behavior
-   e.preventDefault();
+//    // prevent default anchor click behavior
+//    e.preventDefault();
 
-   // store hash
-   var hash = this.hash;
-
-   // animate
-   $('html, body').animate({
-       scrollTop: $(hash).offset().top
-     }, 300, function(){
-
-       // when done, add hash to url
-       // (default click behaviour)
-       window.location.hash = hash;
-     });
-
-});
+//     // jQuery for page scrolling feature - requires jQuery Easing plugin
+//     $('a.page-scroll').bind('click', function(event) {
+//       var $anchor = $(this);
+//       $('html, body').stop().animate({
+//           scrollTop: ($($anchor.attr('href')).offset().top - 50)
+//       }, 1250, 'easeInOutExpo');
+//       event.preventDefault();
+//     });
+// });
 
 
+(function($) {
+    "use strict"; // Start of use strict
 
-
-
-
-
-
-
-
+    // jQuery for page scrolling feature - requires jQuery Easing plugin
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: ($($anchor.attr('href')).offset().top - 70)
+        }, 1550, 'easeInOutExpo');
+        event.preventDefault();
+    });
+})(jQuery); // End of use strict
 
 
 

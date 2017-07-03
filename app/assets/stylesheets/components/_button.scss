@@ -21,6 +21,11 @@
   }
   }
 
+
+.btn-white {
+  background-color: white;
+}
+
 .btn-primary-profile-banner {
   color: white;
   border: 1px solid white;
@@ -84,7 +89,7 @@ $neon: #00FFF8;
   position: relative;
 
   &.bg-gradient1 {
-    text-shadow: 0px 0px 1px #BF4C28;
+    text-shadow: 0px 0px 1px $orange;
   }
 
   &.bg-gradient2 {
