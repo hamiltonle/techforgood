@@ -66,6 +66,7 @@ class LessonsController < ApplicationController
     # for now, we'll use this:
     # @session = @lesson.sessions.last
 
+    @skip_header = true
     @skip_footer = true
   end
 

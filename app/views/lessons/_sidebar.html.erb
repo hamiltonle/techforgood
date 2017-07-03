@@ -1,16 +1,27 @@
 <div id="sidebar" class="text-center">
     <div class="">
-      <a href="javascript:void(0)" style="background-color: white; left:150px;" class="closebtn hidden-sm hidden-md hidden-lg" onclick="closeNav()">&times;</a>
+
+      <!-- This is the button to close the sidenav -->
+
+
+      <div class="text-right div-relative flexbox">
+        <button href=""  class="closebtn text-right" onclick="closeNav()">
+          &times;
+        </button>
+      </div>
+
+
+
 
       <!-- WHY MODULE -->
       <div class="text-left module-completed flexbox" data-toggle="collapse" data-target="#why">
         <div class="lesson-text flex-item-title text-white">
           <h5><strong>WHY </strong></h5>
         </div>
-        <div class="lesson-text flex-item-week">
+        <div class="flex-item-week">
           <h6> (week 1)</h6>
         </div>
-        <div class="lesson-text flex-item-complete">
+        <div class="flex-item-complete lesson-completed">
           <h6>Finished</h6>
 
         </div>
@@ -23,7 +34,7 @@
 
 
             <div class="text-left position-relative <%= @lesson.nil? ? "lesson-tab" : (@lesson.id == lesson.id ? "div-blue" : "lesson-tab") %> div-relative flexbox">
-              <%= link_to "", course_lesson_path(@course.id, lesson.id), class: "card-link" %>
+              <%= link_to "", course_lesson_path(@course.id, lesson.id), class: "lesson-link" %>
               <div class="lesson-text flex-item-image">
                 <h6><i class="fa fa-md <%= fontawesome_icon(lesson) %> <%= lesson.sessions.where(:user_id => current_user.id).exists? ? (fontawesome_color(lesson)) : "text-darkgray" %>" aria-hidden="true"></i></h6>
               </div>
@@ -45,10 +56,10 @@
         <div class="lesson-text flex-item-title text-white">
           <h5><strong>WHAT </strong></h5>
         </div>
-        <div class="lesson-text flex-item-week">
+        <div class="flex-item-week">
           <h6> (week 2)</h6>
         </div>
-        <div class="lesson-text flex-item-complete text-warning">
+        <div class="flex-item-complete lesson-missed">
           <h6>Missed</h6>
         </div>
       </div>
@@ -59,7 +70,7 @@
         <% @what_lessons.each do |lesson| %>
 
            <div class="text-left position-relative <%= @lesson.nil? ? "lesson-tab" : (@lesson.id == lesson.id ? "div-blue" : "lesson-tab") %> div-relative flexbox">
-              <%= link_to "", course_lesson_path(@course.id, lesson.id), class: "card-link" %>
+              <%= link_to "", course_lesson_path(@course.id, lesson.id), class: "lesson-link" %>
               <div class="lesson-text flex-item-image">
 
                 <h6><i class="fa fa-md <%= fontawesome_icon(lesson) %> <%= lesson.sessions.where(:user_id => current_user.id).exists? ? (fontawesome_color(lesson)) : "text-darkgray" %>" aria-hidden="true"></i></h6>
@@ -68,7 +79,7 @@
               <div class="lesson-text flex-item-lesson-title">
                 <h6><%= lesson.title %></h6>
               </div>
-              <div class="lesson-text flex-item-time text-lightgray">
+              <div class="lesson-text flex-item-time text-ongoing">
                 <h6><%= lesson.minutes %> mins</h6>
               </div>
 
@@ -82,10 +93,10 @@
         <div class="lesson-text flex-item-title text-white">
           <h5><strong>HOW </strong></h5>
         </div>
-        <div class="lesson-text flex-item-week">
+        <div class="flex-item-week">
           <h6> (week 3-8)</h6>
         </div>
-        <div class="lesson-text flex-item-complete text-success">
+        <div class="flex-item-complete lesson-ongoing">
           <h6>On Going</h6>
         </div>
       </div>
@@ -95,7 +106,7 @@
 
 
             <div class="text-left position-relative <%= @lesson.nil? ? "lesson-tab" : (@lesson.id == lesson.id ? "div-blue" : "lesson-tab") %> div-relative flexbox">
-              <%= link_to "", course_lesson_path(@course.id, lesson.id), class: "card-link" %>
+              <%= link_to "", course_lesson_path(@course.id, lesson.id), class: "lesson-link" %>
               <div class="lesson-text flex-item-image">
                 <h6><i class="fa fa-md <%= fontawesome_icon(lesson) %> <%= lesson.sessions.where(:user_id => current_user.id).exists? ? (fontawesome_color(lesson)) : "text-darkgray" %>" aria-hidden="true"></i></h6>
               </div>
@@ -125,15 +136,13 @@
         <div class="background-white child-absolute text-center">
           <p> </p>
         </div>
-
-
       </div>
-
-
-
 
     </div>
   </div>
 
-
+<!-- AI ChatBot -->
   <script src="https://api.motion.ai/sdk/webchat.js"></script>
+
+
+
