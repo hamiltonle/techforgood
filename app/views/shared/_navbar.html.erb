@@ -2,7 +2,7 @@
   <div class="container">
 
     </div>
-    <div class="navbar-techforgood">
+    <div id="navbar" class="navbar-techforgood">
       <!-- Logo -->
       <%= link_to root_path do %>
         <i class="fa fa-graduation-cap navbar-techforgood-brand" aria-hidden="true"></i>
@@ -19,8 +19,9 @@
       <!-- Text links -->
       <%= link_to "Courses", courses_path(:anchor => "Courses"), class: "navbar-techforgood-item navbar-techforgood-link" %>
       <%= link_to "How does it work?", courses_path(:anchor => "How does it work?"), class: "navbar-techforgood-item navbar-techforgood-link" %>
+      <%= link_to "Tuition", courses_path(:anchor => "Pricing"), class: "navbar-techforgood-item navbar-techforgood-link" %>
       <%= link_to "FAQ", courses_path(:anchor => "FAQ"), class: "navbar-techforgood-item navbar-techforgood-link" %>
-      <%= link_to "Pricing", courses_path(:anchor => "Pricing"), class: "navbar-techforgood-item navbar-techforgood-link" %>
+
 
         <!-- Different navigation if login or not -->
         <% if user_signed_in? %>
@@ -28,7 +29,7 @@
           <!-- Profile picture and dropdown -->
           <div class="navbar-techforgood-item">
             <div class="dropdown">
-              <%= image_tag "http://placehold.it/30x30", class: "avatar-large dropdown-toggle", id: "navbar-techforgood-menu", "data-toggle" => "dropdown" %>
+              <%= image_tag "avatar_placeholder.png", class: "avatar-large dropdown-toggle", id: "navbar-techforgood-menu", "data-toggle" => "dropdown" %>
               <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
                 <li>
                   <%= link_to dashboard_users_path do %>

@@ -18,6 +18,10 @@
   width: 100%;
 }
 
+.nav-up {
+  top: -40px; // same as header height. use variables in LESS/SASS
+}
+
 /* Navbar logo */
 .navbar-techforgood-brand {
   font-size: 30px;
@@ -74,6 +78,7 @@
 .navbar-techforgood-dropdown-menu {
   margin-top: 15px;
   border-color: white;
+
 }
 .navbar-techforgood-dropdown-menu li > a {
   transition: color 0.3s ease;
