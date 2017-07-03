@@ -26,6 +26,14 @@
 
 }
 
+.course_container {
+  overflow-x: scroll;
+}
+
+.quarter_padding_left {
+  padding-left: 25%;
+}
+
 .course_intro {
   background-color: #ECECEC;
   display: flex;
@@ -99,6 +107,7 @@
   border: solid 1px #666;
   justify-content: space-around;
   padding: 10px;
+  border-radius: 2px;
 }
 
 .rating {

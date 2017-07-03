@@ -182,22 +182,14 @@
     .sidenav a {font-size: 18px;}
 }
 
-
 .fixed-sidemenu {
   background-color: white;
   position: fixed;
   top: 75px;
-
   left: 0;
 }
 
-
-
-
-
 #sidebar {
-
-
   // justify-content: space-between;
   // align-items: center;
   width: 280px;
@@ -215,10 +207,10 @@
 
   // justify-content: space-between;
   // align-items: center;
-  width: 200px;
-  background-color: #f0f0f0;
+  width: 160px;
+  background-color: rgb(140,140,140);
   position: fixed;
-  top: 70px;
+  top: 17%;
   // overflow-x: hidden;
   overflow-y: hidden;
   height: auto;

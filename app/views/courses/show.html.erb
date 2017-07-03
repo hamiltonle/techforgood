@@ -2,15 +2,20 @@
 
   <!-- Course Information -->
   <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('ironboy.jpg') %>);">
-    <div class="banner-content">
+    <div class="banner-content quarter_padding_left">
       <h3><%= @course.title %></h3>
       <p><%=  @course.tagline %></p>
       <%= link_to 'Sign up', new_user_registration_path, class: "btn-warning btn-lg" unless user_signed_in? %>
     </div>
   </div>
 
+  <div class="hidden-xs">
+    <%= render :partial => 'courses/sidebar'%>
+  </div>
+
     <!-- course_show_page.scss -->
-    <div class="row background_gray slightly_padded">
+    <div class="push_right">
+    <div class="row background_gray slightly_padded quarter_padding_left">
       <div class="course_intro width-720">
         <div class="col-sm-8">
           <h4 class="text-left"><i class="fa fa-book" aria-hidden="true"></i> Course Overview</h4>
@@ -19,7 +24,7 @@
       </div>
     </div>
 
-    <div class="row background_white slightly_padded">
+    <div class="row background_white slightly_padded quarter_padding_left">
       <div class="course_outcomes width-720">
         <div class="col-sm-4">
           <h6 class="text-center"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Learn about an issue:</h6>
@@ -60,7 +65,7 @@
       </div>
     </div>
 
-    <div class="row background_gray">
+    <div class="row background_gray quarter_padding_left">
       <div class="course_org width-720 text-center">
         <div class="col-sm-8">
           <h4><i class="fa fa-comments-o" aria-hidden="true"></i> <bold>Brought to you by:</bold> <%= @course.organization.name %></h4>
@@ -70,7 +75,7 @@
       </div>
     </div>
 
-      <div class="row background_white">
+      <div class="row background_white quarter_padding_left">
         <div class="course_reviews width-720">
           <div class="col-sm-8">
             <h4 class="text-left"><i class="fa fa-comments-o" aria-hidden="true"></i> Course Reviews</h4>
@@ -78,11 +83,26 @@
               <%= image_tag("boy.jpg", class: "img-circle", height: '64', width: '64') %>
               <h6>I learned so much during this course!</h6>
               <div class="rating">
-<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-</div>
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
+            </div>
+            <div class="course_review">
+              <%= image_tag("boy.jpg", class: "img-circle", height: '64', width: '64') %>
+              <h6>I learned so much during this course!</h6>
+              <div class="rating">
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
+            </div>
+            <div class="course_review">
+              <%= image_tag("boy.jpg", class: "img-circle", height: '64', width: '64') %>
+              <h6>I learned so much during this course!</h6>
+              <div class="rating">
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
             </div>
           </div>
         </div>
       </div>
+    </div>
   </div>
+</div>
 
