@@ -10,6 +10,11 @@
   padding-bottom: 5em;
 }
 
+.slightly_padded {
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
 // Backgrounds
 .bg-black {
   background: #4a4a4a;
@@ -32,9 +37,6 @@
 .div-blue {
   background: $blue1 !important;
 }
-
-
-
 
 // TEXT
 .text-white {

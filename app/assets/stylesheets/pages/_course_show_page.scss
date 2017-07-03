@@ -23,6 +23,7 @@
   p {
     font-size: 12px;
   }
+
 }
 
 .course_intro {
@@ -30,7 +31,6 @@
   display: flex;
   align-content: center;
   justify-content: space-around;
-  padding: 20px;
   p {
     font-size: 14px;
   }
@@ -48,15 +48,22 @@
   }
 }
 
+.background_gray {
+  background-color: #ECECEC;
+}
+
+.background_white {
+  background-color: white;
+}
+
 .course_outcomes {
-  margin: auto 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   background-color: white;
   color: #555;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 15%;
-  padding-right: 15%;
   flex-wrap: wrap;
   p {
     font-size: 12px;
@@ -68,23 +75,43 @@
 }
 
 .course_reviews {
-  background-color: #ECECEC;
   color: #555;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-left: 15%;
-  padding-right: 15%;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
 .course_org {
-  background-color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-left: 15%;
-  padding-right: 15%;
+  justify-content: space-around;
+}
 
+.width-720 {
+  max-width: 720px;
+  margin: 0 auto;
+}
 
+.course_review {
+  display: flex;
+  align-items: flex-start;
+  border: solid 1px #666;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
 }
