@@ -1,134 +1,78 @@
-<div class="container">
-
-  <div class="hidden-xs">
-  <%= render :partial => 'courses/sidebar' %>
-  </div>
+<div class="course_container">
 
   <!-- Course Information -->
-  <div class="container">
-    <div id="course-content">
-      <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('ironboy.jpg') %>);">
-      <div class="banner-content">
-        <h3><%= @course.title %></h3>
-        <p><%=  @course.tagline %></p>
-        <%= link_to 'Sign up', new_user_registration_path, class: "btn-warning btn-lg" unless user_signed_in? %>
-      </div>
-      </div>
-
-
-      <div class="row">
-        <div class="course_issue">
-            <div class="col-md-1">
-            <a name = "issue"></a>
-              <div>
-                <%= image_tag ("002-man-thinking.png"), class:"img-rounded", alt:"Problem", width:"128", height:"128" %>
-              </div>
-            </div>
-            <div class="col-md-8">
-            <a name = "issue"></a>
-                <div>
-                  <h3 class="text-left"><strong>The Issue </strong></h3>
-                  <p><%= @course.issue %></p>
-                </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="course_technology">
-        <div class="col-md-1">
-            <a name = "issue"></a>
-              <div>
-                <%= image_tag ("001-light-bulb-idea.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
-              </div>
-          </div>
-            <div class="col-md-8">
-            <a name = "technology"></a>
-                <div>
-                  <h3 class="text-left"><strong>The Technology </strong></h3>
-                  <p><%= @course.tech_solution %></p>
-                </div>
-          </div>
-        </div>
-      </div>
-
-    <!-- Course Description -->
-      <div class="row">
-        <a name = "description"></a>
-        <div class="course_description">
-          <div class="col-md-1">
-            <a name = "issue"></a>
-              <div>
-                <%= image_tag ("002-seo-training.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
-              </div>
-          </div>
-            <div class="col-md-8">
-                <div>
-                  <h3 class="text-left"><strong>The Course </strong></h3>
-                  <p><%= @course.description %></p>
-                </div>
-          </div>
-        </div>
-
-    <!-- Lesson Information -->
-      <div class="row">
-        <a name = "description"></a>
-        <div class="course_syllabus" >
-          <div class="col-md-1">
-            <a name = "issue"></a>
-            <div>
-              <%= image_tag ("001-studying.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <h3 class="text-left"><strong>What You'll Learn</strong></h3>
-              <ol class="text-left">
-                <% @course.lessons.each do |lesson| %>
-                  <li><%= lesson.title %></li>
-                <% end %>
-              </ol>
-            </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <a name = "organization"></a>
-        <div class="course_organization">
-          <div class="col-md-1">
-            <a name = "issue"></a>
-            <div>
-              <%= image_tag ("003-group-of-people-in-a-formation.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <h3 class="text-left"><strong>Course by: <%= @course.organization.name %></strong></h3>
-              <p><%= @course.organization.description %></p>
-            </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <a name = "organization"></a>
-        <div class="course_reviews_section">
-          <h3 class="text-center"><strong>Reviews:</strong>
-          <div class="col-md-6">
-            <%= image_tag ("WechatIMG1.jpg"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
-            <div>
-              <p>This course was an amazing experience!</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <%= image_tag ("WechatIMG1.jpg"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
-            <div>
-              <p>This course was an amazing experience!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
+  <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('ironboy.jpg') %>);">
+    <div class="banner-content">
+      <h3><%= @course.title %></h3>
+      <p><%=  @course.tagline %></p>
+      <%= link_to 'Sign up', new_user_registration_path, class: "btn-warning btn-lg" unless user_signed_in? %>
     </div>
   </div>
-</div>
+
+    <!-- course_show_page.scss -->
+    <div class="row">
+      <div class="course_intro">
+        <div class="col-sm-6 offset-sm-3">
+          <h4 class="text-left"><i class="fa fa-book" aria-hidden="true"></i> Course Overview</h4>
+            <p><%= @course.description %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="course_outcomes">
+
+        <div class="col-sm-4">
+          <h6 class="text-center"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Learn about an issue:</h6>
+          <div class="course_show_card">
+            <p><%= @course.issue %></p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h6 class="text-center"><i class="fa fa-rocket" aria-hidden="true"></i> Learn a new technology:</h6>
+          <div class="course_show_card">
+            <p><%= @course.tech_solution %></p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h6 class="text-center"><i class="fa fa-heartbeat" aria-hidden="true"></i> Help someone in need:</h6>
+          <div class="course_show_card">
+            <p>By the end of the course, you'll have built a real 3D printed prosthetic hand for a child in need.</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h6 class="text-center"><i class="fa fa-users" aria-hidden="true"></i> Learn in a social setting:</h6>
+          <div class="course_show_card">
+            <p>You can study alongside your friends </p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h6 class="text-center"><i class="fa fa-plane" aria-hidden="true"></i> Broaden your horizons:</h6>
+          <div class="course_show_card">
+            <p>Get firsthand experience in using technology to solve global problems</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h6 class="text-center"><i class="fa fa-certificate" aria-hidden="true"></i> Earn a certificate:</h6>
+          <div class="course_show_card">
+            <p>Upon completion of the course, each student will recieve a certificate.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="course_org">
+      <% @course.lessons.each %>
+
+    </div>
+
+      <div class="row">
+        <div class="course_reviews">
+          <div class="col-sm-6 offset-sm-3">
+            <h4 class="text-left"><i class="fa fa-comments-o" aria-hidden="true"></i> Course Reviews</h4>
+            <p><%= @course.description %></p>
+          </div>
+        </div>
+      </div>
+  </div>
+

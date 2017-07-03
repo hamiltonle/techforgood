@@ -25,66 +25,66 @@
   }
 }
 
-.course_technology {
-  background-color: #DDDDDD;
+.course_intro {
+  background-color: #ECECEC;
   display: flex;
-  align-items: center;
+  align-content: center;
   justify-content: space-around;
-  border-style: 1px solid grey;
   padding: 20px;
+  p {
+    font-size: 14px;
+  }
 }
 
-.course_issue {
+.course_show_card {
+  margin: 10px;
+  background-color: $blue6;
+  padding: 10px;
+  border-radius: 10px;
+  color: rgb(240,240,240);
+  max-width: 50em;
+  p {
+    font-size: 14px;
+  }
+}
+
+.course_outcomes {
+  margin: auto 20px;
+  background-color: white;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15%;
+  padding-right: 15%;
+  flex-wrap: wrap;
+  p {
+    font-size: 12px;
+  }
+  h6 {
+    color: #555;
+    font-weight: bold;
+  }
+}
+
+.course_reviews {
+  background-color: #ECECEC;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15%;
+  padding-right: 15%;
+  flex-wrap: wrap;
+}
+
+.course_org {
   background-color: white;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  border-style: 1px solid grey;
-  padding: 20px;
-}
+  justify-content: space-between;
+  padding-left: 15%;
+  padding-right: 15%;
 
-.course_description {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-style: 1px solid grey;
-  padding: 20px;
-}
 
-.course_syllabus {
-  background-color: #DDDDDDDDDDDD;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-style: 1px solid grey;
-  padding: 20px;
-  color:white;
-}
-
-.course_organization {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-style: 1px solid grey;
-  padding: 20px;
-}
-
-.who_you_help_section {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-style: 1px solid grey;
-  padding: 20px;
-}
-
-.course_reviews_section {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-style: 1px solid grey;
-  padding: 20px;
 }
