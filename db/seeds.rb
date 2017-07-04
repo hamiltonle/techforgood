@@ -291,7 +291,7 @@ You will obtain a rich understanding of what 3D printing is, how 3D printers wor
 course.organization = Organization.find(3)
 
 urls = [
-  "http://img.clubic.com/07791435-photo-playstation.jpg"
+  "https://www.rit.edu/news/lib/filelib/201402/talonhand1.jpg"
 ]
 course.photo_urls = urls
 
@@ -315,7 +315,7 @@ course.organization = Organization.find(2)
 
 
 urls = [
-  "https://4.bp.blogspot.com/-tpf8RT5Wz78/VxXexmyGwNI/AAAAAAAAFE4/Mm0oj2D2sfwU72xvQD8NibFEG-jtgj52QCLcB/s1600/ExampleImage1.png"
+  "https://hothardware.com/ContentImages/NewsItem/35672/content/Microsoft_Emotion_Detection_2.jpg"
 ]
 course.photo_urls = urls
 
