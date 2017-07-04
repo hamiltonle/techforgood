@@ -74,7 +74,7 @@
     </div>
 
     <div class="row background_gray slightly_padded">
-    <h4 class= "text-center"><%= @course.title.upcase %> SYLLABUS</h4>
+    <h4 class= "text-center"><%= @course.title %> Syllabus</h4>
       <div class="course_syllabus width-720">
         <div class="text-left">
           <% @course.lessons.each do |lesson| %>
@@ -88,7 +88,7 @@
     <div class="row background_white slightly_padded">
       <div class="course_org width-720 text-center">
         <div class="col-sm-8">
-          <h4>Brought to you by: <br></h4>
+          <p>Brought to you by: <br></p>
           <%= image_tag("JohnsonandJohnson.jpg", width: '256') %>
           <p><%= @course.organization.description %></p>
         </div>
