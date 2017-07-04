@@ -7,10 +7,6 @@
 #course_content {
   padding: 0px;
   margin: 0px;
-  // margin-left: 200px;
-  // width: 100%;
-  // margin: 0 auto;
-  // border-radius: 2px;
   background: rgba(175, 175, 175, 0.1);
   top: 70px;
   bottom: 0;
@@ -18,7 +14,6 @@
   height: auto;
   position: relative;
   z-index: 1;
-
 
 // lesson margins
   margin: 0 auto;
@@ -75,15 +70,7 @@
   padding: 20px;
 }
 
-@media(max-width:768px) {
-  .quarter_padding_left {
-    padding-left: 5%;
-    padding-right: 5%
-  }
-}
-.quarter_padding_left {
-  padding-left: 25%;
-}
+
 
 .hand_heart_background {
   color: white;
@@ -131,7 +118,6 @@
     font-weight: bold;
   }
 
-  align-items: center;
   justify-content: space-around;
   border-style: 1px solid grey;
   padding: 20px;

@@ -24,6 +24,7 @@
 .no-y-padding {
   padding-top: 0px;
   padding-bottom: 0px;
+}
 // Backgrounds
 .bg-black {
   background: #4a4a4a;
@@ -238,8 +239,6 @@ a:focus {
     // rgb(21, 158, 131) 26px 26px,
     // rgb(21, 159, 132) 27px 27px,
     // rgb(22, 160, 133) 28px 28px;
-
-
 }
 
 .fredoka {
@@ -313,19 +312,18 @@ font-size: 14px;
 
 .menu {
     text-align: center;
-
     padding-top: 10px;
     padding-bottom: 10px;
     position: relative
 }
+
 .menu_label {
 
     margin-top: 21px;
     z-index: 2;
     position: absolute;
-
-
 }
+
 .photoStyle {
     z-index: 1;
     border: 0px;
