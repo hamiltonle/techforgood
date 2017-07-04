@@ -25,6 +25,18 @@
   padding-top: 0px;
   padding-bottom: 0px;
 }
+
+
+.padded-bottom {
+  padding-top: 0;
+  padding-bottom: 5em;
+}
+
+.padding-top {
+  padding-top: 5em;
+  padding-bottom: 0;
+}
+
 // Backgrounds
 .bg-black {
   background: #4a4a4a;
@@ -66,6 +78,15 @@ a:focus {
 .text-white {
   color: white;
 }
+.text-blue6 {
+  color: $blue6;
+}
+.text-blue7 {
+  color: $blue7;
+}
+.text-orange {
+  color: $orange;
+}
 
 .text-warning {
   color: $red;
@@ -88,6 +109,18 @@ a:focus {
 }
 .text-lg {
   font-size: 80px !important;
+}
+
+.text-80px {
+  font-size: 80px !important;
+}
+
+.text-60px {
+  font-size: 60px !important;
+}
+
+.text-45px {
+  font-size: 45px !important;
 }
 
 .text-smooth {
@@ -252,12 +285,7 @@ a:focus {
     font-family: "Fredoka One", Helvetica, sans-serif;
 }
 
-.text-80px {
-  font-size: 80px !important;
-}
-.text-60px {
-  font-size: 60px !important;
-}
+
 
 // FONT AWESOME
 .fa-xs {
@@ -343,6 +371,21 @@ font-size: 14px;
 }
 .img-full-width {
   width: 100%;
+}
+
+.img-radius-gray {
+  border-radius: 10px;
+  box-shadow: 5px 9px 6px slategray;
+}
+
+.img-radius-orange {
+  border-radius: 10px;
+  box-shadow: 3px 4px 16px $orange;
+}
+
+.img-radius-blue {
+  border-radius: 10px;
+  box-shadow: 3px 4px 16px $blue7;
 }
 
 .img-height-30 {

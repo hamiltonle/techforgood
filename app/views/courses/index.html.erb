@@ -29,7 +29,11 @@
           <!-- Profile picture and dropdown -->
           <div class="navbar-techforgood-item">
             <div class="dropdown">
-              <%= image_tag "avatar_placeholder.png", class: "avatar-large dropdown-toggle", id: "navbar-techforgood-menu", "data-toggle" => "dropdown" %>
+              <% if current_user.photo? %>
+                <%= cl_image_tag current_user.photo.path, height: 50, width: 50, class: "img-circle", crop: :thumb, gravity: :face, "data-toggle" => "dropdown" %>
+              <% else %>
+                <%= image_tag "avatar_placeholder.png", class: "avatar-large dropdown-toggle", id: "navbar-techforgood-menu", "data-toggle" => "dropdown" %>
+              <% end %>
               <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
                 <li>
                   <%= link_to dashboard_users_path do %>
@@ -137,15 +141,6 @@
 
 
 
-<!-- Banner -->
-<!-- <div class=" padded" style="background-image: linear-gradient(180deg, rgba(52, 152, 219,1) 0%, rgba(255,255,255,1) 80%)">
-  <div class="container text-left padded text-white">
-  <div class="shape fredoka text-double ">TechForGood<br> </div>
-  <h1 class="fredoka">Learn &amp; Lend a Hand</h1>
-</div>
-</div> -->
-
-
 
 
 <!-- Characteristics -->
@@ -172,19 +167,92 @@
 
 
 
+<!-- Banner -->
+<div class="banner-why parallax padded" style="background-image: linear-gradient(135deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.8) 40%), url(<%= image_path('volunteer.jpg') %>);">
+  <div class="col-xs-0">
+  </div>
+  <div class="col-xs-4" data-aos="fade-up" data-aos-delay="0">
+    <h2 class="fredoka padding-bottom text-45px text-white">Online courses<br> for anyone wanting to make<br> a difference</h2>
+  </div>
+  <div class="col-xs-5" data-aos="fade-left">
+    <%= image_tag "volunteer.jpg", class: "img-radius-gray img-full-width" %>
+  </div>
+</div>
+
+<div class="banner-why parallax padded" style="background-image: linear-gradient(135deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.8) 40%), url(<%= image_path('volunteer.jpg') %>);">
+  <div class="col-xs-5" data-aos="fade-down">
+    <%= image_tag "why2.png", class: "img-radius-gray img-full-width" %>
+  </div>
+  <div class="col-xs-0">
+  </div>
+  <div class="col-xs-4" data-aos="fade-up" data-aos-delay="0">
+    <h1 class="fredoka padding-bottom text-45px text-blue7">learn about new technology, while contributing to a social cause</h1>
+  </div>
+
+</div>
+
+
+
+<div class="banner-why parallax padded" style="background-image: linear-gradient(-45deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.8) 0%), url(<%= image_path('volunteer.jpg') %>);">
+  <div class="col-xs-0">
+  </div>
+  <div class="col-xs-4" data-aos="fade-up" data-aos-delay="0">
+    <h1 class="fredoka padding-bottom text-45px text-blue7">Get support from tutors and like-minded classmates</h1>
+  </div>
+  <div class="col-xs-5" data-aos="fade-left">
+    <%= image_tag "why3.jpg", class: "img-radius-gray img-full-width" %>
+  </div>
+</div>
+
+<div class="banner-why parallax padded" style="background-image: linear-gradient(-45deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.8) 40%), url(<%= image_path('volunteer.jpg') %>);">
+
+    <div class="col-xs-5" data-aos="fade-down">
+    <%= image_tag "handsnotext.jpg", class: "img-radius-gray img-full-width" %>
+  </div>
+  <div class="col-xs-0">
+  </div>
+  <div class="col-xs-4" data-aos="fade-up" data-aos-delay="0">
+    <h1 class="fredoka padding-bottom text-45px text-white">learn about new technology, while contributing to a social cause</h1>
+  </div>
+
+</div>
+
+
+
+
+
+<!-- Learning Process -->
+<!-- <div class="wrapper-learning-process parallax" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%#= cl_image_path('zi-jian-lim-227847_j6rckn', height: 1082, width: 1624, crop: :lfill) %>);" id="how_does_it_work">
+  <div class="container padded">
+    <div class="row">
+    <!-- <h3 align="center">How does it work?</h3> --> -->
+
+      <%# @steps.each do |step, icon| %>
+<!--       <div class="col-xs-12 col-md-4">
+        <div class=" learning-process-card">
+          <div class="learning-process-description text-center">
+            <h2><#%= step %></h2>
+            <h1><i class="fa fa-<#%= icon %>" aria-hidden="true"></i></h1>
+          </div>
+        </div>
+      </div> -->
+      <%# end %>
+
+<!--     </div>
+  </div>
+</div> -->
+
 
 <!-- Courses -->
 <div class="row no-y-padding text-smooth">
   <div class="text-center " id="courses">
     <h3><span class="row">Courses developed with:
-      <%= image_tag "Microsoft-Logo.png", class: "img-height-30"%>
-      <%= image_tag "JohnsonandJohnsonLogo.svg.png", class: "img-height-30"%>
-      <%= image_tag "Stratasys_Logo.png", class: "img-height-30"%>
+      <%= image_tag "microsoft_sd.png", class: "img-height-30"%>
+      <%= image_tag "JohnsonandJohnson.jpg", class: "img-height-30"%>
+      <%= image_tag "stratasys_sd.png", class: "img-height-30"%>
     </span></h3>
   </div>
 </div>
-
-
 
 <div class="container " id="">
   <div class="row">
@@ -221,27 +289,6 @@
 
 
 
-
-<!-- Learning Process -->
-<div class="wrapper-learning-process parallax" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path('zi-jian-lim-227847_j6rckn', height: 1082, width: 1624, crop: :lfill) %>);" id="how_does_it_work">
-  <div class="container padded">
-    <div class="row">
-    <!-- <h3 align="center">How does it work?</h3> -->
-
-      <% @steps.each do |step, icon| %>
-      <div class="col-xs-12 col-md-4">
-        <div class=" learning-process-card">
-          <div class="learning-process-description text-center">
-            <h2><%= step %></h2>
-            <h1><i class="fa fa-<%= icon %>" aria-hidden="true"></i></h1>
-          </div>
-        </div>
-      </div>
-      <% end %>
-
-    </div>
-  </div>
-</div>
 
 <!-- FAQ -->
 <div class="container faq-section padded" id="faq">

@@ -32,7 +32,7 @@
           <div class="navbar-techforgood-item">
             <div class="dropdown">
               <% if current_user.photo? %>
-                <%= cl_image_tag current_user.photo.path, height: 50, width: 50, class: "img-circle", crop: :thumb, gravity: :face %>
+                <%= cl_image_tag current_user.photo.path, height: 50, width: 50, class: "img-circle", crop: :thumb, gravity: :face, "data-toggle" => "dropdown" %>
               <% else %>
                 <%= image_tag "avatar_placeholder.png", class: "avatar-large dropdown-toggle", id: "navbar-techforgood-menu", "data-toggle" => "dropdown" %>
               <% end %>
