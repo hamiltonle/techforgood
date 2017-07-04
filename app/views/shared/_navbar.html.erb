@@ -14,13 +14,14 @@
       <%# end %>
 
       <!-- Right Navigation -->
-      <div class="navbar-techforgood-right hidden-xs hidden-sm">
+      <div id="nav" class="navbar-techforgood-right hidden-xs hidden-sm">
 
       <!-- Text links -->
-      <%= link_to "Courses", courses_path(:anchor => "Courses"), class: "navbar-techforgood-item navbar-techforgood-link" %>
-      <%= link_to "How does it work?", courses_path(:anchor => "How does it work?"), class: "navbar-techforgood-item navbar-techforgood-link" %>
-      <%= link_to "Tuition", courses_path(:anchor => "Pricing"), class: "navbar-techforgood-item navbar-techforgood-link" %>
-      <%= link_to "FAQ", courses_path(:anchor => "FAQ"), class: "navbar-techforgood-item navbar-techforgood-link" %>
+      <%= link_to "Courses", courses_path(:anchor => "courses"), class: "navbar-techforgood-item page-scroll navbar-techforgood-link" %>
+      <%= link_to "How does it work?", courses_path(:anchor => "how_does_it_work"), class: "navbar-techforgood-item page-scroll navbar-techforgood-link" %>
+      <%= link_to "Tuition", courses_path(:anchor => "tuition"), class: "navbar-techforgood-item page-scroll navbar-techforgood-link" %>
+      <%= link_to "FAQ", courses_path(:anchor => "faq"), class: "navbar-techforgood-item navbar-techforgood-link" %>
+
 
 
         <!-- Different navigation if login or not -->

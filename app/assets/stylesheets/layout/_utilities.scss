@@ -10,6 +10,11 @@
   padding-bottom: 5em;
 }
 
+.no-y-padding {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 // Backgrounds
 .bg-black {
   background: #4a4a4a;
@@ -68,6 +73,11 @@
 .text-lg {
   font-size: 80px !important;
 }
+
+.text-smooth {
+  -webkit-font-smoothing: antialiased;
+}
+
 
 .text-type-animation {
   // steps splits animation to that many segments.
@@ -320,6 +330,10 @@ font-size: 14px;
 }
 .img-full-width {
   width: 100%;
+}
+
+.img-height-30 {
+  height: 30px;
 }
 
 #desktop-image {
