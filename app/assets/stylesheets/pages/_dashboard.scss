@@ -8,8 +8,8 @@
 }
 
 .dashboard-course-card {
-  height: 300px;
-  // position: relative;
+  height: 250px;
+  position: relative;
   border-radius: 5px;
   box-shadow: 2px 2px 5px lightgray;
   margin-bottom: 30px;
@@ -25,11 +25,11 @@
   font-size: 22px;
 }
 
-// .continue-course-button {
-//   position: absolute;
-//   right: 50px;
-//   top: 70px;
-// }
+.continue-course-button {
+  position: absolute;
+  right: 50px;
+  top: 70px;
+}
 
 // .progress {
 //   position: absolute;
@@ -37,8 +37,3 @@
 //   top: 10px;
 //   max-width: 100%;
 // }
-
-.dashboard-course-image {
-  background: url('hand.jpg') no-repeat;
-  background-size: cover;
-}
