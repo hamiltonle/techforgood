@@ -45,6 +45,7 @@ class UsersController < ApplicationController
     @user = current_user
     @courses = @user.courses
     @completed_enrollments = @user.enrollments.where(:status => "completed")
+    @current_enrollments = @user.enrollments.where(:status => nil)
   end
 
   private
