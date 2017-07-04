@@ -7,7 +7,7 @@
   // border-radius: 2px;
   background: rgba(175, 175, 175, 0.1);
 
-  top: 70px;
+  top: 50px;
   bottom: 0;
   left: 200px;
   height: auto;
@@ -15,49 +15,116 @@
   overflow-x: hidden;
   position: absolute;
   width: calc(100%-200px);
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
 }
 
-.course_technology {
-  background-color: #DDDDDD;
+.course_container {
+  overflow-x: scroll;
+}
+
+
+
+.course_intro {
   display: flex;
-  align-items: center;
+  align-content: center;
   justify-content: space-around;
-  border-style: 1px solid grey;
-  padding: 20px;
+  p {
+    font-size: 14px;
+  }
 }
 
-.course_issue {
+@media(max-width:768px) {
+  .quarter_padding_left {
+    padding-left: 5%;
+    padding-right: 5%
+  }
+}
+.quarter_padding_left {
+  padding-left: 25%;
+}
+
+.course_show_card {
+  margin: 10px;
+  background-color: $blue6;
+  padding: 10px;
+  border-radius: 10px;
+  color: rgb(240,240,240);
+  max-width: 50em;
+  p {
+    font-size: 14px;
+  }
+}
+
+.background_gray {
+  background-color: #ECECEC;
+}
+
+.background_white {
   background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-style: 1px solid grey;
-  padding: 20px;
 }
 
-.course_description {
-  background-color: white;
+.course_outcomes {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #555;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  border-style: 1px solid grey;
-  padding: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  p {
+    font-size: 12px;
+  }
+  h6 {
+    color: #555;
+    font-weight: bold;
+  }
 }
 
-.course_syllabus {
-  background-color: #DDDDDD;
+.course_project {
+  color: #555;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-style: 1px solid grey;
-  padding: 20px;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
-.course_organization {
-  background-color: white;
+.project_review {
+  background-color: #F2721B;
+  color: #fff;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.course_org {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-style: 1px solid grey;
-  padding: 20px;
+}
+
+
+.width-720 {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
 }
