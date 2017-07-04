@@ -208,15 +208,16 @@
   // justify-content: space-between;
   // align-items: center;
   width: 160px;
-  background-color: rgb(140,140,140);
+  background-color: #A2A2A2;
   position: fixed;
   top: 17%;
   // overflow-x: hidden;
   overflow-y: hidden;
   height: auto;
-  bottom: 0;
+  bottom: 5%;
   left: 10%;
   z-index: 1;
+  border-radius: 2px;
 }
 
 

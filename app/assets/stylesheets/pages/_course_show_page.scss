@@ -30,18 +30,25 @@
   overflow-x: scroll;
 }
 
-.quarter_padding_left {
-  padding-left: 25%;
-}
+
 
 .course_intro {
-  background-color: #ECECEC;
   display: flex;
   align-content: center;
   justify-content: space-around;
   p {
     font-size: 14px;
   }
+}
+
+@media(max-width:768px) {
+  .quarter_padding_left {
+    padding-left: 5%;
+    padding-right: 5%
+  }
+}
+.quarter_padding_left {
+  padding-left: 25%;
 }
 
 .course_show_card {
@@ -67,7 +74,6 @@
 .course_outcomes {
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: white;
   color: #555;
   display: flex;
   align-items: center;
@@ -82,12 +88,18 @@
   }
 }
 
-.course_reviews {
+.course_project {
   color: #555;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.project_review {
+  background-color: #F2721B;
+  color: #fff;
+  border-radius: 5px;
+  padding: 8px;
 }
 
 .course_org {
@@ -96,18 +108,10 @@
   justify-content: space-around;
 }
 
+
 .width-720 {
   max-width: 720px;
   margin: 0 auto;
-}
-
-.course_review {
-  display: flex;
-  align-items: flex-start;
-  border: solid 1px #666;
-  justify-content: space-around;
-  padding: 10px;
-  border-radius: 2px;
 }
 
 .rating {
