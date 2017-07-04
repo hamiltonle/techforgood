@@ -28,14 +28,16 @@ class EnrollmentsController < ApplicationController
     rescue => error
       redirect_to course_lessons_path
     end
-
-
   end
 
   # deletes an enrollment if the student decides to cancel the class
   def destroy
     @enrollment = Enrollment.find(params[:id])
     @enrollment.delete
+  end
+
+  def status
+
   end
 
   private

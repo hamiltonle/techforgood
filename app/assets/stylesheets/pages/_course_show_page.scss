@@ -1,10 +1,17 @@
 
+
 .course_container {
   overflow-x: scroll;
 }
 
 #course_content {
-   background: white;
+  padding: 0px;
+  margin: 0px;
+  // margin-left: 200px;
+  // width: 100%;
+  // margin: 0 auto;
+  // border-radius: 2px;
+  background: rgba(175, 175, 175, 0.1);
   top: 70px;
   bottom: 0;
   left: 0;
@@ -53,10 +60,19 @@
 .course_intro {
   display: block;
   align-content: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  width: calc(100%-200px);
+}
+
+.course_technology {
+  background-color: #DDDDDD;
+  display: flex;
+  align-items: center;
   justify-content: space-around;
-  p {
-    font-size: 14px;
-  }
+  border-style: 1px solid grey;
+  padding: 20px;
 }
 
 @media(max-width:768px) {
@@ -101,11 +117,9 @@
   background-color: white;
 }
 
-.course_outcomes {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: #555;
+.course_issue {
   display: flex;
+
   align-items: top;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -116,10 +130,16 @@
     color: #555;
     font-weight: bold;
   }
+
+  align-items: center;
+  justify-content: space-around;
+  border-style: 1px solid grey;
+  padding: 20px;
+
 }
 
-.course_project {
-  color: #555;
+.course_description {
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -137,12 +157,9 @@
   padding: 8px;
   margin: 10px;
   height: 280px;
-}
+  border-style: 1px solid grey;
+  padding: 20px;
 
-.course_org {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
 }
 
 .course_syllabus {
@@ -164,17 +181,11 @@
   margin: 0 auto;
 }
 
-.rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-}
-.rating > span {
-  display: inline-block;
-  position: relative;
-  width: 1.1em;
-}
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
+.course_organization {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-style: 1px solid grey;
+  padding: 20px;
 }

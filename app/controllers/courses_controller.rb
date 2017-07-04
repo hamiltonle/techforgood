@@ -18,6 +18,8 @@ class CoursesController < ApplicationController
       "Get help" => "question",
       "Do exercises" => "pencil"
       }
+
+  @skip_header = true
   end
 
   # Shows all the information for one course

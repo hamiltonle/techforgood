@@ -8,7 +8,13 @@
 
   <!-- Profile picture and dropdown -->
   <div class="dropdown lesson-avatar img-circle">
-    <%= image_tag "avatar_placeholder.png", class: "avatar-large dropdown-toggle ", id: "navbar-techforgood-menu", "data-toggle" => "dropdown" %>
+    <% if current_user.photo? %>
+      <%= cl_image_path current_user.photo, height: 50, width: 50, crop: :thumb, gravity: :face %>
+    <% else %>
+      <%= image_tag "avatar_placeholder.png", class: "avatar-large dropdown-toggle", id: "navbar-techforgood-menu", "data-toggle" => "dropdown" %>
+    <% end %>
+
+
     <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
       <li>
         <%= link_to dashboard_users_path do %>
@@ -93,12 +99,19 @@
                 <%= f.button :submit, 'Done with this Lesson! :)', disabled: "disabled", class: 'btn btn-success text-center' %>
               <% end %>
               </div>
-              <div class="col-xs-6 text-right">
 
-              <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+              <% unless @course.lessons.last.id == @lesson.id %>
 
-              <!-- mobile button -->
-              </div>
+
+                <div class="col-xs-6 text-right">
+
+                <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+
+                <!-- mobile button -->
+                </div>
+
+              <% end %>
+
             </div>
           <% else %>
             <div class="row">
@@ -107,10 +120,16 @@
               <%= f.button :submit, 'Just Finished the Lesson', class: 'btn btn-success text-center' %>
             <% end %>
               </div>
-              <div class="col-xs-6 text-right">
 
-              <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
-              </div>
+              <% unless @course.lessons.last.id == @lesson.id %>
+
+
+                <div class="col-xs-6 text-right">
+
+                <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+                </div>
+
+              <% end %>
             </div>
 
 

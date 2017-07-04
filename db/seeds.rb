@@ -8,12 +8,12 @@
 
 puts "deleting all current data"
 
-# Enrollment.destroy_all
-# Lesson.destroy_all
-# Session.destroy_all
-# User.destroy_all
-# Course.destroy_all
-# Organization.destroy_all
+Enrollment.destroy_all
+Lesson.destroy_all
+Session.destroy_all
+User.destroy_all
+Course.destroy_all
+Organization.destroy_all
 
 puts "creating fake students and courses"
 
@@ -21,39 +21,231 @@ puts "creating fake students and courses"
 # Students Seeds
 puts "creating students"
 
-student1 = User.new(
+student = User.new(
   first_name: 'Amin',
   last_name: 'Malik',
   group: 'Le Wagon',
   email: "amin@gmail.com",
   password: 'techforgood',
-  password_confirmation: 'techforgood'
+  password_confirmation: 'techforgood',
+  admin: true
   )
 puts "saved a student user"
-student1.save!
 
-student2 = User.new(
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+
+student.save!
+
+student = User.new(
   first_name: 'Kiki',
   last_name: 'Judd',
   group: 'All Blacks',
   email: "kiki@gmail.com",
   password: 'techforgood',
-  password_confirmation: 'techforgood'
+  password_confirmation: 'techforgood',
+  admin: true
   )
 puts "saved a student user"
-student2.save!
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+student.save!
 
-student3 = User.new(
+student = User.new(
   first_name: 'Hamilton',
   last_name: 'Le',
   group: 'Johnson & Johnson',
   email: "hamilton@gmail.com",
   password: 'techforgood',
+  password_confirmation: 'techforgood',
+  admin: true
+  )
+puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+student.save!
+
+student = User.new(
+  first_name: 'Roger',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "roger@gmail.com",
+  password: 'techforgood',
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
-student3.save!
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+student.save!
 
+student = User.new(
+  first_name: 'Mike',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "mike@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+student.save!
+
+student = User.new(
+  first_name: 'bob',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "bob@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+student.save!
+
+student = User.new(
+  first_name: 'George',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "george@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+student.save!
+
+student = User.new(
+  first_name: 'Sharon',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "sharon@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+student.save!
+
+student = User.new(
+  first_name: 'Cindy',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "cindy@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+student.save!
+
+student = User.new(
+  first_name: 'Jay',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "jay@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+student.save!
+
+student = User.new(
+  first_name: 'Marketa',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "marketa@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+student.save!
+
+student = User.new(
+  first_name: 'Ettiene',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "ettiene@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+student.save!
+
+student = User.new(
+  first_name: 'Nathan',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "nathan@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+student.save!
+
+student = User.new(
+  first_name: 'Maria',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "maria@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+student.save!
+
+student = User.new(
+  first_name: 'Stephen',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "stephen@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+student.save!
+
+student = User.new(
+  first_name: 'Forrest',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "forrest@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+student.save!
+
+student = User.new(
+  first_name: 'Dounan',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "dounan@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+student.save!
 
 # Organization seeds
 puts "creating organizations"
@@ -97,73 +289,73 @@ You will obtain a rich understanding of what 3D printing is, how 3D printers wor
 
   )
 course.organization = Organization.find(3)
+
+urls = [
+  "http://img.clubic.com/07791435-photo-playstation.jpg"
+]
+course.photo_urls = urls
+
 course.save!
 puts "saved a course"
 
 
+
 course = Course.new(
   title: "Computer Vision",
-  tagline: "Using Microsoft's computer vision technology to find missing children"
+  tagline: "Using Microsoft's computer vision technology to find missing children",
+  issue: "Currently, there are millions of children who've gone missing in China.",
+  tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
+  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).
+
+You will obtain a rich understanding of what 3D printing is, how 3D printers work, and how this new technology is being used by both individuals and firms to revolutionize our world. In addition, you will acquire a set of skills that will enable you to create digital designs that you can transform into physical objects. These skills can be used to help you launch a career in the growing field of 3D printing, be the 3D printing expert in your current firm, or just make the things you need.
+
+"
   )
 course.organization = Organization.find(2)
+
+
+urls = [
+  "https://4.bp.blogspot.com/-tpf8RT5Wz78/VxXexmyGwNI/AAAAAAAAFE4/Mm0oj2D2sfwU72xvQD8NibFEG-jtgj52QCLcB/s1600/ExampleImage1.png"
+]
+course.photo_urls = urls
+
 course.save!
 puts "saved a course"
 
 
 course = Course.new(
   title: "Augmented Reality",
-  tagline: "Augmented Reality for vision-impaired people"
+  tagline: "Augmented Reality for vision-impaired people",
+  issue: "Blindness doesn't allow people to experience and interact with their surroundings to the fullest",
+  tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
+  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).
+
+You will obtain a rich understanding of what 3D printing is, how 3D printers work, and how this new technology is being used by both individuals and firms to revolutionize our world. In addition, you will acquire a set of skills that will enable you to create digital designs that you can transform into physical objects. These skills can be used to help you launch a career in the growing field of 3D printing, be the 3D printing expert in your current firm, or just make the things you need.
+
+"
   )
 course.organization = Organization.find(1)
+
+urls = [
+  "https://www-tc.pbs.org/wgbh/nova/next/wp-content/uploads/2015/06/smart-specs.jpg"
+]
+course.photo_urls = urls
+
+
 course.save!
 puts "saved a course"
 
 
-# Enrollment seeds
-puts "creating enrollments"
 
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(1)
-enrollment.save!
-puts "saved an enrollment"
 
-enrollment = Enrollment.new
-enrollment.course = Course.find(2)
-enrollment.user = User.find(1)
-enrollment.save!
-puts "saved an enrollment"
 
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(2)
-enrollment.save!
-puts "saved an enrollment"
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(3)
-enrollment.user = User.find(2)
-enrollment.save!
-puts "saved an enrollment"
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(2)
-enrollment.user = User.find(3)
-enrollment.save!
-puts "saved an enrollment"
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(3)
-enrollment.user = User.find(3)
-enrollment.save!
-puts "saved an enrollment"
 
 # Lessons seeds
 puts "Creating lessons"
 
 lesson = Lesson.new(
-  title: "Crippling injustice",
-  text: "f you judged the country by its laws alone, China would be a global leader on disability rights. The ‘Laws on the Protection of Persons with Disabilities’, introduced in 1990, offer strong and wide-ranging protection of the civil rights of the disabled, guaranteeing employment, education, welfare, and access. But despite the high concerns of the law, Chinese cities make little concession to disabled people. As the sociologist Yu Jianrong has documented, raised pathways for the blind often lead into dead ends, bollards, trees or open pits, or else spiral decoratively but misleadingly. Wheelchair access is non-existent, especially outside Beijing or Shanghai, and guide dogs are effectively forbidden from most public spaces, despite the authorities’ repeated promises of full access.",
+  title: "The Disability  injustice",
+  text: "If you judged the country by its laws alone, China would be a global leader on disability rights. The ‘Laws on the Protection of Persons with Disabilities’, introduced in 1990, offer strong and wide-ranging protection of the civil rights of the disabled, guaranteeing employment, education, welfare, and access. But despite the high concerns of the law, Chinese cities make little concession to disabled people. As the sociologist Yu Jianrong has documented, raised pathways for the blind often lead into dead ends, bollards, trees or open pits, or else spiral decoratively but misleadingly. Wheelchair access is non-existent, especially outside Beijing or Shanghai, and guide dogs are effectively forbidden from most public spaces, despite the authorities’ repeated promises of full access.",
   lesson_type: "lecture",
   video: "<embed src='http://player.youku.com/player.php/sid/XMTU5OTM0MTIxMg==/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
   minutes: 15,
@@ -212,7 +404,7 @@ The e-NABLE Community is made up of  teachers, students, engineers, scientists, 
   lesson_type: "lecture",
   video: "<embed src='http://player.youku.com/player.php/sid/XNTYzODA4Mzk2/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
   minutes: 15,
-  module_name: "how"
+  module_name: "what"
   )
 lesson.course = Course.find(1)
 lesson.save!
@@ -259,7 +451,7 @@ This ultimately led to a mother of a 5 year old boy contacting them to see about
   lesson_type: "article",
   video: "",
   minutes: 10,
-  module_name: "how"
+  module_name: "what"
   )
 lesson.course = Course.find(1)
 lesson.save!
@@ -276,7 +468,7 @@ This course was listed in the top 50 MOOC's of all time by Class-Central (https:
   lesson_type: "lecture",
   video: "<embed src='http://player.youku.com/player.php/sid/XNjMxMTExMTQ0/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
   minutes: 20,
-  module_name: "what"
+  module_name: "how"
 
   )
 lesson.course = Course.find(1)
@@ -289,7 +481,7 @@ lesson = Lesson.new(
   lesson_type: "article",
   video: "",
   minutes: 10,
-  module_name: "what"
+  module_name: "how"
   )
 lesson.course = Course.find(1)
 lesson.save!
@@ -303,7 +495,7 @@ lesson = Lesson.new(
   lesson_type: "quiz",
   video: "",
   minutes: 30,
-  module_name: "what"
+  module_name: "how"
   )
 lesson.course = Course.find(1)
 lesson.save!
@@ -316,7 +508,7 @@ lesson = Lesson.new(
   lesson_type: "lecture",
   video: "<embed src='http://player.youku.com/player.php/sid/XNTAyOTcwMzgw/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
   minutes: 10,
-  module_name: "what"
+  module_name: "how"
   )
 lesson.course = Course.find(1)
 lesson.save!
@@ -330,7 +522,7 @@ If you enjoy this business course and are interested in an MBA, consider applyin
   lesson_type: "assignment",
   video: "",
   minutes: 30,
-  module_name: "what"
+  module_name: "how"
   )
 lesson.course = Course.find(1)
 lesson.save!
@@ -342,7 +534,7 @@ lesson = Lesson.new(
   lesson_type: "discussion",
   video: "",
   minutes: 15,
-  module_name: "what"
+  module_name: "how"
   )
 lesson.course = Course.find(1)
 lesson.save!
@@ -408,40 +600,40 @@ lesson.save!
 puts "saved a lesson"
 
 
-# # Session seeds
-# puts "Creating sessions"
 
-# session = Session.new
-# session.lesson = Lesson.find(1)
-# session.user = User.find(1)
-# session.status = "completed"
-# session.save!
-# puts "saved a lesson"
 
-# session = Session.new
-# session.lesson = Lesson.find(2)
-# session.user = User.find(1)
-# session.status = "started"
-# session.save!
-# puts "saved a lesson"
+# Session seeds
+puts "Creating sessions"
 
-# session = Session.new
-# session.lesson = Lesson.find(3)
-# session.user = User.find(2)
-# session.status = "completed"
-# session.save!
-# puts "saved a lesson"
 
-# session = Session.new
-# session.lesson = Lesson.find(4)
-# session.user = User.find(2)
-# session.status = "started"
-# session.save!
-# puts "saved a lesson"
+student = 1
 
-# session = Session.new
-# session.lesson = Lesson.find(5)
-# session.user = User.find(3)
-# session.status = "started"
-# session.save!
-# puts "saved a lesson"
+
+14.times do
+
+  # Enrollment seeds
+  puts "creating enrollments"
+
+  enrollment = Enrollment.new
+  enrollment.course = Course.find(1)
+  enrollment.user = User.find(student)
+  enrollment.save!
+  puts " enrollments saved"
+
+  lesson_num = 1
+
+  (1..10).to_a.sample.times do
+
+    session = Session.new
+    session.lesson = Lesson.find(lesson_num)
+    session.user = User.find(student)
+    session.enrollment = enrollment
+    session.status = "completed"
+    session.save!
+    print "saved a lesson for"
+    puts student
+
+    lesson_num += 1
+  end
+  student += 1
+end
