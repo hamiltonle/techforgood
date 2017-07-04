@@ -11,6 +11,7 @@
 
 
     <!-- course_show_page.scss -->
+  <div class="lesson-content">
     <div class="row background_white slightly_padded">
       <div class="course_intro width-720">
         <div class="col-sm-8">
@@ -81,7 +82,7 @@
           <h4><%= @course.title %> Syllabus</h4>
           <ul>
           <% @course.lessons.each do |lesson| %>
-            <li><%= lesson.title %>: Lesson description here</li>
+            <li><%= lesson.description %></li>
           <% end %>
           </ul>
         </div>
@@ -97,5 +98,6 @@
         </div>
       </div>
     </div>
+  </div>
 </div>
 
