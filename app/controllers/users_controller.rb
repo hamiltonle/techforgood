@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   # Devise authentication exceptions for the following pages:
-  # skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   # Devise: whitelist all pages for testing
-  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  # skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -44,8 +44,8 @@ class UsersController < ApplicationController
     # Add instance variables which will be used in the user dashboard
     @user = current_user
     @courses = @user.courses
-    # @current_courses != @courses.completed_course
-    # @completed_courses = @courses.completed_course
+    @completed_enrollments = @user.enrollments.where(:status => "completed")
+    @current_enrollments = @user.enrollments.where(:status => nil)
   end
 
   private

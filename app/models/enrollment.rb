@@ -8,3 +8,4 @@ class Enrollment < ApplicationRecord
   end
 
 end
+
