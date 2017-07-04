@@ -1,7 +1,7 @@
 #enroll-btn {
   display: inline-block;
   font-size: 24px;
-  background-color: #F2721B;
+  background-color: $orange;
   position: relative;
   text-shadow: 0px 0px 1px black;
   color: #ffffff;
@@ -10,7 +10,7 @@
   border-radius: 5px;
   margin-top: 10px;
   &:hover {
-    background-color: #F25111;
+    background-color: #F24E18;
     color: #ffffff;
     span {
       filter: brightness(.9) contrast(1.2);
