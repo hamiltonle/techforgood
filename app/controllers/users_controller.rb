@@ -43,6 +43,9 @@ class UsersController < ApplicationController
   def dashboard
     # Add instance variables which will be used in the user dashboard
     @user = current_user
+    @courses = @user.courses
+    # @current_courses != @courses.completed_course
+    # @completed_courses = @courses.completed_course
   end
 
   private
