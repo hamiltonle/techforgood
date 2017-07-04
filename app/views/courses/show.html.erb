@@ -1,0 +1,101 @@
+<div class="course_container">
+
+  <!-- Course Information -->
+  <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('ironboy.jpg') %>);">
+    <div class="banner-content">
+      <h3><%= @course.title %></h3>
+      <p><%=  @course.tagline %></p>
+      <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+    </div>
+  </div>
+
+
+    <!-- course_show_page.scss -->
+    <div class="row background_white slightly_padded">
+      <div class="course_intro width-720">
+        <div class="col-sm-8">
+          <h4 class="text-left"><i class="fa fa-book" aria-hidden="true"></i> Course Overview</h4>
+            <p><%= @course.description %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row background_gray slightly_padded">
+    <h4 class="text-center"><i class="fa fa-book" aria-hidden="true"></i> Course Outcomes</h4>
+      <div class="course_outcomes width-720">
+        <div class="col-sm-4">
+          <h6 class="text-center"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Learn about an issue:</h6>
+          <div class="course_show_card">
+            <p><%= @course.issue %></p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h6 class="text-center"><i class="fa fa-rocket" aria-hidden="true"></i> Learn a new technology:</h6>
+          <div class="course_show_card">
+            <p><%= @course.tech_solution %></p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h6 class="text-center"><i class="fa fa-heartbeat" aria-hidden="true"></i> Help someone in need:</h6>
+          <div class="course_show_card">
+            <p>By the end of the course, you'll have built a real 3D printed prosthetic hand for a child in need.</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h6 class="text-center"><i class="fa fa-users" aria-hidden="true"></i> Learn in a social setting:</h6>
+          <div class="course_show_card">
+            <p>You can study alongside your friends</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h6 class="text-center"><i class="fa fa-plane" aria-hidden="true"></i> Broaden your horizons:</h6>
+          <div class="course_show_card">
+            <p>Get firsthand experience in using technology to solve global problems</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h6 class="text-center"><i class="fa fa-certificate" aria-hidden="true"></i> Earn a certificate:</h6>
+          <div class="course_show_card">
+            <p>Upon completion of the course, each student will recieve a certificate.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row background_white slightly_padded">
+      <div class="course_project width-720 text-center">
+        <div class="project_review col-sm-5">
+          <%= image_tag("boy.jpg", class: "img-circle", height: '64', width: '64') %>
+          <p>"I entered this course with no knowledge about 3D printing but with the help of the instructors and my peers, I built a hand for Chen and it was a really amazing experience!</p>
+        </div>
+        <div class="project_review col-sm-5">
+            <%= image_tag("boy.jpg", class: "img-circle", height: '64', width: '64') %>
+            <p>Samantha built a 3D printed hand for Chen, who is using it to build up his arm strength and to impress all his 3rd grade classmates!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row background_gray slightly_padded">
+      <div class="course_org width-720 text-center">
+        <div class="col-sm-8">
+          <h4><%= @course.title %> Syllabus</h4>
+          <ul>
+          <% @course.lessons.each do |lesson| %>
+            <li><%= lesson.title %>: Lesson description here</li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row background_white slightly_padded">
+      <div class="course_org width-720 text-center">
+        <div class="col-sm-8">
+          <h4><i class="fa fa-comments-o" aria-hidden="true"></i> <bold>Brought to you by:</bold> <%= @course.organization.name %></h4>
+          <%= image_tag("handson-logo.png", class: "img-circle", height: '128', width: '128') %>
+          <p><%= @course.organization.description %></p>
+        </div>
+      </div>
+    </div>
+</div>
+
