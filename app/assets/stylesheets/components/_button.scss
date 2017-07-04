@@ -1,15 +1,17 @@
 #enroll-btn {
   display: inline-block;
-  font-size: 24px;
-  background-color: $success;
+  font-size: 20px;
+  font-family: $header-font;
   position: relative;
-  text-shadow: 0px 0px 1px #BF4C28;
   color: white;
-  padding: 15px;
-  border-radius: 15px;
+  background-color: transparent;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
   &:hover {
-    color: #ffffff;
-    padding: 17px;
+    opacity: 0.6;
+
     span {
       filter: brightness(.9) contrast(1.2);
       transform: scale(0.96);

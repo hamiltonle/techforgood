@@ -4,17 +4,26 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 
+ // show more snippet
+ .show-more-snippet {
+    height:100px;  /*this is set to the height of the how much text you want to show based on the font size, line height, etc*/
+    overflow:hidden;
+}
+
 // Paddings
 .padded {
   padding-top: 5em;
   padding-bottom: 5em;
 }
 
+.slightly_padded {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
 .no-y-padding {
   padding-top: 0px;
   padding-bottom: 0px;
-}
-
 // Backgrounds
 .bg-black {
   background: #4a4a4a;

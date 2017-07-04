@@ -5,8 +5,9 @@
     <div id="navbar" class="navbar-techforgood">
       <!-- Logo -->
       <%= link_to root_path do %>
-        <i class="fa fa-graduation-cap navbar-techforgood-brand" aria-hidden="true"></i>
+        <%= image_tag("TechForGood-sm.svg", class: "navbar-techforgood-left", width: "150px") %>
       <% end %>
+
 
       <!-- We can use this to add the logo image when we have a proper one -->
       <%#= link_to root_path, class: "navbar-techforgood-brand" do %>
