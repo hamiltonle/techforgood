@@ -1,19 +1,17 @@
 
-
 .course_container {
   overflow-x: scroll;
 }
 
 #course_content {
-  padding: 0px;
-  margin: 0px;
-  background: rgba(175, 175, 175, 0.1);
+   background: white;
   top: 70px;
   bottom: 0;
   left: 0;
   height: auto;
   position: relative;
   z-index: 1;
+
 
 // lesson margins
   margin: 0 auto;
@@ -55,22 +53,21 @@
 .course_intro {
   display: block;
   align-content: center;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  position: absolute;
-  width: calc(100%-200px);
-}
-
-.course_technology {
-  background-color: #DDDDDD;
-  display: flex;
-  align-items: center;
   justify-content: space-around;
-  border-style: 1px solid grey;
-  padding: 20px;
+  p {
+    font-size: 14px;
+  }
 }
 
-
+@media(max-width:768px) {
+  .quarter_padding_left {
+    padding-left: 5%;
+    padding-right: 5%
+  }
+}
+.quarter_padding_left {
+  padding-left: 25%;
+}
 
 .hand_heart_background {
   color: white;
@@ -104,9 +101,11 @@
   background-color: white;
 }
 
-.course_issue {
+.course_outcomes {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #555;
   display: flex;
-
   align-items: top;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -117,15 +116,10 @@
     color: #555;
     font-weight: bold;
   }
-
-  justify-content: space-around;
-  border-style: 1px solid grey;
-  padding: 20px;
-
 }
 
-.course_description {
-  background-color: white;
+.course_project {
+  color: #555;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -143,9 +137,12 @@
   padding: 8px;
   margin: 10px;
   height: 280px;
-  border-style: 1px solid grey;
-  padding: 20px;
+}
 
+.course_org {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .course_syllabus {
@@ -165,13 +162,4 @@
 .width-720 {
   max-width: 720px;
   margin: 0 auto;
-}
-
-.course_organization {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-style: 1px solid grey;
-  padding: 20px;
 }
