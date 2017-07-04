@@ -1,7 +1,7 @@
 <div id="course_sidebar" class="text-center">
     <div class="">
 
-      <div class="text-left module-black flexbox">
+      <div class="text-left module-blue flexbox">
         <div class="lesson-text flex-item-title text-white">
           <h5 class><strong>About This Course:</strong></h5>
         </div>
@@ -9,37 +9,49 @@
        <div class="text-left lesson-tab div-relative flexbox">
 
         <div class="lesson-text flex-item-lesson-title">
-          <h6>Course Overview</h6>
+          <h6>The Issue</h6>
         </div>
         <a class="lesson-link" href="#issue" ></a>
       </div>
        <div class="text-left lesson-tab div-relative flexbox">
 
         <div class="lesson-text flex-item-lesson-title">
-          <h6>Course Outcomes</h6>
+          <h6>The Technology</h6>
         </div>
         <a class="lesson-link" href="#issue" ></a>
       </div>
       <div class="text-left lesson-tab div-relative flexbox">
         <div class="lesson-text flex-item-lesson-title">
-          <h6>About The Organization</h6>
+          <h6>Course Description</h6>
         </div>
         <a class="lesson-link" href="#description" ></a>
       </div>
       <div class="text-left lesson-tab div-relative flexbox">
         <div class="lesson-text flex-item-lesson-title">
-          <h6>Reviews</h6>
+          <h6>Syllabus</h6>
         </div>
         <a class="lesson-link" href="#syllabus" ></a>
       </div>
       <div class="text-left lesson-tab div-relative flexbox">
         <div class="lesson-text flex-item-lesson-title">
-          <h6></h6>
+          <h6>About the Organization</h6>
         </div>
         <a class="lesson-link" href="#organization" ></a>
       </div>
+      <div class="text-left lesson-tab div-relative flexbox">
+        <div class="lesson-text flex-item-lesson-title">
+          <h6>Course Resources</h6>
+        </div>
+        <a class="lesson-link" href="#course_resources" ></a>
+      </div>
+
+      <hr>
+
+      <div>
         <div>
           <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
         </div>
+      </div>
+
     </div>
   </div>
