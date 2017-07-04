@@ -9,15 +9,37 @@
 // TAB CONTAINERS
 .lesson-tab {
   background: #FFFFFF;
-  border: 1px solid #EDEDED;
+  border-bottom: 1px solid #EDEDED;
+  border-right: 3px solid white;
+
+}
+.lesson-tab:hover {
+  opacity: 1;
+  border-right: 3px solid $blue7;
 }
 .position-relative {
   position: relative;
 }
 
-.lesson-tab:hover {
-  opacity: 0.8;
+
+.lesson-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  background: $blue7;
+  opacity: 0;
 }
+.lesson-link:hover{
+  opacity: 0.00;
+
+
+  transition: opacity 0.3s ease;
+}
+
 
 .div-relative {
   position: relative;
@@ -32,13 +54,22 @@
   // border: 1px solid $success;
 }
 .module-completed {
-  background: $success;
+  background: $green;
+  border-right: 3px solid $green;
+  // border: 1px solid $success;
+}
+.module-completed:hover {
+  border-right: 3px solid lightgray;
   // border: 1px solid $success;
 }
 
 .module-pending {
-  background: $blue2;
-  border: 1px solid $blue2;
+  background: $blue6;
+  border-right: 3px solid $blue6;
+}
+
+.module-pending:hover {
+  border-right: 3px solid lightgray;
 }
 
 .module-materials {
@@ -58,6 +89,32 @@
 }
 
 
+
+
+
+
+
+// lesson completion text color
+.lesson-completed {
+  color: white;
+}
+.lesson-missed {
+  color: $yellow;
+}
+.lesson-ongoing {
+  color: white;
+}
+.lesson-upcoming {
+  color: white;
+}
+
+
+
+// tab text
+
+.lesson-text h6 {
+  color: #566b78;
+}
 
 
 // MODULE FLEXBOX
@@ -135,45 +192,42 @@
 
 /* The side navigation menu */
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    left: 0;
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Stay on top */
+  top: 0;
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.7s; /* 0.5 second transition effect to slide in the sidenav */
+  border-right: 1px solid $lightgray;
+  box-shadow: 1px 0px 4px $lightgray;
 }
 
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
-}
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+  background-color: white;
+  color: $blue6;
+  font-size: 60px;
+  margin-left: 0px;
+  width: 100%;
+  text-decoration: none;
+  font-size: 60px;
+  cursor:pointer;
+  padding: 0px !important;
+  border:none;
+  line-height: .8;
+
+
+
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: margin-left .5s;
-    padding: 20px;
+    padding: 0px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -184,9 +238,25 @@
 
 .fixed-sidemenu {
   background-color: white;
+  color: $blue6;
   position: fixed;
-  top: 75px;
-  left: 0;
+  padding: 1px;
+  z-index: 0;
+  left: 20px;
+  font-size:60px;
+  z-index:2;
+  cursor: pointer;
+  top: 0px;
+  left: 0px;
+  line-height: .8;
+}
+
+
+iframe {
+    border:none;
+  // top: -2px;
+  // left: -2px;
+  // right: -2px;
 }
 
 #sidebar {
@@ -195,7 +265,7 @@
   width: 280px;
   background-color: grey;
   position: absolute;
-  top: 70px;
+  top: 0px;
   overflow-y: none;
   // overflow-x: hidden;
   height: auto;
@@ -207,41 +277,20 @@
 
   // justify-content: space-between;
   // align-items: center;
-  width: 160px;
-  background-color: #A2A2A2;
-  position: fixed;
-  top: 17%;
+  width: 200px;
+  background-color: #f0f0f0;
+  position: absolute;
+  top: 70px;
   // overflow-x: hidden;
   overflow-y: hidden;
   height: auto;
-  bottom: 5%;
-  left: 10%;
-  z-index: 1;
-  border-radius: 2px;
-}
-
-
-
-// LESSON CONTENT AREA
-#lesson-content {
-  // position: relative;
-  padding: 20px;
-  margin: 0px;
-  // margin-left: 200px;
-  // width: 100%;
-  // margin: 0 auto;
-  // border-radius: 2px;
-  background: rgba(175, 175, 175, 0.1);
-
-  top: 70px;
   bottom: 0;
-  left: 280px;
-  height: auto;
-  overflow-y: scroll;
-  overflow-x: scroll;
-  position: absolute;
-  width: calc(100% - 280px);
+  left: 0;
 }
+
+
+// LESSON CONTENT AREA is in _lesson_show_page.scss
+
 
 
 

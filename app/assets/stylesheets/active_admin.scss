@@ -11,10 +11,12 @@
 @import "active_admin/mixins";
 @import "active_admin/base";
 
+// active admin skin importing
+// @import "active_admin_flat_skin";
+
+
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
 
-// active admin skin importing
-@import "active_admin_flat_skin";

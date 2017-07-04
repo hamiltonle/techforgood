@@ -35,7 +35,8 @@
 // DIV Background
 
 .div-blue {
-  background: $blue1 !important;
+  opacity: .8;
+  border-right: 3px solid $blue7;
 }
 
 // TEXT
@@ -214,20 +215,41 @@
 
 }
 
-.fredoka{
-  font: normal 60px/1 "Fredoka One", Helvetica, sans-serif;
+.fredoka {
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 1;
+    font-family: "Fredoka One", Helvetica, sans-serif;
+}
+
+.text-80px {
+  font-size: 80px !important;
+}
+.text-60px {
+  font-size: 60px !important;
 }
 
 // FONT AWESOME
+.fa-xs {
+font-size: 14px;
+}
+
 .fa-md {
   font-size: 22px;
 }
 
 .fa-xl {
-  font-size: 50px
+  font-size: 50px;
 }
 .fa-xxl {
-  font-size: 100px
+  font-size: 100px;
+}
+.fa-side-padding {
+  padding: 0px 3px;
 }
 
 .globe {
@@ -255,7 +277,7 @@
 .background-white {
   background-color: white;
   height: 20px;
-  bottom: 100px;
+  bottom: 102px;
   width: 90%;
   margin-left: 10px;
 }
