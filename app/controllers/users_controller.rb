@@ -44,6 +44,7 @@ class UsersController < ApplicationController
     # Add instance variables which will be used in the user dashboard
     @user = current_user
     @courses = @user.courses
+    @new_user = @courses.count == 0
     @completed_enrollments = @user.enrollments.where(:status => "completed")
     @current_enrollments = @user.enrollments.where(:status => nil)
   end
