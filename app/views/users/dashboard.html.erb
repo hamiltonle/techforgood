@@ -37,7 +37,7 @@
         <div class="col-xs-12 col-md-6">
           <div class="dashboard-course-description">
             <h2><%= enrollment.course.title %></h2>
-            <p><%= enrollment.course.organization.name %></p>
+            <p><%= link_to enrollment.course.organization.name, organization_path(enrollment.course.organization_id) %></p>
             <div class="progress">
               <% @total_lessons = enrollment.course.lessons.count %>
               <% @number_completed_sessions = 0 %>
@@ -62,7 +62,13 @@
 
         <div class="col-xs-12 col-md-6">
           <div class="continue-course-button text-center">
-            <%= link_to "Resume", courses_path(enrollment.course), class: "btn btn-success" %>
+              <% if enrollment.sessions.where(:status => "completed").count == 0 %>
+                <% @current_lesson = enrollment.course.lessons.first %>
+              <% else %>
+                <% @last_completed_lesson = enrollment.sessions.where(:status => "completed").last.lesson_id %>
+                <% @current_lesson = @last_completed_lesson + 1 %>
+              <% end %>
+            <%= link_to "Resume Course", course_lesson_path(enrollment.course, @current_lesson), class: "btn btn-success" %>
           </div>
         </div>
       </div>
@@ -80,9 +86,13 @@
       <div class="dashboard-course-card">
 
         <div class="col-xs-12 col-md-6">
+
+          <!-- Course Description -->
           <div class="dashboard-course-description">
             <h2><%= enrollment.course.title %></h2>
-            <p><%= enrollment.course.organization.name %></p>
+            <p><%= link_to enrollment.course.organization.name, organization_path(enrollment.course.organization_id) %></p>
+
+            <!-- Progress Bar -->
             <div class="progress">
               <% @total_lessons = enrollment.course.lessons.count %>
               <% @number_completed_sessions = 0 %>
@@ -98,16 +108,19 @@
                 <%= @percentage %>%
               </div>
             </div>
+
+<!--             Score Section
             <div class="score-section">
               <p>Score: 67 <a href="#" data-toggle="tooltip" title="This is your score for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
               <p>Rank: 6/50 <a href="#" data-toggle="tooltip" title="This is your ranking for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
-            </div>
+            </div> -->
+
           </div>
         </div>
 
         <div class="col-xs-12 col-md-6">
           <div class="continue-course-button text-center">
-            <%= link_to "Review", courses_path(enrollment.course), class: "btn btn-success" %>
+            <%= link_to "Review Course", course_path(enrollment.course), class: "btn btn-success" %>
           </div>
         </div>
       </div>

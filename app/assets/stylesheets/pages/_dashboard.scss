@@ -21,8 +21,23 @@
 //   top: 10px;
 // }
 
+.dashboard-course-description a {
+  color: black;
+}
+
 .dashboard-course-description h2 {
   font-size: 22px;
+}
+
+.dashboard-course-description i {
+  opacity: 0.6;
+  font-size: 12px;
+  text-align: center;
+}
+
+.dashboard-course-description a:hover {
+  text-decoration: none;
+  opacity: 0.6;
 }
 
 .continue-course-button {
