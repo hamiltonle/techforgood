@@ -3,7 +3,7 @@ class EnrollmentsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:index, :show]
 
   # Devise: whitelist all pages for testing
-  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  # skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   # finds all enrolled students in a course
   def index
@@ -21,8 +21,15 @@ class EnrollmentsController < ApplicationController
     @enrollment = @course.enrollments.new
     @enrollment.user = current_user
     @enrollment.course = @course
-    @enrollment.save
-    redirect_to course_lessons_path
+
+
+    begin
+      @enrollment.save
+    rescue => error
+      redirect_to course_lessons_path
+    end
+
+
   end
 
   # deletes an enrollment if the student decides to cancel the class
