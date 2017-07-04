@@ -28,7 +28,7 @@
 
   <div class="text-center padded">
     <h3>Start a course now!</h3>
-    <%= link_to "Enroll", courses_path(:anchor => "Courses"), class: "btn btn-primary" %>
+    <%= link_to "Find a course", courses_path(:anchor => "courses"), class: "btn btn-primary" %>
   </div>
 
 <% end %>
@@ -102,7 +102,7 @@
 <% unless @new_user %>
 
 <div align="center" class="dashboard-enroll-button">
-  <%= link_to "Start a new course", courses_path(:anchor => "Courses"), class: "btn btn-primary" %>
+  <%= link_to "Start a new course", courses_path(:anchor => "courses"), class: "btn btn-primary" %>
 </div>
 
 <% end %>
