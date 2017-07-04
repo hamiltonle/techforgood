@@ -31,6 +31,10 @@ student = User.new(
   admin: true
   )
 puts "saved a student user"
+
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
+
 student.save!
 
 student = User.new(
@@ -43,6 +47,8 @@ student = User.new(
   admin: true
   )
 puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
 student.save!
 
 student = User.new(
@@ -55,6 +61,8 @@ student = User.new(
   admin: true
   )
 puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
 student.save!
 
 student = User.new(
@@ -66,6 +74,8 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
 student.save!
 
 student = User.new(
@@ -77,6 +87,8 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
 student.save!
 
 student = User.new(
@@ -88,6 +100,8 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
 student.save!
 
 student = User.new(
@@ -99,6 +113,8 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
 student.save!
 
 student = User.new(
@@ -110,6 +126,8 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
 student.save!
 
 student = User.new(
@@ -121,6 +139,8 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
 student.save!
 
 student = User.new(
@@ -132,6 +152,8 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
 student.save!
 
 student = User.new(
@@ -143,6 +165,8 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
 student.save!
 
 student = User.new(
@@ -154,6 +178,8 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
 student.save!
 
 student = User.new(
@@ -165,6 +191,8 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
 student.save!
 
 student = User.new(
@@ -176,6 +204,8 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
 student.save!
 
 student = User.new(
@@ -187,6 +217,8 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
 student.save!
 
 student = User.new(
@@ -198,6 +230,8 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
 student.save!
 
 student = User.new(
@@ -209,6 +243,8 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
+url = "https://source.unsplash.com/collection/580685/200x200"
+student.photo_url = url
 student.save!
 
 # Organization seeds
@@ -253,136 +289,64 @@ You will obtain a rich understanding of what 3D printing is, how 3D printers wor
 
   )
 course.organization = Organization.find(3)
+
+urls = [
+  "http://img.clubic.com/07791435-photo-playstation.jpg"
+]
+course.photo_urls = urls
+
 course.save!
 puts "saved a course"
 
 
+
 course = Course.new(
   title: "Computer Vision",
-  tagline: "Using Microsoft's computer vision technology to find missing children"
+  tagline: "Using Microsoft's computer vision technology to find missing children",
+  issue: "Currently, there are millions of children who've gone missing in China.",
+  tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
+  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).
+
+You will obtain a rich understanding of what 3D printing is, how 3D printers work, and how this new technology is being used by both individuals and firms to revolutionize our world. In addition, you will acquire a set of skills that will enable you to create digital designs that you can transform into physical objects. These skills can be used to help you launch a career in the growing field of 3D printing, be the 3D printing expert in your current firm, or just make the things you need.
+
+"
   )
 course.organization = Organization.find(2)
+
+
+urls = [
+  "https://4.bp.blogspot.com/-tpf8RT5Wz78/VxXexmyGwNI/AAAAAAAAFE4/Mm0oj2D2sfwU72xvQD8NibFEG-jtgj52QCLcB/s1600/ExampleImage1.png"
+]
+course.photo_urls = urls
+
 course.save!
 puts "saved a course"
 
 
 course = Course.new(
   title: "Augmented Reality",
-  tagline: "Augmented Reality for vision-impaired people"
+  tagline: "Augmented Reality for vision-impaired people",
+  issue: "Blindness doesn't allow people to experience and interact with their surroundings to the fullest",
+  tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
+  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).
+
+You will obtain a rich understanding of what 3D printing is, how 3D printers work, and how this new technology is being used by both individuals and firms to revolutionize our world. In addition, you will acquire a set of skills that will enable you to create digital designs that you can transform into physical objects. These skills can be used to help you launch a career in the growing field of 3D printing, be the 3D printing expert in your current firm, or just make the things you need.
+
+"
   )
 course.organization = Organization.find(1)
+
+urls = [
+  "https://www-tc.pbs.org/wgbh/nova/next/wp-content/uploads/2015/06/smart-specs.jpg"
+]
+course.photo_urls = urls
+
+
 course.save!
 puts "saved a course"
 
 
-# Enrollment seeds
-puts "creating enrollments"
 
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(1)
-enrollment.save!
-puts "saved an enrollment"
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(2)
-enrollment.user = User.find(1)
-enrollment.save!
-puts "saved an enrollment"
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(2)
-enrollment.save!
-puts "saved an enrollment"
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(3)
-enrollment.user = User.find(2)
-enrollment.save!
-puts "saved an enrollment"
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(2)
-enrollment.user = User.find(3)
-enrollment.save!
-puts "saved an enrollment"
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(3)
-enrollment.user = User.find(3)
-enrollment.save!
-puts "saved an enrollment"
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(4)
-enrollment.save!
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(5)
-enrollment.save!
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(6)
-enrollment.save!
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(7)
-enrollment.save!
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(8)
-enrollment.save!
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(9)
-enrollment.save!
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(10)
-enrollment.save!
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(11)
-enrollment.save!
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(12)
-enrollment.save!
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(13)
-enrollment.save!
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(14)
-enrollment.save!
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(15)
-enrollment.save!
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(16)
-enrollment.save!
-
-enrollment = Enrollment.new
-enrollment.course = Course.find(1)
-enrollment.user = User.find(17)
-enrollment.save!
 
 
 
@@ -636,40 +600,40 @@ lesson.save!
 puts "saved a lesson"
 
 
-# # Session seeds
-# puts "Creating sessions"
 
-# session = Session.new
-# session.lesson = Lesson.find(1)
-# session.user = User.find(1)
-# session.status = "completed"
-# session.save!
-# puts "saved a lesson"
 
-# session = Session.new
-# session.lesson = Lesson.find(2)
-# session.user = User.find(1)
-# session.status = "started"
-# session.save!
-# puts "saved a lesson"
+# Session seeds
+puts "Creating sessions"
 
-# session = Session.new
-# session.lesson = Lesson.find(3)
-# session.user = User.find(2)
-# session.status = "completed"
-# session.save!
-# puts "saved a lesson"
 
-# session = Session.new
-# session.lesson = Lesson.find(4)
-# session.user = User.find(2)
-# session.status = "started"
-# session.save!
-# puts "saved a lesson"
+student = 1
 
-# session = Session.new
-# session.lesson = Lesson.find(5)
-# session.user = User.find(3)
-# session.status = "started"
-# session.save!
-# puts "saved a lesson"
+
+14.times do
+
+  # Enrollment seeds
+  puts "creating enrollments"
+
+  enrollment = Enrollment.new
+  enrollment.course = Course.find(1)
+  enrollment.user = User.find(student)
+  enrollment.save!
+  puts " enrollments saved"
+
+  lesson_num = 1
+
+  (1..10).to_a.sample.times do
+
+    session = Session.new
+    session.lesson = Lesson.find(lesson_num)
+    session.user = User.find(student)
+    session.enrollment = enrollment
+    session.status = "completed"
+    session.save!
+    print "saved a lesson for"
+    puts student
+
+    lesson_num += 1
+  end
+  student += 1
+end
