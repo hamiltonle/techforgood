@@ -11,16 +11,15 @@
 
 
     <!-- course_show_page.scss -->
-  <div class="lesson-content">
+  <div class="course-content">
     <div class="row background_white slightly_padded">
       <div class="course_intro width-720">
-        <h4 class="text-center"><i class="fa fa-book" aria-hidden="true"></i> Course Overview</h4>
+        <h4 class="text-center"></i> Course Overview</h4>
           <p><%= @course.description %></p>
       </div>
     </div>
 
     <div class="row background_gray slightly_padded">
-    <h4 class="text-center">What You'll Get Out Of This Course:</h4>
       <div class="course_outcomes width-720">
         <div class="col-sm-4">
           <div class="course_show_card">
@@ -79,7 +78,7 @@
       <div class="course_syllabus width-720">
         <div class="text-left">
           <% @course.lessons.each do |lesson| %>
-            <li><h5><strong><%= lesson.title %></strong>: Lesson descsription will go here one sentence usually</h5></li>
+            <li><h5><strong><%= lesson.title %></strong>: <%= lesson.description %></h5></li>
           <% end %>
           </ul>
         </div>
@@ -89,8 +88,8 @@
     <div class="row background_white slightly_padded">
       <div class="course_org width-720 text-center">
         <div class="col-sm-8">
-          <h4><i class="fa fa-comments-o" aria-hidden="true"></i> <bold>Brought to you by:</bold> <%= @course.organization.name %></h4>
-          <%= image_tag("handson-logo.png", class: "img-circle", height: '128', width: '128') %>
+          <h4>Brought to you by: <br></h4>
+          <%= image_tag("JohnsonandJohnson.jpg", width: '256') %>
           <p><%= @course.organization.description %></p>
         </div>
       </div>

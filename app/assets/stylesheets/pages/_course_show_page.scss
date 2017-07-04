@@ -3,6 +3,51 @@
   overflow-x: scroll;
 }
 
+#course_content {
+   background: white;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  position: relative;
+  z-index: 1;
+
+
+// lesson margins
+  margin: 0 auto;
+  max-width: 720px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 100%;
+
+// Spacing
+  line-height: 1.5;
+  padding: 4em 1em;
+
+
+// letter-spacing: .2px;
+  -webkit-font-smoothing: antialiased;
+
+
+// Soft Accent Colors
+  color: #566b78;
+  font-size: 18px;
+
+  h1, h2, strong {
+  // color: #333;
+  color: $blue7;
+  }
+
+  h2 {
+  margin-top: 1em;
+  padding-top: 1em;
+  }
+
+  embed {
+  margin: 3em 0em;
+  }
+}
+
 
 
 .course_intro {
@@ -43,8 +88,8 @@
   border-radius: 10px;
   color: rgb(10,10,10);
   max-width: 50em;
-  p {
-    font-size: 14px;
+  i {
+    color: $blue6;
   }
 }
 
