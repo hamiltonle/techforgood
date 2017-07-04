@@ -3,7 +3,7 @@ class Session < ApplicationRecord
   belongs_to :lesson
   belongs_to :enrollment
 
-  def completed
+  def completed?
     self.status == "completed"
   end
 
