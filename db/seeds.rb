@@ -8,12 +8,12 @@
 
 puts "deleting all current data"
 
-# Enrollment.destroy_all
-# Lesson.destroy_all
-# Session.destroy_all
-# User.destroy_all
-# Course.destroy_all
-# Organization.destroy_all
+Enrollment.destroy_all
+Lesson.destroy_all
+Session.destroy_all
+User.destroy_all
+Course.destroy_all
+Organization.destroy_all
 
 puts "creating fake students and courses"
 
@@ -21,39 +21,151 @@ puts "creating fake students and courses"
 # Students Seeds
 puts "creating students"
 
-student1 = User.new(
+student = User.new(
   first_name: 'Amin',
   last_name: 'Malik',
   group: 'Le Wagon',
   email: "amin@gmail.com",
   password: 'techforgood',
-  password_confirmation: 'techforgood'
+  password_confirmation: 'techforgood',
+  admin: true
   )
 puts "saved a student user"
-student1.save!
+student.save!
 
-student2 = User.new(
+student = User.new(
   first_name: 'Kiki',
   last_name: 'Judd',
   group: 'All Blacks',
   email: "kiki@gmail.com",
   password: 'techforgood',
-  password_confirmation: 'techforgood'
+  password_confirmation: 'techforgood',
+  admin: true
   )
 puts "saved a student user"
-student2.save!
+student.save!
 
-student3 = User.new(
+student = User.new(
   first_name: 'Hamilton',
   last_name: 'Le',
   group: 'Johnson & Johnson',
   email: "hamilton@gmail.com",
   password: 'techforgood',
+  password_confirmation: 'techforgood',
+  admin: true
+  )
+puts "saved a student user"
+student.save!
+
+student = User.new(
+  first_name: 'Roger',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "roger@gmail.com",
+  password: 'techforgood',
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
-student3.save!
+student.save!
 
+student = User.new(
+  first_name: 'Mike',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "mike@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+student.save!
+
+student = User.new(
+  first_name: 'bob',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "bob@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+student.save!
+
+student = User.new(
+  first_name: 'George',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "george@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+student.save!
+
+student = User.new(
+  first_name: 'Sharon',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "sharon@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+student.save!
+
+student = User.new(
+  first_name: 'Cindy',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "cindy@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+student.save!
+
+student = User.new(
+  first_name: 'Jay',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "jay@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+student.save!
+
+student = User.new(
+  first_name: 'Marketa',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "marketa@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+student.save!
+
+student = User.new(
+  first_name: 'Ettiene',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "ettiene@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+student.save!
+
+student = User.new(
+  first_name: 'Nathan',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "nathan@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+student.save!
 
 # Organization seeds
 puts "creating organizations"
@@ -157,6 +269,57 @@ enrollment.course = Course.find(3)
 enrollment.user = User.find(3)
 enrollment.save!
 puts "saved an enrollment"
+
+enrollment = Enrollment.new
+enrollment.course = Course.find(1)
+enrollment.user = User.find(4)
+enrollment.save!
+
+enrollment = Enrollment.new
+enrollment.course = Course.find(1)
+enrollment.user = User.find(5)
+enrollment.save!
+
+enrollment = Enrollment.new
+enrollment.course = Course.find(1)
+enrollment.user = User.find(6)
+enrollment.save!
+
+enrollment = Enrollment.new
+enrollment.course = Course.find(1)
+enrollment.user = User.find(7)
+enrollment.save!
+
+enrollment = Enrollment.new
+enrollment.course = Course.find(1)
+enrollment.user = User.find(8)
+enrollment.save!
+
+enrollment = Enrollment.new
+enrollment.course = Course.find(1)
+enrollment.user = User.find(9)
+enrollment.save!
+
+enrollment = Enrollment.new
+enrollment.course = Course.find(1)
+enrollment.user = User.find(10)
+enrollment.save!
+
+enrollment = Enrollment.new
+enrollment.course = Course.find(1)
+enrollment.user = User.find(11)
+enrollment.save!
+
+enrollment = Enrollment.new
+enrollment.course = Course.find(1)
+enrollment.user = User.find(12)
+enrollment.save!
+
+enrollment = Enrollment.new
+enrollment.course = Course.find(1)
+enrollment.user = User.find(13)
+enrollment.save!
+
 
 # Lessons seeds
 puts "Creating lessons"

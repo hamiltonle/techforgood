@@ -1,7 +1,7 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require jquery.easing
+
 //= require bootstrap-sprockets
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
@@ -19,7 +19,6 @@ please make a specific require like above */
 function openNav() {
     document.getElementById("mySidenav").style.width = "280px";
     document.getElementById("main").style.marginLeft = "280px";
-
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
