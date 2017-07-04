@@ -93,12 +93,19 @@
                 <%= f.button :submit, 'Done with this Lesson! :)', disabled: "disabled", class: 'btn btn-success text-center' %>
               <% end %>
               </div>
-              <div class="col-xs-6 text-right">
 
-              <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+              <% unless @course.lessons.last.id == @lesson.id %>
 
-              <!-- mobile button -->
-              </div>
+
+                <div class="col-xs-6 text-right">
+
+                <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+
+                <!-- mobile button -->
+                </div>
+
+              <% end %>
+
             </div>
           <% else %>
             <div class="row">
@@ -107,10 +114,16 @@
               <%= f.button :submit, 'Just Finished the Lesson', class: 'btn btn-success text-center' %>
             <% end %>
               </div>
-              <div class="col-xs-6 text-right">
 
-              <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
-              </div>
+              <% unless @course.lessons.last.id == @lesson.id %>
+
+
+                <div class="col-xs-6 text-right">
+
+                <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+                </div>
+
+              <% end %>
             </div>
 
 

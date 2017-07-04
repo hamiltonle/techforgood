@@ -167,6 +167,50 @@ student = User.new(
 puts "saved a student user"
 student.save!
 
+student = User.new(
+  first_name: 'Maria',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "maria@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+student.save!
+
+student = User.new(
+  first_name: 'Stephen',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "stephen@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+student.save!
+
+student = User.new(
+  first_name: 'Forrest',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "forrest@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+student.save!
+
+student = User.new(
+  first_name: 'Dounan',
+  last_name: 'Malik',
+  group: 'Glenbard South High School',
+  email: "dounan@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood'
+  )
+puts "saved a student user"
+student.save!
+
 # Organization seeds
 puts "creating organizations"
 
@@ -320,13 +364,34 @@ enrollment.course = Course.find(1)
 enrollment.user = User.find(13)
 enrollment.save!
 
+enrollment = Enrollment.new
+enrollment.course = Course.find(1)
+enrollment.user = User.find(14)
+enrollment.save!
+
+enrollment = Enrollment.new
+enrollment.course = Course.find(1)
+enrollment.user = User.find(15)
+enrollment.save!
+
+enrollment = Enrollment.new
+enrollment.course = Course.find(1)
+enrollment.user = User.find(16)
+enrollment.save!
+
+enrollment = Enrollment.new
+enrollment.course = Course.find(1)
+enrollment.user = User.find(17)
+enrollment.save!
+
+
 
 # Lessons seeds
 puts "Creating lessons"
 
 lesson = Lesson.new(
-  title: "Crippling injustice",
-  text: "f you judged the country by its laws alone, China would be a global leader on disability rights. The ‘Laws on the Protection of Persons with Disabilities’, introduced in 1990, offer strong and wide-ranging protection of the civil rights of the disabled, guaranteeing employment, education, welfare, and access. But despite the high concerns of the law, Chinese cities make little concession to disabled people. As the sociologist Yu Jianrong has documented, raised pathways for the blind often lead into dead ends, bollards, trees or open pits, or else spiral decoratively but misleadingly. Wheelchair access is non-existent, especially outside Beijing or Shanghai, and guide dogs are effectively forbidden from most public spaces, despite the authorities’ repeated promises of full access.",
+  title: "The Disability  injustice",
+  text: "If you judged the country by its laws alone, China would be a global leader on disability rights. The ‘Laws on the Protection of Persons with Disabilities’, introduced in 1990, offer strong and wide-ranging protection of the civil rights of the disabled, guaranteeing employment, education, welfare, and access. But despite the high concerns of the law, Chinese cities make little concession to disabled people. As the sociologist Yu Jianrong has documented, raised pathways for the blind often lead into dead ends, bollards, trees or open pits, or else spiral decoratively but misleadingly. Wheelchair access is non-existent, especially outside Beijing or Shanghai, and guide dogs are effectively forbidden from most public spaces, despite the authorities’ repeated promises of full access.",
   lesson_type: "lecture",
   video: "<embed src='http://player.youku.com/player.php/sid/XMTU5OTM0MTIxMg==/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
   minutes: 15,
@@ -375,7 +440,7 @@ The e-NABLE Community is made up of  teachers, students, engineers, scientists, 
   lesson_type: "lecture",
   video: "<embed src='http://player.youku.com/player.php/sid/XNTYzODA4Mzk2/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
   minutes: 15,
-  module_name: "how"
+  module_name: "what"
   )
 lesson.course = Course.find(1)
 lesson.save!
@@ -422,7 +487,7 @@ This ultimately led to a mother of a 5 year old boy contacting them to see about
   lesson_type: "article",
   video: "",
   minutes: 10,
-  module_name: "how"
+  module_name: "what"
   )
 lesson.course = Course.find(1)
 lesson.save!
@@ -439,7 +504,7 @@ This course was listed in the top 50 MOOC's of all time by Class-Central (https:
   lesson_type: "lecture",
   video: "<embed src='http://player.youku.com/player.php/sid/XNjMxMTExMTQ0/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
   minutes: 20,
-  module_name: "what"
+  module_name: "how"
 
   )
 lesson.course = Course.find(1)
@@ -452,7 +517,7 @@ lesson = Lesson.new(
   lesson_type: "article",
   video: "",
   minutes: 10,
-  module_name: "what"
+  module_name: "how"
   )
 lesson.course = Course.find(1)
 lesson.save!
@@ -466,7 +531,7 @@ lesson = Lesson.new(
   lesson_type: "quiz",
   video: "",
   minutes: 30,
-  module_name: "what"
+  module_name: "how"
   )
 lesson.course = Course.find(1)
 lesson.save!
@@ -479,7 +544,7 @@ lesson = Lesson.new(
   lesson_type: "lecture",
   video: "<embed src='http://player.youku.com/player.php/sid/XNTAyOTcwMzgw/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
   minutes: 10,
-  module_name: "what"
+  module_name: "how"
   )
 lesson.course = Course.find(1)
 lesson.save!
@@ -493,7 +558,7 @@ If you enjoy this business course and are interested in an MBA, consider applyin
   lesson_type: "assignment",
   video: "",
   minutes: 30,
-  module_name: "what"
+  module_name: "how"
   )
 lesson.course = Course.find(1)
 lesson.save!
@@ -505,7 +570,7 @@ lesson = Lesson.new(
   lesson_type: "discussion",
   video: "",
   minutes: 15,
-  module_name: "what"
+  module_name: "how"
   )
 lesson.course = Course.find(1)
 lesson.save!
