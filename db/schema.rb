@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170629084736) do
+ActiveRecord::Schema.define(version: 20170704015124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,7 +78,9 @@ ActiveRecord::Schema.define(version: 20170629084736) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["course_id"], name: "index_enrollments_on_course_id"
+    t.index ["user_id", "course_id"], name: "index_enrollments_on_user_id_and_course_id", unique: true
     t.index ["user_id"], name: "index_enrollments_on_user_id"
   end
 
@@ -109,6 +111,8 @@ ActiveRecord::Schema.define(version: 20170629084736) do
     t.bigint "lesson_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "enrollment_id"
+    t.index ["enrollment_id"], name: "index_sessions_on_enrollment_id"
     t.index ["lesson_id"], name: "index_sessions_on_lesson_id"
     t.index ["user_id", "lesson_id"], name: "index_sessions_on_user_id_and_lesson_id", unique: true
     t.index ["user_id"], name: "index_sessions_on_user_id"
@@ -139,6 +143,7 @@ ActiveRecord::Schema.define(version: 20170629084736) do
   add_foreign_key "enrollments", "courses"
   add_foreign_key "enrollments", "users"
   add_foreign_key "lessons", "courses"
+  add_foreign_key "sessions", "enrollments"
   add_foreign_key "sessions", "lessons"
   add_foreign_key "sessions", "users"
 end
