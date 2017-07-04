@@ -1,7 +1,7 @@
 <div class="course_container">
 
   <!-- Course Information -->
-  <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('ironboy.jpg') %>);">
+  <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('handsnotext.jpg') %>);">
     <div class="banner-content">
       <h3><%= @course.title %></h3>
       <p><%=  @course.tagline %></p>
@@ -14,7 +14,7 @@
   <div class="course-content">
     <div class="row background_white slightly_padded">
       <div class="course_intro width-720">
-        <h4 class="text-center"></i> Course Overview</h4>
+        <h4 class="text-left"></i> Course Overview</h4>
           <p><%= @course.description %></p>
       </div>
     </div>
@@ -60,7 +60,7 @@
       </div>
     </div>
 
-    <div class="row background_white slightly_padded" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('handsnotext.jpg') ; %>);">
+    <div class="row background_white slightly_padded" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('3dprinter.jpg') ; %>);">
       <div class="course_project width-720 text-center">
         <div class="project_review col-sm-5 col-xs-8">
           <%= image_tag("smilingwoman.jpg", class: "img-circle", height: '100', width: '100') %>
@@ -86,7 +86,7 @@
     </div>
 
     <div class="row background_white slightly_padded">
-      <div class="course_org width-720 text-center">
+      <div class="course_org width-720 text-left">
         <div class="col-sm-8">
           <p>Brought to you by: <br></p>
           <%= image_tag("JohnsonandJohnson.jpg", width: '256') %>
