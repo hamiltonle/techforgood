@@ -13,6 +13,25 @@ to interfere with the JS for our user facing pages, if you need to add a new jav
 please make a specific require like above */
 
 
+
+
+// for tabs in user dashboard
+
+$('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+
+$('#myTabs a[href="#profile"]').tab('show') // Select tab by name
+// $('#myTabs a:first').tab('show') // Select first tab
+// $('#myTabs a:last').tab('show') // Select last tab
+// $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
+
+
+
+
+
+
 // for the alert
 window.setTimeout(function() {
     $(".alert").fadeTo(500, 0).slideUp(500, function(){
