@@ -10,6 +10,18 @@
     overflow:hidden;
 }
 
+
+.align-center {
+  display:flex;
+  align-items:center;
+  // justify-content: space-around;
+}
+
+.height-80vh {
+  height: 90vh;
+}
+
+
 // Paddings
 .padded {
   padding-top: 5em;
@@ -21,10 +33,27 @@
   padding-bottom: 2em;
 }
 
+.one_padded {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
 .no-y-padding {
   padding-top: 0px;
   padding-bottom: 0px;
 }
+
+
+.padded-bottom {
+  padding-top: 0;
+  padding-bottom: 5em;
+}
+
+.padding-top {
+  padding-top: 5em;
+  padding-bottom: 0;
+}
+
 // Backgrounds
 .bg-black {
   background: #4a4a4a;
@@ -33,7 +62,7 @@
   background: #aeaeae;
 }
 .bg-blue {
-  background: #00a3e1;
+  background: $blue6;
 }
 .bg-dark-blue {
   background: #3b5998;
@@ -59,12 +88,30 @@ a:focus {
   text-decoration: none;
 }
 
+.link-white a {
+  text-decoration: none;
+  color: white;
+}
+.link-white a:hover {
+
+  color: white;
+  opacity: .9;
+}
 
 
 
 // TEXT
 .text-white {
   color: white;
+}
+.text-blue6 {
+  color: $blue6;
+}
+.text-blue7 {
+  color: $blue7;
+}
+.text-orange {
+  color: $orange;
 }
 
 .text-warning {
@@ -88,6 +135,18 @@ a:focus {
 }
 .text-lg {
   font-size: 80px !important;
+}
+
+.text-80px {
+  font-size: 80px !important;
+}
+
+.text-60px {
+  font-size: 60px !important;
+}
+
+.text-45px {
+  font-size: 45px !important;
 }
 
 .text-smooth {
@@ -210,6 +269,13 @@ a:focus {
 }
 
 
+.shape-slight {
+    text-shadow: rgb(41, 128, 185) 1px 1px,
+    rgb(41, 128, 185) 2px 2px,
+    rgb(41, 128, 185) 3px 3px,
+
+}
+
 .shape {
     text-shadow: rgb(41, 128, 185) 1px 1px,
     rgb(41, 128, 185) 2px 2px,
@@ -252,12 +318,7 @@ a:focus {
     font-family: "Fredoka One", Helvetica, sans-serif;
 }
 
-.text-80px {
-  font-size: 80px !important;
-}
-.text-60px {
-  font-size: 60px !important;
-}
+
 
 // FONT AWESOME
 .fa-xs {
@@ -343,6 +404,21 @@ font-size: 14px;
 }
 .img-full-width {
   width: 100%;
+}
+
+.img-radius-gray {
+  border-radius: 10px;
+  box-shadow: 5px 9px 6px slategray;
+}
+
+.img-radius-orange {
+  border-radius: 10px;
+  box-shadow: 3px 4px 16px $orange;
+}
+
+.img-radius-blue {
+  border-radius: 10px;
+  box-shadow: 3px 4px 16px $blue7;
 }
 
 .img-height-30 {

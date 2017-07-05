@@ -26,7 +26,7 @@ class EnrollmentsController < ApplicationController
     begin
       @enrollment.save
     rescue => error
-      redirect_to course_lessons_path
+      redirect_to course_lesson_path(@course.id, @course.lessons.first)
     end
   end
 

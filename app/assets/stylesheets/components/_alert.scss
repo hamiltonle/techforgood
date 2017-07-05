@@ -3,13 +3,37 @@
 * ------------------------------------- */
 
 .alert {
-  margin: 0;
+  // margin: 68px -1px;
+  // padding: 0px;
+  // text-align: center;
+  // color: white;
+  background: $green;
+  margin: 68px -1px;
   text-align: center;
   color: white;
+  margin-bottom: -71px;
+}
+// .alert-info {
+//   background: $green;
+// }
+// .alert-warning {
+//   background: $red;
+// }
+
+.flash {
+  margin: 68px -1px;
+  padding: 0px;
+  text-align: center;
+  color: white;
+  background: $green;
 }
 .alert-info {
   background: $green;
 }
 .alert-warning {
-  background: $red;
+  background: $orange;
+  z-index: 3;
+}
+.close {
+  float: none;
 }
