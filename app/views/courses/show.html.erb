@@ -1,21 +1,55 @@
-<div class="course_container">
-
   <!-- Course Information -->
-  <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('handsnotext.jpg') %>);">
+  <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 70%), url(<%= image_path('handsnotext.jpg') %>);">
     <div class="banner-content">
       <h3><%= @course.title %></h3>
       <p><%=  @course.tagline %></p>
+      <a><span class="">
       <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+      </span></a>
     </div>
   </div>
-
-
     <!-- course_show_page.scss -->
   <div class="course-content">
     <div class="row background_white slightly_padded">
       <div class="course_intro width-720">
         <h4 class="text-left"></i> Course Overview</h4>
           <p><%= @course.description %></p>
+      </div>
+    </div>
+
+    <div class="row background_gray slightly_padded">
+    <h4 class= "text-center"><%= @course.title %> Syllabus</h4>
+      <div class="course_syllabus width-720">
+        <div class="text-left">
+          <% @course.lessons.each do |lesson| %>
+            <li><h5><strong><%= lesson.title %></strong>: <%= lesson.description %></h5></li>
+          <% end %>
+          </ul>
+          <div class="slightly_padded text-center">
+            <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row background_white slightly_padded" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('3dprinter.jpg') ; %>);">
+      <div class="course_project width-720 text-center">
+        <div class="project_review col-sm-5 col-xs-8">
+          <div>
+          <%= image_tag("smilingwoman.jpg", class: "img-rounded", height: '100', width: '100') %>
+          </div>
+          <div class="text-center">
+          <p>"I entered this course with no knowledge about 3D printing but with the help of the instructors and my peers, I built a hand for Chen and it was a really amazing experience!" <strong>Samantha</strong></p>
+          </div>
+        </div>
+        <div class="project_review col-sm-5 col-xs-8">
+            <div>
+            <%= image_tag("boy.jpg", class: "img-rounded", height: '100', width: '100') %>
+            </div>
+            <div class="text-center">
+            <p><strong>Chen</strong><br> is using the hand Samantha made to build up his arm strength and to impress all his 3rd grade classmates!</p>
+            </div>
+        </div>
       </div>
     </div>
 
@@ -60,39 +94,14 @@
       </div>
     </div>
 
-    <div class="row background_white slightly_padded" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('3dprinter.jpg') ; %>);">
-      <div class="course_project width-720 text-center">
-        <div class="project_review col-sm-5 col-xs-8">
-          <%= image_tag("smilingwoman.jpg", class: "img-circle", height: '100', width: '100') %>
-          <p>"I entered this course with no knowledge about 3D printing but with the help of the instructors and my peers, I built a hand for Chen and it was a really amazing experience!" - <strong>Samantha</strong></p>
-        </div>
-        <div class="project_review col-sm-5 col-xs-8">
-            <%= image_tag("boy.jpg", class: "img-circle", height: '100', width: '100') %>
-            <p><strong>Chen</strong><br> is using the hand Samantha made to build up his arm strength and to impress all his 3rd grade classmates!</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row background_gray slightly_padded">
-    <h4 class= "text-center"><%= @course.title %> Syllabus</h4>
-      <div class="course_syllabus width-720">
-        <div class="text-left">
-          <% @course.lessons.each do |lesson| %>
-            <li><h5><strong><%= lesson.title %></strong>: <%= lesson.description %></h5></li>
-          <% end %>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="row background_white slightly_padded">
-      <div class="course_org width-720 text-left">
+    <div class="row background_white padded">
+      <div class="course_org width-720 text-center">
         <div class="col-sm-8">
           <p>Brought to you by: <br></p>
-          <%= image_tag("JohnsonandJohnson.jpg", width: '256') %>
-          <p><%= @course.organization.description %></p>
+          <%= image_tag("Stratasys_Logo.png", width: '256') %>
+          <br>
+          <p class="small-org-info">Stratasys is the global leader in 3D printing and additive solutions, materials and services – delivering speed, innovation, performance and customization.</p>
         </div>
       </div>
     </div>
   </div>
-</div>

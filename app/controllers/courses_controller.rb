@@ -25,7 +25,6 @@ class CoursesController < ApplicationController
   # Shows all the information for one course
   def show
     @course = Course.find(params[:id])
-    @skip_footer = true
   end
 
   # To add a new course for an organization
