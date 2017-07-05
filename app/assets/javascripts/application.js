@@ -122,7 +122,7 @@ function hexToRgb(hex) {
   }
 
 
-// Profile banner gradient
+// Dashboard banner gradient
 var colors = new Array(
   [202,232,246],
   [151,215,244],
