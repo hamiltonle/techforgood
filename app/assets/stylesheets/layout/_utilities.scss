@@ -10,6 +10,18 @@
     overflow:hidden;
 }
 
+
+.align-center {
+  display:flex;
+  align-items:center;
+  // justify-content: space-around;
+}
+
+.height-80vh {
+  height: 90vh;
+}
+
+
 // Paddings
 .padded {
   padding-top: 5em;
@@ -19,6 +31,11 @@
 .slightly_padded {
   padding-top: 2em;
   padding-bottom: 2em;
+}
+
+.one_padded {
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .no-y-padding {
@@ -45,7 +62,7 @@
   background: #aeaeae;
 }
 .bg-blue {
-  background: #00a3e1;
+  background: $blue6;
 }
 .bg-dark-blue {
   background: #3b5998;
@@ -71,6 +88,15 @@ a:focus {
   text-decoration: none;
 }
 
+.link-white a {
+  text-decoration: none;
+  color: white;
+}
+.link-white a:hover {
+
+  color: white;
+  opacity: .9;
+}
 
 
 
@@ -242,6 +268,13 @@ a:focus {
   }
 }
 
+
+.shape-slight {
+    text-shadow: rgb(41, 128, 185) 1px 1px,
+    rgb(41, 128, 185) 2px 2px,
+    rgb(41, 128, 185) 3px 3px,
+
+}
 
 .shape {
     text-shadow: rgb(41, 128, 185) 1px 1px,
