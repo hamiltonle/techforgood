@@ -1,114 +1,98 @@
-<div class="container">
-
-  <div class="hidden-xs">
-  <%= render :partial => 'courses/sidebar' %>
-  </div>
+<div class="course_container">
 
   <!-- Course Information -->
-  <div class="container">
-    <div id="course-content">
-      <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('boy.jpg') %>);">
-      <div class="banner-content">
-        <h3><%= @course.title %></h3>
-        <p><%=  @course.tagline %></p>
-        <%= link_to 'Sign up', new_user_registration_path, class: "btn-warning btn-lg" unless user_signed_in? %>
-      </div>
-      </div>
+  <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('handsnotext.jpg') %>);">
+    <div class="banner-content">
+      <h3><%= @course.title %></h3>
+      <p><%=  @course.tagline %></p>
+      <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+    </div>
+  </div>
 
 
-      <div class="row">
-        <div class="course_issue">
-            <div class="col-md-1">
-            <a name = "issue"></a>
-              <div>
-                <%= image_tag ("002-man-thinking.png"), class:"img-rounded", alt:"Problem", width:"128", height:"128" %>
-              </div>
-            </div>
-            <div class="col-md-8">
-            <a name = "issue"></a>
-                <div>
-                  <h3 class="text-center"><strong>The Issue </strong></h3>
-                  <p><%= @course.issue %></p>
-                </div>
+    <!-- course_show_page.scss -->
+  <div class="course-content">
+    <div class="row background_white slightly_padded">
+      <div class="course_intro width-720">
+        <h4 class="text-left"></i> Course Overview</h4>
+          <p><%= @course.description %></p>
+      </div>
+    </div>
+
+    <div class="row background_gray slightly_padded">
+      <div class="course_outcomes width-720">
+        <div class="col-sm-4">
+          <div class="course_show_card">
+          <h6 class="text-left"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Learn about an issue:</h6>
+            <p><%= @course.issue %></p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="course_show_card">
+            <h6 class="text-left"><i class="fa fa-rocket" aria-hidden="true"></i> Learn a new technology:</h6>
+            <p><%= @course.tech_solution %></p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="course_show_card">
+            <h6 class="text-left"><i class="fa fa-heartbeat" aria-hidden="true"></i> Help someone in need:</h6>
+            <p>By the end of the course, you'll have built a real 3D printed prosthetic hand for a child in need. These children need prosthetic hands in order to help keep their arm muscles working properly so they won't lose their grip function due to disuse.</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="course_show_card">
+            <h6 class="text-left"><i class="fa fa-users" aria-hidden="true"></i> Learn in a social setting:</h6>
+            <p>You can study alongside your friends, colleagues or family or make new friends as you engage in a fulfilling educational journey.</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="course_show_card">
+            <h6 class="text-left"><i class="fa fa-plane" aria-hidden="true"></i> Broaden your horizons:</h6>
+            <p>Get firsthand local experience in using technology to solve global problems. As the world speeds up, there is a greater demand for people who can create new technological solutions to old problems.</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="course_show_card">
+          <h6 class="text-left"><i class="fa fa-certificate" aria-hidden="true"></i> Earn a certificate:</h6>
+            <p>Upon completion of the course, each student will recieve an official certificate they can share with their schools, social groups, employers or put on their resume. </p>
           </div>
         </div>
       </div>
+    </div>
 
-
-      <div class="row">
-        <div class="course_technology">
-        <div class="col-md-1">
-            <a name = "issue"></a>
-              <div>
-                <%= image_tag ("001-light-bulb-idea.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
-              </div>
-          </div>
-            <div class="col-md-8">
-            <a name = "technology"></a>
-                <div>
-                  <h3 class="text-center"><strong>The Technology </strong></h3>
-                  <p><%= @course.tech_solution %></p>
-                </div>
-          </div>
+    <div class="row background_white slightly_padded" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('3dprinter.jpg') ; %>);">
+      <div class="course_project width-720 text-center">
+        <div class="project_review col-sm-5 col-xs-8">
+          <%= image_tag("smilingwoman.jpg", class: "img-circle", height: '100', width: '100') %>
+          <p>"I entered this course with no knowledge about 3D printing but with the help of the instructors and my peers, I built a hand for Chen and it was a really amazing experience!" - <strong>Samantha</strong></p>
+        </div>
+        <div class="project_review col-sm-5 col-xs-8">
+            <%= image_tag("boy.jpg", class: "img-circle", height: '100', width: '100') %>
+            <p><strong>Chen</strong><br> is using the hand Samantha made to build up his arm strength and to impress all his 3rd grade classmates!</p>
         </div>
       </div>
+    </div>
 
-    <!-- Course Description -->
-      <div class="row">
-        <a name = "description"></a>
-        <div class="course_description">
-          <div class="col-md-1">
-            <a name = "issue"></a>
-              <div>
-                <%= image_tag ("002-online-course.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
-              </div>
-          </div>
-            <div class="col-md-8">
-                <div>
-                  <h3 class="text-center"><strong>The Course </strong></h3>
-                  <p><%= @course.description %></p>
-                </div>
-          </div>
-        </div>
-
-    <!-- Lesson Information -->
-      <div class="row">
-        <a name = "description"></a>
-        <div class="course_syllabus">
-          <div class="col-md-1">
-            <a name = "issue"></a>
-            <div>
-              <%= image_tag ("001-thinking.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <h3 class="text-center"><strong>What You'll Learn</strong></h3>
-              <ol class="text-left">
-                <% @course.lessons.each do |lesson| %>
-                  <li><%= lesson.title %></li>
-                <% end %>
-              </ol>
-            </div>
+    <div class="row background_gray slightly_padded">
+    <h4 class= "text-center"><%= @course.title %> Syllabus</h4>
+      <div class="course_syllabus width-720">
+        <div class="text-left">
+          <% @course.lessons.each do |lesson| %>
+            <li><h5><strong><%= lesson.title %></strong>: <%= lesson.description %></h5></li>
+          <% end %>
+          </ul>
         </div>
       </div>
+    </div>
 
-      <div class="row">
-        <a name = "organization"></a>
-        <div class="course_organization">
-          <div class="col-md-1">
-            <a name = "issue"></a>
-            <div>
-              <%= image_tag ("group-of-people-in-a-formation.png"), class:"img-rounded", alt:"3D printed hands", width:"128", height:"128" %>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <h3 class="text-center"><strong>Course by: <%= @course.organization.name %></strong></h3>
-              <p><%= @course.organization.description %></p>
-            </div>
+    <div class="row background_white slightly_padded">
+      <div class="course_org width-720 text-left">
+        <div class="col-sm-8">
+          <p>Brought to you by: <br></p>
+          <%= image_tag("JohnsonandJohnson.jpg", width: '256') %>
+          <p><%= @course.organization.description %></p>
         </div>
       </div>
-
-
     </div>
   </div>
 </div>

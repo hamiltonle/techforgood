@@ -188,7 +188,7 @@
 /* The side navigation menu */
 .sidenav {
   height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
+  width: 280px; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 3; /* Stay on top */
   top: 0;
@@ -214,15 +214,13 @@
   padding: 0px !important;
   border:none;
   line-height: .8;
-
-
-
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: margin-left .5s;
     padding: 0px;
+    margin-left: 280px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -252,6 +250,7 @@
 
 iframe {
     border:none;
+    height: 91vh;
   // top: -2px;
   // left: -2px;
   // right: -2px;
