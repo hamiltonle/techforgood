@@ -56,6 +56,8 @@
   margin-top: 70px;
 }
 
+
+
 // COURSE SHOW PAGE
 .course-banner {
   color: white;
@@ -74,12 +76,31 @@
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   }
   p {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: lighter;
-  color: rgba(255, 255, 255, 0.7);
+  // color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
   }
   margin-bottom: 15px;
+}
+
+
+.cover-size {
+    background-size: cover !important;
+}
+
+.no-repeat {
+    background-repeat: no-repeat;
+}
+
+.center-position {
+    background-position: top;
+}
+.top-position {
+    background-position: top;
+}
+.bottom-position {
+    background-position: bottom;
 }
 
 
@@ -110,7 +131,7 @@
     // /* The image used */
     // background-image: url("img_parallax.jpg");
     /* Set a specific height */
-    min-height: 500px;
+    // min-height: 500px;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;

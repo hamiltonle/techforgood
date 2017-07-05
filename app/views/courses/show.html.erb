@@ -1,110 +1,203 @@
   <!-- Course Information -->
-  <div class="course-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 70%), url(<%= image_path('handsnotext.jpg') %>);">
+  <div class="course-banner parallax bottom-position" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 70%), url(<%= image_path('handsnotext.jpg') %>);">
     <div class="banner-content">
-      <h3><%= @course.title %></h3>
-      <p><%=  @course.tagline %></p>
+      <h3 class="fredoka"><%= @course.title %></h3>
+      <p><em><%=  @course.tagline %></em></p>
       <a><span class="">
       <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+      <a href="#intro" class="navbar-techforgood-item navbar-techforgood-link page-scroll btn btn-danger"><span>Learn More</span></a>
       </span></a>
     </div>
   </div>
     <!-- course_show_page.scss -->
-  <div class="course-content">
+  <div class="course-content" id="intro">
     <div class="row background_white slightly_padded">
       <div class="course_intro width-720">
-        <h4 class="text-left"></i> Course Overview</h4>
-          <p><%= @course.description %></p>
+        <h4 class="text-blue7"> Course Overview</h4>
+        <div class="padding-left-20">
+          <p class="text-smooth body-gray "><%= @course.description %></p>
+        </div>
       </div>
     </div>
 
     <div class="row background_gray slightly_padded">
-    <h4 class= "text-center"><%= @course.title %> Syllabus</h4>
-      <div class="course_syllabus width-720">
-        <div class="text-left">
-          <% @course.lessons.each do |lesson| %>
-            <li><h5><strong><%= lesson.title %></strong>: <%= lesson.description %></h5></li>
-          <% end %>
-          </ul>
-          <div class="slightly_padded text-center">
-            <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+      <div class="course_intro width-720">
+      <h4 class= "text-blue7">Syllabus: <%= @course.title %> </h4>
+        <div class="course_syllabus">
+          <div class="">
+            <% lesson_num = 1 %>
+
+            <% @course.lessons.reverse.each do |lesson| %>
+              <div class="padding-left-20 body-gray">
+                <h4 class="no-bottom-margin text-16px"><em><%= lesson_num %>) <%= lesson.title %></em></h4>
+                <p class="no-y-margin text-smooth"> <%= lesson.description %></p>
+              </div>
+              <% lesson_num += 1 %>
+            <% end %>
+
+            <div class="slightly_padded text-center">
+              <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row background_white slightly_padded" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('3dprinter.jpg') ; %>);">
+    <div class="row background_white slightly_padded parallax bottom-position no-repeat cover-size" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(255,255,255,0.4) 90%), url(<%= image_path('3dprinter.jpg') %>);">
+
       <div class="course_project width-720 text-center">
-        <div class="project_review col-sm-5 col-xs-8">
+         <div class="col-xs-0">
+
+        </div>
+        <div class="project_review col-sm-5 col-xs-8 margin-bottom-15px" data-aos="fade-right">
           <div>
           <%= image_tag("smilingwoman.jpg", class: "img-rounded", height: '100', width: '100') %>
           </div>
-          <div class="text-center">
-          <p>"I entered this course with no knowledge about 3D printing but with the help of the instructors and my peers, I built a hand for Chen and it was a really amazing experience!" <strong>Samantha</strong></p>
+          <h4><strong>Samantha</strong></h4>
+          <div class="text-left">
+            <p class="text-smooth "><em>"I started not knowing anything about 3D printing, but with the great lessons and supportive community, I built a hand for Chen and it was a really amazing experience!"</em></p>
           </div>
         </div>
-        <div class="project_review col-sm-5 col-xs-8">
+        <div class="col-xs-0 col-sm-2">
+
+        </div>
+        <div class="project_review2 col-sm-5 col-xs-8 margin-bottom-15px" data-aos="fade-left" data-aos-delay="300" >
             <div>
             <%= image_tag("boy.jpg", class: "img-rounded", height: '100', width: '100') %>
             </div>
-            <div class="text-center">
-            <p><strong>Chen</strong><br> is using the hand Samantha made to build up his arm strength and to impress all his 3rd grade classmates!</p>
+            <h4><strong>Chen</strong></h4>
+            <div class="text-left">
+            <p class="text-smooth ">Chen's been using the hand Samantha made to build up his arm strength &amp; to impress all his 3rd grade classmates!  He often sends Samantha photos of his biking adventures!</p>
             </div>
         </div>
       </div>
     </div>
 
+
+<!--
+ <div class="row background_white slightly_padded parallax bottom-position no-repeat cover-size" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(255,255,255,0.4) 90%), url(<%= image_path('3dprinter.jpg') %>);">
+
+      <div class="course_project width-720 text-center">
+
+        <div class="project_review col-sm-5 col-xs-8 margin-bottom-15px" data-aos="fade-right">
+          <div>
+          <%= image_tag("smilingwoman.jpg", class: "img-rounded", height: '100', width: '100') %>
+          </div>
+          <h4><strong>Samantha</strong></h4>
+          <div class="text-left">
+            <p class="text-smooth "><em>"I started not knowing anything about 3D printing, but with the great lessons and supportive community, I built a hand for Chen and it was a really amazing experience!"</em></p>
+          </div>
+        </div>
+        <div class="col-xs-0 col-sm-2">
+
+        </div>
+
+      </div>
+    </div>
+    <div class="row background_white slightly_padded parallax bottom-position no-repeat cover-size" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(255,255,255,0.4) 90%), url(<%= image_path('3dprinter.jpg') %>);">
+
+      <div class="course_project width-720 text-center">
+         <div class="col-xs-0">
+
+        </div>
+
+        <div class="col-xs-0 col-sm-2">
+
+        </div>
+        <div class="project_review2 col-sm-5 col-xs-8 margin-bottom-15px" data-aos="fade-left" data-aos-delay="300" >
+            <div>
+            <%= image_tag("boy.jpg", class: "img-rounded", height: '100', width: '100') %>
+            </div>
+            <h4><strong>Chen</strong></h4>
+            <div class="text-left">
+            <p class="text-smooth ">Chen's been using the hand Samantha made to build up his arm strength &amp; to impress all his 3rd grade classmates!  He often sends Samantha photos of his biking adventures!</p>
+            </div>
+        </div>
+      </div>
+    </div> -->
+
+
+
     <div class="row background_gray slightly_padded">
-      <div class="course_outcomes width-720">
-        <div class="col-sm-4">
+      <div class="course_outcomes width-750">
+        <div class="col-xs-6">
           <div class="course_show_card">
           <h4 class="text-left"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Learn about an issue:</h4>
-            <p><%= @course.issue %></p>
+            <p class="text-smooth body-gray"><%= @course.issue %></p>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-xs-6">
           <div class="course_show_card">
             <h4 class="text-left"><i class="fa fa-rocket" aria-hidden="true"></i> Learn a new technology:</h4>
-            <p><%= @course.tech_solution %></p>
+            <p class="text-smooth body-gray "><%= @course.tech_solution %></p>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-xs-6">
           <div class="course_show_card">
             <h4 class="text-left"><i class="fa fa-heartbeat" aria-hidden="true"></i> Help someone in need:</h4>
-            <p>By the end of the course, you'll have built a real 3D printed prosthetic hand for a child in need. These children need prosthetic hands in order to help keep their arm muscles working properly so they won't lose their grip function due to disuse.</p>
+            <p class="text-smooth body-gray ">By the end of the course, you'll have built a real 3D printed prosthetic hand for a child in need. These children need prosthetic hands in order to help keep their arm muscles working properly so they won't lose their grip function due to disuse.</p>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-xs-6">
           <div class="course_show_card">
             <h4 class="text-left"><i class="fa fa-users" aria-hidden="true"></i> Learn in a social setting:</h4>
-            <p>You can study alongside your friends, colleagues or family or make new friends as you engage in a fulfilling educational journey.</p>
+            <p class="text-smooth body-gray ">You can study alongside your friends, colleagues or family or make new friends as you engage in a fulfilling educational journey.</p>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-xs-6">
           <div class="course_show_card">
             <h4 class="text-left"><i class="fa fa-plane" aria-hidden="true"></i> Broaden your horizons:</h4>
-            <p>Get firsthand local experience in using technology to solve global problems. As the world speeds up, there is a greater demand for people who can create new technological solutions to old problems.</p>
+            <p class="text-smooth body-gray ">Get firsthand local experience in using technology to solve global problems. As the world speeds up, there is a greater demand for people who can create new technological solutions to old problems.</p>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-xs-6">
           <div class="course_show_card">
-          <h4 class="text-left"><i class="fa fa-certificate" aria-hidden="true"></i> Earn a certificate:</h4>
-            <p>Upon completion of the course, each student will recieve an official certificate they can share with their schools, social groups, employers or put on their resume. </p>
+          <h4 class="text-left"><i class="fa fa-spin fa-certificate" aria-hidden="true"></i> Earn a certificate:</h4>
+            <p class="text-smooth body-gray ">Upon completion of the course, each student will recieve an official certificate they can share with their schools, social groups, employers or put on their resume. </p>
           </div>
         </div>
       </div>
-      <div class="slightly_padded text-center">
-            <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
-          </div>
+
     </div>
 
-    <div class="row background_white padded">
+
+
+      <div class="row background_white slightly_padded parallax bottom-position no-repeat cover-size" style="background-image: linear-gradient(-225deg, rgba(255,255,255,0.9) 40%, rgba(255,255,255,.99) 100%), url(<%= image_path('tedx.jpg') %>);">
+        <div class="row  padded text-center">
+          <h4 class= "text-blue7">Brought to you by: </h4>
+          <div class="course_org width-720 text-center">
+
+            <div class="col-sm-6">
+
+              <%= image_tag("Stratasys_Logo.png", height: '80') %>
+              <br>
+              <p class="small-org-info">Stratasys is the global leader in 3D printing and additive solutions, materials and services – delivering speed, innovation, performance and customization.</p>
+            </div>
+            <div class="col-sm-6">
+              <%= image_tag("handson-logo.png", height: '80') %>
+              <br>
+              <p class="small-org-info">Based on scientific and technological innovation, we develop &amp; disseminate technical solutions in an innovative way and apply them to the those in need</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+     <div class="row background_gray">
       <div class="course_org width-720 text-center">
-        <div class="col-sm-8">
-          <p>Brought to you by: <br></p>
-          <%= image_tag("Stratasys_Logo.png", width: '256') %>
-          <br>
-          <p class="small-org-info">Stratasys is the global leader in 3D printing and additive solutions, materials and services – delivering speed, innovation, performance and customization.</p>
+        <div class="slightly_padded text-center ">
+            <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+
+          <h4>Or back to
+            <%= link_to "course catalog", courses_path(:anchor => "courses"), class: "" %>
+          </h4>
         </div>
       </div>
     </div>
   </div>
+
+
+
+
