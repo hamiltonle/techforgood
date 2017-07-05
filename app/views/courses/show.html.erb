@@ -57,41 +57,44 @@
       <div class="course_outcomes width-720">
         <div class="col-sm-4">
           <div class="course_show_card">
-          <h6 class="text-left"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Learn about an issue:</h6>
+          <h4 class="text-left"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Learn about an issue:</h4>
             <p><%= @course.issue %></p>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="course_show_card">
-            <h6 class="text-left"><i class="fa fa-rocket" aria-hidden="true"></i> Learn a new technology:</h6>
+            <h4 class="text-left"><i class="fa fa-rocket" aria-hidden="true"></i> Learn a new technology:</h4>
             <p><%= @course.tech_solution %></p>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="course_show_card">
-            <h6 class="text-left"><i class="fa fa-heartbeat" aria-hidden="true"></i> Help someone in need:</h6>
+            <h4 class="text-left"><i class="fa fa-heartbeat" aria-hidden="true"></i> Help someone in need:</h4>
             <p>By the end of the course, you'll have built a real 3D printed prosthetic hand for a child in need. These children need prosthetic hands in order to help keep their arm muscles working properly so they won't lose their grip function due to disuse.</p>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="course_show_card">
-            <h6 class="text-left"><i class="fa fa-users" aria-hidden="true"></i> Learn in a social setting:</h6>
+            <h4 class="text-left"><i class="fa fa-users" aria-hidden="true"></i> Learn in a social setting:</h4>
             <p>You can study alongside your friends, colleagues or family or make new friends as you engage in a fulfilling educational journey.</p>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="course_show_card">
-            <h6 class="text-left"><i class="fa fa-plane" aria-hidden="true"></i> Broaden your horizons:</h6>
+            <h4 class="text-left"><i class="fa fa-plane" aria-hidden="true"></i> Broaden your horizons:</h4>
             <p>Get firsthand local experience in using technology to solve global problems. As the world speeds up, there is a greater demand for people who can create new technological solutions to old problems.</p>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="course_show_card">
-          <h6 class="text-left"><i class="fa fa-certificate" aria-hidden="true"></i> Earn a certificate:</h6>
+          <h4 class="text-left"><i class="fa fa-certificate" aria-hidden="true"></i> Earn a certificate:</h4>
             <p>Upon completion of the course, each student will recieve an official certificate they can share with their schools, social groups, employers or put on their resume. </p>
           </div>
         </div>
       </div>
+      <div class="slightly_padded text-center">
+            <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+          </div>
     </div>
 
     <div class="row background_white padded">
