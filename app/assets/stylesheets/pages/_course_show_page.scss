@@ -53,9 +53,11 @@
 .course_intro {
   display: block;
   align-content: center;
-  justify-content: space-around;
+  justify-content: center;
+  color: #566b78;
   p {
     font-size: 14px;
+    color: #566b78;
   }
 }
 
@@ -110,11 +112,10 @@
   justify-content: space-between;
   flex-wrap: wrap;
   p {
-    font-size: 12px;
+    font-size: 12 px;
   }
-  h6 {
-    color: #555;
-    font-weight: bold;
+  h4 {
+    font-size: 16px;
   }
 }
 
@@ -130,13 +131,19 @@
 }
 
 .project_review {
+  justify-content: center;
+  align-items: center;
   padding: 10px;
-  background-color: $orange;
-  color: #fff;
+  background-color: rgba(255,165,0,0.95);
+  color: white;
   border-radius: 5px;
   padding: 8px;
   margin: 10px;
   height: 280px;
+
+  div {
+    padding: 5px;
+  }
 }
 
 .course_org {
@@ -148,7 +155,7 @@
 .course_syllabus {
   display: flex;
   align-items: left;
-  justify-content: space-around;
+  justify-content: center;
   p {
     margin-bottom: 10px;
   }
@@ -162,4 +169,9 @@
 .width-720 {
   max-width: 720px;
   margin: 0 auto;
+}
+
+.small-org-info {
+  font-size: 12px;
+  color: #566b78;
 }

@@ -4,14 +4,12 @@
   font-family: $header-font;
   position: relative;
   color: white;
-  background-color: transparent;
+  background-color: $orange;
   padding-right: 15px;
   padding-left: 15px;
   border-radius: 5px;
   margin-top: 10px;
   &:hover {
-    opacity: 0.6;
-
     span {
       filter: brightness(.9) contrast(1.2);
       transform: scale(0.96);
