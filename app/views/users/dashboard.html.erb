@@ -2,23 +2,30 @@
 <div class="dashboard-banner padded text-center" id="gradient" >
   <div class="container">
 
-        <div class="dashboard-user-details">
-          <% if @new_user %>
-            <h1>Welcome to TechForGood!</h1>
-          <% else %>
-            <h1>Hello <%= @user.first_name%>!</h1>
-          <% end %>
+    <div class="dashboard-user-details">
+      <% if @new_user %>
+        <h1>Welcome to TechForGood!</h1>
+      <% else %>
+        <h1>Hello <%= @user.first_name%>!</h1>
+      <% end %>
 
-          <% if @new_user %>
-            <h3>Update your profile</h3>
-          <% else %>
-            <h3>What did you learn today?</h3>
-          <% end %>
-        </div>
+      <% if @new_user %>
+        <h3>Update your profile</h3>
+      <% else %>
+        <h3>What did you learn today?</h3>
+      <% end %>
+    </div>
 
-        <div class="edit-profile-button">
-          <%= link_to "Edit profile", edit_user_path(current_user), class: "btn-sm btn-primary-profile-banner" %>
-        </div>
+    <!-- Tabs -->
+    <div class="tabs">
+      <div class="tab-links">
+        <ul class="tab-links">
+            <li class="active"><a href="#Courses">Courses</a></li>
+            <li><a href="#Classmates">Classmates</a></li>
+            <li><a href="#Profile">Profile</a></li>
+        </ul>
+      </div>
+    </div>
 
   </div>
 </div>
@@ -32,6 +39,26 @@
   </div>
 
 <% end %>
+
+<!-- Tab Content -->
+<div class="tab-content">
+
+<!-- Start a New Course Section -->
+<h3 id="Courses" class="tab active">Courses</h3>
+<div class="progress-circle padded text-center">
+  <h5>Completed Courses</h5>
+
+  <!-- Progress Circle -->
+  <div id="circle-progress" data-dimension="120" data-text="<%= @completed_enrollments.count %>" data-fontsize="36" data-percent="<%= @completed_enrollments.count %>" data-fgcolor="#5fb3b3" data-bgcolor="#eee" data-width="15" data-bordersize="8" data-animationstep="2"></div>
+
+  <!-- Enroll Button -->
+  <% unless @new_user %>
+    <div align="center" class="dashboard-enroll-button">
+      <%= link_to "Start a new course", courses_path(:anchor => "courses"), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+</div>
 
 <!-- Current Course Information -->
 <% unless @new_user %>
@@ -56,11 +83,6 @@
           <p>Rank: 6/50 <a href="#" data-toggle="tooltip" title="This is your ranking for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
         </div>
         <br>
-
-        <!-- Current Lesson Section -->
-        <div class="current-lesson">
-
-        </div>
 
         <!-- Progress Bar -->
         <div class="progress">
@@ -94,15 +116,6 @@
       </div>
     </div>
   <% end %>
-</div>
-
-<% end %>
-
-<!-- Enroll Button -->
-<% unless @new_user %>
-
-<div align="center" class="dashboard-enroll-button">
-  <%= link_to "Start a new course", courses_path(:anchor => "courses"), class: "btn btn-primary" %>
 </div>
 
 <% end %>
@@ -163,3 +176,164 @@
 </div>
 
 <% end %>
+
+<!-- Classmates -->
+<h3 id="Classmates" class="tab">Classmates</h3>
+
+<% @current_enrollments.each do |enrollment| %>
+  <% @all_enrollments = enrollment.course.enrollments %>
+    <% @all_enrollments.each do |enrollment|  %>
+
+      <ul>
+        <li class="card">
+          <div class="card__flipper">
+            <div class="card__front">
+              <p class="card__num">
+              <!-- Name -->
+              <p class="card__name"><span><%= enrollment.user.first_name %></span> <%= enrollment.user.last_name %></p>
+              <br>
+
+              <!-- Photo -->
+              <% if enrollment.user.photo? %>
+                <%= cl_image_tag enrollment.user.photo.path, class: "dashboard-img-round" %>
+              <% else %>
+                <%= image_tag "https://placehold.it/100x100", class: "img-circle" %>
+              <% end %></p>
+              <br>
+
+              <!-- Group -->
+              <p class="card__name user-email"><%= enrollment.user.group %></p>
+              <br>
+
+              <!-- Email -->
+              <p class="card__name user-email"><%= enrollment.user.email %></p>
+            </div>
+
+            <div class="card__back">
+                <circle cx="90" cy="90" r="55" stroke="#514d9b" stroke-width="35"  />
+              </svg>
+              <span>113.2</span>
+            </div>
+
+          </div>
+        </li>
+      </ul>
+
+    <% end %>
+  <% end %>
+
+<ul>
+  <li class="card">
+    <div class="card__flipper">
+      <div class="card__front">
+        <p class="card__num">
+        <% if @user.photo? %>
+          <%= cl_image_tag @user.photo.path, class: "dashboard-img-round" %>
+        <% else %>
+          <%= image_tag "https://placehold.it/200x200", class: "img-circle" %>
+        <% end %></p>
+        <br>
+        <p class="card__name"><span><%= @user.first_name %></span><br><%= @user.last_name %></p>
+        <br>
+        <p class="card__name user-email"><%= @user.email %></p>
+      </div>
+      <div class="card__back">
+        <svg height="180" width="180">
+          <circle cx="90" cy="90" r="55" stroke="#514d9b" stroke-width="35"  />
+        </svg>
+        <span>113.2</span>
+      </div>
+    </div>
+  </li>
+  <li class="card">
+    <div class="card__flipper">
+       <div class="card__front">
+         <p class="card__name"><span>Aaron</span><br>Rodgers</p>
+        <p class="card__num">12</p>
+      </div>
+      <div class="card__back">
+        <svg height="180" width="180">
+          <circle cx="90" cy="90" r="55" stroke="#35a541" stroke-width="35"  />
+        </svg>
+        <span>112.2</span>
+      </div>
+    </div>
+  </li>
+  <li class="card">
+    <div class="card__flipper">
+       <div class="card__front">
+        <p class="card__name"><span>Ben</span><br>Roethlisberger</p>
+        <p class="card__num">7</p>
+      </div>
+      <div class="card__back">
+        <svg height="180" width="180">
+          <circle cx="90" cy="90" r="55" stroke="#bdb235" stroke-width="35"  />
+        </svg>
+        <span>103.3</span>
+      </div>
+    </div>
+  </li>
+  <li class="card">
+    <div class="card__flipper">
+       <div class="card__front">
+        <p class="card__name"><span>Peyton</span><br>Manning</p>
+        <p class="card__num">18</p>
+      </div>
+      <div class="card__back">
+        <svg height="180" width="180">
+          <circle cx="90" cy="90" r="55" stroke="#db6623" stroke-width="35"  />
+        </svg>
+        <span>101.5</span>
+      </div>
+    </div>
+  </li>
+  <li class="card">
+    <div class="card__flipper">
+       <div class="card__front">
+        <p class="card__name"><span>Tom</span><br>Brady</p>
+        <p class="card__num">12</p>
+      </div>
+      <div class="card__back">
+        <svg height="180" width="180">
+          <circle cx="90" cy="90" r="55" stroke="#3e5eb3" stroke-width="35"  />
+        </svg>
+        <span>97.4</span>
+      </div>
+    </div>
+  </li>
+  <li class="card">
+    <div class="card__flipper">
+       <div class="card__front">
+        <p class="card__name"><span>Drew</span><br>Brees</p>
+        <p class="card__num">9</p>
+      </div>
+      <div class="card__back">
+        <svg height="180" width="180">
+          <circle cx="90" cy="90" r="55" stroke="#aa9e5c" stroke-width="35"  />
+        </svg>
+        <span>97.0</span>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<!-- Profile -->
+<h3 id="Profile" class="tab">Profile</h3>
+<% if @user.photo? %>
+  <%= cl_image_tag @user.photo.path, class: "dashboard-img-round" %>
+<% else %>
+  <%= image_tag "https://placehold.it/200x200", class: "img-circle" %>
+<% end %>
+<br>
+<p><%= @user.first_name %> <%= @user.last_name %></p>
+<br>
+<p>Email: <%= @user.email %></p>
+<br>
+<p>Group: <%= @user.group %></p>
+
+<!-- Edit Profile Button -->
+  <div class="edit-profile-button padded">
+    <%= link_to "Edit profile", edit_user_path(current_user), class: "btn btn-primary" %>
+  </div>
+
+</div>
