@@ -11,6 +11,17 @@
 to interfere with the JS for our user facing pages, if you need to add a new javascript library
 please make a specific require like above */
 
+
+// for the alert
+window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove();
+    });
+}, 2000);
+
+
+
+
 /* show more function for the dropdown read more */
 $('.show-more').click(function() {
   if($('.show-more-snippet').css('height') != '35px'){
