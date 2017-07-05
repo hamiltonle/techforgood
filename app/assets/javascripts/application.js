@@ -971,3 +971,8 @@ jQuery(document).ready(function() {
         e.preventDefault();
     });
 });
+
+// Modal
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})
