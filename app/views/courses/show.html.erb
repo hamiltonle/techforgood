@@ -168,8 +168,8 @@
     <div class="row background_gray slightly_padded">
           <div class="width-720 course_students">
             <h4 class="text-blue7"><%= @course_enrollments.count %> Students Currently Enrolled</h4>
-            <div class="padding-left-20">
-              <% @course_enrollments[0..3].each do |enrollment| %>
+            <div class="padding-left-20 center-overlap-photos">
+              <% @course_enrollments[0..9].each do |enrollment| %>
               <div class="course_show_student_card col-xs-3 overlap-user-avatar">
                 <% if enrollment.user.photo? %>
                 <%= cl_image_tag enrollment.user.photo.path, class: "dashboard-img-round" %>
