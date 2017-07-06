@@ -231,7 +231,7 @@ ul {
 
   &__back {
     transform: rotateY(180deg) scale(1.1);
-    background: lighten(black, 8);
+    background: lighten($blue7, 8);
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -290,9 +290,21 @@ ul {
   font-size: 14px;
 }
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 // Profile
 .profile-section {
   display: flex;
   align-items: center;
   justify-content: space-around;
+=======
+.gif-circle {
+  width: 200px;
+  border-radius: 50%;
+>>>>>>> Stashed changes
+=======
+.gif-circle {
+  width: 200px;
+  border-radius: 50%;
+>>>>>>> Stashed changes
 }
