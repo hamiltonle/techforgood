@@ -2,6 +2,7 @@
   background: $blue6;
   padding: 20px 0;
   color: white;
+
 }
 
 #footer p {
@@ -21,4 +22,21 @@
 
 #footer a:hover{
   color: $blue2;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+#socials {
+  flex: 1 1;
+  margin-right: 200px;
+}
+
+#made-by {
+  flex: 1 1;
+  margin-top: 10px;
 }
