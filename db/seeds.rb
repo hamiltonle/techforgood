@@ -265,8 +265,29 @@ org.save!
 puts "saved an org"
 
 org = Organization.new(
-  name: "Johnson & Johnson",
-  description: "An American multinational medical devices, pharmaceutical and consumer packaged goods manufacturing company founded in 1886"
+  name: "OxSight",
+  description: "a University of Oxford venture that uses the latest smart glasses to improve sight for blind and partially sighted people"
+  )
+org.save!
+puts "saved an org"
+
+org = Organization.new(
+  name: "DJI",
+  description: "As the market leader in easy-to-fly drones and aerial photography systems, DJI quadcopters like the Phantom are the standard in consumer drone technology."
+  )
+org.save!
+puts "saved an org"
+
+org = Organization.new(
+  name: "Google Tilt Brush",
+  description: "Tilt Brush is a room scale 3D painting virtual reality application developed and published by Google. The software was released for Microsoft Windows on April 5, 2016"
+  )
+org.save!
+puts "saved an org"
+
+org = Organization.new(
+  name: "OKCoin",
+  description: "OKCoin is a Bitcoin company in China with core product lines of a Bitcoin exchange, and a mobile consumer payment and lending app"
   )
 org.save!
 puts "saved an org"
@@ -278,16 +299,17 @@ puts "creating courses"
 course = Course.new(
   title: "3D Printing",
   tagline: "Learn how to make 3d printed prosthetics for children in need",
-  issue: "Prosthetics can involve a lot of work and expertise to produce and fit and the WHO says there is currently a shortage of 40,000 trained prosthetists in poorer countries. There is also the time and financial cost to patients, who may have to travel long distances to assess their need, produce a prosthesis and fit it to the residual limb. The result is that braces and artificial limbs are among the most desperately needed medical devices.",
-  tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
-  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).",
-
+  issue: "Prosthetics can involve a lot of work and expertise to produce and fit and the WHO says there is currently a shortage of 40,000 trained prosthetists in poorer countries. ",
+  tech_solution: "Slowly but surely, 3D printing, has made it easier to build low cost customized prosthetics.  There are few commercial products that can suit custom sizes as needed.",
+  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from Stratasys and Zhanyijihua",
 
   )
-course.organization = Organization.find(3)
+course.organization = Organization.find(1)
 
 urls = [
-  "https://www.rit.edu/news/lib/filelib/201402/talonhand1.jpg"
+  "https://www.rit.edu/news/lib/filelib/201402/talonhand1.jpg",
+  "http://res.cloudinary.com/techforgood/image/upload/c_scale,w_330/v1499350323/Stratasys-3_iroanp.png"
+
 ]
 course.photo_urls = urls
 
@@ -300,18 +322,16 @@ course = Course.new(
   title: "Computer Vision",
   tagline: "Using Microsoft's computer vision technology to find missing children",
   issue: "Currently, there are millions of children who've gone missing in China.",
-  tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
-  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).
+  tech_solution: "Slowly but surely, 3D printing, has made it easier to build low cost customized prosthetics.  There are few commercial products that can suit custom sizes as needed.",
+  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from Stratasys and Zhanyijihua",
 
-You will obtain a rich understanding of what 3D printing is, how 3D printers work, and how this new technology is being used by both individuals and firms to revolutionize our world. In addition, you will acquire a set of skills that will enable you to create digital designs that you can transform into physical objects. These skills can be used to help you launch a career in the growing field of 3D printing, be the 3D printing expert in your current firm, or just make the things you need.
-
-"
   )
 course.organization = Organization.find(2)
 
-
 urls = [
-  "https://hothardware.com/ContentImages/NewsItem/35672/content/Microsoft_Emotion_Detection_2.jpg"
+  "https://hothardware.com/ContentImages/NewsItem/35672/content/Microsoft_Emotion_Detection_2.jpg",
+  "http://res.cloudinary.com/techforgood/image/upload/c_scale,w_340/v1499350449/Microsoft-Logo_d5uvez.png"
+
 ]
 course.photo_urls = urls
 
@@ -326,20 +346,83 @@ course = Course.new(
   tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
   description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).
 
-You will obtain a rich understanding of what 3D printing is, how 3D printers work, and how this new technology is being used by both individuals and firms to revolutionize our world. In addition, you will acquire a set of skills that will enable you to create digital designs that you can transform into physical objects. These skills can be used to help you launch a career in the growing field of 3D printing, be the 3D printing expert in your current firm, or just make the things you need.
-
 "
   )
-course.organization = Organization.find(1)
+course.organization = Organization.find(3)
 
 urls = [
-  "https://www-tc.pbs.org/wgbh/nova/next/wp-content/uploads/2015/06/smart-specs.jpg"
+  "https://www-tc.pbs.org/wgbh/nova/next/wp-content/uploads/2015/06/smart-specs.jpg",
+  "http://res.cloudinary.com/techforgood/image/upload/c_scale,w_348/v1499350599/OxSight-logo_rhkwoc.png"
 ]
 course.photo_urls = urls
 
 
 course.save!
 puts "saved a course"
+
+
+course = Course.new(
+  title: "Drones",
+  tagline: "Build drones to help monitor forest fires",
+  issue: "Blindness doesn't allow people to experience and interact with their surroundings to the fullest",
+  tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
+  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).
+
+"
+  )
+course.organization = Organization.find(4)
+
+urls = [
+  "http://res.cloudinary.com/techforgood/image/upload/v1499350844/Forest_fire_UAV_400x300_we9dls.jpg",
+  "http://res.cloudinary.com/techforgood/image/upload/c_scale,w_378/v1499350735/dji_miaufs.png"
+]
+course.photo_urls = urls
+
+course.save!
+puts "saved a course"
+
+
+course = Course.new(
+  title: "Virtual Reality",
+  tagline: "Promote arts advocacy to low-income areas with VR",
+  issue: "Blindness doesn't allow people to experience and interact with their surroundings to the fullest",
+  tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
+  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).
+
+"
+  )
+course.organization = Organization.find(5)
+
+urls = [
+  "http://res.cloudinary.com/techforgood/image/upload/v1499351723/34099C6A00000578-3584512-Google_says_its_new_Tilt_Brush_VR_app_illustrated_enables_users_-a-14_1462963022363_bzmovm.jpg",
+  "http://res.cloudinary.com/techforgood/image/upload/c_scale,w_284/v1499351744/1200px-Google_2015_logo.svg_d6p9cm.png"
+]
+course.photo_urls = urls
+
+course.save!
+puts "saved a course"
+
+
+course = Course.new(
+  title: "Blockchain",
+  tagline: "Use blockchain technology to properly fund-raise for disaster-stricken areas",
+  issue: "Blindness doesn't allow people to experience and interact with their surroundings to the fullest",
+  tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
+  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).
+
+"
+  )
+course.organization = Organization.find(6)
+
+urls = [
+  "http://res.cloudinary.com/techforgood/image/upload/v1499351837/e67718c8-35b9-47ad-be8b-94de27d22080_bs2zwl.jpg",
+  "http://res.cloudinary.com/techforgood/image/upload/c_scale,w_179/v1499351964/logo1_nnimvo.png"
+]
+course.photo_urls = urls
+
+course.save!
+puts "saved a course"
+
 
 
 
