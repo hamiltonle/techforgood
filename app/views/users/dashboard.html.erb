@@ -27,6 +27,31 @@
 
   </div>
 </div>
+<<<<<<< Updated upstream
+=======
+    <!-- Nav tabs -->
+    <ul class="nav tabs" role="tablist">
+      <li role="presentation" class="tab active">
+        <a href="#progress" aria-controls="progress" role="tab" data-toggle="tab">Current Courses</a>
+      </li>
+      <li role="presentation" class="tab">
+        <a href="#completed" aria-controls="completed" role="tab" data-toggle="tab">Completed Courses</a>
+      </li>
+      <li role="presentation" class="tab">
+        <a href="#classmates" aria-controls="classmates" role="tab" data-toggle="tab">Classmates</a>
+      </li>
+      <li role="presentation" class="tab">
+        <a href="#edit" aria-controls="edit" role="tab" data-toggle="tab"> Profile</a>
+      </li>
+    </ul>
+
+
+<!--
+      <a class="tab active" href="#progress"  aria-controls="progress" role="tab" data-toggle="tab"><h5>Courses In Progress</h5></a>
+      <a class="tab active" href="#completed" aria-controls="completed" role="tab" data-toggle="tab"><h5>Past Courses</h5></a>
+      <a class="tab active" href="#classmates" aria-controls="classmates" role="tab" data-toggle="tab"><h5>classmates</h5></a>
+      <a class="tab active" href="#edit" aria-controls="edit" role="tab" data-toggle="tab"><h5>Edit Profile</h5></a> -->
+>>>>>>> Stashed changes
 
 <!-- New User Interface (shows if user hasn't signed up to any courses -->
 <% if @new_user %>
@@ -199,9 +224,36 @@
               <% end %></p>
               <br>
 
+<<<<<<< Updated upstream
               <!-- Group -->
               <p class="card__name user-email"><%= enrollment.user.group %></p>
               <br>
+=======
+      <!-- Profile -->
+      <h3 class="tab">Profile</h3>
+      <div class="profile-section">
+        <div class="profile-item text-center">
+          <% if @user.photo? %>
+            <%= cl_image_tag @user.photo.path, class: "dashboard-img-round" %>
+          <% else %>
+            <%= image_tag "https://placehold.it/150x150", class: "img-circle" %>
+          <% end %>
+        </div>
+        <div class="profile-item text-center">
+          <h4><%= @user.first_name %> <%= @user.last_name %></h4>
+          <br>
+          <p><%= @user.email %></p>
+          <br>
+          <p><%= @user.group %></p>
+        </div>
+      </div>
+
+      <!-- Edit Profile Button -->
+      <div class="edit-profile-button padded text-center">
+        <%= link_to "Edit profile", edit_user_path(current_user), class: "btn btn-primary" %>
+      </div>
+    </div>
+>>>>>>> Stashed changes
 
               <!-- Email -->
               <p class="card__name user-email"><%= enrollment.user.email %></p>

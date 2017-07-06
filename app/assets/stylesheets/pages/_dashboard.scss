@@ -54,7 +54,7 @@
 }
 
 .dashboard-img-round {
-  width: 100px;
+  width: 150px;
   border-radius: 50%;
 }
 
@@ -301,4 +301,11 @@ main {
 
 .user-email {
   font-size: 14px;
+}
+
+// Profile
+.profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
