@@ -198,11 +198,9 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary"><%= link_to 'Next Lesson', course_lesson_path(@course.id, @lesson.id + 1) %></button>
       </div>
       </div>
     </div>
   </div>
 </div>
-
-<%= link_to 'Next Lesson', course_lesson_path(@course.id, @lesson.id + 1), data: {toggle: "modal", target: "#modal"} %>
