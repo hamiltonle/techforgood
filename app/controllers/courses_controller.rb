@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
 
   # Shows all courses on the home page
   def index
-    @courses = Course.all
+    @courses = Course.all[0..5]
 
     @steps = {
       "Choose courses" => "search",

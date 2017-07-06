@@ -45,6 +45,13 @@
   margin-bottom: 15px;
 }
 
+
+
+.width-1000 {
+  max-width: 1000px;
+}
+
+
 // Paddings
 .padded {
   padding-top: 5em;
@@ -154,6 +161,9 @@ a:focus {
 
 .text-darkgray {
   color: $lightgray;
+}
+.text-reading-gray {
+  color: #566b78;
 }
 
 .text-double {
