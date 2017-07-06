@@ -44,6 +44,29 @@
       <a class="tab active" href="#classmates" aria-controls="classmates" role="tab" data-toggle="tab"><h5>classmates</h5></a>
       <a class="tab active" href="#edit" aria-controls="edit" role="tab" data-toggle="tab"><h5>Edit Profile</h5></a> -->
 
+    <!-- Nav tabs -->
+    <ul class="nav tabs" role="tablist">
+      <li role="presentation" class="tab active">
+        <a href="#progress" aria-controls="progress" role="tab" data-toggle="tab">Current Courses</a>
+      </li>
+      <li role="presentation" class="tab">
+        <a href="#completed" aria-controls="completed" role="tab" data-toggle="tab">Completed Courses</a>
+      </li>
+      <li role="presentation" class="tab">
+        <a href="#classmates" aria-controls="classmates" role="tab" data-toggle="tab">Classmates</a>
+      </li>
+      <li role="presentation" class="tab">
+        <a href="#edit" aria-controls="edit" role="tab" data-toggle="tab"> Profile</a>
+      </li>
+    </ul>
+
+
+<!--
+      <a class="tab active" href="#progress"  aria-controls="progress" role="tab" data-toggle="tab"><h5>Courses In Progress</h5></a>
+      <a class="tab active" href="#completed" aria-controls="completed" role="tab" data-toggle="tab"><h5>Past Courses</h5></a>
+      <a class="tab active" href="#classmates" aria-controls="classmates" role="tab" data-toggle="tab"><h5>classmates</h5></a>
+      <a class="tab active" href="#edit" aria-controls="edit" role="tab" data-toggle="tab"><h5>Edit Profile</h5></a> -->
+
 <!-- New User Interface (shows if user hasn't signed up to any courses -->
 <% if @new_user %>
 
@@ -195,7 +218,24 @@
       <%# end %>
     </div> -->
 
+<!-- <h3>Courses</h3>
+    <div class="progress-circle padded text-center tab-pane tab active">
+      <h5>Completed Courses</h5> -->
 
+      <!-- Progress Circle -->
+<!--       <div id="circle-progress" data-dimension="120" data-text="<%#= @completed_enrollments.count %>" data-fontsize="36" data-percent="<%#= @completed_enrollments.count %>" data-fgcolor="#5fb3b3" data-bgcolor="#eee" data-width="15" data-bordersize="8" data-animationstep="2"></div> -->
+
+      <!-- Enroll Button -->
+      <%# unless @new_user %>
+<!--         <div align="center" class="dashboard-enroll-button">
+          <%= link_to "Start a new course", courses_path(:anchor => "courses"), class: "btn btn-primary" %>
+        </div> -->
+      <%# end %>
+<!--     </div> -->
+
+    </div>
+  </div>
+</div>
 
   </div>
 
@@ -221,6 +261,34 @@
       </div>
     </div>
 
+      <!-- Profile -->
+      <h3 class="tab">Profile</h3>
+      <div class="profile-section">
+        <div class="profile-item text-center">
+          <% if @user.photo? %>
+            <%= cl_image_tag @user.photo.path, class: "dashboard-img-round" %>
+          <% else %>
+            <%= image_tag "https://placehold.it/150x150", class: "img-circle" %>
+          <% end %>
+        </div>
+        <div class="profile-item text-center">
+          <h4><%= @user.first_name %> <%= @user.last_name %></h4>
+          <br>
+          <p><%= @user.email %></p>
+          <br>
+          <p><%= @user.group %></p>
+        </div>
+      </div>
+
+      <!-- Edit Profile Button -->
+      <div class="edit-profile-button padded text-center">
+        <%= link_to "Edit profile", edit_user_path(current_user), class: "btn btn-primary" %>
+      </div>
+    </div>
+
+              <!-- Email -->
+              <p class="card__name user-email"><%= enrollment.user.email %></p>
+            </div>
 
 
   <div role="tabpanel" class="tab-pane" id="classmates">
@@ -270,6 +338,74 @@
       </ul>
     </div>
 
+    <% end %>
+  <% end %>
 
+<!-- Profile -->
+<h3 id="Profile" class="tab">Profile</h3>
+<% if @user.photo? %>
+  <%= cl_image_tag @user.photo.path, class: "dashboard-img-round" %>
+<% else %>
+  <%= image_tag "https://placehold.it/200x200", class: "img-circle" %>
+<% end %>
+<br>
+<p><%= @user.first_name %> <%= @user.last_name %></p>
+<br>
+<p>Email: <%= @user.email %></p>
+<br>
+<p>Group: <%= @user.group %></p>
+
+<!-- Edit Profile Button -->
+  <div class="edit-profile-button padded">
+    <%= link_to "Edit profile", edit_user_path(current_user), class: "btn btn-primary" %>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="classmates">
+
+    <!-- Classmates -->
+    <h3 id="classmates" class="tab">Classmates</h3>
+    <ul>
+      <% @current_enrollments.each do |enrollment| %>
+        <% @all_enrollments = enrollment.course.enrollments %>
+          <% @all_enrollments.each do |enrollment|  %>
+            <li class="card">
+              <div class="card__flipper">
+                <div class="card__front text-center">
+
+                  <!-- Name -->
+                  <p class="card__name">
+                    <span><%= enrollment.user.first_name %>
+                    </span> <%= enrollment.user.last_name %>
+                  </p>
+                  <br class="spacing">
+
+                  <!-- Photo -->
+                  <% if enrollment.user.photo? %>
+                    <%= cl_image_tag enrollment.user.photo.path, class: "dashboard-img-round" %>
+                  <% else %>
+                    <%= image_tag "https://placehold.it/100x100", class: "img-circle" %>
+                  <% end %>
+                  <br class="spacing">
+
+                  <!-- Group -->
+                  <p class="card__name user-email"><%= enrollment.user.group %></p>
+                  <br>
+
+                  <!-- Email -->
+                  <p class="card__name user-email"><%= enrollment.user.email %></p>
+
+                </div>
+
+                <div class="card__back">
+                    <circle cx="90" cy="90" r="55" stroke="#514d9b" stroke-width="35"  />
+                  </svg>
+                  <span><%= image_tag "catpurr.gif", class: "gif-circle" %></span>
+                </div>
+
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>r
 
 </div>
