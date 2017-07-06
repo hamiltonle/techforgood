@@ -260,12 +260,19 @@
             <div class="course-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
 
             url('<%= cl_image_path course_photo_path %>');">
-               <h2 class="course-card-mission text-center"><%= course.tagline %></h2>
+
             </div>
 
           <div class="course-card-description">
-            <h2><%= course.title %></h2>
-            <p><%= course.organization.name %></p>
+            <!-- <h2 class="course-card-mission text-left"></h2> -->
+
+            <h4>
+              <%= course.tagline %>
+            </h4>
+            <div class="flexbox">
+              <p class="tag-flex text-reading-gray"><em><%= course.title %></em></p>
+              <p class="tag-flex text-reading-gray"><%= course.organization.name %></p>
+            </div>
             <div class="org-logos"></div>
           </div>
           <%= link_to "", course_path(course), class: "course-card-link" %>
@@ -273,31 +280,6 @@
       </div>
     <% end %>
 
-    <% @courses.each do |course| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="course-card">
-
-            <% if course.photos? %>
-              <% course_photo_path = course.photos.first.path %>
-            <% else %>
-              <% course_photo_path = ('madi-robson-113926_wqpmaf') %>
-            <% end %>
-
-            <div class="course-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-
-            url('<%= cl_image_path course_photo_path %>');">
-               <h2 class="course-card-mission text-center"><%= course.tagline %></h2>
-            </div>
-
-          <div class="course-card-description">
-            <h2><%= course.title %></h2>
-            <p><%= course.organization.name %></p>
-            <div class="org-logos"></div>
-          </div>
-          <%= link_to "", course_path(course), class: "course-card-link" %>
-        </div>
-      </div>
-    <% end %>
 
   </div>
 </div>
@@ -327,7 +309,7 @@
 
   <div class="text-center padded">
     <a href="#courses" class="fancy-button text-center bg-gradient1 page-scroll">
-      <span class="fredoka text-45px">Enroll Today</span>
+      <span class="fredoka">Enroll Today</span>
     </a>
     </div>
 
