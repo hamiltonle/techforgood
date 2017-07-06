@@ -3,6 +3,18 @@
   overflow-x: scroll;
 }
 
+
+
+
+
+
+.body-gray {
+  color: #566b78;
+}
+
+
+
+
 #course_content {
    background: white;
   top: 70px;
@@ -85,18 +97,22 @@
 }
 
 .course_show_card {
-  margin: 10px;
-  padding: 10px;
+  margin: 10px 0px;
+  padding: 10px 0px;
   border-radius: 10px;
   color: rgb(10,10,10);
-  max-width: 50em;
+  // max-width: 50em;
   i {
     color: $blue6;
+  }
+  h4 {
+    color: $blue7;
   }
 }
 
 .background_gray {
-  background-color: #ECECEC;
+  // background-color: #ECECEC;
+  background-color: rgba(0,0,0,0.01);
 }
 
 .background_white {
@@ -134,12 +150,30 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background-color: rgba(255,165,0,0.95);
+  // background-color: rgba(255,165,0,0.95);
+  background: linear-gradient(135deg, $red,$orange);
   color: white;
   border-radius: 5px;
   padding: 8px;
-  margin: 10px;
-  height: 280px;
+  // margin: 10px;
+  // height: 280px;
+
+  div {
+    padding: 5px;
+  }
+}
+
+.project_review2 {
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  // background-color: rgba(255,165,0,0.95);
+  background: linear-gradient(-45deg, $red,$orange);
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  // margin: 10px;
+  // height: 280px;
 
   div {
     padding: 5px;
@@ -153,8 +187,7 @@
 }
 
 .course_syllabus {
-  display: flex;
-  align-items: left;
+
   justify-content: center;
   p {
     margin-bottom: 10px;
@@ -169,6 +202,16 @@
 .width-720 {
   max-width: 720px;
   margin: 0 auto;
+}
+
+.width-750 {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.no-padding-margin {
+  padding: 0px;
+  margin:0px;
 }
 
 .small-org-info {

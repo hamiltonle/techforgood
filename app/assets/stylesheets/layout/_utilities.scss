@@ -21,6 +21,29 @@
   height: 90vh;
 }
 
+// margins
+.no-y-margin {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.no-bottom-margin {
+  margin-bottom: 0px;
+}
+
+.no-padding-margin {
+  padding: 0px;
+  margin:0px;
+}
+
+.no-side-padding-margin {
+  padding: 0px;
+  margin:0px;
+}
+
+.margin-bottom-15px {
+  margin-bottom: 15px;
+}
 
 // Paddings
 .padded {
@@ -43,6 +66,9 @@
   padding-bottom: 0px;
 }
 
+.padding-left-20 {
+    padding-left: 20px;
+}
 
 .padded-bottom {
   padding-top: 0;
@@ -140,6 +166,10 @@ a:focus {
   font-size: 80px !important;
 }
 
+.text-16px {
+  font-size: 16px;
+}
+
 .text-80px {
   font-size: 80px !important;
 }
@@ -160,16 +190,19 @@ a:focus {
 .text-type-animation {
   // steps splits animation to that many segments.
   // alternate reverses. infinite goes on forever
-  animation: type 5s steps(17)infinite alternate, blink .8s infinite;
+  // if want cursor, then add ', blink .8s infinite' to next line
+  animation: type 5s steps(17)infinite alternate;
   // animation-timing-function: ease, step-start, steps(17);
   overflow: hidden;
   white-space: nowrap;
   margin-left: 10px;
   padding-bottom: 10px;
+
   // can do 'ch' for character width of a 0 in the font
   // width: 19ch;
+
   // makes border right look like a cursor
-  border-right: 3px solid;
+  // border-right: 3px solid;
 }
 
 .pvw-title span {
@@ -178,7 +211,7 @@ a:focus {
 .pvw-title:after {
   animation: change 30s infinite;
   animation-delay: 7.2s;
-  content: 'Learn & Lend a Hand......................';
+  content: 'Learn & Lend a Hand...';
 }
 
 
@@ -230,20 +263,20 @@ a:focus {
 
 @keyframes change {
   0% {
-    content: 'Learn & Lend a Hand........................';
+    content: 'Learn & Lend a Hand...';
     // width: 630px;
     width: 900px;
   }
   33% {
-    content: 'Learn & Find a Missing Child........';
+    content: 'Learn & Find a Missing Child...';
     width: 900px;
   }
   66% {
-    content: 'Learn & Identify Cataracts.........';
+    content: 'Learn & Identify Cataracts...';
     width: 900px;
   }
   100% {
-    content: 'Learn & Lend a Hand.....................';
+    content: 'Learn & Lend a Hand...';
   }
 
 }
@@ -409,10 +442,10 @@ font-size: 14px;
   width: 100%;
 }
 
-// .img-radius-gray {
-//   border-radius: 10px;
-//   box-shadow: 5px 9px 6px slategray;
-// }
+.img-radius-gray {
+  border-radius: 10px;
+  // box-shadow: 5px 9px 6px slategray;
+}
 
 .img-radius-orange {
   border-radius: 10px;

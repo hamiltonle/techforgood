@@ -1,15 +1,42 @@
 #enroll-btn {
   display: inline-block;
-  font-size: 20px;
+  font-size: 22px;
   font-family: $header-font;
   position: relative;
   color: white;
-  background-color: $orange;
-  padding-right: 15px;
-  padding-left: 15px;
-  border-radius: 5px;
+  background: linear-gradient(-25deg, $red,$orange);
+  padding: 10px 20px;
+  border-radius: 30px;
   margin-top: 10px;
+  border: none;
   &:hover {
+    // font-size:21px;
+    // padding: 11px 22px;
+    span {
+      filter: brightness(.9) contrast(1.2);
+      transform: scale(0.96);
+    }
+    &:before {
+      bottom: 3px;
+      filter: blur(6px) brightness(0.8);
+    }
+  }
+}
+
+.secondary-cta {
+  display: inline-block;
+  font-size: 22px;
+  font-family: $header-font;
+  position: relative;
+  color: white;
+  background: linear-gradient(-25deg, $blue7,$blue6);
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin-top: 10px;
+  border: none;
+  &:hover {
+    // font-size:21px;
+    // padding: 11px 22px;
     span {
       filter: brightness(.9) contrast(1.2);
       transform: scale(0.96);
@@ -96,7 +123,7 @@ $neon: #00FFF8;
   }
 
   &.bg-gradient2 {
-    text-shadow: 0px 0px 1px #227270;
+    text-shadow: 0px 0px 1px $blue6;
   }
 
   &.bg-gradient3 {
