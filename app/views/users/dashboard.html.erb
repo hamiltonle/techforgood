@@ -76,10 +76,8 @@
 
               <!-- Score Section -->
               <div class="score-section">
-                <p>Score: 67 <a href="#" data-toggle="tooltip" title="This is your score for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
-                <p>Rank: 6/50 <a href="#" data-toggle="tooltip" title="This is your ranking for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
+                <p>Score: 67 <a href="#" data-toggle="tooltip" title="This is your score for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a> Rank: 6/50 <a href="#" data-toggle="tooltip" title="This is your ranking for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
               </div>
-              <br>
 
               <!-- Progress Bar -->
               <div class="progress">
@@ -100,14 +98,14 @@
               <br>
 
               <!-- Resume Course Button -->
-              <div class="continue-course-button">
+              <div class="continue-course-button text-center">
                   <% if enrollment.sessions.where(:status => "completed").count == 0 %>
                     <% @current_lesson = enrollment.course.lessons.first %>
                   <% else %>
                     <% @last_completed_lesson = enrollment.sessions.where(:status => "completed").last.lesson_id %>
                     <% @current_lesson = @last_completed_lesson + 1 %>
                   <% end %>
-                <%= link_to "Resume Course", course_lesson_path(enrollment.course, @current_lesson), class: "btn btn-success" %>
+                <%= link_to "Resume Course", course_lesson_path(enrollment.course, @current_lesson), class: "btn btn-success continue-course-button" %>
               </div>
 
             </div>
@@ -141,10 +139,8 @@
 
                   <!-- Score Section -->
                   <div class="score-section">
-                    <p>Score: 67 <a href="#" data-toggle="tooltip" title="This is your score for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
-                    <p>Rank: 6/50 <a href="#" data-toggle="tooltip" title="This is your ranking for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
+                    <p>Score: 67 <a href="#" data-toggle="tooltip" title="This is your score for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a> Rank: 6/50 <a href="#" data-toggle="tooltip" title="This is your ranking for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
                   </div>
-                  <br>
 
                   <!-- Progress Bar -->
                   <div class="progress">
@@ -165,8 +161,8 @@
                   <br>
 
                   <!-- Review Course Button -->
-                  <div class="continue-course-button">
-                    <%= link_to "Review Course", course_path(enrollment.course), class: "btn btn-success" %>
+                  <div class="text-center">
+                    <%= link_to "Review Course", course_path(enrollment.course), class: "btn btn-success continue-course-button" %>
                   </div>
                 </div>
               </div>
@@ -208,10 +204,10 @@
               <div class="card__front text-center">
 
                   <!-- Name -->
-                  <p class="card__name">
+                  <h4 class="card__name">
                     <span><%= enrollment.user.first_name %>
                     </span> <%= enrollment.user.last_name %>
-                  </p><br>
+                  </h4><br>
 
                   <!-- Photo -->
                   <% if enrollment.user.photo? %>
@@ -245,15 +241,14 @@
     <div role="tabpanel" class="tab-pane text-center" id="edit">
 
       <!-- Profile -->
-      <h3 class="tab">Profile</h3>
+      <h3 class="tab profile-section">Profile</h3>
         <% if @user.photo? %>
           <%= cl_image_tag @user.photo.path, class: "profile-img-round" %>
         <% else %>
           <%= image_tag "https://placehold.it/200x200", class: "img-circle" %>
         <% end %>
-        <br>
-        <p><%= @user.first_name %> <%= @user.last_name %></p><br>
-        <p><%= @user.email %></p><br>
+        <h4><%= @user.first_name %> <%= @user.last_name %></h4>
+        <p><%= @user.email %></p>
         <p><%= @user.group %></p>
 
         <!-- Edit Profile Button -->
