@@ -1,3 +1,5 @@
+
+
 <!-- Banner  -->
 <div class="dashboard-banner padded text-center" id="gradient" >
   <div class="container">
@@ -16,17 +18,31 @@
       <% end %>
     </div>
 
-    <!-- Tabs -->
-    <div class="tabs">
-        <ul class="tab-links">
-            <li class="active"><a href="#Courses">Courses</a></li>
-            <li><a href="#Classmates">Classmates</a></li>
-            <li><a href="#Profile">Profile</a></li>
-        </ul>
-    </div>
 
   </div>
 </div>
+    <!-- Nav tabs -->
+    <ul class="nav tabs" role="tablist">
+      <li role="presentation" class="tab active">
+        <a href="#progress" aria-controls="progress" role="tab" data-toggle="tab">Courses In Progress</a>
+      </li>
+      <li role="presentation" class="tab">
+        <a href="#completed" aria-controls="completed" role="tab" data-toggle="tab">Past Courses</a>
+      </li>
+      <li role="presentation" class="tab">
+        <a href="#classmates" aria-controls="classmates" role="tab" data-toggle="tab">classmates</a>
+      </li>
+      <li role="presentation" class="tab">
+        <a href="#edit" aria-controls="edit" role="tab" data-toggle="tab">Edit Profile</a>
+      </li>
+    </ul>
+
+
+<!--
+      <a class="tab active" href="#progress"  aria-controls="progress" role="tab" data-toggle="tab"><h5>Courses In Progress</h5></a>
+      <a class="tab active" href="#completed" aria-controls="completed" role="tab" data-toggle="tab"><h5>Past Courses</h5></a>
+      <a class="tab active" href="#classmates" aria-controls="classmates" role="tab" data-toggle="tab"><h5>classmates</h5></a>
+      <a class="tab active" href="#edit" aria-controls="edit" role="tab" data-toggle="tab"><h5>Edit Profile</h5></a> -->
 
     <!-- Nav tabs -->
     <ul class="nav tabs" role="tablist">
@@ -64,133 +80,143 @@
 <!-- Tab Content -->
 <div class="tab-content">
 
-<!-- Start a New Course Section -->
-<h3 >Courses</h3>
-<div id="Courses" class="progress-circle padded text-center tab active">
-  <h5>Completed Courses</h5>
 
-  <!-- Progress Circle -->
-  <div id="circle-progress" data-dimension="120" data-text="<%= @completed_enrollments.count %>" data-fontsize="36" data-percent="<%= @completed_enrollments.count %>" data-fgcolor="#5fb3b3" data-bgcolor="#eee" data-width="15" data-bordersize="8" data-animationstep="2"></div>
+  <div role="tabpanel" class="tab-pane active" id="progress">
 
-  <!-- Enroll Button -->
-  <% unless @new_user %>
-    <div align="center" class="dashboard-enroll-button">
-      <%= link_to "Start a new course", courses_path(:anchor => "courses"), class: "btn btn-primary" %>
-    </div>
-  <% end %>
+  <!-- Current Course Information -->
+    <% unless @new_user %>
 
-</div>
+      <div class="container padded">
+        <h3 align="center" class="heading">Current Courses</h3>
 
-<!-- Current Course Information -->
-<% unless @new_user %>
+        <% @current_enrollments.each do |enrollment| %>
+          <div class="dashboard-course-card">
+            <div class="card-content">
 
-<div class="container padded">
-  <h3 align="center" class="heading">Current Courses</h3>
+              <!-- Course Description -->
+              <div class="dashboard-course-description">
+                <h2><%= enrollment.course.title %></h2>
+                <p><%= link_to enrollment.course.organization.name, organization_path(enrollment.course.organization_id) %></p>
+              </div>
+              <br>
 
-  <% @current_enrollments.each do |enrollment| %>
-    <div class="dashboard-course-card">
-      <div class="card-content">
+              <!-- Score Section -->
+              <div class="score-section">
+                <p>Score: 67 <a href="#" data-toggle="tooltip" title="This is your score for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
+                <p>Rank: 6/50 <a href="#" data-toggle="tooltip" title="This is your ranking for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
+              </div>
+              <br>
 
-        <!-- Course Description -->
-        <div class="dashboard-course-description">
-          <h2><%= enrollment.course.title %></h2>
-          <p><%= link_to enrollment.course.organization.name, organization_path(enrollment.course.organization_id) %></p>
-        </div>
-        <br>
+              <!-- Progress Bar -->
+              <div class="progress">
+                <% @total_lessons = enrollment.course.lessons.count %>
+                <% @number_completed_sessions = 0 %>
+                <% enrollment.sessions.each do |session| %>
+                  <% if session.completed? %>
+                  <% @number_completed_sessions += 1 %>
+                  <% end %>
+                <% end %>
+                <% @number_completed_sessions %>
+                <% @percentage = (@number_completed_sessions*100 / @total_lessons) %>
+                <div class="progress-bar active" role="progressbar"
+                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:<%= @percentage %>%">
+                  <%= @percentage %>%
+                </div>
+              </div>
+              <br>
 
-        <!-- Score Section -->
-        <div class="score-section">
-          <p>Score: 67 <a href="#" data-toggle="tooltip" title="This is your score for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
-          <p>Rank: 6/50 <a href="#" data-toggle="tooltip" title="This is your ranking for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
-        </div>
-        <br>
+              <!-- Resume Course Button -->
+              <div class="continue-course-button">
+                  <% if enrollment.sessions.where(:status => "completed").count == 0 %>
+                    <% @current_lesson = enrollment.course.lessons.first %>
+                  <% else %>
+                    <% @last_completed_lesson = enrollment.sessions.where(:status => "completed").last.lesson_id %>
+                    <% @current_lesson = @last_completed_lesson + 1 %>
+                  <% end %>
+                <%= link_to "Resume Course", course_lesson_path(enrollment.course, @current_lesson), class: "btn btn-success" %>
+              </div>
 
-        <!-- Progress Bar -->
-        <div class="progress">
-          <% @total_lessons = enrollment.course.lessons.count %>
-          <% @number_completed_sessions = 0 %>
-          <% enrollment.sessions.each do |session| %>
-            <% if session.completed? %>
-            <% @number_completed_sessions += 1 %>
-            <% end %>
-          <% end %>
-          <% @number_completed_sessions %>
-          <% @percentage = (@number_completed_sessions*100 / @total_lessons) %>
-          <div class="progress-bar active" role="progressbar"
-          aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:<%= @percentage %>%">
-            <%= @percentage %>%
+            </div>
           </div>
-        </div>
-        <br>
+        <% end %>
+      </div>
 
-        <!-- Resume Course Button -->
-        <div class="continue-course-button">
-            <% if enrollment.sessions.where(:status => "completed").count == 0 %>
-              <% @current_lesson = enrollment.course.lessons.first %>
-            <% else %>
-              <% @last_completed_lesson = enrollment.sessions.where(:status => "completed").last.lesson_id %>
-              <% @current_lesson = @last_completed_lesson + 1 %>
+    <% end %>
+  </div>
+
+
+  <!-- Start a New Course Section -->
+  <div role="tabpanel" class="tab-pane" id="completed">
+
+    <!-- Completed Course Information -->
+    <% unless @new_user %>
+
+      <div class="container padded">
+        <div class="row">
+          <h3 align="center" class="heading">Completed Courses</h3>
+
+            <% @completed_enrollments.each do |enrollment| %>
+              <div class="dashboard-course-card">
+                <div class="card-content">
+
+                  <!-- Course Description -->
+                  <div class="dashboard-course-description">
+                    <h2><%= enrollment.course.title %></h2>
+                    <p><%= link_to enrollment.course.organization.name, organization_path(enrollment.course.organization_id) %></p>
+                  </div>
+                  <br>
+
+                  <!-- Score Section -->
+                  <div class="score-section">
+                    <p>Score: 67 <a href="#" data-toggle="tooltip" title="This is your score for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
+                    <p>Rank: 6/50 <a href="#" data-toggle="tooltip" title="This is your ranking for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
+                  </div>
+                  <br>
+
+                  <!-- Progress Bar -->
+                  <div class="progress">
+                    <% @total_lessons = enrollment.course.lessons.count %>
+                    <% @number_completed_sessions = 0 %>
+                    <% enrollment.sessions.each do |session| %>
+                      <% if session.completed? %>
+                      <% @number_completed_sessions += 1 %>
+                      <% end %>
+                    <% end %>
+                    <% @number_completed_sessions %>
+                    <% @percentage = (@number_completed_sessions*100 / @total_lessons) %>
+                    <div class="progress-bar active" role="progressbar"
+                    aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:<%= @percentage %>%">
+                      <%= @percentage %>%
+                    </div>
+                  </div>
+                  <br>
+
+                  <!-- Complete Course Button -->
+                  <div class="continue-course-button">
+                    <%= link_to "Review Course", course_path(enrollment.course), class: "btn btn-success" %>
+                  </div>
+                </div>
+              </div>
             <% end %>
-          <%= link_to "Resume Course", course_lesson_path(enrollment.course, @current_lesson), class: "btn btn-success" %>
-        </div>
+          </div>
 
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
 
-<% end %>
+<!--     <h3>Courses</h3>
+    <div class="progress-circle padded text-center tab-pane tab active">
+      <h5>Completed Courses</h5> -->
 
-<!-- Completed Course Information -->
-<% unless @new_user %>
+      <!-- Progress Circle -->
+      <!-- <div id="circle-progress" data-dimension="120" data-text="<%#= @completed_enrollments.count %>" data-fontsize="36" data-percent="<%#= @completed_enrollments.count %>" data-fgcolor="#5fb3b3" data-bgcolor="#eee" data-width="15" data-bordersize="8" data-animationstep="2"></div> -->
 
-<div class="container padded">
-  <div class="row">
-    <h3 align="center" class="heading">Completed Courses</h3>
-
-    <% @completed_enrollments.each do |enrollment| %>
-      <div class="dashboard-course-card">
-        <div class="card-content">
-
-            <!-- Course Description -->
-            <div class="dashboard-course-description">
-              <h2><%= enrollment.course.title %></h2>
-              <p><%= link_to enrollment.course.organization.name, organization_path(enrollment.course.organization_id) %></p>
-            </div>
-            <br>
-
-            <!-- Score Section -->
-            <div class="score-section">
-              <p>Score: 67 <a href="#" data-toggle="tooltip" title="This is your score for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
-              <p>Rank: 6/50 <a href="#" data-toggle="tooltip" title="This is your ranking for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
-            </div>
-            <br>
-
-            <!-- Progress Bar -->
-            <div class="progress">
-              <% @total_lessons = enrollment.course.lessons.count %>
-              <% @number_completed_sessions = 0 %>
-              <% enrollment.sessions.each do |session| %>
-                <% if session.completed? %>
-                <% @number_completed_sessions += 1 %>
-                <% end %>
-              <% end %>
-              <% @number_completed_sessions %>
-              <% @percentage = (@number_completed_sessions*100 / @total_lessons) %>
-              <div class="progress-bar active" role="progressbar"
-              aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:<%= @percentage %>%">
-                <%= @percentage %>%
-              </div>
-            </div>
-            <br>
-
-            <!-- Complete Course Button -->
-            <div class="continue-course-button">
-              <%= link_to "Review Course", course_path(enrollment.course), class: "btn btn-success" %>
-            </div>
-
+      <!-- Enroll Button -->
+<!--       <%# unless @new_user %>
+        <div align="center" class="dashboard-enroll-button">
+          <%#= link_to "Start a new course", courses_path(:anchor => "courses"), class: "btn btn-primary" %>
         </div>
-      <% end %>
+      <%# end %>
+    </div> -->
 
 <!-- <h3>Courses</h3>
     <div class="progress-circle padded text-center tab-pane tab active">
@@ -211,35 +237,29 @@
   </div>
 </div>
 
-<% end %>
+  </div>
 
-<!-- Classmates -->
-<h3 id="Classmates" class="tab">Classmates</h3>
 
-<% @current_enrollments.each do |enrollment| %>
-  <% @all_enrollments = enrollment.course.enrollments %>
-    <% @all_enrollments.each do |enrollment|  %>
 
-      <ul>
-        <li class="card">
-          <div class="card__flipper">
-            <div class="card__front">
-              <p class="card__num">
-              <!-- Name -->
-              <p class="card__name"><span><%= enrollment.user.first_name %></span> <%= enrollment.user.last_name %></p>
-              <br>
+    <div role="tabpanel" class="tab-pane" id="edit">
 
-              <!-- Photo -->
-              <% if enrollment.user.photo? %>
-                <%= cl_image_tag enrollment.user.photo.path, class: "dashboard-img-round" %>
-              <% else %>
-                <%= image_tag "https://placehold.it/100x100", class: "img-circle" %>
-              <% end %></p>
-              <br>
+      <!-- Profile -->
+      <h3 class="tab">Profile</h3>
+      <% if @user.photo? %>
+        <%= cl_image_tag @user.photo.path, class: "dashboard-img-round" %>
+      <% else %>
+        <%= image_tag "https://placehold.it/200x200", class: "img-circle" %>
+      <% end %>
+      <br>
+      <p><%= @user.first_name %> <%= @user.last_name %></p><br>
+      <p>Email: <%= @user.email %></p><br>
+      <p>Group: <%= @user.group %></p>
 
-              <!-- Group -->
-              <p class="card__name user-email"><%= enrollment.user.group %></p>
-              <br>
+      <!-- Edit Profile Button -->
+      <div class="edit-profile-button padded">
+        <%= link_to "Edit profile", edit_user_path(current_user), class: "btn btn-primary" %>
+      </div>
+    </div>
 
       <!-- Profile -->
       <h3 class="tab">Profile</h3>
@@ -270,15 +290,53 @@
               <p class="card__name user-email"><%= enrollment.user.email %></p>
             </div>
 
-            <div class="card__back">
-                <circle cx="90" cy="90" r="55" stroke="#514d9b" stroke-width="35"  />
-              </svg>
-              <span>113.2</span>
-            </div>
 
-          </div>
-        </li>
+  <div role="tabpanel" class="tab-pane" id="classmates">
+
+    <!-- Classmates -->
+    <h3 id="classmates" class="tab">Classmates</h3>
+    <ul>
+      <% @current_enrollments.each do |enrollment| %>
+        <% @all_enrollments = enrollment.course.enrollments %>
+          <% @all_enrollments.each do |enrollment|  %>
+            <li class="card">
+              <div class="card__flipper">
+                <div class="card__front">
+                  <p class="card__num">
+
+                  <!-- Name -->
+                  <p class="card__name">
+                    <span><%= enrollment.user.first_name %>
+                    </span> <%= enrollment.user.last_name %>
+                  </p><br>
+
+                  <!-- Photo -->
+                  <% if enrollment.user.photo? %>
+                    <%= cl_image_tag enrollment.user.photo.path, class: "dashboard-img-round" %>
+                  <% else %>
+                    <%= image_tag "https://placehold.it/100x100", class: "img-circle" %>
+                  <% end %></p>
+                  <br>
+
+                  <!-- Group -->
+                  <p class="card__name user-email"><%= enrollment.user.group %></p>
+                  <br>
+
+                  <!-- Email -->
+                  <p class="card__name user-email"><%= enrollment.user.email %></p>
+                </div>
+
+                <div class="card__back">
+                    <circle cx="90" cy="90" r="55" stroke="#514d9b" stroke-width="35"  />
+                  </svg>
+                  <span>113.2</span>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        <% end %>
       </ul>
+    </div>
 
     <% end %>
   <% end %>
@@ -301,7 +359,6 @@
   <div class="edit-profile-button padded">
     <%= link_to "Edit profile", edit_user_path(current_user), class: "btn btn-primary" %>
   </div>
-=======
   <div role="tabpanel" class="tab-pane" id="classmates">
 
     <!-- Classmates -->
@@ -349,6 +406,6 @@
           <% end %>
         <% end %>
       </ul>
-    </div>
+    </div>r
 
 </div>

@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
 
   # Shows all courses on the home page
   def index
-    @courses = Course.all
+    @courses = Course.all[0..5]
 
     @steps = {
       "Choose courses" => "search",
@@ -25,6 +25,8 @@ class CoursesController < ApplicationController
   # Shows all the information for one course
   def show
     @course = Course.find(params[:id])
+    @course_enrollments = @course.enrollments
+    @completed_course_enrollments = @course.enrollments.where(:status => "completed")
   end
 
   # To add a new course for an organization

@@ -82,9 +82,62 @@
 }
 
 
+.nav > li > a:hover, .nav > li > a:active {
+  text-decoration: none;
+  background-color: rgba(0,0,0,0);
+}
+
+li.active a, li.active a:hover {
+  color: $blue7;
+  background-color: rgba(0,0,0,0);
+
+}
+
+.tabs {
+  display: flex;
+  padding: 10px 10px 0 10px;
+  top: -91px;
+  position: relative;
+}
+.tabs a {
+  color: white;
+}
+.tabs a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.8;
+}
+.tabs h3 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 0;
+}
+.tabs p {
+  opacity: 0.5;
+  margin-bottom: 0;
+}
+.tab {
+  background: $blue7;
+  flex: 0 0 25%;
+  text-align: center;
+  padding: 20px 0;
+}
+.tab:first-child {
+  border-radius: 10px 0 0 0;
+}
+.tab:last-child {
+  border-radius: 0 10px 0 0;
+}
+.tab.active {
+  background: white;
+  color: $blue7;
+
+}
+
+
 // Classmate Cards
 $color1: $blue7;
-$color2: $blue2;
+$color2: $blue6;
 $color3: $blue7;
 $color4: $blue4;
 $color5: $blue5;
@@ -137,6 +190,13 @@ ul {
   overflow-x: hidden;
 }
 
+.card__front {
+background: $color2;
+}
+.card__num {
+text-shadow: longshadow(darken($color2, 15%),$color2,100, 0.8);
+}
+
 .card {
   float: left;
   // position: relative;
@@ -147,60 +207,7 @@ ul {
   line-height: 1.8;
   text-shadow: none;
 
-  &:first-child {
-    .card__front {
-      background: $color1;
-    }
-    .card__num {
-      text-shadow: longshadow(darken($color1, 15%),$color1,100, 0.8);
-    }
-  }
 
-  &:nth-child(2) {
-     .card__front {
-      background: $color2;
-    }
-    .card__num {
-      text-shadow: longshadow(darken($color2, 15%),$color2,100, 0.8);
-    }
-  }
-
-  &:nth-child(3) {
-    margin-right: 0;
-     .card__front {
-      background: $color3;
-    }
-    .card__num {
-      text-shadow: longshadow(darken($color3, 15%),$color3,100, 0.8);
-    }
-  }
-
-  &:nth-child(4) {
-     .card__front {
-      background: $color4;
-    }
-    .card__num {
-      text-shadow: longshadow(darken($color4, 15%),$color4,100, 0.8);
-    }
-  }
-
-  &:nth-child(5) {
-     .card__front {
-      background: $color5;
-    }
-    .card__num {
-      text-shadow: longshadow(darken($color5, 15%),$color5,100, 0.8);
-    }
-  }
-
-  &:nth-child(6) {
-     .card__front {
-      background: $color6;
-    }
-    .card__num {
-      text-shadow: longshadow(darken($color6, 15%),$color6,100, 0.8);
-    }
-  }
 
   &:last-child {
     margin-right: 0;
