@@ -61,7 +61,7 @@
   <!-- Current Course Information -->
     <% unless @new_user %>
 
-      <div class="container">
+      <div class="container course-container">
 
         <% @current_enrollments.each do |enrollment| %>
           <div class="dashboard-course-card">
@@ -125,7 +125,7 @@
     <!-- Completed Course Information -->
     <% unless @new_user %>
 
-      <div class="container">
+      <div class="container course-container">
         <div class="row">
 
             <% @completed_enrollments.each do |enrollment| %>
@@ -164,7 +164,7 @@
                   </div>
                   <br>
 
-                  <!-- Complete Course Button -->
+                  <!-- Review Course Button -->
                   <div class="continue-course-button">
                     <%= link_to "Review Course", course_path(enrollment.course), class: "btn btn-success" %>
                   </div>
@@ -232,7 +232,7 @@
                 <div class="card__back">
                     <circle cx="90" cy="90" r="55" stroke="#514d9b" stroke-width="35"  />
                   </svg>
-                <span><%= image_tag "catpurr.gif", class: "gif-circle" %></span>
+                <span>This is a person's bio. How interesting. <%#= image_tag "catpurr.gif", class: "gif-circle" %></span>
                 </div>
               </div>
             </li>
@@ -247,7 +247,7 @@
       <!-- Profile -->
       <h3 class="tab">Profile</h3>
         <% if @user.photo? %>
-          <%= cl_image_tag @user.photo.path, class: "dashboard-img-round" %>
+          <%= cl_image_tag @user.photo.path, class: "profile-img-round" %>
         <% else %>
           <%= image_tag "https://placehold.it/200x200", class: "img-circle" %>
         <% end %>
@@ -257,7 +257,7 @@
         <p><%= @user.group %></p>
 
         <!-- Edit Profile Button -->
-        <div class="edit-profile-button padded">
+        <div class="edit-profile-button">
           <%= link_to "Edit profile", edit_user_path(current_user), class: "btn btn-primary" %>
         </div>
     </div>
