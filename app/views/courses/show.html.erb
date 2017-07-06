@@ -5,7 +5,6 @@
       <p><em><%=  @course.tagline %></em></p>
       <a><span class="">
       <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
-      <a href="#intro" class="navbar-techforgood-item navbar-techforgood-link page-scroll btn btn-danger"><span>Learn More</span></a>
       </span></a>
     </div>
   </div>
@@ -28,10 +27,16 @@
             <% lesson_num = 1 %>
 
             <% @course.lessons.reverse.each do |lesson| %>
-              <div class="padding-left-20 body-gray">
+              <div class="padding-left-20 body-gray syllabus-item">
+                <div>
                 <h4 class="no-bottom-margin text-16px"><em><%= lesson_num %>) <%= lesson.title %></em></h4>
                 <p class="no-y-margin text-smooth"> <%= lesson.description %></p>
+                </div>
+                <div>
+                <i class="fa fa-clock-o" aria-hidden="true"></i> <p class="text-right"><%=lesson.minutes %> minutes</p>
+                </div>
               </div>
+
               <% lesson_num += 1 %>
             <% end %>
 
@@ -49,7 +54,7 @@
          <div class="col-xs-0">
 
         </div>
-        <div class="project_review col-sm-5 col-xs-8 margin-bottom-15px" data-aos="fade-right">
+        <div class="project_review col-sm-5 col-xs-8 margin-bottom-15px" >
           <div>
           <%= image_tag("smilingwoman.jpg", class: "img-rounded", height: '100', width: '100') %>
           </div>
@@ -61,7 +66,7 @@
         <div class="col-xs-0 col-sm-2">
 
         </div>
-        <div class="project_review2 col-sm-5 col-xs-8 margin-bottom-15px" data-aos="fade-left" data-aos-delay="300" >
+        <div class="project_review2 col-sm-5 col-xs-8 margin-bottom-15px">
             <div>
             <%= image_tag("boy.jpg", class: "img-rounded", height: '100', width: '100') %>
             </div>
@@ -152,8 +157,8 @@
         </div>
         <div class="col-xs-6">
           <div class="course_show_card">
-          <h4 class="text-left"><i class="fa fa-spin fa-certificate" aria-hidden="true"></i> Earn a certificate:</h4>
-            <p class="text-smooth body-gray ">Upon completion of the course, each student will recieve an official certificate they can share with their schools, social groups, employers or put on their resume. </p>
+          <h4 class="text-left"><i class="fa fa-certificate" aria-hidden="true"></i> Earn a certificate:</h4>
+            <p class="text-smooth body-gray ">Upon completion of the course, each student will receive an official certificate they can share with their schools, social groups, employers or put on their resume. </p>
           </div>
         </div>
       </div>
