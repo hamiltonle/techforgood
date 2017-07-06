@@ -3,11 +3,6 @@
   overflow-x: scroll;
 }
 
-
-
-
-
-
 .body-gray {
   color: #566b78;
 }
@@ -198,6 +193,20 @@
   }
 }
 
+.course_students {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.course_show_student_card {
+  justify-content: center;
+  align-items: block;
+  padding: 5px;
+  width: 200px;
+  img {
+    padding: 5px;
+  }
+}
 
 .width-720 {
   max-width: 720px;

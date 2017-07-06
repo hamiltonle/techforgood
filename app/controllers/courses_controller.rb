@@ -25,6 +25,7 @@ class CoursesController < ApplicationController
   # Shows all the information for one course
   def show
     @course = Course.find(params[:id])
+    @course_enrollments = @course.enrollments
   end
 
   # To add a new course for an organization

@@ -160,6 +160,22 @@
 
     </div>
 
+    <div class="row background_gray slightly_padded">
+          <div class="width-720 course_students">
+            <h4 class="text-blue7"> Current Students</h4>
+            <div class="padding-left-20">
+              <% @course_enrollments[0..5].each do |enrollment| %>
+              <div class="course_show_student_card col-xs-3">
+                <% if enrollment.user.photo? %>
+                <%= cl_image_tag enrollment.user.photo.path, class: "dashboard-img-round" %>
+                <%= enrollment.user.first_name %>
+                <% end %>
+                </div>
+                <% end %>
+            </div>
+          </div>
+        </div>
+
 
 
       <div class="row background_white slightly_padded parallax bottom-position no-repeat cover-size" style="background-image: linear-gradient(-225deg, rgba(255,255,255,0.9) 40%, rgba(255,255,255,.99) 100%), url(<%= image_path('tedx.jpg') %>);">
@@ -180,8 +196,6 @@
             </div>
           </div>
         </div>
-
-
       </div>
 
 
