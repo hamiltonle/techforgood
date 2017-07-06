@@ -154,6 +154,7 @@
       <div class="dashboard-course-card">
         <div class="card-content">
 
+<<<<<<< Updated upstream
             <!-- Course Description -->
             <div class="dashboard-course-description">
               <h2><%= enrollment.course.title %></h2>
@@ -193,6 +194,22 @@
 
         </div>
       <% end %>
+=======
+<!-- <h3>Courses</h3>
+    <div class="progress-circle padded text-center tab-pane tab active">
+      <h5>Completed Courses</h5> -->
+
+      <!-- Progress Circle -->
+<!--       <div id="circle-progress" data-dimension="120" data-text="<%#= @completed_enrollments.count %>" data-fontsize="36" data-percent="<%#= @completed_enrollments.count %>" data-fgcolor="#5fb3b3" data-bgcolor="#eee" data-width="15" data-bordersize="8" data-animationstep="2"></div> -->
+
+      <!-- Enroll Button -->
+      <%# unless @new_user %>
+<!--         <div align="center" class="dashboard-enroll-button">
+          <%= link_to "Start a new course", courses_path(:anchor => "courses"), class: "btn btn-primary" %>
+        </div> -->
+      <%# end %>
+<!--     </div> -->
+>>>>>>> Stashed changes
 
     </div>
   </div>
@@ -265,6 +282,7 @@
               <span>113.2</span>
             </div>
 
+<<<<<<< Updated upstream
           </div>
         </li>
       </ul>
@@ -290,5 +308,55 @@
   <div class="edit-profile-button padded">
     <%= link_to "Edit profile", edit_user_path(current_user), class: "btn btn-primary" %>
   </div>
+=======
+  <div role="tabpanel" class="tab-pane" id="classmates">
+
+    <!-- Classmates -->
+    <h3 id="classmates" class="tab">Classmates</h3>
+    <ul>
+      <% @current_enrollments.each do |enrollment| %>
+        <% @all_enrollments = enrollment.course.enrollments %>
+          <% @all_enrollments.each do |enrollment|  %>
+            <li class="card">
+              <div class="card__flipper">
+                <div class="card__front text-center">
+
+                  <!-- Name -->
+                  <p class="card__name">
+                    <span><%= enrollment.user.first_name %>
+                    </span> <%= enrollment.user.last_name %>
+                  </p>
+                  <br class="spacing">
+
+                  <!-- Photo -->
+                  <% if enrollment.user.photo? %>
+                    <%= cl_image_tag enrollment.user.photo.path, class: "dashboard-img-round" %>
+                  <% else %>
+                    <%= image_tag "https://placehold.it/100x100", class: "img-circle" %>
+                  <% end %>
+                  <br class="spacing">
+
+                  <!-- Group -->
+                  <p class="card__name user-email"><%= enrollment.user.group %></p>
+                  <br>
+
+                  <!-- Email -->
+                  <p class="card__name user-email"><%= enrollment.user.email %></p>
+
+                </div>
+
+                <div class="card__back">
+                    <circle cx="90" cy="90" r="55" stroke="#514d9b" stroke-width="35"  />
+                  </svg>
+                  <span>Surprise :)</span>
+                </div>
+
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+>>>>>>> Stashed changes
 
 </div>
