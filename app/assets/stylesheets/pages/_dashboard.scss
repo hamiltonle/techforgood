@@ -4,10 +4,16 @@
 
 .edit-profile-button {
   margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .heading {
   margin-bottom: 50px;
+}
+
+.course-container {
+  padding-right: 120px;
+  padding-left: 120px;
 }
 
 .course-information {
@@ -290,6 +296,11 @@ text-shadow: longshadow(darken($color2, 15%),$color2,100, 0.8);
   font-size: 14px;
 }
 
+.gif-circle {
+  width: 200px;
+  border-radius: 50%;
+}
+
 // Profile
 .profile-section {
   display: flex;
@@ -297,7 +308,8 @@ text-shadow: longshadow(darken($color2, 15%),$color2,100, 0.8);
   justify-content: space-around;
 }
 
-.gif-circle {
-  width: 200px;
+.profile-img-round {
+  width: 150px;
   border-radius: 50%;
+  margin-bottom: 40px;
 }
