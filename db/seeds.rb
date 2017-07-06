@@ -67,7 +67,7 @@ student.save!
 
 student = User.new(
   first_name: 'Roger',
-  last_name: 'Malik',
+  last_name: 'Smith',
   group: 'Glenbard South High School',
   email: "roger@gmail.com",
   password: 'techforgood',
@@ -80,7 +80,7 @@ student.save!
 
 student = User.new(
   first_name: 'Mike',
-  last_name: 'Malik',
+  last_name: 'Smith',
   group: 'Glenbard South High School',
   email: "mike@gmail.com",
   password: 'techforgood',
@@ -93,7 +93,7 @@ student.save!
 
 student = User.new(
   first_name: 'bob',
-  last_name: 'Malik',
+  last_name: 'Smith',
   group: 'Glenbard South High School',
   email: "bob@gmail.com",
   password: 'techforgood',
@@ -106,7 +106,7 @@ student.save!
 
 student = User.new(
   first_name: 'George',
-  last_name: 'Malik',
+  last_name: 'Smith',
   group: 'Glenbard South High School',
   email: "george@gmail.com",
   password: 'techforgood',
@@ -119,7 +119,7 @@ student.save!
 
 student = User.new(
   first_name: 'Sharon',
-  last_name: 'Malik',
+  last_name: 'Smith',
   group: 'Glenbard South High School',
   email: "sharon@gmail.com",
   password: 'techforgood',
@@ -132,7 +132,7 @@ student.save!
 
 student = User.new(
   first_name: 'Cindy',
-  last_name: 'Malik',
+  last_name: 'Smith',
   group: 'Glenbard South High School',
   email: "cindy@gmail.com",
   password: 'techforgood',
@@ -145,7 +145,7 @@ student.save!
 
 student = User.new(
   first_name: 'Jay',
-  last_name: 'Malik',
+  last_name: 'Smith',
   group: 'Glenbard South High School',
   email: "jay@gmail.com",
   password: 'techforgood',
@@ -158,7 +158,7 @@ student.save!
 
 student = User.new(
   first_name: 'Marketa',
-  last_name: 'Malik',
+  last_name: 'Smith',
   group: 'Glenbard South High School',
   email: "marketa@gmail.com",
   password: 'techforgood',
@@ -171,7 +171,7 @@ student.save!
 
 student = User.new(
   first_name: 'Ettiene',
-  last_name: 'Malik',
+  last_name: 'Smith',
   group: 'Glenbard South High School',
   email: "ettiene@gmail.com",
   password: 'techforgood',
@@ -184,7 +184,7 @@ student.save!
 
 student = User.new(
   first_name: 'Nathan',
-  last_name: 'Malik',
+  last_name: 'Smith',
   group: 'Glenbard South High School',
   email: "nathan@gmail.com",
   password: 'techforgood',
@@ -197,7 +197,7 @@ student.save!
 
 student = User.new(
   first_name: 'Maria',
-  last_name: 'Malik',
+  last_name: 'Smith',
   group: 'Glenbard South High School',
   email: "maria@gmail.com",
   password: 'techforgood',
@@ -210,7 +210,7 @@ student.save!
 
 student = User.new(
   first_name: 'Stephen',
-  last_name: 'Malik',
+  last_name: 'Smith',
   group: 'Glenbard South High School',
   email: "stephen@gmail.com",
   password: 'techforgood',
@@ -223,7 +223,7 @@ student.save!
 
 student = User.new(
   first_name: 'Forrest',
-  last_name: 'Malik',
+  last_name: 'Smith',
   group: 'Glenbard South High School',
   email: "forrest@gmail.com",
   password: 'techforgood',
@@ -236,7 +236,7 @@ student.save!
 
 student = User.new(
   first_name: 'Dounan',
-  last_name: 'Malik',
+  last_name: 'Smith',
   group: 'Glenbard South High School',
   email: "dounan@gmail.com",
   password: 'techforgood',
@@ -251,22 +251,22 @@ student.save!
 puts "creating organizations"
 
 org = Organization.new(
-  name: "Hands On",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi nam esse odit consequuntur officiis nesciunt eius deleniti sunt pariatur, molestiae obcaecati minima rem excepturi nulla ea, praesentium aspernatur voluptas, harum?"
+  name: "Stratasys",
+  description: "A manufacturer of 3D printers and 3D production systems for office-based rapid prototyping and direct digital manufacturing solutions"
   )
 org.save!
 puts "saved an org"
 
 org = Organization.new(
   name: "Microsoft",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem aliquid voluptatum eum quam natus perferendis possimus nam voluptate, ducimus obcaecati alias fuga ab, omnis. Eaque pariatur accusamus quibusdam assumenda laudantium."
+  description: "An American multinational technology company headquartered in Redmond, Washington. It develops, manufactures, licenses, supports and sells computer software, consumer electronics, personal computers, and services"
   )
 org.save!
 puts "saved an org"
 
 org = Organization.new(
   name: "Johnson & Johnson",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum saepe, quisquam deleniti maxime unde, harum consequuntur cupiditate nobis quos ut, itaque est quas labore atque dolorem animi, voluptatibus expedita! Dicta?"
+  description: "An American multinational medical devices, pharmaceutical and consumer packaged goods manufacturing company founded in 1886"
   )
 org.save!
 puts "saved an org"
@@ -280,11 +280,7 @@ course = Course.new(
   tagline: "Learn how to make 3d printed prosthetics for children in need",
   issue: "Prosthetics can involve a lot of work and expertise to produce and fit and the WHO says there is currently a shortage of 40,000 trained prosthetists in poorer countries. There is also the time and financial cost to patients, who may have to travel long distances to assess their need, produce a prosthesis and fit it to the residual limb. The result is that braces and artificial limbs are among the most desperately needed medical devices.",
   tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
-  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).
-
-You will obtain a rich understanding of what 3D printing is, how 3D printers work, and how this new technology is being used by both individuals and firms to revolutionize our world. In addition, you will acquire a set of skills that will enable you to create digital designs that you can transform into physical objects. These skills can be used to help you launch a career in the growing field of 3D printing, be the 3D printing expert in your current firm, or just make the things you need.
-
-",
+  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).",
 
 
   )
