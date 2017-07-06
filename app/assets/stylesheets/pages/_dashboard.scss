@@ -165,18 +165,10 @@ $color6: $blue6;
   box-sizing: border-box;
 }
 
-// body {
-//   min-height: 100vh;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   flex-flow: column wrap;
-//   background: lighten(black, 12);
-//   color: white;
-//   font-family: 'Lato';
-//   -webkit-font-smoothing: antialiased;
-//   text-rendering: optimizeLegibility;
-// }
+.classmates-img-round {
+  width: 100px;
+  border-radius: 50%;
+}
 
 ul {
   margin: 0;
@@ -234,6 +226,7 @@ text-shadow: longshadow(darken($color2, 15%),$color2,100, 0.8);
     transform: rotateY(0);
     z-index: 2;
     overflow: hidden;
+    text-shadow: none;
   }
 
   &__back {
