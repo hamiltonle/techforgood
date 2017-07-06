@@ -44,9 +44,14 @@
 
 .course-card-description {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 0px;
+  padding: 10px;
 }
+
+.height-80 {
+  height: 80px;
+}
+
 
 .course-card-description h2 {
   font-size: 22px;

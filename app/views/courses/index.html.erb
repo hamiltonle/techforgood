@@ -164,7 +164,7 @@
 
 
 <!-- Banner -->
-<div id="learnmore" class="banner-why parallax padded" style="background-image: linear-gradient(135deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.9) 50%), url(<%= image_path('volunteer.jpg') %>);">
+<div id="learnmore" class="banner-why parallax padded items-center" style="background-image: linear-gradient(135deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.9) 50%), url(<%= image_path('volunteer.jpg') %>);">
   <div class="col-xs-0">
   </div>
   <div class="col-xs-4" data-aos="fade-up" data-aos-delay="0">
@@ -175,21 +175,21 @@
   </div>
 </div>
 
-<div class="banner-why parallax padded" style="background-image: linear-gradient(-45deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.9) 50%), url(<%= image_path('why2.png') %>);">
+<div class="banner-why parallax padded items-center" style="background-image: linear-gradient(-45deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.9) 50%), url(<%= image_path('why2.png') %>);">
   <div class="col-xs-5" data-aos="fade-down">
     <%= image_tag "why2.png", class: "img-radius-gray img-full-width" %>
   </div>
   <div class="col-xs-0">
   </div>
   <div class="col-xs-4" data-aos="fade-up" data-aos-delay="0">
-    <h1 class="fredoka padding-bottom text-45px text-white">learn about new technology, while contributing to a social cause</h1>
+    <h1 class="fredoka padding-bottom text-45px text-white">Learn about new technology, while contributing to a social cause</h1>
   </div>
 
 </div>
 
 
 
-<div class="banner-why parallax padded" style="background-image: linear-gradient(135deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.9) 50%), url(<%= image_path('why3.jpg') %>);">
+<div class="banner-why parallax padded items-center" style="background-image: linear-gradient(135deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.9) 50%), url(<%= image_path('why3.jpg') %>);">
   <div class="col-xs-0">
   </div>
   <div class="col-xs-4" data-aos="fade-up" data-aos-delay="0">
@@ -200,7 +200,7 @@
   </div>
 </div>
 
-<div class="banner-why parallax padded" style="background-image: linear-gradient(-45deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.9) 50%), url(<%= image_path('handsnotext.jpg') %>);">
+<div class="banner-why parallax padded items-center" style="background-image: linear-gradient(-45deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.9) 50%), url(<%= image_path('handsnotext.jpg') %>);">
 
     <div class="col-xs-5" data-aos="fade-down">
     <%= image_tag "handsnotext.jpg", class: "img-radius-gray img-full-width" %>
@@ -262,7 +262,9 @@
 
             <% if course.photos? %>
               <% course_photo_path = course.photos.first.path %>
+              <% course_company_logo = course.photos.last.path %>
             <% else %>
+              <% course_photo_path = ('madi-robson-113926_wqpmaf') %>
               <% course_photo_path = ('madi-robson-113926_wqpmaf') %>
             <% end %>
 
@@ -274,15 +276,17 @@
 
           <div class="course-card-description">
             <!-- <h2 class="course-card-mission text-left"></h2> -->
-
-            <h4>
-              <%= course.tagline %>
-            </h4>
-            <div class="flexbox">
-              <p class="tag-flex text-reading-gray"><i class="fa fa-tag text-blue7"></i><em> <%= course.title %></em></p>
-              <p class="tag-flex text-reading-gray"><%= course.organization.name %></p>
+            <div class="height-80 text-reading-gray text-smooth">
+              <h4>
+                <%= course.tagline %>
+              </h4>
             </div>
-            <div class="org-logos"></div>
+            <div>
+              <div class="flexbox">
+                <p class="tag-flex text-reading-gray"><i class="fa fa-tag text-blue7"></i><em> <%= course.title %></em></p>
+                <%= cl_image_tag course_company_logo, height: '20px' %>
+              </div>
+            </div>
           </div>
           <%= link_to "", course_path(course), class: "course-card-link" %>
         </div>
@@ -299,21 +303,18 @@
 <!-- FAQ -->
 <div class="container faq-section padded width-1000" id="faq">
   <h3 class="text-center fredoka text-blue7">FAQ</h3>
-  <h4><em>Do you only help children?</em></h4>
-  <p class="text-reading-gray">Our current Cyborg Beast is designed primarily for children, so it will be more targeted to help 3-14 year old children and adolescents. Prostheses also apply to adults, we are also developing more realistic appearance, but also the synthesis of human prosthetic products (such as Flexy Hand).</p><br>
+  <h4><em>Will I be paired up with people in need?</em></h4>
+  <p class="text-reading-gray">As we expand our network of NGO partners, we hope for each course to be paired with real world use cases.</p><br>
 
-  <h4><em>What can you do with this limb? What is the practical help for the children?</em></h4>
-  <p class="text-reading-gray">Our mechanical prosthesis is mainly achieved by grasping function. 3D printing machine Yisheng as a hand aids, not to fully realize the function of the real hand. But for the hand of the disabled children, the meaning of our prosthesis is mainly reflected in: <br><br>
-  Life in the scene with the hands of the activities<br>
-  Exercise the limb hand muscle, promote normal development<br>
-  The "hands with the use of" into a not so frustrating learning process, reduce the hands can not cope with the anxiety, contribute to mental health growth.</p><br>
+  <h4><em>How can my company offer our tech?</em></h4>
+  <p class="text-reading-gray">It'd be great to speak further!  Please email us at contact@learnforgood.cn</p><br>
 
-  <h4><em>What is the difference between your courses and other prostheses on the market?</em></h4>
-  <p class="text-reading-gray">The market has been prosthetic products from the cost of appearance, function, weight, etc. are not applicable to children, we do the 3D printing machine prosthesis:<br><br>
-  The main components of 3D printing, low production costs<br>
-  Mechanical transmission ﹑ easy loading and unloading replacement<br>
-  You can achieve the basic grip function<br>
-  Production is simple, for Jintong people do not exist production threshold, suitable for a wide range of popular</p>
+  <h4><em>Can my company take courses as a group?</em></h4>
+  <p class="text-reading-gray">We'd love to talk to you and see how we can cooperate. From running workshops for your employees, to actually training your employees to to provide workshops to the local community.</p><br>
+
+  <h4><em>What's the cost of the courses?</em></h4>
+  <p class="text-reading-gray">The course fee is still being decidedly, but will be only used to run our operations, as we are an NGO ourselves.</p><br>
+
 </div>
 
   <div class="text-center padded background_gray">
