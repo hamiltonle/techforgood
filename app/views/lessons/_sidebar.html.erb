@@ -19,17 +19,15 @@
           <h5><strong>WHY </strong></h5>
         </div>
         <div class="flex-item-week">
-          <h6> (week 1)</h6>
         </div>
         <div class="flex-item-complete lesson-completed">
-          <h6>Finished</h6>
-
+          <h6> (week 1)</h6>
         </div>
       </div>
 
 
       <div id="why" class="collapse <%= @lesson.nil? ? "in" : (@lesson.module_name == "why" ? "in" : "") %> ">
-        <% @why_lessons.each do |lesson| %>
+        <% @why_lessons.reverse.each do |lesson| %>
 
 
 
@@ -42,7 +40,7 @@
                 <h6><%= lesson.title %></h6>
               </div>
               <div class="lesson-text flex-item-time text-lightgray">
-                <h6><%= lesson.minutes %> mins</h6>
+                <h6 class="body-gray"><%= lesson.minutes %> mins</h6>
               </div>
 
             </div>
@@ -57,17 +55,17 @@
           <h5><strong>WHAT </strong></h5>
         </div>
         <div class="flex-item-week">
-          <h6> (week 2)</h6>
+
         </div>
-        <div class="flex-item-complete lesson-missed">
-          <h6>Missed</h6>
+        <div class="flex-item-complete lesson-completed">
+          <h6> (week 2)</h6>
         </div>
       </div>
 
 
       <div id="what" class="collapse <%= @lesson.nil? ? "in" : (@lesson.module_name == "what" ? "in" : "") %> ">
 
-        <% @what_lessons.each do |lesson| %>
+        <% @what_lessons.reverse.each do |lesson| %>
 
            <div class="text-left position-relative <%= @lesson.nil? ? "lesson-tab" : (@lesson.id == lesson.id ? "div-blue" : "lesson-tab") %> div-relative flexbox">
               <%= link_to "", course_lesson_path(@course.id, lesson.id), class: "lesson-link" %>
@@ -80,7 +78,7 @@
                 <h6><%= lesson.title %></h6>
               </div>
               <div class="lesson-text flex-item-time text-ongoing">
-                <h6><%= lesson.minutes %> mins</h6>
+                <h6 class="body-gray"><%= lesson.minutes %> mins</h6>
               </div>
 
             </div>
@@ -94,15 +92,15 @@
           <h5><strong>HOW </strong></h5>
         </div>
         <div class="flex-item-week">
-          <h6> (week 3-8)</h6>
+          <h6></h6>
         </div>
         <div class="flex-item-complete lesson-ongoing">
-          <h6>On Going</h6>
+          <h6> (week 3-8)</h6>
         </div>
       </div>
 
       <div id="how" class="collapse <%= @lesson.nil? ? "in" : (@lesson.module_name == "how" ? "in" : "") %> ">
-        <% @how_lessons.each do |lesson| %>
+        <% @how_lessons.reverse.each do |lesson| %>
 
 
             <div class="text-left position-relative <%= @lesson.nil? ? "lesson-tab" : (@lesson.id == lesson.id ? "div-blue" : "lesson-tab") %> div-relative flexbox">
@@ -114,7 +112,7 @@
                 <h6><%= lesson.title %></h6>
               </div>
               <div class="lesson-text flex-item-time text-lightgray">
-                <h6><%= lesson.minutes %> mins</h6>
+                <h6 class="body-gray"><%= lesson.minutes %> mins</h6>
               </div>
 
             </div>
