@@ -1,5 +1,7 @@
 {
   "name": "techforgood",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "aos": "^2.1.1"
+  }
 }

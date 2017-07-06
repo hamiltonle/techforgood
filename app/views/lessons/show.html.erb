@@ -99,6 +99,10 @@
               <%= simple_form_for [@course, @lesson, @session] do |f| %>
                 <%= f.button :submit, 'Done with this Lesson! :)', disabled: "disabled", class: 'btn btn-success text-center' %>
               <% end %>
+                <!-- Popup -->
+                <div data-aos="zoom-in-up">
+                  <p>Congrtulations! You have finished this lesson. </p>
+                </div>
               </div>
 
               <% unless @course.lessons.last.id == @lesson.id %>
@@ -143,40 +147,9 @@
             <div class="row">
 
               <div class="col-xs-6">
-<!--               <%= simple_form_for [@course, @lesson, @session] do |f| %>
-                <%= f.button :submit, 'Done with this Lesson! :)', disabled: "disabled", class: 'btn btn-success text-center' %>
-              <% end %> -->
-
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                 <%= simple_form_for [@course, @lesson, @session] do |f| %>
                 <%= f.button :submit, 'Done with this Lesson! :)', disabled: "disabled", class: 'btn btn-success text-center' %>
-                <% end %>
-              </button>
-
-              <!-- Modal -->
-              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="myModalLabel"></h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <p>Congratulations! You have finished this lesson.</p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary"><%= link_to 'Next Lesson', course_lesson_path(@course.id, @lesson.id + 1) %></button>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
+              <% end %>
               </div>
 
               <div class="col-xs-6 text-right">
@@ -207,32 +180,4 @@
 
 
 
-</div>
-
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="myModalLabel"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Congratulations! You have finished this lesson.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary"><%= link_to 'Next Lesson', course_lesson_path(@course.id, @lesson.id + 1) %></button>
-      </div>
-      </div>
-    </div>
-  </div>
 </div>

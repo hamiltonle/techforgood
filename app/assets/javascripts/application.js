@@ -122,7 +122,7 @@ function hexToRgb(hex) {
   }
 
 
-// Dashboard banner gradient
+// Profile banner gradient
 var colors = new Array(
   [202,232,246],
   [151,215,244],
@@ -971,8 +971,3 @@ jQuery(document).ready(function() {
         e.preventDefault();
     });
 });
-
-// Modal
-$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').focus()
-})
