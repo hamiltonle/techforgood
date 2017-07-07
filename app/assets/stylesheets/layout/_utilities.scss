@@ -4,6 +4,17 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 
+
+
+// .col-xs-12 {
+//   float: none;
+// }
+
+
+
+
+
+
  // show more snippet
  .show-more-snippet {
     height:100px;  /*this is set to the height of the how much text you want to show based on the font size, line height, etc*/
@@ -189,6 +200,10 @@ a:focus {
   font-size: 60px !important;
 }
 
+.text-32px {
+  font-size: 32px !important;
+}
+
 .text-45px {
   font-size: 45px !important;
 }
@@ -362,6 +377,18 @@ a:focus {
     font-weight: normal;
     font-stretch: normal;
     line-height: 1;
+    font-family: "Fredoka One", Helvetica, sans-serif;
+}
+
+.fredoka-sm {
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 1;
+    font-size: 14px;
     font-family: "Fredoka One", Helvetica, sans-serif;
 }
 
