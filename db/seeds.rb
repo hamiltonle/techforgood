@@ -80,7 +80,7 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
-url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311573/u9wuyy0fgyjct0eco1ka.jpg"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311532/xvxveknlnyc11pnenlye.jpg"
 student.photo_url = url
 student.save!
 
@@ -94,7 +94,7 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
-url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311585/kdpnnvawgqavfwsanjwu.jpg"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311573/u9wuyy0fgyjct0eco1ka.jpg"
 student.photo_url = url
 student.save!
 
@@ -436,7 +436,7 @@ lesson = Lesson.new(
   description: "What's the situation like for Chinese children with physical disabilities",
   lesson_type: "lecture",
   video: "<embed src='http://player.youku.com/player.php/sid/XMTU5OTM0MTIxMg==/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
-  minutes: 15,
+  minutes: 10,
   module_name: "why"
   )
 lesson.course = Course.find(1)
@@ -449,7 +449,7 @@ lesson = Lesson.new(
   description: "An introduction to our social impact",
   lesson_type: "quiz",
   video: "",
-  minutes: 10,
+  minutes: 20,
   module_name: "why"
   )
 lesson.course = Course.find(1)
@@ -562,7 +562,7 @@ lesson = Lesson.new(
   description: "How are leading players using 3D printing technology",
   lesson_type: "article",
   video: "",
-  minutes: 10,
+  minutes: 15,
   module_name: "how"
   )
 lesson.course = Course.find(1)
@@ -590,7 +590,7 @@ lesson = Lesson.new(
   description: "How to write your own scripts for your 3D printer",
   lesson_type: "lecture",
   video: "<embed src='http://player.youku.com/player.php/sid/XNTAyOTcwMzgw/v.swf' allowFullScreen='true' quality='high' width='100%' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>",
-  minutes: 10,
+  minutes: 55,
   module_name: "how"
   )
 lesson.course = Course.find(1)
@@ -605,7 +605,7 @@ If you enjoy this business course and are interested in an MBA, consider applyin
   description: "What makes up a 3D printer?",
   lesson_type: "assignment",
   video: "",
-  minutes: 30,
+  minutes: 40,
   module_name: "how"
   )
 lesson.course = Course.find(1)
@@ -618,7 +618,7 @@ lesson = Lesson.new(
   description: "Your final project for the course",
   lesson_type: "discussion",
   video: "",
-  minutes: 15,
+  minutes: 90,
   module_name: "how"
   )
 lesson.course = Course.find(1)
