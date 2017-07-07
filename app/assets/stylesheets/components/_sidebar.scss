@@ -67,6 +67,15 @@
   border-right: 3px solid lightgray;
 }
 
+.module-chatbot {
+  background: $orange;
+  border-right: 3px solid $orange;
+}
+
+.module-chatbot:hover {
+  border-right: 3px solid lightgray;
+}
+
 .module-materials {
   background: #FFFFFF;
   border: 1px solid #EDEDED;

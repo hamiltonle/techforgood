@@ -91,10 +91,14 @@
   background-color: rgba(0,0,0,0);
 }
 
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: rgba(0,0,0,0) !important;
+}
+
 li.active a, li.active a:hover {
   color: $blue7;
-  background-color: rgba(0,0,0,0);
-
+  background-color: white;
 }
 
 .tabs {
@@ -184,6 +188,7 @@ ul {
   padding: 15px;
   text-align: center;
   overflow-x: hidden;
+  padding-left: 38px;
 }
 
 .card__front {
@@ -199,7 +204,7 @@ text-shadow: longshadow(darken($color2, 15%),$color2,100, 0.8);
   // width: calc(100% * .3333 - 30px + .3333 * 30px);
   width: 220px;
   height: 280px;
-  margin: 0px 30px 30px 0;
+  margin: 0px 25px 25px 0;
   perspective: 1000;
   line-height: 1.8;
   text-shadow: none;
@@ -243,12 +248,12 @@ text-shadow: longshadow(darken($color2, 15%),$color2,100, 0.8);
     justify-content: center;
     box-shadow: 0 4px 20px rgba(black, 0.3);
 
-    span {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+    // span {
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    // }
   }
 
   &__name {
