@@ -206,8 +206,8 @@
 
                   <!-- Name -->
                   <h4 class="card__name">
-                    <span><%= enrollment.user.first_name %>
-                    </span> <%= enrollment.user.last_name %>
+                    <span><%= enrollment.user.first_name %></span>
+<!--                <%= enrollment.user.last_name %> -->
                   </h4><br>
 
                   <!-- Photo -->
@@ -218,12 +218,11 @@
                   <% end %>
                   <br>
 
-                  <!-- Group -->
-                  <p class="card__name user-email"><%= enrollment.user.group %></p>
-                  <br>
-
                   <!-- Email -->
                   <p class="card__name user-email"><%= enrollment.user.email %></p>
+
+                  <!-- Group -->
+<!--                   <p class="card__name user-email"><%= enrollment.user.group %></p> -->
                 </div>
 
                 <div class="card__back">
