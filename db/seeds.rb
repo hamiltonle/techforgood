@@ -71,7 +71,7 @@ student.photo_url = url
 student.save!
 
 student = User.new(
-  first_name: 'Etienne',
+  first_name: 'Ettienne',
   last_name: 'Gagne',
   group: 'LeWagon',
   email: "etienne@gmail.com",
@@ -80,7 +80,7 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
-url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311573/u9wuyy0fgyjct0eco1ka.jpg"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311532/xvxveknlnyc11pnenlye.jpg"
 student.photo_url = url
 student.save!
 
@@ -94,7 +94,7 @@ student = User.new(
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
-url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311585/kdpnnvawgqavfwsanjwu.jpg"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311573/u9wuyy0fgyjct0eco1ka.jpg"
 student.photo_url = url
 student.save!
 
