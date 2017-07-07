@@ -61,17 +61,18 @@
   <!-- Current Course Information -->
     <% unless @new_user %>
 
-      <div class="container course-container">
+      <div class="container">
 
         <% @current_enrollments.each do |enrollment| %>
-          <div class="dashboard-course-card">
+          <div class="dashboard-course-card col-xs-12 col-sm-6 col-md-4">
             <div class="card-content">
 
               <!-- Course Description -->
               <div class="dashboard-course-description">
                 <h2><%= enrollment.course.title %></h2>
+                <br>
 <!--                 <p><%= link_to enrollment.course.organization.name, organization_path(enrollment.course.organization_id) %></p> -->
-<%= cl_image_tag enrollment.course.photos.last.path, height: '20px' %>
+                <h2><%= cl_image_tag enrollment.course.photos.last.path, height: '20px' %></h2>
               </div>
               <br>
 
@@ -110,8 +111,10 @@
               </div>
 
             </div>
+
           </div>
         <% end %>
+
       </div>
 
     <% end %>
@@ -124,17 +127,19 @@
     <!-- Completed Course Information -->
     <% unless @new_user %>
 
-      <div class="container course-container">
+      <div class="container">
         <div class="row">
 
             <% @completed_enrollments.each do |enrollment| %>
-              <div class="dashboard-course-card">
+            <div class="dashboard-course-card col-xs-12 col-sm-6 col-md-4">
                 <div class="card-content">
 
                   <!-- Course Description -->
                   <div class="dashboard-course-description">
                     <h2><%= enrollment.course.title %></h2>
-                    <p><%= link_to enrollment.course.organization.name, organization_path(enrollment.course.organization_id) %></p>
+                    <br>
+                    <h2><%= cl_image_tag enrollment.course.photos.last.path, height: '20px' %></h2>
+                    <!-- <p><%= link_to enrollment.course.organization.name, organization_path(enrollment.course.organization_id) %></p> -->
                   </div>
                   <br>
 
@@ -169,9 +174,8 @@
               </div>
             <% end %>
           </div>
-
+        <% end %>
       </div>
-    <% end %>
 
 <!--     <h3>Courses</h3>
     <div class="progress-circle padded text-center tab-pane tab active">
@@ -206,8 +210,8 @@
 
                   <!-- Name -->
                   <h4 class="card__name">
-                    <span><%= enrollment.user.first_name %>
-                    </span> <%= enrollment.user.last_name %>
+                    <span><%= enrollment.user.first_name %></span>
+<!--                <%= enrollment.user.last_name %> -->
                   </h4><br>
 
                   <!-- Photo -->
@@ -218,12 +222,11 @@
                   <% end %>
                   <br>
 
-                  <!-- Group -->
-                  <p class="card__name user-email"><%= enrollment.user.group %></p>
-                  <br>
-
                   <!-- Email -->
                   <p class="card__name user-email"><%= enrollment.user.email %></p>
+
+                  <!-- Group -->
+<!--                   <p class="card__name user-email"><%= enrollment.user.group %></p> -->
                 </div>
 
                 <div class="card__back">
