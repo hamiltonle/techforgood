@@ -19,12 +19,7 @@
     <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
       <li>
         <%= link_to dashboard_users_path do %>
-          <i class="fa fa-fw fa-user"></i> <%= t(".profile", default: "Profile") %>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to courses_path do %>
-          <i class="fa fa-fw fa-graduation-cap"></i> <%= t(".profile", default: "Browse Courses") %>
+          <i class="fa fa-fw fa-user"></i> <%= t(".profile", default: "Dashboard") %>
         <% end %>
       </li>
       <li>
@@ -176,34 +171,3 @@
 
 
 </div>
-
-
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="myModalLabel"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Congratulations! You have finished this lesson.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<%= link_to 'Next Lesson', course_lesson_path(@course.id, @lesson.id + 1), data: {toggle: "modal", target: "#modal"} %>

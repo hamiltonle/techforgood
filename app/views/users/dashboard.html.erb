@@ -70,7 +70,8 @@
               <!-- Course Description -->
               <div class="dashboard-course-description">
                 <h2><%= enrollment.course.title %></h2>
-                <p><%= link_to enrollment.course.organization.name, organization_path(enrollment.course.organization_id) %></p>
+<!--                 <p><%= link_to enrollment.course.organization.name, organization_path(enrollment.course.organization_id) %></p> -->
+<%= cl_image_tag enrollment.course.photos.last.path, height: '20px' %>
               </div>
               <br>
 
@@ -228,7 +229,7 @@
                 <div class="card__back">
                     <circle cx="90" cy="90" r="55" stroke="#514d9b" stroke-width="35"  />
                   </svg>
-                <span>This is a person's bio. How interesting. <%#= image_tag "catpurr.gif", class: "gif-circle" %></span>
+                <span><%= enrollment.user.bio %></span>
                 </div>
               </div>
             </li>
