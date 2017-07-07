@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
 puts "deleting all current data"
 
 Enrollment.destroy_all
@@ -28,11 +30,12 @@ student = User.new(
   email: "amin@gmail.com",
   password: 'techforgood',
   password_confirmation: 'techforgood',
+  bio: "I used to work as an educational content developer creating content (books, music, videos) for an edtech company and wanted to learn the technical skills to build cool products.",
   admin: true
   )
 puts "saved a student user"
 
-url = "https://source.unsplash.com/collection/580685/200x200"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311521/le8ix9nqfdxjwj1fushc.jpg"
 student.photo_url = url
 
 student.save!
@@ -40,212 +43,207 @@ student.save!
 student = User.new(
   first_name: 'Kiki',
   last_name: 'Judd',
-  group: 'All Blacks',
+  group: 'LeWagon',
   email: "kiki@gmail.com",
   password: 'techforgood',
   password_confirmation: 'techforgood',
+  bio: "I used to work in Sales & Marketing at a company developing software for education. I joined Le Wagon so I could learn to code and bring my own ideas to life.",
   admin: true
   )
 puts "saved a student user"
-url = "https://source.unsplash.com/collection/580685/200x200"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311585/kdpnnvawgqavfwsanjwu.jpg"
 student.photo_url = url
 student.save!
 
 student = User.new(
   first_name: 'Hamilton',
   last_name: 'Le',
-  group: 'Johnson & Johnson',
+  group: 'LeWagon',
   email: "hamilton@gmail.com",
   password: 'techforgood',
   password_confirmation: 'techforgood',
+  bio: "Involved in education and tech for the past 10 years. Interested to get more technical know-how under my belt and tackle bigger and more interesting challenges ahead!",
   admin: true
   )
 puts "saved a student user"
-url = "https://source.unsplash.com/collection/580685/200x200"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311562/y9tdup08fhevjsadionv.jpg"
 student.photo_url = url
 student.save!
 
 student = User.new(
-  first_name: 'Roger',
-  last_name: 'Smith',
-  group: 'Glenbard South High School',
-  email: "roger@gmail.com",
+  first_name: 'Etienne',
+  last_name: 'Gagne',
+  group: 'LeWagon',
+  email: "etienne@gmail.com",
   password: 'techforgood',
+  bio: 'I booked a one way to Shanghai with no firm plan after LeWagon',
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
-url = "https://source.unsplash.com/collection/580685/200x200"
-student.photo_url = url
-student.save!
-
-student = User.new(
-  first_name: 'Mike',
-  last_name: 'Smith',
-  group: 'Glenbard South High School',
-  email: "mike@gmail.com",
-  password: 'techforgood',
-  password_confirmation: 'techforgood'
-  )
-puts "saved a student user"
-url = "https://source.unsplash.com/collection/580685/200x200"
-student.photo_url = url
-student.save!
-
-student = User.new(
-  first_name: 'bob',
-  last_name: 'Smith',
-  group: 'Glenbard South High School',
-  email: "bob@gmail.com",
-  password: 'techforgood',
-  password_confirmation: 'techforgood'
-  )
-puts "saved a student user"
-url = "https://source.unsplash.com/collection/580685/200x200"
-student.photo_url = url
-student.save!
-
-student = User.new(
-  first_name: 'George',
-  last_name: 'Smith',
-  group: 'Glenbard South High School',
-  email: "george@gmail.com",
-  password: 'techforgood',
-  password_confirmation: 'techforgood'
-  )
-puts "saved a student user"
-url = "https://source.unsplash.com/collection/580685/200x200"
-student.photo_url = url
-student.save!
-
-student = User.new(
-  first_name: 'Sharon',
-  last_name: 'Smith',
-  group: 'Glenbard South High School',
-  email: "sharon@gmail.com",
-  password: 'techforgood',
-  password_confirmation: 'techforgood'
-  )
-puts "saved a student user"
-url = "https://source.unsplash.com/collection/580685/200x200"
-student.photo_url = url
-student.save!
-
-student = User.new(
-  first_name: 'Cindy',
-  last_name: 'Smith',
-  group: 'Glenbard South High School',
-  email: "cindy@gmail.com",
-  password: 'techforgood',
-  password_confirmation: 'techforgood'
-  )
-puts "saved a student user"
-url = "https://source.unsplash.com/collection/580685/200x200"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311573/u9wuyy0fgyjct0eco1ka.jpg"
 student.photo_url = url
 student.save!
 
 student = User.new(
   first_name: 'Jay',
-  last_name: 'Smith',
-  group: 'Glenbard South High School',
+  last_name: 'Gao',
+  group: 'LeWagon',
   email: "jay@gmail.com",
+  bio: 'Interested in Techs, want to learn about it from scratch, and also got a new job.',
   password: 'techforgood',
   password_confirmation: 'techforgood'
   )
 puts "saved a student user"
-url = "https://source.unsplash.com/collection/580685/200x200"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311585/kdpnnvawgqavfwsanjwu.jpg"
 student.photo_url = url
 student.save!
 
 student = User.new(
   first_name: 'Marketa',
-  last_name: 'Smith',
-  group: 'Glenbard South High School',
+  last_name: 'Dragounova',
+  group: 'LeWagon',
   email: "marketa@gmail.com",
   password: 'techforgood',
-  password_confirmation: 'techforgood'
+  password_confirmation: 'techforgood',
+  bio: 'I love learning new things and le wagon seemed like the right kind of challenge.'
   )
 puts "saved a student user"
-url = "https://source.unsplash.com/collection/580685/200x200"
-student.photo_url = url
-student.save!
-
-student = User.new(
-  first_name: 'Ettiene',
-  last_name: 'Smith',
-  group: 'Glenbard South High School',
-  email: "ettiene@gmail.com",
-  password: 'techforgood',
-  password_confirmation: 'techforgood'
-  )
-puts "saved a student user"
-url = "https://source.unsplash.com/collection/580685/200x200"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311596/i8krhgdfhtdaxtvsnirh.jpg"
 student.photo_url = url
 student.save!
 
 student = User.new(
   first_name: 'Nathan',
-  last_name: 'Smith',
-  group: 'Glenbard South High School',
+  last_name: 'Lee',
+  group: 'LeWagon',
   email: "nathan@gmail.com",
   password: 'techforgood',
-  password_confirmation: 'techforgood'
+  password_confirmation: 'techforgood',
+  bio: 'I hope to either create a start-up or work as a front-end developer focusing on ux and ui.'
   )
 puts "saved a student user"
-url = "https://source.unsplash.com/collection/580685/200x200"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311606/jom6k1ibvmk8nrk4olbp.jpg"
 student.photo_url = url
 student.save!
 
 student = User.new(
-  first_name: 'Maria',
-  last_name: 'Smith',
-  group: 'Glenbard South High School',
-  email: "maria@gmail.com",
+  first_name: 'Thibault',
+  last_name: 'Genaitay',
+  group: 'LeWagon',
+  email: "thibault@gmail.com",
   password: 'techforgood',
-  password_confirmation: 'techforgood'
+  password_confirmation: 'techforgood',
+  bio: 'Thibault founded Le Wagon in Shanghai to support creative entrepreneurs build amazing products in China!'
   )
 puts "saved a student user"
-url = "https://source.unsplash.com/collection/580685/200x200"
-student.photo_url = url
-student.save!
-
-student = User.new(
-  first_name: 'Stephen',
-  last_name: 'Smith',
-  group: 'Glenbard South High School',
-  email: "stephen@gmail.com",
-  password: 'techforgood',
-  password_confirmation: 'techforgood'
-  )
-puts "saved a student user"
-url = "https://source.unsplash.com/collection/580685/200x200"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,h_100,w_100/v1475007353/yzza4gmf7ktqsnzsun2x.jpg"
 student.photo_url = url
 student.save!
 
 student = User.new(
   first_name: 'Forrest',
-  last_name: 'Smith',
-  group: 'Glenbard South High School',
+  last_name: 'Ye',
+  group: 'LeWagon',
   email: "forrest@gmail.com",
   password: 'techforgood',
-  password_confirmation: 'techforgood'
+  password_confirmation: 'techforgood',
+  bio: 'At Le Wagon he will teach to our entrepreneurs the fundamentals of code'
   )
 puts "saved a student user"
-url = "https://source.unsplash.com/collection/580685/200x200"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,h_100,w_100/v1475007397/jzao4su1v6kfzchg22t4.jpg"
+student.photo_url = url
+student.save!
+
+student = User.new(
+  first_name: 'Maggie',
+  last_name: 'Li',
+  group: 'LeWagon',
+  email: "maggie@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood',
+  bio: "I'm a cool gal!  Come talk to me!"
+  )
+puts "saved a student user"
+url = "http://res.cloudinary.com/techforgood/image/upload/c_scale,w_195/v1499354412/Screen_Shot_2017-06-09_at_5.13.34_PM_ogsjqt.png"
 student.photo_url = url
 student.save!
 
 student = User.new(
   first_name: 'Dounan',
-  last_name: 'Smith',
-  group: 'Glenbard South High School',
+  last_name: 'Hu',
+  group: 'LeWagon',
   email: "dounan@gmail.com",
   password: 'techforgood',
-  password_confirmation: 'techforgood'
+  password_confirmation: 'techforgood',
+  bio: ' Involved in programming since the age of 16, I lived in the USA to conduct university-level projects of algorithms and serve the research of Astronomy'
   )
 puts "saved a student user"
-url = "https://source.unsplash.com/collection/580685/200x200"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,h_100,w_100/v1484535586/jjfugzyxtusvs9rczju7.jpg"
 student.photo_url = url
 student.save!
+
+student = User.new(
+  first_name: 'Maria',
+  last_name: 'Altyeva',
+  group: 'LeWagon',
+  email: "maria@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood',
+  bio: 'She moved to China in 2014 to explore the tech scene and is currently leading the development team at 5:IT'
+  )
+puts "saved a student user"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,h_100,w_100/v1497405233/cnnnneepwwmlmmvts4h6.jpg"
+student.photo_url = url
+student.save!
+
+
+student = User.new(
+  first_name: 'Adrian',
+  last_name: 'Pelegri',
+  group: 'LeWagon',
+  email: "Adrian@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood',
+  bio: "I'm an awesome Teaching Assistant!"
+  )
+puts "saved a student user"
+url = "http://res.cloudinary.com/techforgood/image/upload/c_scale,w_330/v1499354745/Screen_Shot_2017-07-06_at_11.25.17_PM_ivrpqk.png"
+student.photo_url = url
+student.save!
+
+student = User.new(
+  first_name: 'Michaeljohn',
+  last_name: 'Clement',
+  group: 'LeWagon',
+  email: "michaeljohn@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood',
+  bio: 'He moved from the US to China in 2011 and believes many of the biggest opportunities for tech startups are found in the Middle Kingdom'
+  )
+puts "saved a student user"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,h_100,w_100/v1487548942/i3euir5yvbgb9wtwlzdn.jpg"
+student.photo_url = url
+student.save!
+
+student = User.new(
+  first_name: 'Dimitri',
+  last_name: 'Bosch',
+  group: 'LeWagon',
+  email: "dimitri@gmail.com",
+  password: 'techforgood',
+  password_confirmation: 'techforgood',
+  bio: 'He has now found his passion, working as a freelance web developer while living in Japan!'
+  )
+puts "saved a student user"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,h_100,w_100/v1473855071/rjsqrp5csugzz3uw2hzb.jpg"
+student.photo_url = url
+student.save!
+
+
+
+
+
+
 
 # Organization seeds
 puts "creating organizations"
@@ -265,8 +263,29 @@ org.save!
 puts "saved an org"
 
 org = Organization.new(
-  name: "Johnson & Johnson",
-  description: "An American multinational medical devices, pharmaceutical and consumer packaged goods manufacturing company founded in 1886"
+  name: "OxSight",
+  description: "a University of Oxford venture that uses the latest smart glasses to improve sight for blind and partially sighted people"
+  )
+org.save!
+puts "saved an org"
+
+org = Organization.new(
+  name: "DJI",
+  description: "As the market leader in easy-to-fly drones and aerial photography systems, DJI quadcopters like the Phantom are the standard in consumer drone technology."
+  )
+org.save!
+puts "saved an org"
+
+org = Organization.new(
+  name: "Google Tilt Brush",
+  description: "Tilt Brush is a room scale 3D painting virtual reality application developed and published by Google. The software was released for Microsoft Windows on April 5, 2016"
+  )
+org.save!
+puts "saved an org"
+
+org = Organization.new(
+  name: "OKCoin",
+  description: "OKCoin is a Bitcoin company in China with core product lines of a Bitcoin exchange, and a mobile consumer payment and lending app"
   )
 org.save!
 puts "saved an org"
@@ -278,16 +297,17 @@ puts "creating courses"
 course = Course.new(
   title: "3D Printing",
   tagline: "Learn how to make 3d printed prosthetics for children in need",
-  issue: "Prosthetics can involve a lot of work and expertise to produce and fit and the WHO says there is currently a shortage of 40,000 trained prosthetists in poorer countries. There is also the time and financial cost to patients, who may have to travel long distances to assess their need, produce a prosthesis and fit it to the residual limb. The result is that braces and artificial limbs are among the most desperately needed medical devices.",
-  tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
-  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).",
-
+  issue: "Prosthetics can involve a lot of work and expertise to produce and fit and the WHO says there is currently a shortage of 40,000 trained prosthetists in poorer countries. ",
+  tech_solution: "Slowly but surely, 3D printing, has made it easier to build low cost customized prosthetics.  There are few commercial products that can suit custom sizes as needed.",
+  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from Stratasys and Zhanyijihua",
 
   )
-course.organization = Organization.find(3)
+course.organization = Organization.find(1)
 
 urls = [
-  "https://www.rit.edu/news/lib/filelib/201402/talonhand1.jpg"
+  "https://www.rit.edu/news/lib/filelib/201402/talonhand1.jpg",
+  "http://res.cloudinary.com/techforgood/image/upload/c_scale,w_330/v1499350323/Stratasys-3_iroanp.png"
+
 ]
 course.photo_urls = urls
 
@@ -298,20 +318,18 @@ puts "saved a course"
 
 course = Course.new(
   title: "Computer Vision",
-  tagline: "Using Microsoft's computer vision technology to find missing children",
+  tagline: "Help Microsoft's facial recognition tech to find missing children",
   issue: "Currently, there are millions of children who've gone missing in China.",
-  tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
-  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).
+  tech_solution: "Slowly but surely, 3D printing, has made it easier to build low cost customized prosthetics.  There are few commercial products that can suit custom sizes as needed.",
+  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from Stratasys and Zhanyijihua",
 
-You will obtain a rich understanding of what 3D printing is, how 3D printers work, and how this new technology is being used by both individuals and firms to revolutionize our world. In addition, you will acquire a set of skills that will enable you to create digital designs that you can transform into physical objects. These skills can be used to help you launch a career in the growing field of 3D printing, be the 3D printing expert in your current firm, or just make the things you need.
-
-"
   )
 course.organization = Organization.find(2)
 
-
 urls = [
-  "https://hothardware.com/ContentImages/NewsItem/35672/content/Microsoft_Emotion_Detection_2.jpg"
+  "https://hothardware.com/ContentImages/NewsItem/35672/content/Microsoft_Emotion_Detection_2.jpg",
+  "http://res.cloudinary.com/techforgood/image/upload/c_scale,w_340/v1499350449/Microsoft-Logo_d5uvez.png"
+
 ]
 course.photo_urls = urls
 
@@ -321,25 +339,88 @@ puts "saved a course"
 
 course = Course.new(
   title: "Augmented Reality",
-  tagline: "Augmented Reality for vision-impaired people",
+  tagline: "Augmented Reality for the visually-impaired",
   issue: "Blindness doesn't allow people to experience and interact with their surroundings to the fullest",
   tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
   description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).
 
-You will obtain a rich understanding of what 3D printing is, how 3D printers work, and how this new technology is being used by both individuals and firms to revolutionize our world. In addition, you will acquire a set of skills that will enable you to create digital designs that you can transform into physical objects. These skills can be used to help you launch a career in the growing field of 3D printing, be the 3D printing expert in your current firm, or just make the things you need.
-
 "
   )
-course.organization = Organization.find(1)
+course.organization = Organization.find(3)
 
 urls = [
-  "https://www-tc.pbs.org/wgbh/nova/next/wp-content/uploads/2015/06/smart-specs.jpg"
+  "https://www-tc.pbs.org/wgbh/nova/next/wp-content/uploads/2015/06/smart-specs.jpg",
+  "http://res.cloudinary.com/techforgood/image/upload/c_scale,w_348/v1499350599/OxSight-logo_rhkwoc.png"
 ]
 course.photo_urls = urls
 
 
 course.save!
 puts "saved a course"
+
+
+course = Course.new(
+  title: "Drones",
+  tagline: "Build drones to help monitor forest fires and pollution",
+  issue: "Blindness doesn't allow people to experience and interact with their surroundings to the fullest",
+  tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
+  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).
+
+"
+  )
+course.organization = Organization.find(4)
+
+urls = [
+  "http://res.cloudinary.com/techforgood/image/upload/v1499350844/Forest_fire_UAV_400x300_we9dls.jpg",
+  "http://res.cloudinary.com/techforgood/image/upload/c_scale,w_378/v1499350735/dji_miaufs.png"
+]
+course.photo_urls = urls
+
+course.save!
+puts "saved a course"
+
+
+course = Course.new(
+  title: "Virtual Reality",
+  tagline: "Promote arts advocacy to low-income areas with VR",
+  issue: "Blindness doesn't allow people to experience and interact with their surroundings to the fullest",
+  tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
+  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).
+
+"
+  )
+course.organization = Organization.find(5)
+
+urls = [
+  "http://res.cloudinary.com/techforgood/image/upload/v1499351723/34099C6A00000578-3584512-Google_says_its_new_Tilt_Brush_VR_app_illustrated_enables_users_-a-14_1462963022363_bzmovm.jpg",
+  "http://res.cloudinary.com/techforgood/image/upload/c_scale,w_284/v1499351744/1200px-Google_2015_logo.svg_d6p9cm.png"
+]
+course.photo_urls = urls
+
+course.save!
+puts "saved a course"
+
+
+course = Course.new(
+  title: "Blockchain",
+  tagline: "Transparently fund-raise for disaster-stricken areas using blockchain",
+  issue: "Blindness doesn't allow people to experience and interact with their surroundings to the fullest",
+  tech_solution: "Slowly but surely, 3D printing, also known as additive manufacturing, has made it easier to build low cost customized prosthetics. Perhaps this is not surprising, given that its key benefit is to enable the rapid and cost-efficient creation of bespoke products. There are few commercial products that need to suit a wider variety of shapes and sizes than medical devices made for human beings",
+  description:"This course will introduce you to the magic of 3D printing. Through a series of four cohesive courses and a hands-on capstone experience, you will acquire the knowledge, skills, and tools to turn your ideas into objects! This specialization has been developed by faculty experts from the Illinois MakerLab (the world's first 3D printing lab in a Business School) along with industry experts from both Autodesk (a leading 3D software firm) and Ultimaker (a leading 3D hardware firm).
+
+"
+  )
+course.organization = Organization.find(6)
+
+urls = [
+  "http://res.cloudinary.com/techforgood/image/upload/v1499351837/e67718c8-35b9-47ad-be8b-94de27d22080_bs2zwl.jpg",
+  "http://res.cloudinary.com/techforgood/image/upload/c_scale,w_179/v1499351964/logo1_nnimvo.png"
+]
+course.photo_urls = urls
+
+course.save!
+puts "saved a course"
+
 
 
 
@@ -562,7 +643,7 @@ lesson.save!
 puts "saved a lesson"
 
 lesson = Lesson.new(
-  title: "How Computer Vision Works",
+  title: "How it can help",
   text: "Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
     Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
   description: "How face recognition works",
@@ -590,7 +671,7 @@ lesson.save!
 puts "saved a lesson"
 
 lesson = Lesson.new(
-  title: "How AR work",
+  title: "How AR can help",
   text: "Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
     Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
   description: "Is AR the Future?",
@@ -613,7 +694,7 @@ puts "Creating sessions"
 student = 1
 
 
-14.times do
+15.times do
 
   # Enrollment seeds
   puts "creating enrollments"
@@ -626,7 +707,7 @@ student = 1
 
   lesson_num = 1
 
-  (1..10).to_a.sample.times do
+  (1..9).to_a.sample.times do
 
     session = Session.new
     session.lesson = Lesson.find(lesson_num)
@@ -641,3 +722,84 @@ student = 1
   end
   student += 1
 end
+
+
+32.times do
+
+  student = User.new(
+    first_name: Faker::Name.first_name ,
+    last_name: Faker::Name.last_name,
+    group: "Glenbard South High School",
+    email: Faker::Internet.email,
+    password: 'techforgood',
+    password_confirmation: 'techforgood'
+    )
+  url = "https://source.unsplash.com/collection/580685/200x200"
+  student.photo_url = url
+  student.save!
+  puts "saved a student user"
+
+
+  puts "creating enrollments"
+  enrollment = Enrollment.new
+  enrollment.course = Course.find(1)
+  enrollment.user = student
+  enrollment.status = "completed"
+  enrollment.save!
+  puts " enrollments saved"
+
+end
+
+14.times do
+
+  student = User.new(
+    first_name: Faker::Name.first_name ,
+    last_name: Faker::Name.last_name,
+    group: "Glenbard South High School",
+    email: Faker::Internet.email,
+    password: 'techforgood',
+    password_confirmation: 'techforgood'
+    )
+  url = "https://source.unsplash.com/collection/580685/200x200"
+  student.photo_url = url
+  student.save!
+  puts "saved a student user"
+
+
+  puts "creating enrollments"
+  enrollment = Enrollment.new
+  enrollment.course = Course.find(2)
+  enrollment.user = student
+  enrollment.status = "completed"
+  enrollment.save!
+  puts " enrollments saved"
+
+end
+
+12.times do
+
+  student = User.new(
+    first_name: Faker::Name.first_name ,
+    last_name: Faker::Name.last_name,
+    group: "Glenbard South High School",
+    email: Faker::Internet.email,
+    password: 'techforgood',
+    password_confirmation: 'techforgood'
+    )
+  url = "https://source.unsplash.com/collection/580685/200x200"
+  student.photo_url = url
+  student.save!
+  puts "saved a student user"
+
+
+  puts "creating enrollments"
+  enrollment = Enrollment.new
+  enrollment.course = Course.find(3)
+  enrollment.user = student
+  enrollment.status = "completed"
+  enrollment.save!
+  puts " enrollments saved"
+
+end
+
+

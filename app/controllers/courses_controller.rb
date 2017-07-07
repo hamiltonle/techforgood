@@ -46,7 +46,7 @@ class CoursesController < ApplicationController
     @course.organization = @organization
     @course.save
 
-    redirect_to course_path
+    # redirect_to course_path
   end
 
   # To edit a course
@@ -62,7 +62,7 @@ class CoursesController < ApplicationController
     @course.update(course_params)
     @course.save
 
-    redirect_to course_path
+    # redirect_to course_path
   end
 
   # To delete a course
