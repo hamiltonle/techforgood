@@ -58,6 +58,7 @@
       </div>
 
       <!-- Dropdown list appearing on mobile only -->
+      <% if user_signed_in? %>
       <div class="navbar-techforgood-item hidden-md hidden-lg">
         <div class="dropdown">
           <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
@@ -72,9 +73,31 @@
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
                 <% end %>
             </li>
+
+
           </ul>
         </div>
       </div>
+<% end %>
+      <div class="navbar-techforgood-item hidden-md hidden-lg">
+        <div class="dropdown">
+          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+          <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
+
+            <li>
+              <a href="#steps" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>How does it work?</span></a>
+            </li>
+            <li>
+              <a href="#courses" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>Courses</span></a>
+            </li>
+            <li>
+              <a href="#faq" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>FAQ</span></a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -131,39 +154,43 @@
 
 
 
-<!-- Characteristics -->
-<!-- <div class="wrapper" id="steps">
-  <div class="container text-center padded characteristics">
-    <div class="row">
-
-      <div class="col-sm-4" data-aos="fade-left" >
-        <%= image_tag "char1.png", class: "img-double"%>
-        <h4>Learn online in your own time</h4>
-      </div>
-      <div class="col-sm-4" data-aos="fade-left" data-aos-delay="300" >
-        <%= image_tag "char2.png", class: "img-double"%>
-        <h4>Study courses developed with universities and NGOs</h4>
-      </div>
-      <div class="col-sm-4" data-aos="fade-left" data-aos-delay="600">
-        <%= image_tag "char3.png", class: "img-double"%>
-        <h4>Get support from tutors and our online learning community</h4>
-      </div>
-    </div>
-  </div>
-</div> -->
 
 
-<div class="continer">
-  <div class="padded text-center">
-    <iframe width="960" height="540" src="https://www.youtube.com/embed/wSexHoIjYKg?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<div class="container hidden-xs">
+  <div class="slightly_padded text-center">
+    <iframe width="80%" height="50vh" src="https://www.youtube.com/embed/wSexHoIjYKg?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
   </div>
 </div>
 
 
 
 
+<!-- Characteristics -->
+<div class="wrapper hidden-md hidden-lg" id="steps">
+  <div class="container text-center padded characteristics">
+    <div class="row">
+
+      <div class="col-sm-4" >
+        <%= image_tag "char1.png", class: "img-double"%>
+        <h4>Learn online in your own time</h4>
+      </div>
+      <div class="col-sm-4"  >
+        <%= image_tag "char2.png", class: "img-double"%>
+        <h4>Study courses developed with universities and NGOs</h4>
+      </div>
+      <div class="col-sm-4" >
+        <%= image_tag "char3.png", class: "img-double"%>
+        <h4>Get support from tutors and our online learning community</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <!-- Banner -->
-<div id="how_does_it_work">
+
+<div id="how_does_it_work" class="hidden-xs">
   <div id="learnmore" class="banner-why parallax padded items-center" style="background-image: linear-gradient(135deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.9) 50%), url(<%= image_path('volunteer.jpg') %>);">
     <div class="col-xs-0">
     </div>
@@ -214,6 +241,7 @@
   </div>
 
 </div>
+
 
 
 
@@ -292,7 +320,6 @@
         </div>
       </div>
     <% end %>
-
 
   </div>
 </div>
