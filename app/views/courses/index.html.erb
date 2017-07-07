@@ -58,6 +58,7 @@
       </div>
 
       <!-- Dropdown list appearing on mobile only -->
+      <% if user_signed_in? %>
       <div class="navbar-techforgood-item hidden-md hidden-lg">
         <div class="dropdown">
           <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
@@ -72,9 +73,31 @@
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
                 <% end %>
             </li>
+
+
           </ul>
         </div>
       </div>
+<% end %>
+      <div class="navbar-techforgood-item hidden-md hidden-lg">
+        <div class="dropdown">
+          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+          <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
+
+            <li>
+              <a href="#steps" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>How does it work?</span></a>
+            </li>
+            <li>
+              <a href="#courses" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>Courses</span></a>
+            </li>
+            <li>
+              <a href="#faq" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>FAQ</span></a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
