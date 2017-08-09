@@ -100,171 +100,40 @@
 
     </div>
   </div>
-</div>
-
 
 
 <!-- Banner -->
-<!-- id="gradient" is to create the moving background -->
-<div id="" id="top" class="parallax top-margin" style="background-color: #3498DB;">
-  <div class="container text-left text-white padded width-1000 hidden-xs">
-
-    <span class="shape fredoka text-80px">TechForGo</span>
-
-    <span class="menu">
-      <i class="fa fa-xl fa-globe globe  menu_label"></i>
-      <span class="shape fredoka text-80px photoStyle">o</span>
-      <span class="shape fredoka text-80px ">d</span>
-    </span>
-
-
-    <h1 class="fredoka text-type-animation text-60px pvw-title"><span>Learn &amp; Lend a Hand</span></h1>
-
-    <a href="#learnmore" class="fancy-button bg-gradient1 page-scroll">
-      <span class="fredoka">Learn More</span>
-    </a>
-
-  </div>
-  <div class="container text-left text-white padded text-center hidden-sm hidden-md hidden-lg">
-
-    <span class="shape fredoka text-lg ">Tech<br>For<br>Go</span>
-
-    <span class="menu">
-      <i class="fa fa-xl fa-globe globe image-spin  menu_label"></i>
-      <span class="shape fredoka text-lg  photoStyle">o</span>
-      <span class="shape fredoka text-lg  ">d</span>
-    </span>
-
-    <h1 class="fredoka"><span>Learn &amp; Lend a Hand</span></h1>
-
-  </div>
-  <div id="globe-image" class="row ">
-    <div class="col-xs-3 col-sm-6">
-    </div>
-
-<!--     <div class="col-xs-6 col-sm-4 text-white text-center">
-      <%#= image_tag "globetech.svg", class: "img-full-width"%>
-    </div> -->
-    <div class="col-xs-3 col-sm-2">
-    </div>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,101,168,0.3) 50%), url(<%= image_path('homepage_banner.png') %>);">
+  <div class="text-left text-50px padding-left-120">
+    <h1>学习创新技术<br>为你的社区创造积极影响力</h1>
   </div>
 </div>
-
-
-
-
-
-
-
-<div class="container hidden-xs">
-  <div class="slightly_padded text-center">
-    <iframe width="80%" height="50vh" src="https://www.youtube.com/embed/wSexHoIjYKg?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-  </div>
-</div>
-
-
 
 
 <!-- Characteristics -->
-<div class="wrapper hidden-md hidden-lg" id="steps">
+<div class="wrapper" id="steps">
   <div class="container text-center padded characteristics">
     <div class="row">
 
+      <h2>随时随地获取优质的STEAM教育</h2>
+
       <div class="col-sm-4" >
         <%= image_tag "char4.png", class: "img-double"%>
-        <h4>Learn online in your own time</h4>
+        <h4>完全在线的学习系统摆脱时间与地点的限制</h4>
       </div>
       <div class="col-sm-4"  >
         <%= image_tag "char5.png", class: "img-double"%>
-        <h4>Study courses developed with universities and NGOs</h4>
+        <h4>知名企业，大学，NGO共同开发课程提供专业权威的课程认证</h4>
       </div>
       <div class="col-sm-4" >
         <%= image_tag "char6.png", class: "img-double"%>
-        <h4>Get support from tutors and our online learning community</h4>
+        <h4>导师全程监督与辅导在互助的学习社区里共同进步</h4>
       </div>
     </div>
   </div>
 </div>
 
 
-
-<!-- Banner -->
-
-<div id="how_does_it_work" class="hidden-xs">
-  <div id="learnmore" class="banner-why parallax padded items-center" style="background-image: linear-gradient(135deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.9) 50%), url(<%= image_path('volunteer.jpg') %>);">
-    <div class="col-xs-0">
-    </div>
-    <div class="col-xs-4" data-aos="fade-up" data-aos-delay="0">
-      <h2 class="fredoka padding-bottom text-45px text-white">Online courses<br> for anyone wanting to make<br> a difference</h2>
-    </div>
-    <div class="col-xs-5" data-aos="fade-left">
-      <%= image_tag "volunteer.jpg", class: "img-radius-gray img-full-width" %>
-    </div>
-  </div>
-
-  <div class="banner-why parallax padded items-center" style="background-image: linear-gradient(-45deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.9) 50%), url(<%= image_path('why2.png') %>);">
-    <div class="col-xs-5" data-aos="fade-down">
-      <%= image_tag "why2.png", class: "img-radius-gray img-full-width" %>
-    </div>
-    <div class="col-xs-0">
-    </div>
-    <div class="col-xs-4" data-aos="fade-up" data-aos-delay="0">
-      <h1 class="fredoka padding-bottom text-45px text-white">Learn about new technology, while contributing to a social cause</h1>
-    </div>
-
-  </div>
-
-
-
-  <div class="banner-why parallax padded items-center" style="background-image: linear-gradient(135deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.9) 50%), url(<%= image_path('why3.jpg') %>);">
-    <div class="col-xs-0">
-    </div>
-    <div class="col-xs-4" data-aos="fade-up" data-aos-delay="0">
-      <h1 class="fredoka padding-bottom text-45px text-white">Get support from tutors and like-minded classmates</h1>
-    </div>
-    <div class="col-xs-5" data-aos="fade-left">
-      <%= image_tag "why3.jpg", class: "img-radius-gray img-full-width" %>
-    </div>
-  </div>
-
-  <div class="banner-why parallax padded items-center" style="background-image: linear-gradient(-45deg, rgba(52,152,219,1) 50%, rgba(255,255,255,0.9) 50%), url(<%= image_path('handsnotext.jpg') %>);">
-
-      <div class="col-xs-5" data-aos="fade-down">
-      <%= image_tag "handsnotext.jpg", class: "img-radius-gray img-full-width" %>
-    </div>
-    <div class="col-xs-0">
-    </div>
-    <div class="col-xs-4" data-aos="fade-up" data-aos-delay="0">
-      <h1 class="fredoka padding-bottom text-45px text-white">Stay connected to those you’ve helped</h1>
-    </div>
-
-  </div>
-
-</div>
-
-
-
-
-<!-- Learning Process -->
-<!-- <div class="wrapper-learning-process parallax" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%#= cl_image_path('zi-jian-lim-227847_j6rckn', height: 1082, width: 1624, crop: :lfill) %>);" id="how_does_it_work">
-  <div class="container padded">
-    <div class="row">
-    <!-- <h3 align="center">How does it work?</h3> -->
-
-      <%# @steps.each do |step, icon| %>
-<!--       <div class="col-xs-12 col-md-4">
-        <div class=" learning-process-card">
-          <div class="learning-process-description text-center">
-            <h2><#%= step %></h2>
-            <h1><i class="fa fa-<#%= icon %>" aria-hidden="true"></i></h1>
-          </div>
-        </div>
-      </div> -->
-      <%# end %>
-
-<!--     </div>
-  </div>
-</div> -->
 
 
 <!-- Courses -->
@@ -326,6 +195,27 @@
 
 
 
+
+<!-- Learning Process -->
+<div class="wrapper-learning-process parallax" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path('zi-jian-lim-227847_j6rckn', height: 1082, width: 1624, crop: :lfill) %>);" id="how_does_it_work">
+  <div class="container padded">
+    <div class="row">
+    <h3 align="center">How does it work?</h3>
+
+      <% @steps.each do |step, icon| %>
+      <div class="col-xs-12 col-md-4">
+        <div class=" learning-process-card">
+          <div class="learning-process-description text-center">
+            <h2><%= step %></h2>
+            <h1><i class="fa fa-<%= icon %>" aria-hidden="true"></i></h1>
+          </div>
+        </div>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
 
 <!-- FAQ -->
 <div class="container faq-section padded width-1000" id="faq">
