@@ -2,15 +2,22 @@
     <div class="">
 
       <!-- This is the button to close the sidenav -->
-
-
       <div class="text-right div-relative flexbox">
         <button href=""  class="closebtn text-right" onclick="closeNav()">
           &times;
         </button>
       </div>
 
-
+      <div>
+        <div class="text-left rank-flexbox">
+          <div class="lesson-text flex-item-score">
+            <h5><strong>Score: </strong></h5>
+          </div>
+          <div class="lesson-text flex-item-rank">
+            <h5><strong>Rank: </strong></h5>
+          </div>
+        </div>
+      </div>
 
 
       <!-- WHY MODULE -->
@@ -21,7 +28,7 @@
         <div class="flex-item-week">
         </div>
         <div class="flex-item-complete lesson-completed">
-          <h6> (week 1)</h6>
+          <h6>Finished</h6>
         </div>
       </div>
 
@@ -55,8 +62,8 @@
         <div class="flex-item-week">
 
         </div>
-        <div class="flex-item-complete lesson-completed">
-          <h6> (week 2)</h6>
+        <div class="flex-item-complete lesson-missed">
+          <h6>Missed</h6>
         </div>
       </div>
 
@@ -114,6 +121,32 @@
               </div>
 
             </div>
+        <% end %>
+      </div>
+
+
+      <!-- TOP 10 LEARNERS -->
+      <div>
+        <div class="text-left rank-flexbox">
+          <div class="lesson-text flex-item-score">
+            <h5><strong>Top 10 Learners</strong></h5>
+          </div>
+        </div>
+      </div>
+
+      <div id="how" class=" ">
+        <% 5.times do %>
+        <div class="text-left position-relative lesson-tab div-relative flexbox">
+          <div class="lesson-text flex-item-image">
+            <h6>1</h6>
+          </div>
+          <div class="lesson-text flex-item-lesson-title">
+            <h6> name </h6>
+          </div>
+          <div class="lesson-text flex-item-time text-lightgray">
+            <h6 class="body-gray">100</h6>
+          </div>
+        </div>
         <% end %>
       </div>
 

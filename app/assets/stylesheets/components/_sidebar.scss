@@ -58,6 +58,10 @@
   // border: 1px solid $success;
 }
 
+.module-rank {
+  background: white;
+}
+
 .module-pending {
   background: $blue6;
   border-right: 3px solid $blue6;
@@ -103,7 +107,7 @@
   color: white;
 }
 .lesson-missed {
-  color: $yellow;
+  color: $red;
 }
 .lesson-ongoing {
   color: white;
@@ -126,6 +130,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.rank-flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-item-score {
+  flex: 0 0 50%;
+  padding-left: 10px;
+  vertical-align: center;
+}
+
+.flex-item-rank {
+  flex: 0 0 50%;
+  padding-left: 10px;
+  vertical-align: center;
 }
 
 .flex-item-title {
@@ -267,12 +289,10 @@ iframe {
 
 
 #sidebar {
-
-
   // justify-content: space-between;
   // align-items: center;
   width: 280px;
-  background-color: #f0f0f0;
+  background-color: white;
   position: absolute;
   top: 0px;
   overflow-y: none;
