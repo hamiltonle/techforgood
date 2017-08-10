@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 
+//= require active_admin/editor/wysiwyg
 //= require bootstrap-sprockets
 //= require jquery.easing
 //= require jquery-fileupload/basic
