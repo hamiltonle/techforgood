@@ -2,7 +2,7 @@
 // LESSON CONTENT AREA
 #lesson-content {
   background: white;
-  top: 70px;
+  top: 0px;
   bottom: 0;
   left: 0;
   height: auto;
@@ -10,11 +10,13 @@
   z-index: 1;
 
 
+
+
 // lesson margins
   margin: 0 auto;
-  max-width: 720px;
-  padding-left: 5px;
-  padding-right: 5px;
+  // max-width: 720px;
+  // padding-left: 5px;
+  // padding-right: 5px;
   width: 100%;
 
 // Spacing
@@ -44,6 +46,21 @@
   margin: 3em 0em;
   }
 
+}
+
+.flex-item-lesson-show-title {
+  flex: 0 0 30%;
+  padding-left: 0px;
+  vertical-align: center;
+  border-bottom: 2px solid $green;
+}
+
+.bottom-border {
+  border-bottom: 1px solid $gray;
+}
+
+.flex-item-grow {
+  flex: 1 0 auto;
 }
 
 

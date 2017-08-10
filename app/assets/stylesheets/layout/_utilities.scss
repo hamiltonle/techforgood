@@ -14,7 +14,6 @@
 
 
 
-
  // show more snippet
  .show-more-snippet {
     height:100px;  /*this is set to the height of the how much text you want to show based on the font size, line height, etc*/
@@ -155,6 +154,10 @@ a:focus {
 
 
 // TEXT
+
+.full-width {
+  width: 100%;
+}
 .text-white {
   color: white;
 }
