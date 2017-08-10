@@ -6,13 +6,10 @@
 
 
 
-// .col-xs-12 {
-//   float: none;
-// }
-
-
-
-
+// Borders
+.bottom-border {
+  border-bottom: 1px solid $lightgray;
+}
 
 
  // show more snippet
@@ -155,6 +152,10 @@ a:focus {
 
 
 // TEXT
+
+.full-width {
+  width: 100%;
+}
 .text-white {
   color: white;
 }
