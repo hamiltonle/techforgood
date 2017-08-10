@@ -10,7 +10,8 @@ gem 'rails', '5.1.1'
 gem 'redis'
 gem 'faker', '~> 1.7', '>= 1.7.3'
 
-gem 'active_admin_editor'
+gem 'active_admin_editor', github: 'boontdustie/active_admin_editor'
+
 
 gem 'active_admin_flat_skin'
 gem 'jquery-easing-rails', '~> 0.0.2'

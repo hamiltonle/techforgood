@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/boontdustie/active_admin_editor.git
+  revision: efc7df212173cbac65dc95ed50e6f5917ae049c0
+  specs:
+    active_admin_editor (1.1.0)
+      activeadmin (>= 0.4.0)
+      ejs
+      rails (>= 3.0.0)
+
+GIT
   remote: https://github.com/activeadmin/activeadmin.git
   revision: 85d4690f824825fcd5f855146a56b7f98bcef37f
   specs:
@@ -61,10 +70,6 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    active_admin_editor (1.1.0)
-      activeadmin (>= 0.4.0)
-      ejs
-      rails (>= 3.0.0)
     active_admin_flat_skin (0.1.2)
     activejob (5.1.1)
       activesupport (= 5.1.1)
@@ -297,7 +302,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_admin_editor
+  active_admin_editor!
   active_admin_flat_skin
   activeadmin!
   attachinary!
