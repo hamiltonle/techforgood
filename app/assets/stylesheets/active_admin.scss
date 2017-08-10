@@ -15,8 +15,24 @@
 // @import "active_admin_flat_skin";
 
 
+
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+
+
+// @mixin box-shadow($value) {
+//   -webkit-box-shadow: none;
+//   -moz-box-shadow: none;
+//   box-shadow: none;
+// }
+
+@mixin box-shadow($value) {
+   -webkit-box-shadow: $value !important;
+   -moz-box-shadow: $value !important;
+   box-shadow: $value !important;
+}
+
+
 
