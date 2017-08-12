@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170706131611) do
+ActiveRecord::Schema.define(version: 20170812195735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,23 @@ ActiveRecord::Schema.define(version: 20170706131611) do
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
   create_table "attachinary_files", id: :serial, force: :cascade do |t|
@@ -78,7 +95,7 @@ ActiveRecord::Schema.define(version: 20170706131611) do
     t.integer "minutes"
     t.string "module_name"
     t.string "lesson_type"
-    t.string "question"
+    t.integer "score"
     t.index ["course_id"], name: "index_lessons_on_course_id"
   end
 
@@ -89,6 +106,20 @@ ActiveRecord::Schema.define(version: 20170706131611) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.bigint "lesson_id"
+    t.string "knowledge_point"
+    t.text "question"
+    t.text "option_a"
+    t.text "option_b"
+    t.text "option_c"
+    t.text "option_d"
+    t.text "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_questions_on_lesson_id"
+  end
+
   create_table "sessions", force: :cascade do |t|
     t.string "status"
     t.bigint "user_id"
@@ -96,7 +127,7 @@ ActiveRecord::Schema.define(version: 20170706131611) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "enrollment_id"
-    t.string "answer"
+    t.datetime "due_date"
     t.index ["enrollment_id"], name: "index_sessions_on_enrollment_id"
     t.index ["lesson_id"], name: "index_sessions_on_lesson_id"
     t.index ["user_id", "lesson_id"], name: "index_sessions_on_user_id_and_lesson_id", unique: true
@@ -129,6 +160,7 @@ ActiveRecord::Schema.define(version: 20170706131611) do
   add_foreign_key "enrollments", "courses"
   add_foreign_key "enrollments", "users"
   add_foreign_key "lessons", "courses"
+  add_foreign_key "questions", "lessons"
   add_foreign_key "sessions", "enrollments"
   add_foreign_key "sessions", "lessons"
   add_foreign_key "sessions", "users"
