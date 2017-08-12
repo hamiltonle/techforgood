@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170812195735) do
+ActiveRecord::Schema.define(version: 20170812223541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,7 +117,21 @@ ActiveRecord::Schema.define(version: 20170812195735) do
     t.text "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "session_id"
     t.index ["lesson_id"], name: "index_questions_on_lesson_id"
+    t.index ["session_id"], name: "index_questions_on_session_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.bigint "lesson_id"
+    t.bigint "session_id"
+    t.integer "attempt"
+    t.string "question_list"
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_quizzes_on_lesson_id"
+    t.index ["session_id"], name: "index_quizzes_on_session_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -161,6 +175,9 @@ ActiveRecord::Schema.define(version: 20170812195735) do
   add_foreign_key "enrollments", "users"
   add_foreign_key "lessons", "courses"
   add_foreign_key "questions", "lessons"
+  add_foreign_key "questions", "sessions"
+  add_foreign_key "quizzes", "lessons"
+  add_foreign_key "quizzes", "sessions"
   add_foreign_key "sessions", "enrollments"
   add_foreign_key "sessions", "lessons"
   add_foreign_key "sessions", "users"
