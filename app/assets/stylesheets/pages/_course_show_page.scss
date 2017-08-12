@@ -3,6 +3,30 @@
   overflow-x: scroll;
 }
 
+.left_padding {
+  padding-left: 220px;
+}
+.green_text {
+  color: #3DBE31 !important;
+}
+
+.syllabus_box {
+  border: 1px solid #f0f0f0;
+}
+.green_box {
+  border: 1px solid #3DBE31;
+  background: #3DBE31;
+  padding: 5px;
+  width: 100px;
+  color: white !important;
+}
+.green_grey_hr {
+  width: 25%;
+  height:2px;
+  border-top:1px solid #3DBE31;
+  align: left;
+}
+
 .body-gray {
   color: #566b78;
 }
@@ -142,6 +166,14 @@
   }
 }
 
+.review_box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: solid 1px #f0f0f0;
+  align-content: center;
+}
+
 .project_review {
   justify-content: center;
   align-items: center;
@@ -236,6 +268,7 @@
   display:flex;
   justify-content: space-between;
   align-items: center;
+  padding: 5px;
 }
 
 .overlap-user-avatar {
