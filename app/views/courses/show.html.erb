@@ -9,10 +9,13 @@
     </div>
   </div>
     <!-- course_show_page.scss -->
+  <div class="course_container">
+  <%= render "courses/sidebar" %>
   <div class="course-content" id="intro">
-    <div class="row background_white slightly_padded">
+    <div class="row background_white slightly_padded left_padding">
       <div class="course_intro width-720">
-        <h4 class="text-blue7 text-center"> Course Overview</h4>
+        <h4 class="text-blue7 text-left"> Course Overview</h4>
+        <hr>
         <div class="">
           <p class="text-smooth body-gray "><%= @course.description %></p>
         </div>
@@ -21,7 +24,8 @@
 
     <div class="row background_gray slightly_padded">
       <div class="course_intro width-720">
-      <h4 class= "text-blue7 text-center">Syllabus: <%= @course.title %> </h4>
+      <h4 class= "text-blue7 text-left">Syllabus: <%= @course.title %> </h4>
+      <hr>
         <div class="course_syllabus">
           <div class="">
             <% lesson_num = 1 %>
@@ -221,6 +225,7 @@
             <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
         </div>
       </div>
+    </div>
     </div>
   </div>
 

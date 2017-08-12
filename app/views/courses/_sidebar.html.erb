@@ -1,57 +1,32 @@
 <div id="course_sidebar" class="text-center">
-    <div class="">
 
-      <div class="text-left module-blue flexbox">
-        <div class="lesson-text flex-item-title text-white">
-          <h5 class><strong>About This Course:</strong></h5>
-        </div>
-      </div>
-       <div class="text-left lesson-tab div-relative flexbox">
 
+      <div class="text-left lesson-tab div-relative course_sidebar_tab padded_tab">
         <div class="lesson-text flex-item-lesson-title">
-          <h6>The Issue</h6>
+          <h5>Brought To You By</h5>
+          <h5><%= @course.organization.name %></h5>
+          <hr>
         </div>
-        <a class="lesson-link" href="#issue" ></a>
       </div>
-       <div class="text-left lesson-tab div-relative flexbox">
-
-        <div class="lesson-text flex-item-lesson-title">
-          <h6>The Technology</h6>
-        </div>
-        <a class="lesson-link" href="#issue" ></a>
+      <div class="text-left lesson-tab div-relative course_sidebar_tab">
+        <h5>About the issue</h5>
       </div>
-      <div class="text-left lesson-tab div-relative flexbox">
-        <div class="lesson-text flex-item-lesson-title">
-          <h6>Course Description</h6>
-        </div>
-        <a class="lesson-link" href="#description" ></a>
+      <div class="text-left lesson-tab div-relative course_sidebar_tab">
+        <h5>Curriculum</h5>
       </div>
-      <div class="text-left lesson-tab div-relative flexbox">
-        <div class="lesson-text flex-item-lesson-title">
-          <h6>Syllabus</h6>
-        </div>
-        <a class="lesson-link" href="#syllabus" ></a>
+      <div class="text-left lesson-tab div-relative course_sidebar_tab">
+        <h5>Practicing Project</h5>
       </div>
-      <div class="text-left lesson-tab div-relative flexbox">
-        <div class="lesson-text flex-item-lesson-title">
-          <h6>About the Organization</h6>
-        </div>
-        <a class="lesson-link" href="#organization" ></a>
+      <div class="text-left lesson-tab div-relative course_sidebar_tab">
+        <h5>Tutor Team</h5>
       </div>
-      <div class="text-left lesson-tab div-relative flexbox">
-        <div class="lesson-text flex-item-lesson-title">
-          <h6>Course Resources</h6>
-        </div>
-        <a class="lesson-link" href="#course_resources" ></a>
+      <div class="text-left lesson-tab div-relative course_sidebar_tab">
+        <h5>FAQ</h5>
       </div>
 
-      <hr>
-
-      <div>
-        <div>
-          <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
-        </div>
+      <div class="padded_tab">
+        <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+        <h6>Course Starts: 2017.10.2</h6>
+        <h6><%= @course_enrollments.count %> Students</h6>
       </div>
-
-    </div>
   </div>
