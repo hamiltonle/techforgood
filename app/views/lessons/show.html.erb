@@ -16,7 +16,7 @@
       <!-- Lesson Content -->
       <div id="lesson-content">
 
-        <!-- Lesson Title -->
+        <!-- Lesson Title and Score -->
         <div class="flexbox">
           <div class="text-left flex-item-lesson-show-title">
             <p class=""><%= @lesson.title %></p>
@@ -27,13 +27,46 @@
           </div>
         </div>
 
+        <!-- Lesson Text -->
         <div class="">
           <%= raw(@lesson.text) %>
         </div>
 
+        <!-- Quiz -->
+        <span>session: </span>
+        <%= @session %>
+        <span>session ID: </span>
+        <%= @session.id %>
+        <span>current session: </span>
+        <%= @current_session.last.created_at %>  <%= @current_session.last.id %>
+        <%= raw(@question1.question) %>
 
 
-<!--         <h4 class="text-center"><#%= @lesson.description %></h4>
+
+
+        <div class="padded">
+          <%= simple_form_for [@course, @lesson, @quiz] do |f| %>
+
+            <!-- question 1 -->
+            <%= raw(@question1.question) %>
+            <% @options1 = [@question1.option_a, @question1.option_b, @question1.option_c, @question1.option_d] %>
+            <%= f.input :answer_a, collection: @options1, as: :radio_buttons %>
+
+            <!-- question 2 -->
+            <%= raw(@question2.question) %>
+            <% @options2 = [@question2.option_a, @question2.option_b, @question2.option_c, @question2.option_d] %>
+            <%= f.input :answer_b, collection: @options2, as: :radio_buttons %>
+
+          <%= f.submit "Submit", class: "btn btn-primary" %>
+
+          <% end %>
+        </div>
+
+
+
+
+
+<!--    <h4 class="text-center"><#%= @lesson.description %></h4>
  -->
 <!--    <div class="text-center">
           <#% if @lesson.video? %>
@@ -67,6 +100,7 @@
         <!-- Lesson Complete Button -->
         <div class="section-margin hidden-xs">
         <% if @current_session.exists? %>
+
             <div class="row">
               <div class="col-xs-6">
               <%= simple_form_for [@course, @lesson, @session] do |f| %>
@@ -74,20 +108,16 @@
               <% end %>
               </div>
 
+              <!-- removes 'next lesson' button if lesson is last lesson of course -->
               <% unless @course.lessons.last.id == @lesson.id %>
-
-
                 <div class="col-xs-6 text-right">
-
                 <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
-
-                <!-- mobile button -->
                 </div>
-
               <% end %>
-
             </div>
+
           <% else %>
+
             <div class="row">
               <div class="col-xs-6">
               <%= simple_form_for [@course, @lesson, @session] do |f| %>
@@ -95,17 +125,13 @@
             <% end %>
               </div>
 
+              <!-- removes 'next lesson' button if lesson is last lesson of course -->
               <% unless @course.lessons.last.id == @lesson.id %>
-
-
                 <div class="col-xs-6 text-right">
-
                 <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
                 </div>
-
               <% end %>
             </div>
-
 
           <% end %>
         </div>

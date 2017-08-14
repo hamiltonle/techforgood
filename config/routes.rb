@@ -18,8 +18,11 @@ Rails.application.routes.draw do
 
     resources :lessons do
       resources :sessions, only: [:show, :new, :create, :edit, :update]
+      resources :quizzes
     end
   end
 
+
+  resources :questions
   resources :organizations
 end

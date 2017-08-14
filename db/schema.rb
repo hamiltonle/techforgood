@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170812223541) do
+ActiveRecord::Schema.define(version: 20170814050114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -130,6 +130,9 @@ ActiveRecord::Schema.define(version: 20170812223541) do
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "answer_list"
+    t.text "answer_a"
+    t.text "answer_b"
     t.index ["lesson_id"], name: "index_quizzes_on_lesson_id"
     t.index ["session_id"], name: "index_quizzes_on_session_id"
   end
