@@ -4,6 +4,20 @@ class QuizzesController < ApplicationController
 
   # show quiz results
   def show
+    @course = Course.find(params[:course_id])
+    @lesson = Lesson.find(params[:lesson_id])
+    @quiz = Quiz.find(params[:id])
+
+    # Randomizes questions
+
+    # Assign questions to view
+    @question1 = @lesson.questions.find(1)
+    @question2 = @lesson.questions.find(2)
+    @question3 = @lesson.questions.find(3)
+    @question4 = @lesson.questions.find(4)
+    @question5 = @lesson.questions.find(5)
+
+
   end
 
   def new
@@ -26,12 +40,19 @@ class QuizzesController < ApplicationController
     @quiz.lesson = @lesson
     @quiz.session = @session
 
+    @question1 = @lesson.questions.find(1)
+    @question2 = @lesson.questions.find(2)
+    @question3 = @lesson.questions.find(3)
+    @question4 = @lesson.questions.find(4)
+    @question5 = @lesson.questions.find(5)
+
     # assign correct answers to quiz attributes
-    # @quiz.correct_answer1 = @question1.answer
-    # @quiz.correct_answer2 = @question2.answer
-    # @quiz.correct_answer3 = @question3.answer
-    # @quiz.correct_answer4 = @question4.answer
-    # @quiz.correct_answer5 = @question5.answer
+    @quiz.correct_answer1 = @question1.answer
+    @quiz.correct_answer2 = @question2.answer
+    @quiz.correct_answer3 = @question3.answer
+    @quiz.correct_answer4 = @question4.answer
+    @quiz.correct_answer5 = @question5.answer
+
 
 
 

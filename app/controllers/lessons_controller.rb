@@ -60,14 +60,6 @@ class LessonsController < ApplicationController
     @session = Session.new
     @current_session = current_user.sessions.where(:lesson_id => @lesson.id)
 
-
-    @question1 = @lesson.questions.find(1)
-    @question2 = @lesson.questions.find(2)
-    @question3 = @lesson.questions.find(3)
-    @question4 = @lesson.questions.find(4)
-    @question5 = @lesson.questions.find(5)
-
-
     @quiz = Quiz.new
 
     # after we do unique session validations for unique user_id & lesson_id, then code should be
