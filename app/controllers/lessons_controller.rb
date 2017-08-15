@@ -63,6 +63,9 @@ class LessonsController < ApplicationController
 
     @question1 = @lesson.questions.find(1)
     @question2 = @lesson.questions.find(2)
+    @question3 = @lesson.questions.find(3)
+    @question4 = @lesson.questions.find(4)
+    @question5 = @lesson.questions.find(5)
 
 
     @quiz = Quiz.new

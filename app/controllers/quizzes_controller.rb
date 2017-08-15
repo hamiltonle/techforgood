@@ -25,6 +25,16 @@ class QuizzesController < ApplicationController
     # assigning the lesson & session to the quiz
     @quiz.lesson = @lesson
     @quiz.session = @session
+
+    # assign correct answers to quiz attributes
+    # @quiz.correct_answer1 = @question1.answer
+    # @quiz.correct_answer2 = @question2.answer
+    # @quiz.correct_answer3 = @question3.answer
+    # @quiz.correct_answer4 = @question4.answer
+    # @quiz.correct_answer5 = @question5.answer
+
+
+
     @quiz.save
 
     # maybe use below for when redirecting to the answers
@@ -45,6 +55,6 @@ class QuizzesController < ApplicationController
   private
 
   def quiz_params
-    params.require(:quiz).permit(:attempt, :question_list, :answer_list, :score, :session_id, :lesson_id, :answer_a, :answer_b)
+    params.require(:quiz).permit(:attempt, :question_list, :answer_list, :score, :session_id, :lesson_id, :user_answer1, :user_answer2, :user_answer3, :user_answer4, :user_answer5, :correct_answer1, :correct_answer2, :correct_answer3, :correct_answer4, :correct_answer5)
   end
 end

@@ -6,10 +6,10 @@ ActiveAdmin.register Question do
       f.input :lesson_id
       f.input :knowledge_point
       f.input :question, as: :html_editor
-      f.input :option_a, as: :html_editor
-      f.input :option_b, as: :html_editor
-      f.input :option_c, as: :html_editor
-      f.input :option_d, as: :html_editor
+      f.input :option_a
+      f.input :option_b
+      f.input :option_c
+      f.input :option_d
       f.input :answer
     end
     f.actions
