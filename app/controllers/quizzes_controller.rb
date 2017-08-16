@@ -27,9 +27,10 @@ class QuizzesController < ApplicationController
 
   def create
     # creating a new quiz with the parameters from the simpleform from lesson show
-    @quiz = Quiz.new(quiz_params)
+    @quiz = Quiz.new
 
-    # find the lesson the quiz is related to
+    # find the course & lesson the quiz is related to (used in redirect below)
+    @course = Course.find(params[:course_id])
     @lesson = Lesson.find(params[:lesson_id])
 
     # uses current session to assign the session_id
@@ -39,6 +40,9 @@ class QuizzesController < ApplicationController
     # assigning the lesson & session to the quiz
     @quiz.lesson = @lesson
     @quiz.session = @session
+
+    # marking attempt # as 0 by default
+    @quiz.attempt = 0
 
     @question1 = @lesson.questions.find(1)
     @question2 = @lesson.questions.find(2)
@@ -53,24 +57,36 @@ class QuizzesController < ApplicationController
     @quiz.correct_answer4 = @question4.answer
     @quiz.correct_answer5 = @question5.answer
 
-
-
-
     @quiz.save
 
     # maybe use below for when redirecting to the answers
     # begin
     #   @quiz.save
     # rescue => error
-    #   redirect_to course_lesson_path(@course.id, @course.lessons.first)
+    redirect_to edit_course_lesson_quiz_path(@course.id, @lesson.id, @quiz.id)
     # end
 
   end
 
   def edit
+    @course = Course.find(params[:course_id])
+    @lesson = Lesson.find(params[:lesson_id])
+    @quiz = Quiz.find(params[:id])
+
+    @question1 = @lesson.questions.find(1)
+    @question2 = @lesson.questions.find(2)
+    @question3 = @lesson.questions.find(3)
+    @question4 = @lesson.questions.find(4)
+    @question5 = @lesson.questions.find(5)
   end
 
   def update
+    @quiz = Quiz.find(params[:id])
+    @quiz.update(quiz_params)
+
+    # redirect_to quiz show with answers
+    # if quiz has a score, then quiz show has button to retake
+
   end
 
   private

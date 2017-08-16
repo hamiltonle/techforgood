@@ -49,6 +49,11 @@
             <%= f.button :submit, 'Begin Quiz', class: 'btn btn-success text-center' %>
           <% end %>
 
+          <%= simple_form_for [@course, @lesson, @session] do |f| %>
+            <%= f.button :submit, 'Just Finished the Lesson', class: 'btn btn-success text-center' %>
+          <% end %>
+
+
         <% end %>
 
 

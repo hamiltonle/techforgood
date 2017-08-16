@@ -1,5 +1,7 @@
+
+
 <div class="padded">
-  test
+  this is the edit page
 
   <p>course</p>
   <%= @course.id %>
@@ -18,14 +20,11 @@
     <%= raw(@question1.question) %>
     <% @options1 = [@question1.option_a, @question1.option_b, @question1.option_c, @question1.option_d] %>
     <%= f.input :user_answer1, collection: @options1, as: :radio_buttons, label: false %>
-    <%= f.input :correct_answer1, :input_html => { :value => @question1.answer }  %>
-
 
     <!-- question 2 -->
     <%= raw(@question2.question) %>
     <% @options2 = [@question2.option_a, @question2.option_b, @question2.option_c, @question2.option_d] %>
     <%= f.input :user_answer2, collection: @options2, as: :radio_buttons, label: false %>
-    <%= f.input :correct_answer2, :input_html => { :value => @question2.answer }  %>
 
     <!-- question 3 -->
     <%= raw(@question3.question) %>
