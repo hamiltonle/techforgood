@@ -19,6 +19,9 @@ class QuizzesController < ApplicationController
     @question5 = @lesson.questions.find(5)
 
 
+
+
+
   end
 
   def new
@@ -52,11 +55,11 @@ class QuizzesController < ApplicationController
     @question5 = @lesson.questions.find(5)
 
     # assign correct answers to quiz attributes
-    @quiz.correct_answer1 = @question1.answer
-    @quiz.correct_answer2 = @question2.answer
-    @quiz.correct_answer3 = @question3.answer
-    @quiz.correct_answer4 = @question4.answer
-    @quiz.correct_answer5 = @question5.answer
+    @quiz.correct_answer1 = correct_answer(@question1)
+    @quiz.correct_answer2 = correct_answer(@question2)
+    @quiz.correct_answer3 = correct_answer(@question3)
+    @quiz.correct_answer4 = correct_answer(@question4)
+    @quiz.correct_answer5 = correct_answer(@question5)
 
     @quiz.save
 
@@ -67,6 +70,23 @@ class QuizzesController < ApplicationController
     redirect_to edit_course_lesson_quiz_path(@course.id, @lesson.id, @quiz.id)
     # end
 
+  end
+
+  def correct_answer(question)
+    # 1. takes question.correct_answerX
+    abcd_answer = question.answer
+    # 2. if a, then option_a, else b, then option_b, etc.
+    # 3. returns exact string, according to answer
+    case abcd_answer
+    when "a"
+      question.option_a
+    when "b"
+      question.option_b
+    when "c"
+      question.option_c
+    else "d"
+      question.option_d
+    end
   end
 
   def edit
@@ -82,12 +102,33 @@ class QuizzesController < ApplicationController
   end
 
   def update
+    @course = Course.find(params[:course_id])
+    @lesson = Lesson.find(params[:lesson_id])
     @quiz = Quiz.find(params[:id])
+
+    # updates quiz attributes with user answers
     @quiz.update(quiz_params)
+
+    # Assess User answers, assign score, and save
+    @quiz.score = quiz_score(@quiz)
+    @quiz.save
 
     # redirect_to quiz show with answers
     # if quiz has a score, then quiz show has button to retake
+    redirect_to course_lesson_quiz_path(@course.id, @lesson.id, @quiz.id)
+  end
 
+  def quiz_score(quiz)
+    score = 0
+    score += question_correctness(quiz.user_answer1, quiz.correct_answer1)
+    score += question_correctness(quiz.user_answer2, quiz.correct_answer2)
+    score += question_correctness(quiz.user_answer3, quiz.correct_answer3)
+    score += question_correctness(quiz.user_answer4, quiz.correct_answer4)
+    score += question_correctness(quiz.user_answer5, quiz.correct_answer5)
+  end
+
+  def question_correctness(user_answer, correct_answer)
+    user_answer == correct_answer ? 1 : 0
   end
 
   private
