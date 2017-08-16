@@ -42,7 +42,34 @@
     <% @options5 = [@question5.option_a, @question5.option_b, @question5.option_c, @question5.option_d] %>
     <%= f.input :user_answer5, collection: @options5, as: :radio_buttons, label: false %>
 
-  <%= f.submit "Submit", class: "btn btn-primary" %>
+  <%= f.submit "Quiz Done", disabled: "disabled", class: "btn btn-primary" %>
 
   <% end %>
 </div>
+
+        <!-- Lesson Complete Button -->
+        <div class="section-margin hidden-xs">
+
+          <div class="row">
+            <div class="col-xs-6">
+              <%= simple_form_for [@course, @lesson, @session] do |f| %>
+                <%= f.button :submit, 'Acknowledged Correct Quiz Answers', class: 'btn btn-success text-center' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <!-- mobile button -->
+        <div class="section-margin visible-xs">
+          <div class="row">
+            <div class="col-xs-6">
+              <%= simple_form_for [@course, @lesson, @session] do |f| %>
+                <%= f.button :submit, 'Lesson Finished', class: 'btn btn-success text-center' %>
+              <% end %>
+            </div>l
+            <div class="col-xs-6 text-right">
+              <%= link_to "Next Lesson", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+            </div>
+          </div>
+        </div>
+

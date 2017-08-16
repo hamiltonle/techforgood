@@ -7,6 +7,7 @@ class QuizzesController < ApplicationController
     @course = Course.find(params[:course_id])
     @lesson = Lesson.find(params[:lesson_id])
     @quiz = Quiz.find(params[:id])
+    @session = Session.new
 
     # Randomizes questions
 

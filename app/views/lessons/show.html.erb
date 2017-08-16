@@ -43,15 +43,13 @@
 
           <p>You're about to begin a quiz....</p>
 
-          <%= link_to "Begin Quiz", course_lesson_quiz_path(@course.id, @lesson.id), class: "btn btn-warning text-center" %>
+
 
           <%= simple_form_for [@course, @lesson, @quiz] do |f| %>
-            <%= f.button :submit, 'Begin Quiz', class: 'btn btn-success text-center' %>
+            <%= f.button :submit, 'Begin Quiz', class: 'btn btn-warning text-center' %>
           <% end %>
 
-          <%= simple_form_for [@course, @lesson, @session] do |f| %>
-            <%= f.button :submit, 'Just Finished the Lesson', class: 'btn btn-success text-center' %>
-          <% end %>
+
 
 
         <% end %>
