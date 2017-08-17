@@ -37,46 +37,73 @@ class QuizzesController < ApplicationController
     @course = Course.find(params[:course_id])
     @lesson = Lesson.find(params[:lesson_id])
 
-    # uses current session to assign the session_id
+    # if retaking a quiz, use current session to assign the session_id
     @current_session = current_user.sessions.where(:lesson_id => @lesson.id)
-    @session = @current_session.last
 
+    if @current_session.exists?
+      @session = @current_session.last
+    else
+      # beginning a quiz also creates a session
+      @session = @lesson.sessions.new
+      @session.user = current_user
+      @session.lesson = @lesson
+      @session.status = "completed"
 
-    # beginning a quiz also creates a session
-    @session = @lesson.sessions.new
-    @session.user = current_user
-    @session.lesson = @lesson
-    @session.status = "completed"
+      # This finds the enrollment for the current session
+      @enrollment = current_user.enrollments.where(:course_id => @course.id).first
+      @session.enrollment = @enrollment
 
-    # This finds the enrollment for the current session
-    @enrollment = current_user.enrollments.where(:course_id => @course.id).first
-    @session.enrollment = @enrollment
-
-    # saves session
-    @session.save
+      # saves session
+      @session.save
+    end
 
     # assigning the lesson & session to the quiz
     @quiz.lesson = @lesson
     @quiz.session = @session
 
-    # marking attempt # as 0 by default
-    @quiz.attempt = 0
+    # assigning number of attempts, according to quizzes with same session id
+    @quiz.attempt = Quiz.where(:session_id => @quiz.session_id).count
 
 
     # Randomize the questions and assign as the questions list
     theory_ids = []
-    @lesson.questions.where(:knowledge_point => "theory").each { |l| theory_ids << l.id }
+    @lesson.questions.where(:knowledge_point => "theory").each { |q| theory_ids << q.id }
 
     definition_ids = []
-    @lesson.questions.where(:knowledge_point => "definitions").each { |l| definition_ids << l.id }
+    @lesson.questions.where(:knowledge_point => "definitions").each { |q| definition_ids << q.id }
 
     reading_ids = []
-    @lesson.questions.where(:knowledge_point => "reading").each { |l| reading_ids << l.id }
+    @lesson.questions.where(:knowledge_point => "reading").each { |q| reading_ids << q.id }
+
+
+    # If 1st attempt, creates array of IDs of all questions in the lesson
+    if @quiz.all_question_array.nil?
+      total_question_array = (1..@lesson.questions.count).to_a
+    else
+      total_question_array = @quiz.all_question_array
+    end
+
+    # remove questions which have already been asked
+    Quiz.where(:session_id => @quiz.session_id).each do |quiz|
+      asked_questions = quiz.question_list.split(",").map(&:to_i)
+
+      theory_ids -= asked_questions
+      definition_ids -= asked_questions
+      reading_ids -= asked_questions
+
+    end
+
 
     # Take random questions from knowledge_points and assign to question variable
+    # The .delete(questionX) removes any duplicate questions
     question1 = theory_ids.sample
+    theory_ids.delete(question1)
+
     question2 = theory_ids.sample
+
     question3 = definition_ids.sample
+    definition_ids.delete(question3)
+
     question4 = definition_ids.sample
     question5 = reading_ids.sample
 
@@ -97,15 +124,18 @@ class QuizzesController < ApplicationController
     @quiz.correct_answer4 = correct_answer(@question4)
     @quiz.correct_answer5 = correct_answer(@question5)
 
-    # creates array of IDs of all questions in the lesson
-    total_question_array = (1..@lesson.questions.count).to_a
 
-    # removes questions which the user has already answered in the past
+
+    # removes other questions which the user has already answered in the past
+    # already removed questions 1 & 3 above
     total_question_array.delete(question1)
     total_question_array.delete(question2)
     total_question_array.delete(question3)
     total_question_array.delete(question4)
     total_question_array.delete(question5)
+
+    # save all unanswered questions into quiz
+    @quiz.all_question_array = total_question_array
 
     @quiz.save
 

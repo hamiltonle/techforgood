@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814160633) do
+ActiveRecord::Schema.define(version: 20170817222749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -141,6 +141,7 @@ ActiveRecord::Schema.define(version: 20170814160633) do
     t.text "correct_answer3"
     t.text "correct_answer4"
     t.text "correct_answer5"
+    t.string "all_question_array"
     t.index ["lesson_id"], name: "index_quizzes_on_lesson_id"
     t.index ["session_id"], name: "index_quizzes_on_session_id"
   end
