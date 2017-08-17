@@ -41,6 +41,20 @@ class QuizzesController < ApplicationController
     @current_session = current_user.sessions.where(:lesson_id => @lesson.id)
     @session = @current_session.last
 
+
+    # beginning a quiz also creates a session
+    @session = @lesson.sessions.new
+    @session.user = current_user
+    @session.lesson = @lesson
+    @session.status = "completed"
+
+    # This finds the enrollment for the current session
+    @enrollment = current_user.enrollments.where(:course_id => @course.id).first
+    @session.enrollment = @enrollment
+
+    # saves session
+    @session.save
+
     # assigning the lesson & session to the quiz
     @quiz.lesson = @lesson
     @quiz.session = @session
@@ -92,7 +106,7 @@ class QuizzesController < ApplicationController
     total_question_array.delete(question3)
     total_question_array.delete(question4)
     total_question_array.delete(question5)
-    raise
+
     @quiz.save
 
     # maybe use below for when redirecting to the answers
@@ -128,6 +142,7 @@ class QuizzesController < ApplicationController
 
     # increases quiz attempt but limits to 3 tries
     @quiz.attempt += 1
+    @quiz.save
 
     # Assign lesson questions to instance variables
     questions = @quiz.question_list.split(",").map(&:to_i)
