@@ -3,16 +3,18 @@ ActiveAdmin.register Question do
 
   form do |f|
     f.inputs "Question" do
-      f.input :lesson_id
-      f.input :knowledge_point
+      f.input :lesson_id, :as => :select, :collection => Lesson.all
+
+      f.input :knowledge_point, :as => :select, :collection => ["theory","definitions","reading"]
       f.input :question, as: :html_editor
       f.input :option_a
       f.input :option_b
       f.input :option_c
       f.input :option_d
-      f.input :answer
+      f.input :answer, :label => 'Correct Answer?...a, b, c, d?', :as => :select, :collection => ["a","b","c","d"]
     end
     f.actions
   end
 
 end
+

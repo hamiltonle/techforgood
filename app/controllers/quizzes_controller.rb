@@ -11,13 +11,13 @@ class QuizzesController < ApplicationController
 
     # Randomizes questions
 
-    # Assign questions to view
-    @question1 = @lesson.questions.find(1)
-    @question2 = @lesson.questions.find(2)
-    @question3 = @lesson.questions.find(3)
-    @question4 = @lesson.questions.find(4)
-    @question5 = @lesson.questions.find(5)
-
+    # Assign lesson questions to instance variables
+    questions = @quiz.question_list.split(",").map(&:to_i)
+    @question1 = @lesson.questions.find(questions[0])
+    @question2 = @lesson.questions.find(questions[1])
+    @question3 = @lesson.questions.find(questions[2])
+    @question4 = @lesson.questions.find(questions[3])
+    @question5 = @lesson.questions.find(questions[4])
 
 
 
@@ -48,11 +48,33 @@ class QuizzesController < ApplicationController
     # marking attempt # as 0 by default
     @quiz.attempt = 0
 
-    @question1 = @lesson.questions.find(1)
-    @question2 = @lesson.questions.find(2)
-    @question3 = @lesson.questions.find(3)
-    @question4 = @lesson.questions.find(4)
-    @question5 = @lesson.questions.find(5)
+
+    # Randomize the questions and assign as the questions list
+    theory_ids = []
+    @lesson.questions.where(:knowledge_point => "theory").each { |l| theory_ids << l.id }
+
+    definition_ids = []
+    @lesson.questions.where(:knowledge_point => "definitions").each { |l| definition_ids << l.id }
+
+    reading_ids = []
+    @lesson.questions.where(:knowledge_point => "reading").each { |l| reading_ids << l.id }
+
+    # Take random questions from knowledge_points and assign to question variable
+    question1 = theory_ids.sample
+    question2 = theory_ids.sample
+    question3 = definition_ids.sample
+    question4 = definition_ids.sample
+    question5 = reading_ids.sample
+
+    # Assign lesson questions to instance variables
+    @question1 = @lesson.questions.find(question1)
+    @question2 = @lesson.questions.find(question2)
+    @question3 = @lesson.questions.find(question3)
+    @question4 = @lesson.questions.find(question4)
+    @question5 = @lesson.questions.find(question5)
+
+    # Assigns the randomly generated questions to question_list attribute as an array, by ID
+    @quiz.question_list = "#{question1}, #{question2}, #{question3}, #{question4}, #{question5}"
 
     # assign correct answers to quiz attributes
     @quiz.correct_answer1 = correct_answer(@question1)
@@ -61,6 +83,16 @@ class QuizzesController < ApplicationController
     @quiz.correct_answer4 = correct_answer(@question4)
     @quiz.correct_answer5 = correct_answer(@question5)
 
+    # creates array of IDs of all questions in the lesson
+    total_question_array = (1..@lesson.questions.count).to_a
+
+    # removes questions which the user has already answered in the past
+    total_question_array.delete(question1)
+    total_question_array.delete(question2)
+    total_question_array.delete(question3)
+    total_question_array.delete(question4)
+    total_question_array.delete(question5)
+    raise
     @quiz.save
 
     # maybe use below for when redirecting to the answers
@@ -94,11 +126,18 @@ class QuizzesController < ApplicationController
     @lesson = Lesson.find(params[:lesson_id])
     @quiz = Quiz.find(params[:id])
 
-    @question1 = @lesson.questions.find(1)
-    @question2 = @lesson.questions.find(2)
-    @question3 = @lesson.questions.find(3)
-    @question4 = @lesson.questions.find(4)
-    @question5 = @lesson.questions.find(5)
+    # increases quiz attempt but limits to 3 tries
+    @quiz.attempt += 1
+
+    # Assign lesson questions to instance variables
+    questions = @quiz.question_list.split(",").map(&:to_i)
+    @question1 = @lesson.questions.find(questions[0])
+    @question2 = @lesson.questions.find(questions[1])
+    @question3 = @lesson.questions.find(questions[2])
+    @question4 = @lesson.questions.find(questions[3])
+    @question5 = @lesson.questions.find(questions[4])
+
+
   end
 
   def update

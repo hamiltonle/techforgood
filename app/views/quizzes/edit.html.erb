@@ -12,34 +12,39 @@
   <!-- session hasn't been initiated yet -->
   <%= @session %>
   <br>
-
+  <br>
+  <br>
 
   <%= simple_form_for [@course, @lesson, @quiz] do |f| %>
 
     <!-- question 1 -->
     <%= raw(@question1.question) %>
     <% @options1 = [@question1.option_a, @question1.option_b, @question1.option_c, @question1.option_d] %>
-    <%= f.input :user_answer1, collection: @options1, as: :radio_buttons, label: false %>
-
+    <%= f.input :user_answer1, collection: @options1, as: :radio_buttons, label: "The ID is...#{@question1.id}" %>
+<br>
+<br>
     <!-- question 2 -->
     <%= raw(@question2.question) %>
     <% @options2 = [@question2.option_a, @question2.option_b, @question2.option_c, @question2.option_d] %>
-    <%= f.input :user_answer2, collection: @options2, as: :radio_buttons, label: false %>
-
+    <%= f.input :user_answer2, collection: @options2, as: :radio_buttons, label: "The ID is...#{@question2.id}" %>
+<br>
+<br>
     <!-- question 3 -->
     <%= raw(@question3.question) %>
     <% @options3 = [@question3.option_a, @question3.option_b, @question3.option_c, @question3.option_d] %>
-    <%= f.input :user_answer3, collection: @options3, as: :radio_buttons, label: false %>
-
+    <%= f.input :user_answer3, collection: @options3, as: :radio_buttons, label: "The ID is...#{@question3.id}" %>
+<br>
+<br>
     <!-- question 4 -->
     <%= raw(@question4.question) %>
     <% @options4 = [@question4.option_a, @question4.option_b, @question4.option_c, @question4.option_d] %>
-    <%= f.input :user_answer4, collection: @options4, as: :radio_buttons, label: false %>
-
+    <%= f.input :user_answer4, collection: @options4, as: :radio_buttons, label: "The ID is...#{@question4.id}" %>
+<br>
+<br>
     <!-- question 5 -->
     <%= raw(@question5.question) %>
     <% @options5 = [@question5.option_a, @question5.option_b, @question5.option_c, @question5.option_d] %>
-    <%= f.input :user_answer5, collection: @options5, as: :radio_buttons, label: false %>
+    <%= f.input :user_answer5, collection: @options5, as: :radio_buttons, label: "The ID is...#{@question5.id}" %>
 
   <%= f.submit "Submit", class: "btn btn-primary" %>
 
