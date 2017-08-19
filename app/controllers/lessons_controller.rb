@@ -53,33 +53,23 @@ class LessonsController < ApplicationController
     @session = Session.new
     @quiz = Quiz.new
     @current_session = current_user.sessions.where(:lesson_id => @lesson.id).last
+    @highscore = 0
 
     # finds latest quiz for this session, if the student has taken one before
     unless @current_session.nil?
       @attempts = @lesson.quizzes.where(:session_id => @current_session.id).last.attempt
+
+      # Finds quiz with highest score
+      @lesson.quizzes.where(:session_id => @current_session.id).each do |quiz|
+        past_quiz_scores << quiz.score
+      end
+      @highscore = past_quiz_scores
     end
-
-
-
-
-    # finds latest quiz for this session, if the student has taken one before
-    # unless @current_session.nil?
-    #   @quiz = @lesson.quizzes.where(:session_id => @current_session.id).last
-    # end
 
     # passes these instances to the sidebar
     @why_lessons = @course.lessons.where(:module_name => "why")
     @how_lessons = @course.lessons.where(:module_name => "how")
     @what_lessons = @course.lessons.where(:module_name => "what")
-
-
-
-    # @quiz = Quiz.new
-
-    # after we do unique session validations for unique user_id & lesson_id, then code should be
-    # @session = @lesson.sessions.last
-    # for now, we'll use this:
-    # @session = @lesson.sessions.last
 
     @skip_footer = true
   end

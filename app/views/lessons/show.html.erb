@@ -42,18 +42,47 @@
         <br>
         <br>
 
-
-
         <!-- 'Take Quiz' Button -->
         <% if @lesson.lesson_type == "quiz" %>
-          <% if @attempts != 3 %>
-            <p>You're about to begin a quiz....</p>
+          <p>there are 5 quiz in total, there are 3 chances to take the quizz, we will take the highest score among them</p>
+
+          <% if @attempts == 1 %>
+          <p>this is the 1st time you're taking the quizz, the current high score is: <%= @highscore %> </p>
             <%= simple_form_for [@course, @lesson, @quiz] do |f| %>
-              <%= f.button :submit, 'Begin Quiz', class: 'btn btn-warning text-center' %>
+              <%= f.button :submit, 'Take Quiz for 1st time', class: 'btn btn-warning text-center' %>
             <% end %>
+          <% elsif @attempts == 2 %>
+            <%= simple_form_for [@course, @lesson, @quiz] do |f| %>
+              <%= f.button :submit, 'Retake Quiz 2nd time', class: 'btn btn-warning text-center' %>
+            <% end %>
+
+            <% first_quiz = Quiz.where(:session_id => @current_session.id).first %>
+            <%= link_to "Review your 1st quiz", course_lesson_quiz_path(@course.id, @lesson.id, first_quiz), class: "btn btn-primary text-center" %>
+
+          <% elsif @attempts == 3 %>
+            <%= simple_form_for [@course, @lesson, @quiz] do |f| %>
+              <%= f.button :submit, 'Retake Quiz 3rd time', class: 'btn btn-warning text-center' %>
+            <% end %>
+
+            <% first_quiz = Quiz.where(:session_id => @current_session.id).first %>
+            <%= link_to "Review your 1st quiz", course_lesson_quiz_path(@course.id, @lesson.id, first_quiz), class: "btn btn-primary text-center" %>
+
+            <% second_quiz = Quiz.where(:session_id => @current_session.id).where(:attempt => 2).first.id %>
+            <%= link_to "Review your 2nd quiz", course_lesson_quiz_path(@course.id, @lesson.id, second_quiz), class: "btn btn-primary text-center" %>
+
           <% else %>
             <p>You've already attempted the quiz 3 times</p>
+
+            <% first_quiz = Quiz.where(:session_id => @current_session.id).where(:attempt => 1).first.id %>
+            <%= link_to "Review your 1st quiz", course_lesson_quiz_path(@course.id, @lesson.id, first_quiz), class: "btn btn-primary text-center" %>
+
+            <% second_quiz = Quiz.where(:session_id => @current_session.id).where(:attempt => 2).first.id %>
+            <%= link_to "Review your 2nd quiz", course_lesson_quiz_path(@course.id, @lesson.id, second_quiz), class: "btn btn-primary text-center" %>
+
+            <% second_quiz = Quiz.where(:session_id => @current_session.id).where(:attempt => 3).first.id %>
+            <%= link_to "Review your 2nd quiz", course_lesson_quiz_path(@course.id, @lesson.id, second_quiz), class: "btn btn-primary text-center" %>
           <% end %>
+
         <% end %>
 
         <!-- <h4 class="text-center"><#%= @lesson.description %></h4> -->
