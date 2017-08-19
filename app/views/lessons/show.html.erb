@@ -32,28 +32,29 @@
           <%= raw(@lesson.text) %>
         </div>
 
-        <!-- Quiz -->
-        <span>session: </span>
-        <%= @session %>
-        <span>session ID: </span>
-        <%= @session.id %>
-        <span>current session: </span>
+        <br>
+        <br>
+        <!-- Info -->
+        <p>course: <%= @course.id %></p>
+        <p>lesson: <%= @lesson.id %> </p>
+        <p>last quiz: <%= @quiz %></p>
+        <p>session: </p>
+        <br>
+        <br>
 
+
+
+        <!-- 'Take Quiz' Button -->
         <% if @lesson.lesson_type == "quiz" %>
-
-          <p>You're about to begin a quiz....</p>
-
-
-
-          <%= simple_form_for [@course, @lesson, @quiz] do |f| %>
-            <%= f.button :submit, 'Begin Quiz', class: 'btn btn-warning text-center' %>
+          <% if @attempts != 3 %>
+            <p>You're about to begin a quiz....</p>
+            <%= simple_form_for [@course, @lesson, @quiz] do |f| %>
+              <%= f.button :submit, 'Begin Quiz', class: 'btn btn-warning text-center' %>
+            <% end %>
+          <% else %>
+            <p>You've already attempted the quiz 3 times</p>
           <% end %>
-
-
-
-
         <% end %>
-
 
         <!-- <h4 class="text-center"><#%= @lesson.description %></h4> -->
         <!-- <div class="text-center">
@@ -62,76 +63,77 @@
           <#% end %>
         </div> -->
 
-
         <!-- Lesson Complete Button -->
         <div class="section-margin hidden-xs">
-        <% if @current_session.exists? %>
+        <% unless @current_session.nil? %>
+          <% if @current_session.id.nil? %>
 
-          <div class="row">
-            <div class="col-xs-6">
-            <%= simple_form_for [@course, @lesson, @session] do |f| %>
-              <%= f.button :submit, 'Done with this Lesson! :)', disabled: "disabled", class: 'btn btn-success text-center' %>
-            <% end %>
-            </div>
-
-            <!-- removes 'next lesson' button if lesson is last lesson of course -->
-            <% unless @course.lessons.last.id == @lesson.id %>
-              <div class="col-xs-6 text-right">
-              <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+            <div class="row">
+              <div class="col-xs-6">
+                <%= simple_form_for [@course, @lesson, @session] do |f| %>
+                  <%= f.button :submit, 'Just Finished the Lesson', class: 'btn btn-success text-center' %>
+                <% end %>
               </div>
-            <% end %>
-          </div>
 
-        <% else %>
-
-          <div class="row">
-            <div class="col-xs-6">
-              <%= simple_form_for [@course, @lesson, @session] do |f| %>
-                <%= f.button :submit, 'Just Finished the Lesson', class: 'btn btn-success text-center' %>
+              <!-- removes 'next lesson' button if lesson is last lesson of course -->
+              <% unless @course.lessons.last.id == @lesson.id %>
+                <div class="col-xs-6 text-right">
+                <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+                </div>
               <% end %>
             </div>
 
-            <!-- removes 'next lesson' button if lesson is last lesson of course -->
-            <% unless @course.lessons.last.id == @lesson.id %>
-              <div class="col-xs-6 text-right">
-              <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
-              </div>
-            <% end %>
-          </div>
+          <% else %>
 
-        <% end %>
-        </div>
-
-        <!-- mobile button -->
-        <div class="section-margin visible-xs">
-        <% if @current_session.exists? %>
             <div class="row">
               <div class="col-xs-6">
               <%= simple_form_for [@course, @lesson, @session] do |f| %>
                 <%= f.button :submit, 'Done with this Lesson! :)', disabled: "disabled", class: 'btn btn-success text-center' %>
               <% end %>
               </div>
-              <div class="col-xs-6 text-right">
 
-              <%= link_to "Next Lesson", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
-
-              <!-- mobile button -->
-              </div>
+              <!-- removes 'next lesson' button if lesson is last lesson of course -->
+              <% unless @course.lessons.last.id == @lesson.id %>
+                <div class="col-xs-6 text-right">
+                <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+                </div>
+              <% end %>
             </div>
+
+          <% end %>
+        <% end %>
+        </div>
+
+        <!-- mobile button -->
+        <div class="section-margin visible-xs">
+        <% unless @current_session.nil? %>
+          <% if @current_session.id.nil? %>
+              <div class="row">
+                <div class="col-xs-6">
+                <%= simple_form_for [@course, @lesson, @session] do |f| %>
+                  <%= f.button :submit, 'Lesson Finished', class: 'btn btn-success text-center' %>
+                <% end %>
+                </div>
+                <div class="col-xs-6 text-right">
+                <%= link_to "Next Lesson", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+                </div>
+              </div>
           <% else %>
             <div class="row">
-              <div class="col-xs-6">
-              <%= simple_form_for [@course, @lesson, @session] do |f| %>
-              <%= f.button :submit, 'Lesson Finished', class: 'btn btn-success text-center' %>
+                <div class="col-xs-6">
+                <%= simple_form_for [@course, @lesson, @session] do |f| %>
+                  <%= f.button :submit, 'Done with this Lesson! :)', disabled: "disabled", class: 'btn btn-success text-center' %>
+                <% end %>
+                </div>
+                <div class="col-xs-6 text-right">
+
+                <%= link_to "Next Lesson", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+
+                <!-- mobile button -->
+                </div>
+              </div>
+
             <% end %>
-              </div>
-              <div class="col-xs-6 text-right">
-
-              <%= link_to "Next Lesson", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
-              </div>
-            </div>
-
-
           <% end %>
         </div>
 

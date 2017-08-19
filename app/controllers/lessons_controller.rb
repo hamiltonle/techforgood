@@ -46,21 +46,35 @@ class LessonsController < ApplicationController
   end
 
 
-
   # Displays an individual lesson for a course
   def show
     @course = Course.find(params[:course_id])
     @lesson = Lesson.find(params[:id])
+    @session = Session.new
+    @quiz = Quiz.new
+    @current_session = current_user.sessions.where(:lesson_id => @lesson.id).last
+
+    # finds latest quiz for this session, if the student has taken one before
+    unless @current_session.nil?
+      @attempts = @lesson.quizzes.where(:session_id => @current_session.id).last.attempt
+    end
+
+
+
+
+    # finds latest quiz for this session, if the student has taken one before
+    # unless @current_session.nil?
+    #   @quiz = @lesson.quizzes.where(:session_id => @current_session.id).last
+    # end
 
     # passes these instances to the sidebar
     @why_lessons = @course.lessons.where(:module_name => "why")
     @how_lessons = @course.lessons.where(:module_name => "how")
     @what_lessons = @course.lessons.where(:module_name => "what")
 
-    @session = Session.new
-    @current_session = current_user.sessions.where(:lesson_id => @lesson.id)
 
-    @quiz = Quiz.new
+
+    # @quiz = Quiz.new
 
     # after we do unique session validations for unique user_id & lesson_id, then code should be
     # @session = @lesson.sessions.last

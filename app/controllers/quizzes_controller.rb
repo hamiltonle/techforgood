@@ -19,9 +19,7 @@ class QuizzesController < ApplicationController
     @question4 = @lesson.questions.find(questions[3])
     @question5 = @lesson.questions.find(questions[4])
 
-
-
-
+    @skip_footer = true
   end
 
   def new
@@ -76,13 +74,6 @@ class QuizzesController < ApplicationController
     @lesson.questions.where(:knowledge_point => "reading").each { |q| reading_ids << q.id }
 
 
-    # If 1st attempt, creates array of IDs of all questions in the lesson
-    if @quiz.all_question_array.nil?
-      total_question_array = (1..@lesson.questions.count).to_a
-    else
-      total_question_array = @quiz.all_question_array
-    end
-
     # remove questions which have already been asked
     Quiz.where(:session_id => @quiz.session_id).each do |quiz|
       asked_questions = quiz.question_list.split(",").map(&:to_i)
@@ -90,7 +81,17 @@ class QuizzesController < ApplicationController
       theory_ids -= asked_questions
       definition_ids -= asked_questions
       reading_ids -= asked_questions
+    end
 
+
+    # If 1st attempt, creates array of IDs of all questions in the lesson
+    if Quiz.where(:session_id => @quiz.session_id).nil?
+      total_question_array = (1..@lesson.questions.count).to_a
+    # If 2nd/3rd attempt, then remove previously asked questions
+    else
+      # @quiz.all_question_array = theory_ids + definition_ids + reading_ids
+      # total_question_array = @quiz.all_question_array
+      total_question_array = (theory_ids + definition_ids + reading_ids).sort
     end
 
 
