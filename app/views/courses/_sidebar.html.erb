@@ -9,24 +9,24 @@
         </div>
       </div>
       <div class="text-left lesson-tab div-relative course_sidebar_tab">
-        <h5>About the issue</h5>
+        <h5><a href="#overview">Overview</a></h5>
       </div>
       <div class="text-left lesson-tab div-relative course_sidebar_tab">
-        <h5>Curriculum</h5>
+        <h5><a href="#syllabus">Curriculum</a></h5>
       </div>
       <div class="text-left lesson-tab div-relative course_sidebar_tab">
-        <h5>Practicing Project</h5>
+        <h5><a href="#project">Practical Project</a></h5>
       </div>
       <div class="text-left lesson-tab div-relative course_sidebar_tab">
-        <h5>Tutor Team</h5>
+        <h5><a href="#tutors">Tutor Team</a></h5>
       </div>
       <div class="text-left lesson-tab div-relative course_sidebar_tab">
-        <h5>FAQ</h5>
+        <h5><a href="#faqs">FAQ</a></h5>
       </div>
 
       <div class="padded_tab">
         <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
-        <h6>Course Starts: 2017.10.2</h6>
+        <h6>Course Starts: <%= @course.start_date %></h6>
         <h6><%= @course_enrollments.count %> Students</h6>
       </div>
   </div>
