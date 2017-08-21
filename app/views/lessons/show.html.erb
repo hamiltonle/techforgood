@@ -9,70 +9,59 @@
   <div id="main" class="">
     <!-- This is the button to open the sidenav -->
     <!-- the button to close is on the _sidebar.html.erb file -->
-    <span class="fixed-sidemenu top-margin" onclick="openNav()">&#9776<div class="text-right div-relative flexbox">
-    </div></span>
+    <span class="fixed-sidemenu top-margin" onclick="openNav()">&#9776
+      <div class="text-right div-relative flexbox"></div>
+    </span>
 
-      <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-      <!-- Lesson Content -->
-      <div id="lesson-content">
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <!-- Lesson Content -->
+    <div id="lesson-content">
 
-        <!-- Lesson Title and Score -->
-        <div class="flexbox">
-          <div class="text-left flex-item-lesson-show-title">
-            <p class=""><%= @lesson.title %></p>
-          </div>
-
-          <div class="text-right flex-item-grow bottom-border">
-            <p class="">本节得分：5/5</p>
-          </div>
+      <!-- Lesson Title and Score -->
+      <div class="flexbox">
+        <div class="text-left flex-item-lesson-show-title">
+          <p class=""><%= @lesson.title %></p>
         </div>
 
-        <!-- Lesson Text -->
-        <div class="">
-          <%= raw(@lesson.text) %>
+        <div class="text-right flex-item-grow bottom-border">
+          <p class="">本节得分：5/5</p>
         </div>
+      </div>
 
-        <br>
-        <br>
-        <!-- Info -->
-        <p>course: <%= @course.id %></p>
-        <p>lesson: <%= @lesson.id %> </p>
-        <p>last quiz: <%= @quiz %></p>
-        <p>session: </p>
-        <br>
-        <br>
-
-        <!-- 'Take Quiz' Button -->
-        <% if @lesson.lesson_type == "quiz" %>
+      <!-- 'Take Quiz' Button -->
+      <% if @lesson.lesson_type == "quiz" %>
+        <div class="div-lightblue padded-allsides margin-y-1em">
           <p>there are 5 quiz in total, there are 3 chances to take the quizz, we will take the highest score among them</p>
+          <p>this is the <span class="text-green"><%= @attempts %></span> time you're taking the quizz, the current high score is: <span class="text-blue"><%= @highscore %></span></p>
 
-          <% if @attempts == 1 %>
-          <p>this is the 1st time you're taking the quizz, the current high score is: <%= @highscore %> </p>
+          <% if @attempts.nil? %>
+
             <%= simple_form_for [@course, @lesson, @quiz] do |f| %>
               <%= f.button :submit, 'Take Quiz for 1st time', class: 'btn btn-warning text-center' %>
             <% end %>
-          <% elsif @attempts == 2 %>
+
+          <% elsif @attempts == 1 %>
             <%= simple_form_for [@course, @lesson, @quiz] do |f| %>
               <%= f.button :submit, 'Retake Quiz 2nd time', class: 'btn btn-warning text-center' %>
             <% end %>
 
-            <% first_quiz = Quiz.where(:session_id => @current_session.id).first %>
+            <% first_quiz = Quiz.where(:session_id => @current_session.id).first.id %>
             <%= link_to "Review your 1st quiz", course_lesson_quiz_path(@course.id, @lesson.id, first_quiz), class: "btn btn-primary text-center" %>
 
-          <% elsif @attempts == 3 %>
+          <% elsif @attempts == 2 %>
             <%= simple_form_for [@course, @lesson, @quiz] do |f| %>
               <%= f.button :submit, 'Retake Quiz 3rd time', class: 'btn btn-warning text-center' %>
             <% end %>
 
-            <% first_quiz = Quiz.where(:session_id => @current_session.id).first %>
+
+            <% first_quiz = Quiz.where(:session_id => @current_session.id).first.id %>
             <%= link_to "Review your 1st quiz", course_lesson_quiz_path(@course.id, @lesson.id, first_quiz), class: "btn btn-primary text-center" %>
 
             <% second_quiz = Quiz.where(:session_id => @current_session.id).where(:attempt => 2).first.id %>
             <%= link_to "Review your 2nd quiz", course_lesson_quiz_path(@course.id, @lesson.id, second_quiz), class: "btn btn-primary text-center" %>
 
           <% else %>
-            <p>You've already attempted the quiz 3 times</p>
-
+            <p class="text-green">You've already attempted the quiz 3 times</p>
             <% first_quiz = Quiz.where(:session_id => @current_session.id).where(:attempt => 1).first.id %>
             <%= link_to "Review your 1st quiz", course_lesson_quiz_path(@course.id, @lesson.id, first_quiz), class: "btn btn-primary text-center" %>
 
@@ -80,17 +69,14 @@
             <%= link_to "Review your 2nd quiz", course_lesson_quiz_path(@course.id, @lesson.id, second_quiz), class: "btn btn-primary text-center" %>
 
             <% second_quiz = Quiz.where(:session_id => @current_session.id).where(:attempt => 3).first.id %>
-            <%= link_to "Review your 2nd quiz", course_lesson_quiz_path(@course.id, @lesson.id, second_quiz), class: "btn btn-primary text-center" %>
+            <%= link_to "Review your 3rd quiz", course_lesson_quiz_path(@course.id, @lesson.id, second_quiz), class: "btn btn-primary text-center" %>
           <% end %>
-
-        <% end %>
-
-        <!-- <h4 class="text-center"><#%= @lesson.description %></h4> -->
-        <!-- <div class="text-center">
-          <#% if @lesson.video? %>
-            <#%= @lesson.video.html_safe %>
-          <#% end %>
-        </div> -->
+        </div>
+      <% else %>
+        <!-- Lesson Text -->
+        <div class="">
+          <%= raw(@lesson.text) %>
+        </div>
 
         <!-- Lesson Complete Button -->
         <div class="section-margin hidden-xs">
@@ -128,7 +114,6 @@
                 </div>
               <% end %>
             </div>
-
           <% end %>
         <% end %>
         </div>
@@ -165,10 +150,27 @@
             <% end %>
           <% end %>
         </div>
+      <% end %>
 
-      </div>
+      <!-- Info -->
+      <p>course: <%= @course.id %></p>
+      <p>lesson: <%= @lesson.id %> </p>
+      <p>last quiz: <%= @quiz %></p>
+      <p>session:
+      <% unless @current_session.nil? %>
+        <%= @current_session.id %>
+      <% end %>
+      </p>
+      <p>attemps: <%= @attempts %></p>
+      <br>
+      <br>
 
-
-
-
+      <!-- <h4 class="text-center"><#%= @lesson.description %></h4> -->
+      <!-- <div class="text-center">
+        <#% if @lesson.video? %>
+          <#%= @lesson.video.html_safe %>
+        <#% end %>
+      </div> -->
+    </div>
+  </div>
 </div>

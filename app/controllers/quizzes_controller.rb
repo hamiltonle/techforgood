@@ -171,10 +171,6 @@ class QuizzesController < ApplicationController
     @lesson = Lesson.find(params[:lesson_id])
     @quiz = Quiz.find(params[:id])
 
-    # increases quiz attempt but limits to 3 tries
-    @quiz.attempt += 1
-    @quiz.save
-
     # Assign lesson questions to instance variables
     questions = @quiz.question_list.split(",").map(&:to_i)
     @question1 = @lesson.questions.find(questions[0])
@@ -190,6 +186,9 @@ class QuizzesController < ApplicationController
     @course = Course.find(params[:course_id])
     @lesson = Lesson.find(params[:lesson_id])
     @quiz = Quiz.find(params[:id])
+
+    # increases quiz attempt but limits to 3 tries
+    @quiz.attempt += 1
 
     # updates quiz attributes with user answers
     @quiz.update(quiz_params)

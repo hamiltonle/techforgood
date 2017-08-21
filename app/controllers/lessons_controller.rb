@@ -60,10 +60,11 @@ class LessonsController < ApplicationController
       @attempts = @lesson.quizzes.where(:session_id => @current_session.id).last.attempt
 
       # Finds quiz with highest score
+      past_quiz_scores = []
       @lesson.quizzes.where(:session_id => @current_session.id).each do |quiz|
         past_quiz_scores << quiz.score
       end
-      @highscore = past_quiz_scores
+      @highscore = past_quiz_scores.compact.sort.last
     end
 
     # passes these instances to the sidebar
