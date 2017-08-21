@@ -51,20 +51,32 @@ class LessonsController < ApplicationController
     @course = Course.find(params[:course_id])
     @lesson = Lesson.find(params[:id])
     @session = Session.new
-    @quiz = Quiz.new
     @current_session = current_user.sessions.where(:lesson_id => @lesson.id).last
-    @highscore = 0
 
-    # finds latest quiz for this session, if the student has taken one before
-    unless @current_session.nil?
-      @attempts = @lesson.quizzes.where(:session_id => @current_session.id).last.attempt
 
-      # Finds quiz with highest score
-      past_quiz_scores = []
-      @lesson.quizzes.where(:session_id => @current_session.id).each do |quiz|
-        past_quiz_scores << quiz.score
+    # Assignment Lesson
+    if @lesson.lesson_type == "assignment"
+      @assignment = Assignment.new
+
+    end
+
+    # Quiz Lesson
+    if @lesson.lesson_type == "quiz"
+      @quiz = Quiz.new
+      @quiz_highscore = 0
+
+      unless @current_session.nil?
+
+        # finds latest quiz for this session, if the student has taken one before
+        @quiz_attempts = @lesson.quizzes.where(:session_id => @current_session.id).last.attempt
+
+        # Finds quiz with highest score
+        past_quiz_scores = []
+        @lesson.quizzes.where(:session_id => @current_session.id).each do |quiz|
+          past_quiz_scores << quiz.score
+        end
+        @quiz_highscore = past_quiz_scores.compact.sort.last
       end
-      @highscore = past_quiz_scores.compact.sort.last
     end
 
     # passes these instances to the sidebar

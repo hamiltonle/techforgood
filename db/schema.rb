@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170817222749) do
+ActiveRecord::Schema.define(version: 20170821213408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,19 @@ ActiveRecord::Schema.define(version: 20170817222749) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "assignments", force: :cascade do |t|
+    t.bigint "lesson_id"
+    t.bigint "session_id"
+    t.integer "attempt"
+    t.text "user_answer"
+    t.text "mentor_feedback"
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_assignments_on_lesson_id"
+    t.index ["session_id"], name: "index_assignments_on_session_id"
   end
 
   create_table "attachinary_files", id: :serial, force: :cascade do |t|
@@ -183,6 +196,8 @@ ActiveRecord::Schema.define(version: 20170817222749) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "assignments", "lessons"
+  add_foreign_key "assignments", "sessions"
   add_foreign_key "courses", "organizations"
   add_foreign_key "enrollments", "courses"
   add_foreign_key "enrollments", "users"

@@ -3,5 +3,6 @@ class Lesson < ApplicationRecord
   has_many :sessions
   has_many :questions
   has_many :quizzes
+  has_many :assignments
 end
 

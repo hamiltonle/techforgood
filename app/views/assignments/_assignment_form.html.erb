@@ -1,0 +1,4 @@
+<%= simple_form_for [@course, @lesson, @assignment] do |assignment| %>
+  <%= assignment.input :attempt, as: :html_editor %>
+  <%= assignment.button :submit, class: 'btn btn-primary' %>
+<% end %>
