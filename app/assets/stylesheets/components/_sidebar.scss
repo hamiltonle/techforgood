@@ -49,12 +49,13 @@
   // border: 1px solid $success;
 }
 .module-completed {
-  background: $green;
-  border-right: 3px solid $green;
+  background: $blue;
+  // border-right: 3px solid $green;
   // border: 1px solid $success;
 }
 .module-completed:hover {
-  border-right: 3px solid lightgray;
+  opacity: .9;
+  // border-right: 3px solid lightgray;
   // border: 1px solid $success;
 }
 
@@ -62,13 +63,15 @@
   background: white;
 }
 
+
 .module-pending {
-  background: $blue2;
+  background: $lightblue;
   // border-right: 3px solid $blue6;
 }
 
 .module-pending:hover {
-  border-right: 3px solid lightgray;
+  opacity: .9;
+  // border-right: 3px solid lightgray;
 }
 
 .module-chatbot {
