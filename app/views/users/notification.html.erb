@@ -1,0 +1,204 @@
+<!-- Banner  -->
+<div class="dashboard-banner padded text-center" id="gradient" >
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="dashboard-user-details">
+
+        <div class="col-xs-6" id="dashboard-photo">
+          <% if @user.photo? %>
+            <%= cl_image_tag @user.photo.path, class: "profile-img-round" %>
+          <% else %>
+            <%= image_tag "https://placehold.it/200x200", class: "img-circle" %>
+          <% end %>
+        </div>
+
+        <div class="col-xs-6" id="dashboard-profile">
+          <% if @new_user %>
+            <h3>Update your profile</h3>
+          <% else %>
+            <h2 id="dashboard-username"><%= @user.first_name%></h2>
+            <h4 id="dashboard-group"><%= @user.group%></h4>
+          <% end %>
+        </div>
+
+      </div>
+
+    <div class="row">
+      <div class="col-xs-12" id="dashboard-user-ranking">
+        <ul>
+          <li class="col-xs-12 col-sm-4">参与课程: <span class="green-text">2 </span>个</li>
+          <li class="col-xs-12 col-sm-4">最高课程得分: <span class="blue-text">176</span>/233 </li>
+          <li class="col-xs-12 col-sm-4">最高课程排名: <span class="red-text">4</span>/56 </li>
+        </ul>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- New User Interface (shows if user hasn't signed up to any courses -->
+<div>
+  <div class="dashboard-course-container">
+
+  <% if @new_user %>
+
+    <div class="text-center padded">
+      <h3>Start a course now!</h3>
+      <%= link_to "Find a course", courses_path(:anchor => "courses"), class: "btn btn-primary" %>
+    </div>
+
+  <% end %>
+
+  <!-- Sidebar -->
+  <div id="dashboard-sidebar">
+    <ul>
+      <li><a href="#">我的课程</a></li>
+      <li><a href="#">课程通知</a></li>
+      <li><a href="#">我的排名</a></li>
+    </ul>
+  </div>
+
+<div class="container">
+
+<div class="main">
+
+  <!-- Current Course Information -->
+    <% unless @new_user %>
+
+        <% @current_enrollments.each do |enrollment| %>
+          <div class="dashboard-course-card">
+
+            <!-- Course Status -->
+            <div class="dashboard-incomplete-status">
+              <p><span>正在进行</span></p>
+            </div>
+
+            <div class="card-left">
+
+              <!-- Course Description -->
+              <div class="dashboard-course-description">
+                <h2><%= enrollment.course.title %></h2>
+              </div>
+
+              <!-- Progress Bar -->
+              <div class="progress-section">
+              <div class="progress">
+                <% @total_lessons = enrollment.course.lessons.count %>
+                <% @number_completed_sessions = 0 %>
+                <% enrollment.sessions.each do |session| %>
+                  <% if session.completed? %>
+                  <% @number_completed_sessions += 1 %>
+                  <% end %>
+                <% end %>
+                <% @number_completed_sessions %>
+                <% @percentage = (@number_completed_sessions*100 / @total_lessons) %>
+                <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                aria-valuemin="0" aria-valuemax="100" style="width:<%= @percentage %>%">
+                  <span class="sr-only"><%= @percentage %>%</span>
+                </div>
+              </div>
+                <%= @percentage %>%
+              </div>
+
+              <!-- Score Section -->
+              <div class="score-section">
+                <p>课程得分: 67 <a href="#" data-toggle="tooltip" title="This is your score for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a>课程排名: 6/50 <a href="#" data-toggle="tooltip" title="This is your ranking for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
+              </div>
+
+          </div>
+
+          <div class="card-right text-center">
+
+              <!-- Resume Course Button -->
+              <div class="continue-course-button text-center">
+                  <% if enrollment.sessions.where(:status => "completed").count == 0 %>
+                    <% @current_lesson = enrollment.course.lessons.first %>
+                  <% else %>
+                    <% @last_completed_lesson = enrollment.sessions.where(:status => "completed").last.lesson_id %>
+                    <% @current_lesson = @last_completed_lesson + 1 %>
+                  <% end %>
+                <%= link_to "继续上课", course_lesson_path(enrollment.course, @current_lesson), class: "btn dashboard-success" %>
+              </div>
+
+              <!-- Progress & Course Date -->
+              <div class="date-section">
+                <p>课程进度: 第 7/10 周</p>
+                <p>结课日期：2017.07.23</p>
+              </div>
+
+          </div>
+
+          </div>
+        <% end %>
+
+      <% end %>
+
+    <!-- Completed Course Information -->
+    <% unless @new_user %>
+
+      <% @completed_enrollments.each do |enrollment| %>
+      <div class="dashboard-course-card">
+
+            <!-- Course Status -->
+            <div class="dashboard-complete-status">
+              <p><span>已完成</span></p>
+            </div>
+
+            <div class="card-left">
+
+            <!-- Course Description -->
+            <div class="dashboard-course-description">
+              <h2><%= enrollment.course.title %></h2>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress">
+              <% @total_lessons = enrollment.course.lessons.count %>
+              <% @number_completed_sessions = 0 %>
+              <% enrollment.sessions.each do |session| %>
+                <% if session.completed? %>
+                <% @number_completed_sessions += 1 %>
+                <% end %>
+              <% end %>
+              <% @number_completed_sessions %>
+              <% @percentage = (@number_completed_sessions*100 / @total_lessons) %>
+              <div class="progress-bar" role="progressbar"
+              aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:<%= @percentage %>%">
+                <span class="sr-only"><%= @percentage %>%</span>
+              </div>
+                <%= @percentage %>%
+            </div>
+
+            <!-- Score Section -->
+            <div class="score-section">
+              <p>课程得分: 67 <a href="#" data-toggle="tooltip" title="This is your score for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a> 课程排名: 6/50 <a href="#" data-toggle="tooltip" title="This is your ranking for the course"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a></p>
+            </div>
+
+            </div>
+
+            <div class="card-right text-center">
+
+            <!-- Review Course Button -->
+            <div class="text-center">
+              <%= link_to "查看课程", course_path(enrollment.course), class: "btn dashboard-danger" %>
+            </div>
+
+            <!-- Progress & Course Date -->
+            <div class="date-section">
+              <p>课程进度: 第 7/10 周</p>
+              <p>结课日期：2017.07.23</p>
+            </div>
+
+            </div>
+
+          </div>
+      <% end %>
+
+    <% end %>
+
+
+</div>
+</div>
+
+</div>
