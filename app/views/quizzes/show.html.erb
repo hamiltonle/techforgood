@@ -1,0 +1,112 @@
+<div class="padded">
+  test
+
+  <p>course</p>
+  <%= @course.id %>
+  <p>lesson</p>
+  <%= @lesson.id %>
+  <p>quiz</p>
+  <%= @quiz.id %>
+  <!-- session hasn't been initiated yet -->
+  <%= @session %>
+  <br>
+
+<br>
+<br>
+<h2>score is <%= @quiz.score %></h2>
+
+<br>
+<br>
+
+  <%= simple_form_for [@course, @lesson, @quiz] do |f| %>
+
+    <!-- question 1 -->
+    <% if @quiz.user_answer1 == @quiz.correct_answer1 %>
+      <p class="text-success">Correct</p>
+    <% else %>
+      <p class="text-warning">Incorrect, the correct answer is <%= @quiz.correct_answer1 %></p>
+    <% end %>
+    <%= raw(@question1.question) %>
+    <% @options1 = [@question1.option_a, @question1.option_b, @question1.option_c, @question1.option_d] %>
+    <%= f.input :user_answer1, collection: @options1, as: :radio_buttons, label: false %>
+    <br><br>
+
+    <!-- question 2 -->
+    <% if @quiz.user_answer2 == @quiz.correct_answer2 %>
+      <p class="text-success">Correct</p>
+    <% else %>
+      <p class="text-warning">Incorrect, the correct answer is <%= @quiz.correct_answer2 %></p>
+    <% end %>
+    <%= raw(@question2.question) %>
+    <% @options2 = [@question2.option_a, @question2.option_b, @question2.option_c, @question2.option_d] %>
+    <%= f.input :user_answer2, collection: @options2, as: :radio_buttons, label: false %>
+    <br><br>
+
+    <!-- question 3 -->
+    <% if @quiz.user_answer3 == @quiz.correct_answer3 %>
+      <p class="text-success">Correct</p>
+    <% else %>
+      <p class="text-warning">Incorrect, the correct answer is <%= @quiz.correct_answer3 %></p>
+    <% end %>
+
+    <%= raw(@question3.question) %>
+    <% @options3 = [@question3.option_a, @question3.option_b, @question3.option_c, @question3.option_d] %>
+    <%= f.input :user_answer3, collection: @options3, as: :radio_buttons, label: false %>
+    <br><br>
+
+
+    <!-- question 4 -->
+    <% if @quiz.user_answer4 == @quiz.correct_answer4 %>
+      <p class="text-success">Correct</p>
+    <% else %>
+      <p class="text-warning">Incorrect, the correct answer is <%= @quiz.correct_answer4 %></p>
+    <% end %>
+    <%= raw(@question4.question) %>
+    <% @options4 = [@question4.option_a, @question4.option_b, @question4.option_c, @question4.option_d] %>
+    <%= f.input :user_answer4, collection: @options4, as: :radio_buttons, label: false %>
+    <br><br>
+
+
+    <!-- question 5 -->
+    <% if @quiz.user_answer5 == @quiz.correct_answer5 %>
+      <p class="text-success">Correct</p>
+    <% else %>
+      <p class="text-warning">Incorrect, the correct answer is <%= @quiz.correct_answer5 %></p>
+    <% end %>
+    <%= raw(@question5.question) %>
+    <% @options5 = [@question5.option_a, @question5.option_b, @question5.option_c, @question5.option_d] %>
+    <%= f.input :user_answer5, collection: @options5, as: :radio_buttons, label: false %>
+
+  <%= f.submit "Quiz Done", disabled: "disabled", class: "btn btn-primary" %>
+
+  <% end %>
+</div>
+
+
+        <!-- Lesson Complete Button -->
+        <div class="section-margin hidden-xs">
+
+          <div class="row">
+            <div class="col-xs-6">
+            <!-- Session's already created during quiz initiation, so this button can be changed if preferred -->
+              <%= simple_form_for [@course, @lesson, @session] do |f| %>
+                <%= f.button :submit, 'Back To Lesson', class: 'btn btn-success text-center' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <!-- mobile button -->
+        <div class="section-margin visible-xs">
+          <div class="row">
+            <div class="col-xs-6">
+              <%= simple_form_for [@course, @lesson, @session] do |f| %>
+                <%= f.button :submit, 'Lesson Finished', class: 'btn btn-success text-center' %>
+              <% end %>
+            </div>l
+            <div class="col-xs-6 text-right">
+              <%= link_to "Next Lesson", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+            </div>
+          </div>
+        </div>
+

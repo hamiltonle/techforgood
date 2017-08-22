@@ -15,7 +15,7 @@
 }
 .lesson-tab:hover {
   opacity: 1;
-  border-right: 3px solid $blue7;
+  border-left: 3px solid $blue7;
 }
 .position-relative {
   position: relative;
@@ -297,21 +297,37 @@ iframe {
   left: 0;
 
 }
-
+//This is the sidebar that shows up in the course show page
 #course_sidebar {
 
   // justify-content: space-between;
   // align-items: center;
-  width: 200px;
-  background-color: #f0f0f0;
-  position: absolute;
-  top: 70px;
+  width: 300px;
+  background-color: white;
+  position: fixed;
   // overflow-x: hidden;
   overflow-y: hidden;
   height: auto;
   bottom: 0;
   left: 0;
+  border-right: 1px solid #f0f0f0;
 }
+
+// Course Sidebar Tabs CSS
+.padded_tab {
+  padding-top: 20px;
+}
+
+.course_sidebar_tab {
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+
+
 
 // LESSON CONTENT AREA is in _lesson_show_page.scss
 

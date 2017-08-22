@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170706131611) do
+ActiveRecord::Schema.define(version: 20170817222749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20170706131611) do
     t.string "tagline"
     t.string "issue"
     t.string "tech_solution"
+    t.date "start_date"
     t.index ["organization_id"], name: "index_courses_on_organization_id"
   end
 
@@ -95,7 +96,7 @@ ActiveRecord::Schema.define(version: 20170706131611) do
     t.integer "minutes"
     t.string "module_name"
     t.string "lesson_type"
-    t.string "question"
+    t.integer "score"
     t.index ["course_id"], name: "index_lessons_on_course_id"
   end
 
@@ -117,7 +118,9 @@ ActiveRecord::Schema.define(version: 20170706131611) do
     t.text "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "session_id"
     t.index ["lesson_id"], name: "index_questions_on_lesson_id"
+    t.index ["session_id"], name: "index_questions_on_session_id"
   end
 
   create_table "quizzes", force: :cascade do |t|
@@ -151,7 +154,7 @@ ActiveRecord::Schema.define(version: 20170706131611) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "enrollment_id"
-    t.string "answer"
+    t.datetime "due_date"
     t.index ["enrollment_id"], name: "index_sessions_on_enrollment_id"
     t.index ["lesson_id"], name: "index_sessions_on_lesson_id"
     t.index ["user_id", "lesson_id"], name: "index_sessions_on_user_id_and_lesson_id", unique: true
@@ -186,6 +189,7 @@ ActiveRecord::Schema.define(version: 20170706131611) do
   add_foreign_key "lessons", "courses"
 
   add_foreign_key "questions", "lessons"
+  add_foreign_key "questions", "sessions"
   add_foreign_key "quizzes", "lessons"
   add_foreign_key "quizzes", "sessions"
 

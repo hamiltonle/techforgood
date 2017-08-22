@@ -29,6 +29,11 @@ class SessionsController < ApplicationController
 
     begin
       @session.save
+
+      # if @lesson.lesson_type == "quiz"
+      #   redirect_to new_course_lesson_quiz_path(@course.id, @lesson.id)
+      # end
+
     rescue => error
       redirect_to course_lesson_path(@course.id, @lesson.id)
     end
