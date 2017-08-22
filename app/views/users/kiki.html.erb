@@ -1,0 +1,93 @@
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <p>Some content.</p>
+  </div>
+</div>
+
+<!-- Classmates -->
+<ul>
+  <% @current_enrollments.each do |enrollment| %>
+    <% @all_enrollments = enrollment.course.enrollments %>
+      <% @all_enrollments.each do |enrollment|  %>
+        <li class="card">
+        <div class="card__flipper">
+          <div class="card__front text-center">
+
+              <!-- Name -->
+              <h4 class="card__name">
+                <span><%= enrollment.user.first_name %></span>
+<!--                <%= enrollment.user.last_name %> -->
+              </h4><br>
+
+              <!-- Photo -->
+              <% if enrollment.user.photo? %>
+                <%= cl_image_tag enrollment.user.photo.path, class: "classmates-img-round" %>
+              <% else %>
+                <%= image_tag "https://placehold.it/100x100", class: "img-circle" %>
+              <% end %>
+              <br>
+
+              <!-- Email -->
+              <p class="card__name user-email"><%= enrollment.user.email %></p>
+
+              <!-- Group -->
+<!--                   <p class="card__name user-email"><%= enrollment.user.group %></p> -->
+            </div>
+
+            <div class="card__back">
+                <circle cx="90" cy="90" r="55" stroke="#514d9b" stroke-width="35"  />
+              </svg>
+            <span><%= enrollment.user.bio %></span>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+
+<!-- Profile -->
+<h3 class="tab profile-section">Profile</h3>
+  <% if @user.photo? %>
+    <%= cl_image_tag @user.photo.path, class: "profile-img-round" %>
+  <% else %>
+    <%= image_tag "https://placehold.it/200x200", class: "img-circle" %>
+  <% end %>
+  <h4><%= @user.first_name %> <%= @user.last_name %></h4>
+  <p><%= @user.email %></p>
+  <p><%= @user.group %></p>
+
+  <!-- Edit Profile Button -->
+  <div class="edit-profile-button">
+    <%= link_to "Edit profile", edit_user_path(current_user), class: "btn btn-primary" %>
+  </div>
+
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="text-center">
+    <div class="">
+
+      <!-- This is the button to close the sidenav -->
+      <div class="text-right div-relative flexbox">
+        <button href=""  class="closebtn text-right" onclick="closeNav()">
+          &times;
+        </button>
+      </div>
+
+      <div class="text-left flexbox">
+        <div class="sidebar-text flex-item-score">
+          <h5><strong>我的课程</strong></h5>
+        </div>
+        <div class="sidebar-text flex-item-rank">
+          <h5><strong>课程通知</strong></h5>
+        </div>
+        <div class="sidebar-text flex-item-rank">
+          <h5><strong>我的排名</strong></h5>
+        </div>
+      </div>
+
+    </div>
+  </div>

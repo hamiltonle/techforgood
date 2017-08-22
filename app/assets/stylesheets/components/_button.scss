@@ -271,5 +271,37 @@ $neon: #00FFF8;
   transition: all 250ms linear;
 }
 
+// Dashboard Buttons
+.dashboard-success {
+  color: $green;
+  border: 2px solid $green;
+  font-weight: 900;
+  letter-spacing: 1px;
+  transition: all 150ms linear;
+}
 
+.dashboard-success:hover {
+  background: darken($green, 1.5%);
+  color: white;
+  border: 1px solid rgba(#000, .05);
+  text-decoration: none;
+  text-shadow: -1px -1px 0 darken($green, 9.5%);
+  transition: all 250ms linear;
+}
 
+.dashboard-danger {
+  color: $red;
+  border: 2px solid $red;
+  font-weight: 900;
+  letter-spacing: 1px;
+  transition: all 150ms linear;
+}
+
+.dashboard-danger:hover {
+  background: darken($red, 1.5%);
+  color: white;
+  border: 1px solid rgba(#000, .05);
+  text-decoration: none;
+  text-shadow: -1px -1px 0 darken($red, 9.5%);
+  transition: all 250ms linear;
+}
