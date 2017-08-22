@@ -41,7 +41,7 @@
 #dashboard-sidebar {
   float: left;
   width: 120px;
-  line-height: 40px;
+  line-height: 50px;
 }
 
 #dashboard-sidebar:hover a {
@@ -50,6 +50,15 @@
 
 #dashboard-sidebar ul {
   list-style-type: none;
+  color: #6e6e6e;
+}
+
+#dashboard-sidebar a {
+  color: #6e6e6e;
+}
+
+#dashboard-sidebar a:hover {
+  font-weight: bold;
 }
 
 li.active a {
