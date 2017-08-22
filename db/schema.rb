@@ -29,6 +29,23 @@ ActiveRecord::Schema.define(version: 20170706131611) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
+  create_table "admin_users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
   create_table "attachinary_files", id: :serial, force: :cascade do |t|
     t.string "attachinariable_type"
     t.integer "attachinariable_id"
@@ -89,6 +106,44 @@ ActiveRecord::Schema.define(version: 20170706131611) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.bigint "lesson_id"
+    t.string "knowledge_point"
+    t.text "question"
+    t.text "option_a"
+    t.text "option_b"
+    t.text "option_c"
+    t.text "option_d"
+    t.text "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_questions_on_lesson_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.bigint "lesson_id"
+    t.bigint "session_id"
+    t.integer "attempt"
+    t.string "question_list"
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "answer_list"
+    t.text "user_answer1"
+    t.text "user_answer2"
+    t.text "user_answer3"
+    t.text "user_answer4"
+    t.text "user_answer5"
+    t.text "correct_answer1"
+    t.text "correct_answer2"
+    t.text "correct_answer3"
+    t.text "correct_answer4"
+    t.text "correct_answer5"
+    t.string "all_question_array"
+    t.index ["lesson_id"], name: "index_quizzes_on_lesson_id"
+    t.index ["session_id"], name: "index_quizzes_on_session_id"
+  end
+
   create_table "sessions", force: :cascade do |t|
     t.string "status"
     t.bigint "user_id"
@@ -129,6 +184,11 @@ ActiveRecord::Schema.define(version: 20170706131611) do
   add_foreign_key "enrollments", "courses"
   add_foreign_key "enrollments", "users"
   add_foreign_key "lessons", "courses"
+
+  add_foreign_key "questions", "lessons"
+  add_foreign_key "quizzes", "lessons"
+  add_foreign_key "quizzes", "sessions"
+
   add_foreign_key "sessions", "enrollments"
   add_foreign_key "sessions", "lessons"
   add_foreign_key "sessions", "users"
