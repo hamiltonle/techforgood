@@ -57,7 +57,25 @@ class LessonsController < ApplicationController
     # Assignment Lesson
     if @lesson.lesson_type == "assignment"
       @assignment = Assignment.new
+      @assignment_highscore = 0
 
+      unless @current_session.nil?
+
+        # finds latest assignment for this session, if the student has submitted one before
+        # uses the # of attempts to display a 2nd chance or not
+        @assignment_attempts = @lesson.assignments.where(:session_id => @current_session.id).last.attempt
+
+        # Finds quiz with highest score
+        past_assignment_scores = []
+        @lesson.assignments.where(:session_id => @current_session.id).each do |assignment|
+          past_assignment_scores << assignment.score
+        end
+        @assignment_highscore = past_assignment_scores.compact.sort.last
+
+        # For displaying submitted assignments
+        @first_assignment = @lesson.assignments.where(:session_id => @current_session.id).first
+        @second_assignment = @lesson.assignments.where(:session_id => @current_session.id).last
+      end
     end
 
     # Quiz Lesson

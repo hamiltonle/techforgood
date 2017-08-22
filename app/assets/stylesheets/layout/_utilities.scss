@@ -8,7 +8,15 @@
 
 // Borders
 .bottom-border {
-  border-bottom: 1px solid $lightgray;
+  border-bottom: 1px solid $slightlightgray;
+}
+
+.dashed-border {
+  border: 2px dashed $slightlightgray;
+}
+
+.border-left-blue {
+  border-left: 3px solid $blue;
 }
 
 
@@ -61,6 +69,13 @@
   margin-bottom: 15px;
 }
 
+.margin-top-2em {
+  margin-top: 2em;
+}
+
+.margin-top-5em {
+  margin-top: 5em;
+}
 
 
 .width-1000 {
@@ -100,7 +115,18 @@
     padding-left: 120px;
 }
 
+.padded-top-2em {
+  padding-top: 2em;
+}
 
+.padded-bottom-1em {
+  padding-bottom: 1em;
+}
+
+.padded-bottom-3em {
+  padding-top: 0;
+  padding-bottom: 3em;
+}
 
 .padded-bottom {
   padding-top: 0;
@@ -191,6 +217,10 @@ a:focus {
   color: $green;
 }
 
+.text-gray {
+  color: $gray;
+}
+
 .text-success {
   color: $success;
 }
@@ -199,8 +229,12 @@ a:focus {
   color: $lightgray;
 }
 
+.text-slightlightgray {
+  color: $slightlightgray;
+}
+
 .text-darkgray {
-  color: $lightgray;
+  color: $darkgray;
 }
 .text-reading-gray {
   color: #566b78;

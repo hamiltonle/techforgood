@@ -126,7 +126,6 @@ class QuizzesController < ApplicationController
     @quiz.correct_answer5 = correct_answer(@question5)
 
 
-
     # removes other questions which the user has already answered in the past
     # already removed questions 1 & 3 above
     total_question_array.delete(question1)

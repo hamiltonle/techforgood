@@ -1,9 +1,11 @@
 //= require jquery
 //= require jquery_ujs
 
+
 //= require bootstrap-sprockets
 //= require jquery.easing
 //= require jquery-fileupload/basic
+//= require bootstrap-wysihtml5
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require_tree .
@@ -13,6 +15,14 @@ to interfere with the JS for our user facing pages, if you need to add a new jav
 please make a specific require like above */
 
 
+
+
+// wysihtml5 editor for assignment lessons
+$(document).ready(function(){
+  $('.wysihtml5').each(function(i, elem) {
+    $(elem).wysihtml5();
+  });
+})
 
 
 // for tabs in user dashboard

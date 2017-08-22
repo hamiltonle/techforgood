@@ -1,2 +1,7 @@
-<h1>Assignments#edit</h1>
-<p>Find me in app/views/assignments/edit.html.erb</p>
+
+<div class="top-margin padded-allsides padded">
+  <%= simple_form_for [@course, @lesson, @assignment] do |f| %>
+    <%= f.input :user_answer, label: false %>
+    <%= f.button :submit, 'Re-submit Assignment', class: 'btn btn-primary' %>
+  <% end %>
+</div>

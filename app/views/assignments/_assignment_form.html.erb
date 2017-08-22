@@ -1,4 +1,4 @@
 <%= simple_form_for [@course, @lesson, @assignment] do |assignment| %>
-  <%= assignment.input :attempt, as: :html_editor %>
+  <%= assignment.input :user_answer, label: false %>
   <%= assignment.button :submit, class: 'btn btn-primary' %>
 <% end %>

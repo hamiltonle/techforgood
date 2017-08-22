@@ -12,13 +12,67 @@ class AssignmentsController < ApplicationController
   end
 
   def create
+    # creating a new assignment with the parameters from the simpleform from lesson show
     @assignment = Assignment.new(assignment_params)
+
+
+    # find the course & lesson the assignment is related to (used in redirect below)
+    @course = Course.find(params[:course_id])
+    @lesson = Lesson.find(params[:lesson_id])
+
+    # if submitting a 2nd assignment, use current session to assign the previously made session_id
+    @current_session = current_user.sessions.where(:lesson_id => @lesson.id)
+
+    if @current_session.exists?
+      @session = @current_session.last
+    else
+      # beginning an assignment also creates a session
+      @session = @lesson.sessions.new
+      @session.user = current_user
+      @session.lesson = @lesson
+      @session.status = "completed"
+
+      # This finds the enrollment for the current session
+      @enrollment = current_user.enrollments.where(:course_id => @course.id).first
+      @session.enrollment = @enrollment
+
+      # saves session
+      @session.save
+    end
+
+    # assigning the lesson & session to the assignment
+    @assignment.lesson = @lesson
+    @assignment.session = @session
+
+    # assigning number of attempts, according to assignments with same session id
+    @assignment.attempt = Assignment.where(:session_id => @assignment.session_id).count + 1
+
     @assignment.save
+
+    redirect_to course_lesson_path(@course.id, @lesson.id)
   end
 
 
   def edit
+    @course = Course.find(params[:course_id])
+    @lesson = Lesson.find(params[:lesson_id])
+    @assignment = Assignment.find(params[:id])
   end
+
+  def update
+    @course = Course.find(params[:course_id])
+    @lesson = Lesson.find(params[:lesson_id])
+    @assignment = Assignment.find(params[:id])
+
+    # updates assignment attributes with user answers
+    @assignment.update(assignment_params)
+
+    @assignment.save
+
+    # redirects back to lesson show with updated answer
+    redirect_to course_lesson_path(@course.id, @lesson.id)
+  end
+
 
   private
 
