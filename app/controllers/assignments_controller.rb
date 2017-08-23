@@ -140,6 +140,6 @@ class AssignmentsController < ApplicationController
 
   # Ensures that only the appropriate values are used to create a lesson
   def assignment_params
-    params.require(:assignment).permit(:course_id, :session_id, :lesson_id, :attempt, :user_answer, :mentor_feedback, :score)
+    params.require(:assignment).permit(:course_id, :session_id, :lesson_id, :attempt, :user_answer, :mentor_feedback, :score, photos: [])
   end
 end

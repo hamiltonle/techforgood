@@ -55,15 +55,16 @@
 
 
 
+        <!-- To edit the user's answer -->
+        <div class="">
+          <%= simple_form_for [@course, @lesson, @assignment] do |f| %>
+            <%= f.input :user_answer, label: false, as: :trix_editor %>
+            <%= f.input :photos, label: false, as: :attachinary %>
+            <%= f.button :submit, 'Re-submit Assignment', class: 'btn btn-primary' %>
+          <% end %>
+        </div>
 
-        <%= simple_form_for [@course, @lesson, @assignment] do |f| %>
-          <%= f.input :user_answer, label: false, input_html: { value: @assignment.user_answer} %>
-          <%= f.button :submit, 'Re-submit Assignment', class: 'btn btn-primary' %>
-        <% end %>
-
-
-
-
+        <!-- delete below except else? -->
         <% if @assignment_attempts.nil? %>
           <div class="text-right">
             <%= simple_form_for [@course, @lesson, @assignment] do |f| %>
@@ -103,7 +104,7 @@
           </div>
 
           <div class="dashed-border padded-allsides">
-            <%= @first_assignment.user_answer %>
+            <%= raw(@first_assignment.user_answer) %>
           </div>
 
           <div class="padded-top-2em padded-bottom-1em">
@@ -112,7 +113,7 @@
           </div>
 
           <div class="dashed-border padded-allsides">
-            <%= @first_assignment.mentor_feedback %>
+            <%= raw(@first_assignment.mentor_feedback) %>
           </div>
         </div>
 
@@ -124,7 +125,7 @@
           </div>
 
           <div class="dashed-border padded-allsides">
-            <%= @second_assignment.user_answer %>
+            <%= raw(@second_assignment.user_answer) %>
           </div>
 
           <div class="padded-top-2em padded-bottom-1em">
@@ -133,7 +134,7 @@
           </div>
 
           <div class="dashed-border padded-allsides">
-            <%= @second_assignment.mentor_feedback %>
+            <%= raw(@second_assignment.mentor_feedback) %>
           </div>
         </div>
       <% end %>

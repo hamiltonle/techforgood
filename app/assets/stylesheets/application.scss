@@ -8,13 +8,10 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "vendor/index";
-@import "bootstrap-wysihtml5/bootstrap3-wysihtml5";
+@import "trix";
 
 // Your CSS
 @import "layout/index";
 @import "components/index";
 @import "pages/index";
 @import "pages/dashboard";
-
-//= require active_admin/editor/wysiwyg
-

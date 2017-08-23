@@ -139,8 +139,18 @@
           </div>
 
           <div class="dashed-border padded-allsides">
-            <%= @first_assignment.user_answer %>
+            <%= raw(@first_assignment.user_answer) %>
           </div>
+
+
+          <% if @first_assignment.photos? %>
+            <div class="padded-allsides">
+              <% @first_assignment.photos.each do |photo| %>
+                <%= cl_image_tag photo.path, width: 300, crop: :fill %>
+              <% end %>
+            </div>
+          <% end %>
+
 
           <div class="padded-top-2em padded-bottom-1em">
             <span class=""><strong>导师点评</strong></span>
@@ -148,8 +158,10 @@
           </div>
 
           <div class="dashed-border padded-allsides">
-            <%= @first_assignment.mentor_feedback %>
+            <%= raw(@first_assignment.mentor_feedback) %>
           </div>
+
+
         </div>
 
         <div class="border-left-blue padding-left-20 margin-top-2em">
@@ -160,8 +172,18 @@
           </div>
 
           <div class="dashed-border padded-allsides">
-            <%= @second_assignment.user_answer %>
+            <%= raw(@second_assignment.user_answer) %>
           </div>
+
+
+          <% if @second_assignment.photos? %>
+            <div class="padded-allsides">
+              <% @second_assignment.photos.each do |photo| %>
+                <%= cl_image_tag photo.path, width: 300, crop: :fill %>
+              <% end %>
+            </div>
+          <% end %>
+
 
           <div class="padded-top-2em padded-bottom-1em">
             <span class=""><strong>导师点评</strong></span>
@@ -169,8 +191,9 @@
           </div>
 
           <div class="dashed-border padded-allsides">
-            <%= @second_assignment.mentor_feedback %>
+            <%= raw(@second_assignment.mentor_feedback) %>
           </div>
+
         </div>
 
 
