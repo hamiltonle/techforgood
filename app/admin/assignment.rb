@@ -1,20 +1,18 @@
 ActiveAdmin.register Assignment do
-  permit_params :course_id, :session_id, :lesson_id, :attempt, :user_answer, :mentor_feedback, :score
+  permit_params :session_id, :lesson_id, :attempt, :user_answer, :mentor_feedback, :score
 
-  # form do |f|
-  #   f.inputs "Question" do
-  #     f.input :lesson_id, :as => :select, :collection => Lesson.all
+  form do |f|
+    f.inputs "Assignment" do
+      f.input :lesson_id, :as => :select, :collection => Lesson.all
+      f.input :session_id, :as => :select, :collection => Session.all
 
-  #     f.input :knowledge_point, :as => :select, :collection => ["theory","definitions","reading"]
-  #     f.input :question, as: :html_editor
-  #     f.input :option_a
-  #     f.input :option_b
-  #     f.input :option_c
-  #     f.input :option_d
-  #     f.input :answer, :label => 'Correct Answer?...a, b, c, d?', :as => :select, :collection => ["a","b","c","d"]
-  #   end
-  #   f.actions
-  # end
+      f.input :attempt, :as => :select, :collection => [1,2]
+      f.input :user_answer
+      f.input :mentor_feedback, as: :html_editor
+      f.input :score, :as => :select, :collection => [1,2,3,4,5]
+    end
+    f.actions
+  end
 
 end
 

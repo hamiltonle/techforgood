@@ -1,9 +1,9 @@
 <!-- Navbar -->
-<div class="navbar-fixed-top bottom-border">
+<div class="navbar-fixed-top bottom-shadow">
     <div id="navbar" class="navbar-techforgood">
       <!-- Logo -->
       <%= link_to root_path do %>
-        <h2>Learn For Good</h2>
+        <h2>TechForGood</h2>
         <%#= image_tag("TechForGood-sm.svg", class: "navbar-techforgood-left", width: "150px") %>
       <% end %>
 
@@ -30,11 +30,16 @@
           <!-- Profile picture and dropdown -->
           <div class="navbar-techforgood-item">
             <div class="dropdown">
-              <% if current_user.photo? %>
-                <%= cl_image_tag current_user.photo.path, height: 50, width: 50, class: "img-circle", crop: :thumb, gravity: :face, "data-toggle" => "dropdown" %>
-              <% else %>
-                <%= image_tag "avatar_placeholder.png", class: "avatar-large dropdown-toggle", id: "navbar-techforgood-menu", "data-toggle" => "dropdown" %>
-              <% end %>
+
+
+                  <% if current_user.photo? %>
+                    <%= cl_image_tag current_user.photo.path, height: 50, width: 50, class: "img-circle", crop: :thumb, gravity: :face, "data-toggle" => "dropdown" %>
+                  <% else %>
+                    <%= image_tag "avatar_placeholder.png", class: "avatar-large dropdown-toggle", id: "navbar-techforgood-menu", "data-toggle" => "dropdown" %>
+                  <% end %>
+
+                  <span data-toggle="dropdown"><%= current_user.first_name %><i class="fa fa-caret-down fa-fw text-blue7"></i></span>
+
               <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
                 <li>
                   <%= link_to dashboard_users_path do %>
