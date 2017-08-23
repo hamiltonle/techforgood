@@ -202,10 +202,12 @@ ActiveRecord::Schema.define(version: 20170821213408) do
   add_foreign_key "enrollments", "courses"
   add_foreign_key "enrollments", "users"
   add_foreign_key "lessons", "courses"
+
   add_foreign_key "questions", "lessons"
   add_foreign_key "questions", "sessions"
   add_foreign_key "quizzes", "lessons"
   add_foreign_key "quizzes", "sessions"
+
   add_foreign_key "sessions", "enrollments"
   add_foreign_key "sessions", "lessons"
   add_foreign_key "sessions", "users"

@@ -1,5 +1,35 @@
-.dashboard-user-details {
-  color: white;
+// Coloured Text
+.green-text {
+  color: $green;
+}
+
+.blue-text {
+  color: $blue;
+}
+
+.red-text {
+  color: $red;
+}
+
+// Dashboard Banner
+.dashboard-banner {
+}
+
+#dashboard-photo {
+}
+
+#dashboard-profile {
+}
+
+#dashboard-user-ranking {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  background-color: white;
+  line-height: 65px;
+}
+
+#dashboard-user-ranking li {
+  display: inline;
 }
 
 .edit-profile-button {
@@ -7,25 +37,103 @@
   margin-bottom: 40px;
 }
 
-.heading {
+// Sidebar
+#dashboard-sidebar {
+  float: left;
+  width: 120px;
+  line-height: 50px;
+}
+
+#dashboard-sidebar:hover a {
+  text-decoration: none;
+}
+
+#dashboard-sidebar ul {
+  list-style-type: none;
+  color: #6e6e6e;
+}
+
+#dashboard-sidebar a {
+  color: #6e6e6e;
+}
+
+#dashboard-sidebar a:hover {
+  font-weight: bold;
+}
+
+li.active a {
+  border-left: 2px solid $blue;
+  padding: 5px;
+}
+
+.main {
+  margin-left: 200px;
+  background-color: white;
+  padding: 50px 50px 1px 50px;
   margin-bottom: 50px;
+}
+
+.badge {
+  background-color: $red;
+}
+
+// Course Cards
+.dashboard-course-container {
+  background-color: #F3F7FA;
+  padding-top: 50px;
+}
+
+.dashboard-course-card {
+  height: 250px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #F3F7FA;
+  display: flex;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.card-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 60%;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.card-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 40%;
+  margin-top: 30px;
+}
+
+.dashboard-incomplete-status span {
+  color: white;
+  background-color: $green;
+  padding: 10px;
+  border: none;
+  border-radius: 3px 0 0 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.dashboard-complete-status span {
+  color: white;
+  background-color: $green;
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 0;
+  position: absolute;
+  top: 0px;
+  z-index: 1;
 }
 
 .course-information {
   border: 3px solid rgba(0, 0, 0, 0.3);
   border-radius: 3px;
-}
-
-.dashboard-course-card {
-  height: 250px;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px lightgray;
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.card-content {
-  padding: 25px 20px;
 }
 
 .dashboard-course-description h2 {
@@ -57,247 +165,69 @@
   border-radius: 50%;
 }
 
-// Progress Circle
-.circliful {
-    margin:auto;
-    position: relative;
-}
-
-.circle-text, .circle-info, .circle-text-half, .circle-info-half {
-    width: 100%;
-    position: absolute;
-    text-align: center;
-    display: inline-block;
-}
-
-.circle-info, .circle-info-half {
-  color: #999;
-}
-
-.circliful .fa {
-  margin: -10px 3px 0 3px;
-  position: relative;
-  bottom: 4px;
-}
-
-
-.nav > li > a:hover, .nav > li > a:active {
-  text-decoration: none;
-  background-color: rgba(0,0,0,0);
-}
-
-.nav > li > a:focus {
-  text-decoration: none;
-  background-color: rgba(0,0,0,0) !important;
-}
-
-li.active a, li.active a:hover {
-  color: $blue7;
-  background-color: white;
-}
-
-.tabs {
-  display: flex;
-  padding: 10px 10px 0 10px;
-  top: -91px;
-  position: relative;
-}
-.tabs a {
-  color: white;
-}
-.tabs a:hover {
-  cursor: pointer;
-  text-decoration: none;
-  opacity: 0.8;
-}
-.tabs h3 {
-  font-size: 17px;
-  font-weight: bold;
-  margin-top: 0;
-}
-.tabs p {
-  opacity: 0.5;
-  margin-bottom: 0;
-}
-.tab {
-  background: $blue7;
-  flex: 0 0 25%;
-  text-align: center;
-  padding: 20px 0;
-}
-.tab:first-child {
-  border-radius: 10px 0 0 0;
-}
-.tab:last-child {
-  border-radius: 0 10px 0 0;
-}
-.tab.active {
-  background: white;
-  color: $blue7;
-
-}
-
-
-// Classmate Cards
-$color1: $blue7;
-$color2: $blue6;
-$color3: $blue7;
-$color4: $blue4;
-$color5: $blue5;
-$color6: $blue6;
-
-@function longshadow($color_a,$color_b,$stepnum, $opacity: 1){
-  $gradient_steps: null;
-  @for $i from 1 through $stepnum {
-    $weight: ( ( $i - 1 ) / $stepnum ) * 100;
-    $colour_mix: mix($color_b, rgba($color_a, $opacity), $weight);
-    $seperator: null;
-    @if($i != $stepnum){
-      $seperator: #{','};
-    }
-    $gradient_steps: append( #{$gradient_steps}, #{$i}px #{$i}px $colour_mix $seperator );
- }
-  @return $gradient_steps;
-}
-
-@mixin easeOut {
-  transition: all .6s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.classmates-img-round {
-  width: 100px;
-  border-radius: 50%;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 15px;
-  text-align: center;
-  overflow-x: hidden;
-  padding-left: 38px;
-}
-
-.card__front {
-background: $color2;
-}
-.card__num {
-text-shadow: longshadow(darken($color2, 15%),$color2,100, 0.8);
-}
-
-.card {
+.progress {
+  height: 5px;
+  width: 80%;
+  margin-bottom: 0px;
+  background-color: rgba(73, 181, 95, 0.3);
   float: left;
-  // position: relative;
-  // width: calc(100% * .3333 - 30px + .3333 * 30px);
-  width: 220px;
-  height: 280px;
-  margin: 0px 25px 25px 0;
-  perspective: 1000;
-  line-height: 1.8;
-  text-shadow: none;
-
-
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  &__flipper {
-    cursor: pointer;
-    transform-style: preserve-3d;
-    @include easeOut;
-  }
-
-  &__front,
-  &__back {
-    position: absolute;
-    backface-visibility: hidden;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 280px;
-    padding-top: 20px;
-  }
-
-  &__front {
-    transform: rotateY(0);
-    z-index: 2;
-    overflow: hidden;
-    text-shadow: none;
-  }
-
-  &__back {
-    transform: rotateY(180deg) scale(1.1);
-    background: lighten($blue7, 8);
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(black, 0.3);
-
-    // span {
-    //   position: absolute;
-    //   top: 50%;
-    //   left: 50%;
-    //   transform: translate(-50%, -50%);
-    // }
-  }
-
-  &__name {
-    font-size: 18px;
-    line-height: 0.9;
-    font-weight: 700;
-    padding-right: 0px;
-    margin-top: 20px;
-
-    span {
-      font-size: 18px;
-    }
-  }
-
-  &__num {
-    font-size: 100px;
-    margin: 0 8px 0 0;
-    font-weight: 700;
-
-    @media (max-width: 700px) {
-      font-size: 70px;
-    }
-  }
-
-  @media (max-width: 700px) {
-    width: 100%;
-    height: 290px;
-    margin-right: 0;
-    float: none;
-
-    .card__front,
-    .card__back {
-      height: 290px;
-    }
-  }
+  margin-top: 8px;
+  margin-right: 10px;
 }
 
-.fa-twitter {
-  color: white;
-  font-size: 30px;
+.fa-question-circle-o {
+  margin-right: 20px;
+  color: #6e6e6e;
 }
 
-.user-email {
-  font-size: 14px;
+.progress-section {
+  height: 5px;
 }
 
-.gif-circle {
-  width: 200px;
-  border-radius: 50%;
+// Notification Cards
+.dashboard-notification-card {
+  height: 250px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
+  display: flex;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.dashboard-notification-card:hover {
+  height: 250px;
+  border-radius: 3px;
+  border: 2px solid rgb(74, 144, 226);
+  background-color: white;
+  display: flex;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.dashboard-notification-card:hover h1 {
+  color: rgb(74, 144, 226);
+  font-weight: normal;
+}
+
+.left-notification-card {
+  align-self: center;
+  margin-left: 20px;
+}
+
+.notification-image {
+  float: left;
+  margin-right: 10px;
+}
+
+.right-notification-card {
+  margin-top: 20px;
+}
+
+.notification-arrow {
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
 }
 
 // Profile
