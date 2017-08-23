@@ -1,0 +1,169 @@
+<div class="">
+
+  <!-- Lessons Sidebar -->
+  <div id="mySidenav" class="sidenav top-margin">
+    <%= render :partial => 'lessons/sidebar' %>
+  </div>
+
+  <div id="main" class="">
+    <!-- This is the button to open the sidenav -->
+    <!-- the button to close is on the _sidebar.html.erb file -->
+    <span class="fixed-sidemenu top-margin" onclick="openNav()">&#9776
+      <div class="text-right div-relative flexbox"></div>
+    </span>
+
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <!-- Lesson Content -->
+    <div id="lesson-content">
+
+      <!-- Lesson Title and Score -->
+      <div class="flexbox">
+        <div class="text-left flex-item-lesson-show-title">
+          <p class=""><%= @lesson.title %></p>
+        </div>
+
+        <div class="text-right flex-item-grow bottom-border">
+          <p class="">本节得分：5/5</p>
+        </div>
+      </div>
+
+
+      <!-- Assignment Section-->
+      <% if @lesson.lesson_type == "assignment" %>
+        <div class="div-lightblue padded-allsides margin-y-1em">
+          <p>提交之后导师会在 3 个工作日内，给出评</p>
+          <p>There are 5 quiz in total, there are 3 chances to take the quizz, we will take the highest score among them</p>
+          <p>this is the <span class="text-green"><%= @assignment_attempts %></span> time you're taking the quizz, the current high score is: <span class="text-blue">
+          <%= @assignment_highscore %></span></p>
+        </div>
+
+        <div class="">
+          <%= raw(@lesson.text) %>
+        </div>
+
+        <!-- Show submitted assignments -->
+
+        <div class="flexbox padded-bottom-3em margin-top-5em">
+          <div class="text-left flex-item-lesson-show-title">
+            <p class="">项目提交</p>
+          </div>
+
+          <div class="text-right flex-item-grow bottom-border">
+            <p class="">&#8203;</p>
+          </div>
+        </div>
+
+
+
+        <!-- To edit the user's answer -->
+        <div class="">
+          <%= simple_form_for [@course, @lesson, @assignment] do |f| %>
+            <%= f.input :user_answer, label: false, as: :trix_editor %>
+            <%= f.input :photos, label: false, as: :attachinary %>
+            <%= f.button :submit, 'Re-submit Assignment', class: 'btn btn-primary' %>
+          <% end %>
+        </div>
+
+        <!-- delete below except else? -->
+        <% if @assignment_attempts.nil? %>
+          <div class="text-right">
+            <%= simple_form_for [@course, @lesson, @assignment] do |f| %>
+              <%= f.input :user_answer, label: false %>
+              <%= f.button :submit, 'Submit 1st Assignment', class: 'btn btn-primary' %>
+            <% end %>
+          </div>
+        <% elsif @assignment_attempts == 1 %>
+          <div class="text-right">
+            <%= simple_form_for [@course, @lesson, @assignment] do |f| %>
+              <%= f.input :user_answer, label: false %>
+              <%= f.button :submit, 'Submit 2nd Assignment', class: 'btn btn-primary' %>
+            <% end %>
+          </div>
+        <% else %>
+          <p></p>
+        <% end %>
+
+
+
+        <!-- Show submitted assignments -->
+        <div class="flexbox padded-bottom-3em margin-top-5em">
+          <div class="text-left flex-item-lesson-show-title">
+            <p class="">提交记录 &amp; 导师点评</p>
+          </div>
+
+          <div class="text-right flex-item-grow bottom-border">
+            <p class="">&#8203;</p>
+          </div>
+        </div>
+
+        <div class="border-left-blue padding-left-20">
+          <div class="padded-bottom-1em">
+            <span class=""><strong>首次提交</strong></span>
+            <span class="text-slightlightgray padding-left-20"><%= @first_assignment.created_at %></span>
+            <span class="padding-left-20"><%= link_to "Edit Assignment", edit_course_lesson_assignment_path(@course.id, @lesson.id, @first_assignment.id), class: "btn btn-primary text-center" %></span>
+          </div>
+
+          <div class="dashed-border padded-allsides">
+            <%= raw(@first_assignment.user_answer) %>
+          </div>
+
+          <div class="padded-top-2em padded-bottom-1em">
+            <span class=""><strong>导师点评</strong></span>
+            <span class="text-slightlightgray padding-left-20"><%= @first_assignment.updated_at %></span>
+          </div>
+
+          <div class="dashed-border padded-allsides">
+            <%= raw(@first_assignment.mentor_feedback) %>
+          </div>
+        </div>
+
+        <div class="border-left-blue padding-left-20 margin-top-2em">
+          <div class="padded-bottom-1em">
+            <span class=""><strong>首次提交</strong></span>
+            <span class="text-slightlightgray padding-left-20"><%= @second_assignment.created_at %></span>
+            <span class="padding-left-20"><%= link_to "Edit Assignment", edit_course_lesson_assignment_path(@course.id, @lesson.id, @second_assignment.id), class: "btn btn-primary text-center" %></span>
+          </div>
+
+          <div class="dashed-border padded-allsides">
+            <%= raw(@second_assignment.user_answer) %>
+          </div>
+
+          <div class="padded-top-2em padded-bottom-1em">
+            <span class=""><strong>导师点评</strong></span>
+            <span class="text-slightlightgray padding-left-20"><%= @second_assignment.updated_at %></span>
+          </div>
+
+          <div class="dashed-border padded-allsides">
+            <%= raw(@second_assignment.mentor_feedback) %>
+          </div>
+        </div>
+      <% end %>
+
+
+
+
+
+
+      <!-- Info -->
+      <p>course: <%= @course.id %></p>
+      <p>lesson: <%= @lesson.id %> </p>
+      <p>session:
+      <% unless @current_session.nil? %>
+        <%= @current_session.id %>
+      <% end %>
+      </p>
+      <p>assignment: <%= @assignment %> </p>
+      <p>Assignment attempts: <%= @assignment_attempts %></p>
+      <p>Quiz attempts: <%= @quiz_attempts %></p>
+      <br>
+      <br>
+
+      <!-- <h4 class="text-center"><#%= @lesson.description %></h4> -->
+      <!-- <div class="text-center">
+        <#% if @lesson.video? %>
+          <#%= @lesson.video.html_safe %>
+        <#% end %>
+      </div> -->
+    </div>
+  </div>
+</div>

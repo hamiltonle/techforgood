@@ -51,20 +51,50 @@ class LessonsController < ApplicationController
     @course = Course.find(params[:course_id])
     @lesson = Lesson.find(params[:id])
     @session = Session.new
-    @quiz = Quiz.new
     @current_session = current_user.sessions.where(:lesson_id => @lesson.id).last
-    @highscore = 0
 
-    # finds latest quiz for this session, if the student has taken one before
-    unless @current_session.nil?
-      @attempts = @lesson.quizzes.where(:session_id => @current_session.id).last.attempt
 
-      # Finds quiz with highest score
-      past_quiz_scores = []
-      @lesson.quizzes.where(:session_id => @current_session.id).each do |quiz|
-        past_quiz_scores << quiz.score
+    # Assignment Lesson
+    if @lesson.lesson_type == "assignment"
+      @assignment = Assignment.new
+      @assignment_highscore = 0
+
+      unless @current_session.nil?
+
+        # finds latest assignment for this session, if the student has submitted one before
+        # uses the # of attempts to display a 2nd chance or not
+        @assignment_attempts = @lesson.assignments.where(:session_id => @current_session.id).last.attempt
+
+        # Finds quiz with highest score
+        past_assignment_scores = []
+        @lesson.assignments.where(:session_id => @current_session.id).each do |assignment|
+          past_assignment_scores << assignment.score
+        end
+        @assignment_highscore = past_assignment_scores.compact.sort.last
+
+        # For displaying submitted assignments
+        @first_assignment = @lesson.assignments.where(:session_id => @current_session.id).first
+        @second_assignment = @lesson.assignments.where(:session_id => @current_session.id).last
       end
-      @highscore = past_quiz_scores.compact.sort.last
+    end
+
+    # Quiz Lesson
+    if @lesson.lesson_type == "quiz"
+      @quiz = Quiz.new
+      @quiz_highscore = 0
+
+      unless @current_session.nil?
+
+        # finds latest quiz for this session, if the student has taken one before
+        @quiz_attempts = @lesson.quizzes.where(:session_id => @current_session.id).last.attempt
+
+        # Finds quiz with highest score
+        past_quiz_scores = []
+        @lesson.quizzes.where(:session_id => @current_session.id).each do |quiz|
+          past_quiz_scores << quiz.score
+        end
+        @quiz_highscore = past_quiz_scores.compact.sort.last
+      end
     end
 
     # passes these instances to the sidebar
@@ -95,7 +125,42 @@ class LessonsController < ApplicationController
 
   # 1st step of updating a lesson: displays form for updating a new lesson
   def edit
+    @course = Course.find(params[:course_id])
     @lesson = Lesson.find(params[:id])
+    @session = Session.new
+    @current_session = current_user.sessions.where(:lesson_id => @lesson.id).last
+
+
+    # Assignment Lesson
+    if @lesson.lesson_type == "assignment"
+      @assignment = Assignment.new
+      @assignment_highscore = 0
+
+      unless @current_session.nil?
+
+        # finds latest assignment for this session, if the student has submitted one before
+        # uses the # of attempts to display a 2nd chance or not
+        @assignment_attempts = @lesson.assignments.where(:session_id => @current_session.id).last.attempt
+
+        # Finds quiz with highest score
+        past_assignment_scores = []
+        @lesson.assignments.where(:session_id => @current_session.id).each do |assignment|
+          past_assignment_scores << assignment.score
+        end
+        @assignment_highscore = past_assignment_scores.compact.sort.last
+
+        # For displaying submitted assignments
+        @first_assignment = @lesson.assignments.where(:session_id => @current_session.id).first
+        @second_assignment = @lesson.assignments.where(:session_id => @current_session.id).last
+      end
+    end
+
+    # passes these instances to the sidebar
+    @why_lessons = @course.lessons.where(:module_name => "why")
+    @how_lessons = @course.lessons.where(:module_name => "how")
+    @what_lessons = @course.lessons.where(:module_name => "what")
+
+    @skip_footer = true
   end
 
   # 2nd step of updating a lesson: grabs form values and updates lesson

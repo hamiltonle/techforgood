@@ -1,5 +1,5 @@
 ActiveAdmin.register Question do
-  permit_params :lesson_id, :knowledge_point, :question, :option_a, :option_b, :option_c, :option_d, :answer, :_wysihtml5_mode
+  permit_params :lesson_id, :knowledge_point, :question, :option_a, :option_b, :option_c, :option_d, :answer
 
   form do |f|
     f.inputs "Question" do
