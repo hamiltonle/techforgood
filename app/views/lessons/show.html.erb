@@ -209,24 +209,7 @@
         <!-- Lesson Complete Button -->
         <div class="section-margin hidden-xs">
         <% unless @current_session.nil? %>
-          <% if @current_session.id.nil? %>
-
-            <div class="row">
-              <div class="col-xs-6">
-                <%= simple_form_for [@course, @lesson, @session] do |f| %>
-                  <%= f.button :submit, 'Just Finished the Lesson', class: 'btn btn-success text-center' %>
-                <% end %>
-              </div>
-
-              <!-- removes 'next lesson' button if lesson is last lesson of course -->
-              <% unless @course.lessons.last.id == @lesson.id %>
-                <div class="col-xs-6 text-right">
-                <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
-                </div>
-              <% end %>
-            </div>
-
-          <% else %>
+          <%# if @current_session.id.nil? %>
 
             <div class="row">
               <div class="col-xs-6">
@@ -242,7 +225,25 @@
                 </div>
               <% end %>
             </div>
-          <% end %>
+          <%# end %>
+
+        <% else %>
+          <div class="row">
+              <div class="col-xs-6">
+                <%= simple_form_for [@course, @lesson, @session] do |f| %>
+                  <%= f.button :submit, 'Just Finished the Lesson', class: 'btn btn-success text-center' %>
+                <% end %>
+              </div>
+
+              <!-- removes 'next lesson' button if lesson is last lesson of course -->
+              <% unless @course.lessons.last.id == @lesson.id %>
+                <div class="col-xs-6 text-right">
+                <%= link_to "Next Lesson: #{Lesson.find(@lesson.id + 1).title}", course_lesson_path(@course.id, @lesson.id + 1), class: "btn btn-primary text-center" %>
+                </div>
+              <% end %>
+            </div>
+
+
         <% end %>
         </div>
 

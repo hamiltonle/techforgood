@@ -11,6 +11,10 @@
   border-bottom: 1px solid $slightlightgray;
 }
 
+.bottom-shadow {
+  box-shadow: 1px 1px 1px $slightlightgray;
+}
+
 .dashed-border {
   border: 2px dashed $slightlightgray;
 }
