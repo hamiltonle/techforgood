@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
       <div class="dashboard-user-details">
 
-        <div class="col-xs-6" id="dashboard-photo">
+        <div id="dashboard-photo">
           <% if @user.photo? %>
             <%= cl_image_tag @user.photo.path, class: "profile-img-round" %>
           <% else %>
@@ -12,7 +12,7 @@
           <% end %>
         </div>
 
-        <div class="col-xs-6" id="dashboard-profile">
+        <div id="dashboard-profile">
           <% if @new_user %>
             <h3>Update your profile</h3>
           <% else %>
@@ -24,10 +24,10 @@
       </div>
 
     <div class="row">
-      <div class="col-xs-12" id="dashboard-user-ranking">
+      <div class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-12" id="dashboard-user-ranking">
         <ul>
-          <li class="col-xs-12 col-sm-4">参与课程: <span class="green-text">2 </span>个</li>
-          <li class="col-xs-12 col-sm-4">最高课程得分: <span class="blue-text">176</span>/233 </li>
+          <li class="col-xs-12 col-sm-4">参与课程: <span class="green-text"><%= @completed_enrollments.count %> </span>个</li>
+          <li class="col-xs-12 col-sm-4">最高课程得分: <span class="blue-text">167</span>/233 </li>
           <li class="col-xs-12 col-sm-4">最高课程排名: <span class="red-text">4</span>/56 </li>
         </ul>
       </div>
