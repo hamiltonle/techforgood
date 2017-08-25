@@ -12,13 +12,19 @@
 }
 
 // Dashboard Banner
-.dashboard-banner {
+.dashboard-user-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 #dashboard-photo {
+  margin-right: 20px;
 }
 
 #dashboard-profile {
+  margin-left: 20px;
 }
 
 #dashboard-user-ranking {
@@ -35,6 +41,12 @@
 .edit-profile-button {
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+@media (max-width: 767px) {
+  #dashboard-user-ranking {
+    line-height: 30px;
+  }
 }
 
 // Sidebar
@@ -125,7 +137,7 @@ li.active a {
   background-color: $green;
   padding: 10px;
   border: none;
-  border-radius: 5px 0 0 0;
+  border-radius: 3px 0 0 0;
   position: absolute;
   top: 0px;
   z-index: 1;
@@ -184,6 +196,24 @@ li.active a {
   height: 5px;
 }
 
+@media (max-width: 767px) {
+  .dashboard-course-card {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 350px;
+  }
+
+  .card-right {
+    display: block;
+    margin-top: 0px;
+  }
+
+  .card-left {
+    display: block;
+  }
+}
+
 // Notification Cards
 .dashboard-notification-card {
   height: 250px;
@@ -232,7 +262,6 @@ li.active a {
 
 // Profile
 .profile-img-round {
-  width: 150px;
+  width: 100px;
   border-radius: 50%;
-  margin-bottom: 40px;
 }
