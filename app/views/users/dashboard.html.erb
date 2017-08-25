@@ -17,8 +17,8 @@
             <h3>Update your profile</h3>
             <%= link_to "Edit profile", edit_user_path(current_user), class: "btn btn-sm btn-primary" %>
           <% else %>
-            <h2 id="dashboard-username"><%= @user.first_name%></h2>
-            <h4 id="dashboard-group"><%= @user.group%></h4>
+            <h2 id="dashboard-username"><%= @user.first_name %></h2>
+            <h4 id="dashboard-group"><%= @user.group %></h4>
           <% end %>
         </div>
 
@@ -168,7 +168,7 @@
         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:<%= @percentage %>%">
           <span class="sr-only"><%= @percentage %>%</span>
         </div>
-          <%= @percentage %>%
+          <%= @percentage %>
       </div>
 
       <!-- Score Section -->
