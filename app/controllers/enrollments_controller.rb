@@ -21,6 +21,8 @@ class EnrollmentsController < ApplicationController
     @enrollment = @course.enrollments.new
     @enrollment.user = current_user
     @enrollment.course = @course
+    @enrollment.user_score = 0
+    @enrollment.max_course_score = max_course_score(@course)
 
 
     begin
@@ -28,6 +30,14 @@ class EnrollmentsController < ApplicationController
     rescue => error
       redirect_to course_lesson_path(@course.id, @course.lessons.first)
     end
+  end
+
+  def max_course_score(course)
+    max_score = 0
+    course.lessons.each do |lesson|
+      max_score += lesson.score
+    end
+    max_score
   end
 
   # deletes an enrollment if the student decides to cancel the class
