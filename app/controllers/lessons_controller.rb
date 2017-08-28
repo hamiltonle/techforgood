@@ -46,12 +46,57 @@ class LessonsController < ApplicationController
   end
 
 
+  def course_max_score(course)
+    max_score = 0
+    course.lessons.each do |lesson|
+      max_score += lesson.score
+    end
+    max_score
+  end
+
+  def course_user_current_score(enrollment, user)
+    # 1. add up points from lessons the user has finished
+    user_score = 0
+
+    user.sessions.where(:enrollment_id => enrollment.id).each do |session|
+      if session.lesson.lesson_type == "assignment"
+        all_assignment_scores = []
+
+        session.assignments.each do |assignment|
+          all_assignment_scores << assignment.score
+        end
+
+        user_score += all_assignment_scores.compact.sort.last
+      elsif session.lesson.lesson_type == "quiz"
+        all_quiz_scores = []
+
+        session.quizzes.each do |quiz|
+          all_quiz_scores << quiz.score
+        end
+
+        user_score += all_quiz_scores.compact.sort.last
+      else
+        user_score += session.lesson.score
+      end
+    end
+    user_score
+  end
+
+
+
   # Displays an individual lesson for a course
   def show
     @course = Course.find(params[:course_id])
+    @current_enrollment = current_user.enrollments.where(:course_id => @course.id).last
     @lesson = Lesson.find(params[:id])
     @session = Session.new
     @current_session = current_user.sessions.where(:lesson_id => @lesson.id).last
+
+    # total score for a course
+    @course_max_score = course_max_score(@course)
+
+    # current user's score
+    @course_user_current_score = course_user_current_score(@current_enrollment, current_user)
 
 
     # Assignment Lesson
