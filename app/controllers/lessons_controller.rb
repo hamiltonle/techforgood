@@ -45,18 +45,21 @@ class LessonsController < ApplicationController
     end
   end
 
-  def all_scores_array(course, enrollment)
+  def class_rank(course, enrollment)
     all_scores = []
+    higher_scores_than_user = []
 
     course.enrollments.where(:class_cohort => enrollment.class_cohort).each do |enrollment|
       all_scores << enrollment.user_score
     end
+
+    higher_scores_than_user = all_scores.compact.select { |a| a >= enrollment.user_score }.count
   end
 
-  def class_rank(all_scores, enrollment)
-    higher_scores_than_user = []
-    higher_scores_than_user = all_scores.select { |a| a > enrollment.user_score }.count
-  end
+  # def class_rank(all_scores, enrollment)
+  #   higher_scores_than_user = []
+  #   higher_scores_than_user = all_scores.select { |a| a >= enrollment.user_score }.count
+  # end
 
   def top_ten(all_scores, course, enrollment)
     top_ten = []
@@ -78,9 +81,8 @@ class LessonsController < ApplicationController
 
     # class rank and class size
     @course_class_size = @current_enrollment.class_size
-    @all_scores = all_scores_array(@course, @current_enrollment)
-    @users_class_rank = class_rank(@all_scores, @current_enrollment)
-    @top_ten = top_ten(@all_scores)
+    @users_class_rank = class_rank(@course, @current_enrollment)
+    # @top_ten = top_ten(@all_scores)
 
 
     # Assignment Lesson

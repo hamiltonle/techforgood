@@ -98,9 +98,9 @@ ActiveRecord::Schema.define(version: 20170828084448) do
     t.integer "max_course_score"
     t.integer "class_size"
     t.string "class_cohort"
-    t.string "why_module_due_date"
-    t.string "what_module_due_date"
-    t.string "how_module_due_date"
+    t.date "why_module_due_date"
+    t.date "what_module_due_date"
+    t.date "how_module_due_date"
     t.index ["course_id"], name: "index_enrollments_on_course_id"
     t.index ["user_id", "course_id"], name: "index_enrollments_on_user_id_and_course_id", unique: true
     t.index ["user_id"], name: "index_enrollments_on_user_id"
