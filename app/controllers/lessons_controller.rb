@@ -45,6 +45,30 @@ class LessonsController < ApplicationController
     end
   end
 
+  def all_scores_array(course, enrollment)
+    all_scores = []
+
+    course.enrollments.where(:class_cohort => enrollment.class_cohort).each do |enrollment|
+      all_scores << enrollment.user_score
+    end
+  end
+
+  def class_rank(all_scores)
+    higher_scores_than_user = []
+    higher_scores_than_user = all_scores.select { |a| a >= enrollment.user_score }.count
+  end
+
+  def top_ten(all_scores, course, enrollment)
+    top_ten = []
+
+    # CAN PROBABLY USE A SORT BY USER_SCORE METHOD
+  end
+
+
+    # c.enrollments.where(:class_cohort => 1).each do |enrollment|
+    #   all_e << enrollment
+    # end
+
   # Displays an individual lesson for a course
   def show
     @course = Course.find(params[:course_id])
@@ -53,12 +77,15 @@ class LessonsController < ApplicationController
     @session = Session.new
     @current_session = current_user.sessions.where(:lesson_id => @lesson.id).last
 
-    # total score for a course
+    # total score for a course & current user's score
     @course_max_score = @current_enrollment.max_course_score
-
-    # current user's score
     @course_user_current_score = @current_enrollment.user_score
+
+    # class rank and class size
     @course_class_size = @current_enrollment.class_size
+    @all_scores = all_scores_array(@course, @current_enrollment)
+    @users_class_rank = class_rank(@all_scores)
+    @top_ten = top_ten(@all_scores)
 
 
     # Assignment Lesson
