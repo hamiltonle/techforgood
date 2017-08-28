@@ -64,11 +64,6 @@ class LessonsController < ApplicationController
     # CAN PROBABLY USE A SORT BY USER_SCORE METHOD
   end
 
-
-    # c.enrollments.where(:class_cohort => 1).each do |enrollment|
-    #   all_e << enrollment
-    # end
-
   # Displays an individual lesson for a course
   def show
     @course = Course.find(params[:course_id])
@@ -138,40 +133,6 @@ class LessonsController < ApplicationController
 
     @skip_footer = true
   end
-
-  # moved to session controller
-  # def course_user_current_score(enrollment, user)
-  #   # NOTE: This should later be refactored so that it updates an attribute
-  #   #       for enrollments.  Enrollments should have attributes for 1)# of
-  #   #       total students, 2) max score for the course, and 3) user's current
-  #   #       score for the course
-
-  #   user_score = 0
-
-  #   user.sessions.where(:enrollment_id => enrollment.id).each do |session|
-  #     if session.lesson.lesson_type == "assignment"
-  #       all_assignment_scores = []
-
-  #       session.assignments.each do |assignment|
-  #         all_assignment_scores << assignment.score
-  #       end
-
-  #       user_score += all_assignment_scores.compact.sort.last
-  #     elsif session.lesson.lesson_type == "quiz"
-  #       all_quiz_scores = []
-
-  #       session.quizzes.each do |quiz|
-  #         all_quiz_scores << quiz.score
-  #       end
-
-  #       user_score += all_quiz_scores.compact.sort.last
-  #     else
-  #       user_score += session.lesson.score
-  #     end
-  #   end
-  #   user_score
-  # end
-
 
   # 1st step of creating a lesson: displays form for creating a new lesson
   def new

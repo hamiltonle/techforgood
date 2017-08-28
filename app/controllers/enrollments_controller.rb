@@ -53,17 +53,6 @@ class EnrollmentsController < ApplicationController
 
   end
 
-# all_student_ids = {}
-
-# all_student_scores = []
-
-# c.enrollments.each do |enrollment|
-#   enrollment.class_cohort = (1..2).to_a.sample
-#   enrollment.save
-# end
-
-# new_hash = { "key" => "cool" }
-
   private
 
   def enrollments_param

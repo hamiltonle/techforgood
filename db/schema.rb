@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170828035213) do
+ActiveRecord::Schema.define(version: 20170828052612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20170828035213) do
     t.string "issue"
     t.string "tech_solution"
     t.date "start_date"
+    t.string "module_duration"
     t.index ["organization_id"], name: "index_courses_on_organization_id"
   end
 
