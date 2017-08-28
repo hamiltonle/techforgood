@@ -34,7 +34,7 @@
 
 
       <div id="why" class="collapse <%= @lesson.nil? ? "in" : (@lesson.module_name == "why" ? "in" : "") %> ">
-        <% @why_lessons.reverse.each do |lesson| %>
+        <% @why_lessons.sort.each do |lesson| %>
 
             <div class="text-left position-relative <%= @lesson.nil? ? "lesson-tab" : (@lesson.id == lesson.id ? "div-blue" : "lesson-tab") %> div-relative flexbox">
               <%= link_to "", course_lesson_path(@course.id, lesson.id), class: "lesson-link" %>
@@ -70,7 +70,7 @@
 
       <div id="what" class="collapse <%= @lesson.nil? ? "in" : (@lesson.module_name == "what" ? "in" : "") %> ">
 
-        <% @what_lessons.reverse.each do |lesson| %>
+        <% @what_lessons.sort.each do |lesson| %>
 
            <div class="text-left position-relative <%= @lesson.nil? ? "lesson-tab" : (@lesson.id == lesson.id ? "div-blue" : "lesson-tab") %> div-relative flexbox">
               <%= link_to "", course_lesson_path(@course.id, lesson.id), class: "lesson-link" %>
@@ -105,7 +105,7 @@
       </div>
 
       <div id="how" class="collapse <%= @lesson.nil? ? "in" : (@lesson.module_name == "how" ? "in" : "") %> ">
-        <% @how_lessons.reverse.each do |lesson| %>
+        <% @how_lessons.sort.each do |lesson| %>
 
 
             <div class="text-left position-relative <%= @lesson.nil? ? "lesson-tab" : (@lesson.id == lesson.id ? "div-blue" : "lesson-tab") %> div-relative flexbox">
