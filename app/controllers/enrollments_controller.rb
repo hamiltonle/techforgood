@@ -24,7 +24,13 @@ class EnrollmentsController < ApplicationController
     @enrollment.user_score = 0
     @enrollment.max_course_score = max_course_score(@course)
 
-    # Need to set class size manually
+    # assigning due dates for modules
+    due_dates = @course.module_duration.split(",").map(&:to_i)
+    @enrollment.why_module_due_date = @course.start_date + (due_dates[0] * 604800)
+    @enrollment.what_module_due_date = @course.start_date + ((due_dates[0] + due_dates[1]) * 604800)
+    @enrollment.how_module_due_date = @course.start_date + ((due_dates[0] + due_dates[1] + due_dates[2]) * 604800)
+
+    # ...Need to set class size manually
     # @enrollment.class_size = Enrollment.where(:class_cohort => @course.id)
 
 

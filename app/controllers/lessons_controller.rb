@@ -53,9 +53,9 @@ class LessonsController < ApplicationController
     end
   end
 
-  def class_rank(all_scores)
+  def class_rank(all_scores, enrollment)
     higher_scores_than_user = []
-    higher_scores_than_user = all_scores.select { |a| a >= enrollment.user_score }.count
+    higher_scores_than_user = all_scores.select { |a| a > enrollment.user_score }.count
   end
 
   def top_ten(all_scores, course, enrollment)
@@ -79,7 +79,7 @@ class LessonsController < ApplicationController
     # class rank and class size
     @course_class_size = @current_enrollment.class_size
     @all_scores = all_scores_array(@course, @current_enrollment)
-    @users_class_rank = class_rank(@all_scores)
+    @users_class_rank = class_rank(@all_scores, @current_enrollment)
     @top_ten = top_ten(@all_scores)
 
 
