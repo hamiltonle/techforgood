@@ -58,6 +58,7 @@ class LessonsController < ApplicationController
 
     # current user's score
     @course_user_current_score = @current_enrollment.user_score
+    @course_class_size = @current_enrollment.class_size
 
 
     # Assignment Lesson

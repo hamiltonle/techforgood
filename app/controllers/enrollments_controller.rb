@@ -23,6 +23,7 @@ class EnrollmentsController < ApplicationController
     @enrollment.course = @course
     @enrollment.user_score = 0
     @enrollment.max_course_score = max_course_score(@course)
+    @enrollment.class_size = Enrollment.where(:course => @course.id)
 
 
     begin
@@ -49,6 +50,16 @@ class EnrollmentsController < ApplicationController
   def status
 
   end
+
+all_student_ids = {}
+
+all_student_scores = []
+
+c.enrollments.each do |enrollment|
+  all_student_ids[enrollment.user_id] = enrollment.user_score
+end
+
+new_hash = { "key" => "cool" }
 
   private
 
