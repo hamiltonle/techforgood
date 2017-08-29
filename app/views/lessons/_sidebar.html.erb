@@ -28,7 +28,8 @@
         <div class="flex-item-week">
         </div>
         <div class="flex-item-complete lesson-completed">
-          <h6>Finished</h6>
+          <!-- <h6>Finished</h6> -->
+          <h6> Due in <%= (@current_enrollment.why_module_due_date - Time.now.to_date).to_i %> days </h6>
         </div>
       </div>
 
@@ -63,7 +64,8 @@
 
         </div>
         <div class="flex-item-complete lesson-missed">
-          <h6>Missed</h6>
+          <!-- <h6>Missed</h6> -->
+          <h6> Due in <%= (@current_enrollment.what_module_due_date - Time.now.to_date).to_i %> days </h6>
         </div>
       </div>
 
@@ -100,7 +102,8 @@
           <h6></h6>
         </div>
         <div class="flex-item-complete lesson-ongoing">
-          <h6> (week 3-8)</h6>
+        <!--   <h6> (week 3-8)</h6> -->
+        <h6> Due in <%= (@current_enrollment.how_module_due_date - Time.now.to_date).to_i %> days </h6>
         </div>
       </div>
 
