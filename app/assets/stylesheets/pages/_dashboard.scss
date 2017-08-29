@@ -83,7 +83,7 @@ li.active a {
 }
 
 .main {
-  margin-left: 200px;
+  margin-left: 140px;
   background-color: white;
   padding: 50px 50px 1px 50px;
   margin-bottom: 50px;
@@ -226,34 +226,6 @@ li.active a {
   height: 5px;
 }
 
-@media (max-width: 605px) {
-  .dashboard-course-card {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    height: 320px;
-  }
-
-  .card-right {
-    display: block;
-    text-align: left;
-    margin-left: 40px;
-    width: 80%;
-  }
-
-  .card-left {
-    display: block;
-    margin-left: 40px;
-    margin-top: 55px;
-    width: 80%;
-  }
-
-  .continue-course-button {
-    margin-bottom: 30px;
-    margin-top: -10px;
-  }
-}
-
 // Notification Cards
 .dashboard-notification-card {
   height: 250px;
@@ -300,8 +272,21 @@ li.active a {
   margin-right: 20px;
 }
 
+@media (max-width: 767px) {
+  .notification-image {
+    display: none;
+  }
+}
+
 // Profile
 .profile-img-round {
   width: 100px;
   border-radius: 50%;
+}
+
+// Ranking
+@media (max-width: 767px) {
+  .col_3 {
+    display: none;
+  }
 }
