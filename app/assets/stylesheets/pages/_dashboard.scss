@@ -269,7 +269,13 @@ li.active a {
 .notification-arrow {
   float: right;
   margin-top: 20px;
-  margin-right: 20px;
+  margin-right: -40px;
+}
+
+@media (max-width: 900px) {
+  .notification-arrow {
+    margin-right: 20px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -285,6 +291,38 @@ li.active a {
 }
 
 // Ranking
+.ranking-dropdown {
+  margin-bottom: 30px;
+}
+
+.ranking-heading {
+  display: inline;
+}
+
+.ranking-btn {
+  font-size: 14px;
+  background-color: white;
+  border: 0px solid rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-toggle {
+  font-size: 14px;
+  background-color: white;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #F3F7FA;
+ }
+
+.table th {
+  text-align: center;
+}
+
+.table {
+  border: none;
+}
+
 @media (max-width: 767px) {
   .col_3 {
     display: none;

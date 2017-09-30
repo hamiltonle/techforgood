@@ -217,7 +217,7 @@
         </div>
 
         <div class="right-notification-card">
-          <div>
+          <div class="notification-date">
             <p>2017年8月22日 14:22</p>
           </div>
           <div class="notification-arrow">
@@ -232,9 +232,9 @@
 
       <!-- Dropdown -->
       <div class="ranking-dropdown">
-      <p>我参与的课程:</p>
+      <p class="ranking-heading">我参与的课程 : </p>
         <div class="btn-group">
-          <button type="button" class="btn btn-secondary">Courses</button>
+          <button type="button" class="btn btn-secondary ranking-btn">Courses</button>
           <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="caret"></span>
             <span class="sr-only">Toggle Dropdown</span>
@@ -249,7 +249,7 @@
       </div>
 
       <!-- Table -->
-      <div class="table-responsive">
+      <div class="table-responsive text-center">
         <table class="table table-striped">
           <thead>
             <tr>
@@ -261,10 +261,16 @@
           </thead>
           <tbody>
             <tr>
-              <td>John</td>
-              <td>Doe</td>
+              <% @courses.each do |course| %>
+                <% course.enrollments.each do |enrollment| %>
+              <td>1</td>
+              <td>
+                <%= enrollment.user.first_name %>
+              </td>
               <td class="col_3">john@example.com</td>
-              <td>123</td>
+              <td>98</td>
+                <% end %>
+              <% end %>
             </tr>
           </tbody>
         </table>
