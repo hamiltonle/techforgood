@@ -60,13 +60,13 @@
 // COURSE SHOW PAGE
 .course-banner {
   color: white;
-  text-align: center;
+  text-align: left;
   margin-top: 0px;
   height: 50vh;
   background-size: cover !important;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-position: center;
   background-repeat: no-repeat;
   h3 {
@@ -80,7 +80,8 @@
   // color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
   }
-  margin-bottom: 15px;
+  margin-bottom: 60px;
+  padding-left: 15vw;
 }
 
 

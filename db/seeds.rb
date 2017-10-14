@@ -136,7 +136,7 @@ student = User.new(
   bio: 'Thibault founded Le Wagon in Shanghai to support creative entrepreneurs build amazing products in China!'
   )
 puts "saved a student user"
-url = "https://res.cloudinary.com/wagon/image/upload/c_fill,h_100,w_100/v1475007353/yzza4gmf7ktqsnzsun2x.jpg"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311606/jom6k1ibvmk8nrk4olbp.jpg"
 student.photo_url = url
 student.save!
 
@@ -150,7 +150,7 @@ student = User.new(
   bio: 'At Le Wagon he will teach to our entrepreneurs the fundamentals of code'
   )
 puts "saved a student user"
-url = "https://res.cloudinary.com/wagon/image/upload/c_fill,h_100,w_100/v1475007397/jzao4su1v6kfzchg22t4.jpg"
+url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1499311606/jom6k1ibvmk8nrk4olbp.jpg"
 student.photo_url = url
 student.save!
 

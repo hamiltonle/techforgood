@@ -71,6 +71,7 @@ GEM
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
     active_admin_flat_skin (0.1.2)
+    active_reload (0.6.1)
     activejob (5.1.1)
       activesupport (= 5.1.1)
       globalid (>= 0.3.6)
@@ -306,6 +307,7 @@ PLATFORMS
 DEPENDENCIES
   active_admin_editor!
   active_admin_flat_skin
+  active_reload
   activeadmin!
   attachinary!
   autoprefixer-rails
@@ -344,4 +346,4 @@ RUBY VERSION
    ruby 2.3.3p222
 
 BUNDLED WITH
-   1.15.1
+   1.15.3

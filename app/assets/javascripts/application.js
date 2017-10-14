@@ -15,14 +15,32 @@ to interfere with the JS for our user facing pages, if you need to add a new jav
 please make a specific require like above */
 
 
+// Scroll events for sidebar
 
+$(document).ready(function() {
+
+    $(window).scroll(function() {
+        var courseBannerHeight = $('.course-banner').height()
+        if ($(window).scrollTop() > courseBannerHeight) {
+            $('#course_sidebar').addClass('course_sidebar_fixed').removeClass('course_sidebar')
+        }
+        if ($(window).scrollTop() < courseBannerHeight++) {
+            $('#course_sidebar').addClass('course_sidebar').removeClass('course_sidebar_fixed');
+        } // var scroll = $(window).scrollTop();
+    });
+
+    $(".sidebar-items").on('click', 'div', function() {
+        $(this).addClass('course_sidebar_tab_active').siblings().removeClass('course_sidebar_tab_active');
+    })
+
+});
 
 
 // for tabs in user dashboard
 
-$('#myTabs a').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
+$('#myTabs a').click(function(e) {
+    e.preventDefault()
+    $(this).tab('show')
 })
 
 $('#myTabs a[href="#profile"]').tab('show') // Select tab by name
@@ -37,7 +55,7 @@ $('#myTabs a[href="#profile"]').tab('show') // Select tab by name
 
 // for the alert
 window.setTimeout(function() {
-    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+    $(".alert").fadeTo(500, 0).slideUp(500, function() {
         $(this).remove();
     });
 }, 2000);
@@ -47,17 +65,17 @@ window.setTimeout(function() {
 
 /* show more function for the dropdown read more */
 $('.show-more').click(function() {
-  if($('.show-more-snippet').css('height') != '35px'){
-    $('.show-more-snippet').stop().animate({height: '35px'}, 200);
-    $(this).text('More...');
-  }else{
-    $('.show-more-snippet').css({height:'100%'});
-    var xx = $('.show-more-snippet').height();
-    $('.show-more-snippet').css({height:'35px'});
-    $('.show-more-snippet').stop().animate({height: xx}, 400);
-    // ^^ The above is beacuse you can't animate css to 100%.  So I change it to 100%, get the value, change it back, then animate it to the value. If you don't want animation, you can ditch all of it and just leave: $('.show-more-snippet').css({height:'100%'});^^ //
-    $(this).text('Less...');
-  }
+    if ($('.show-more-snippet').css('height') != '35px') {
+        $('.show-more-snippet').stop().animate({ height: '35px' }, 200);
+        $(this).text('More...');
+    } else {
+        $('.show-more-snippet').css({ height: '100%' });
+        var xx = $('.show-more-snippet').height();
+        $('.show-more-snippet').css({ height: '35px' });
+        $('.show-more-snippet').stop().animate({ height: xx }, 400);
+        // ^^ The above is beacuse you can't animate css to 100%.  So I change it to 100%, get the value, change it back, then animate it to the value. If you don't want animation, you can ditch all of it and just leave: $('.show-more-snippet').css({height:'100%'});^^ //
+        $(this).text('Less...');
+    }
 });
 
 
@@ -76,82 +94,77 @@ function closeNav() {
 
 // flat shadows
 
-function flattyShadow(){
-var bg_size = 130;
-var icon_size = 60;
-  $('.flatty_shadow').each(function() {
-    var bg_color = $(this).attr("data-bg-color") || '#f65034';
-    var shadow_color = $(this).attr("data-shadow-color") || '#df3618';
-    var icon_color = $(this).attr("data-icon-color") || '#ffffff';
-    var angle = $(this).attr("data-angle") || 70;
-    var depth = $(this).attr("data-depth") || 160;
-    var shape = $(this).attr("data-shape") || 50;
-    var bg_transparency = $(this).attr("data-bg-transparency")|| 1;
-    var shadow_transparency = $(this).attr("data-shadow-transparency") || 1;
-    var icon_transparency = $(this).attr("data-icon-transparency") || 1;
-    var icon_pos_x = $(this).attr("data-pos-x") || 0;
-    var icon_pos_y = $(this).attr("data-pos-y") || 0;
-    bg_size = $(this).attr("data-bg-size") || 130;
-    icon_size = $(this).attr("data-icon-size") || 60;
+function flattyShadow() {
+    var bg_size = 130;
+    var icon_size = 60;
+    $('.flatty_shadow').each(function() {
+        var bg_color = $(this).attr("data-bg-color") || '#f65034';
+        var shadow_color = $(this).attr("data-shadow-color") || '#df3618';
+        var icon_color = $(this).attr("data-icon-color") || '#ffffff';
+        var angle = $(this).attr("data-angle") || 70;
+        var depth = $(this).attr("data-depth") || 160;
+        var shape = $(this).attr("data-shape") || 50;
+        var bg_transparency = $(this).attr("data-bg-transparency") || 1;
+        var shadow_transparency = $(this).attr("data-shadow-transparency") || 1;
+        var icon_transparency = $(this).attr("data-icon-transparency") || 1;
+        var icon_pos_x = $(this).attr("data-pos-x") || 0;
+        var icon_pos_y = $(this).attr("data-pos-y") || 0;
+        bg_size = $(this).attr("data-bg-size") || 130;
+        icon_size = $(this).attr("data-icon-size") || 60;
 
-    var selectedIcon = $(this).html();
+        var selectedIcon = $(this).html();
 
-    $(this).empty();
-    $(this).append('<div class="flatty_icon"><div class="centered"><span class="fs_icon">'+selectedIcon+'</span></div></div>')
+        $(this).empty();
+        $(this).append('<div class="flatty_icon"><div class="centered"><span class="fs_icon">' + selectedIcon + '</span></div></div>')
 
-    bg_color = ' rgba(' + hexToRgb(bg_color).r +', ' + hexToRgb(bg_color).g +', ' + hexToRgb(bg_color).b +', ' + bg_transparency + ')';
-    shadow_color = ' rgba(' + hexToRgb(shadow_color).r +', ' + hexToRgb(shadow_color).g +', ' + hexToRgb(shadow_color).b +', ' + shadow_transparency + ')';
-    icon_color = ' rgba(' + hexToRgb(icon_color).r +', ' + hexToRgb(icon_color).g +', ' + hexToRgb(icon_color).b +', ' + icon_transparency + ')';
+        bg_color = ' rgba(' + hexToRgb(bg_color).r + ', ' + hexToRgb(bg_color).g + ', ' + hexToRgb(bg_color).b + ', ' + bg_transparency + ')';
+        shadow_color = ' rgba(' + hexToRgb(shadow_color).r + ', ' + hexToRgb(shadow_color).g + ', ' + hexToRgb(shadow_color).b + ', ' + shadow_transparency + ')';
+        icon_color = ' rgba(' + hexToRgb(icon_color).r + ', ' + hexToRgb(icon_color).g + ', ' + hexToRgb(icon_color).b + ', ' + icon_transparency + ')';
 
-      var x = 1.5 * Math.cos(angle * Math.PI/180);
-        var y = 1.5 * Math.sin(angle * Math.PI/180);
+        var x = 1.5 * Math.cos(angle * Math.PI / 180);
+        var y = 1.5 * Math.sin(angle * Math.PI / 180);
 
-        var num_x= x/2;
-        var num_y= y/2;
+        var num_x = x / 2;
+        var num_y = y / 2;
 
         var long_shadow = "";
 
-        for (var i = 1; i <= (depth*2); i++) {
-            long_shadow += ' ' + x + 'px ' + y + 'px '+ 0 + ' '+ shadow_color + ',';
-            x+=num_x;
-            y+=num_y;
+        for (var i = 1; i <= (depth * 2); i++) {
+            long_shadow += ' ' + x + 'px ' + y + 'px ' + 0 + ' ' + shadow_color + ',';
+            x += num_x;
+            y += num_y;
         }
 
-        long_shadow = long_shadow.substr(0, long_shadow.length-1);
+        long_shadow = long_shadow.substr(0, long_shadow.length - 1);
 
-      $(this).children( '.flatty_icon' ).css('background-color', bg_color);
-      $(this).children('.flatty_icon').find('.fs_icon').css( 'color', icon_color );
-        $(this).children('.flatty_icon').find('.fs_icon').css( 'text-shadow', long_shadow );
-        $(this).children('.flatty_icon').css({borderRadius:shape+'%'});
-        $(this).children('.flatty_icon').find('.centered').css({ marginLeft : (parseInt(icon_pos_x)*2.3)-58+'px', marginTop : (parseInt(icon_pos_y)*1.5)-55+'px' });
+        $(this).children('.flatty_icon').css('background-color', bg_color);
+        $(this).children('.flatty_icon').find('.fs_icon').css('color', icon_color);
+        $(this).children('.flatty_icon').find('.fs_icon').css('text-shadow', long_shadow);
+        $(this).children('.flatty_icon').css({ borderRadius: shape + '%' });
+        $(this).children('.flatty_icon').find('.centered').css({ marginLeft: (parseInt(icon_pos_x) * 2.3) - 58 + 'px', marginTop: (parseInt(icon_pos_y) * 1.5) - 55 + 'px' });
 
 
-  });
-  $('.fs_icon').css( 'font-size', icon_size );
-  $('.flatty_icon').css( 'width', bg_size );
-  $('.flatty_icon').css( 'height', bg_size );
-  var icon_pos = parseInt(icon_size.split('px')[0]) * -1;
-  $('.centered').css( { marginLeft : icon_pos, marginTop : icon_pos } );
+    });
+    $('.fs_icon').css('font-size', icon_size);
+    $('.flatty_icon').css('width', bg_size);
+    $('.flatty_icon').css('height', bg_size);
+    var icon_pos = parseInt(icon_size.split('px')[0]) * -1;
+    $('.centered').css({ marginLeft: icon_pos, marginTop: icon_pos });
 }
 
 function hexToRgb(hex) {
-      var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-      return result ? {
-          r: parseInt(result[1], 16),
-          g: parseInt(result[2], 16),
-          b: parseInt(result[3], 16)
-      } : null;
-  }
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
 
 
 // Dashboard banner gradient
 var colors = new Array(
-  [202,232,246],
-  [151,215,244],
-  [103,232,249],
-  [51,166,220],
-  [28,87,160],
-  [52,152,219]);
+    [202, 232, 246], [151, 215, 244], [103, 232, 249], [51, 166, 220], [28, 87, 160], [52, 152, 219]);
 
 var step = 0;
 //color table indices for:
@@ -159,52 +172,52 @@ var step = 0;
 // next color left
 // current color right
 // next color right
-var colorIndices = [0,1,2,3];
+var colorIndices = [0, 1, 2, 3];
 
 //transition speed
 var gradientSpeed = 0.002;
 
-function updateGradient()
-{
+function updateGradient() {
 
-  if ( $===undefined ) return;
+    if ($ === undefined) return;
 
-var c0_0 = colors[colorIndices[0]];
-var c0_1 = colors[colorIndices[1]];
-var c1_0 = colors[colorIndices[2]];
-var c1_1 = colors[colorIndices[3]];
+    var c0_0 = colors[colorIndices[0]];
+    var c0_1 = colors[colorIndices[1]];
+    var c1_0 = colors[colorIndices[2]];
+    var c1_1 = colors[colorIndices[3]];
 
-var istep = 1 - step;
-var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
-var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
-var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
-var color1 = "rgb("+r1+","+g1+","+b1+")";
+    var istep = 1 - step;
+    var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+    var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+    var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+    var color1 = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
 
-var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
-var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
-var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
-var color2 = "rgb("+r2+","+g2+","+b2+")";
+    var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+    var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+    var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+    var color2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
 
- $('#gradient').css({
-   background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
-    background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+    $('#gradient').css({
+        background: "-webkit-gradient(linear, left top, right top, from(" + color1 + "), to(" + color2 + "))"
+    }).css({
+        background: "-moz-linear-gradient(left, " + color1 + " 0%, " + color2 + " 100%)"
+    });
 
-  step += gradientSpeed;
-  if ( step >= 1 )
-  {
-    step %= 1;
-    colorIndices[0] = colorIndices[1];
-    colorIndices[2] = colorIndices[3];
+    step += gradientSpeed;
+    if (step >= 1) {
+        step %= 1;
+        colorIndices[0] = colorIndices[1];
+        colorIndices[2] = colorIndices[3];
 
-    //pick two new target color indices
-    //do not pick the same as the current one
-    colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
-    colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+        //pick two new target color indices
+        //do not pick the same as the current one
+        colorIndices[1] = (colorIndices[1] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
+        colorIndices[3] = (colorIndices[3] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
 
-  }
+    }
 }
 
-setInterval(updateGradient,10);
+setInterval(updateGradient, 10);
 
 
 
@@ -671,20 +684,20 @@ setInterval(updateGradient,10);
 
 
 AOS.init({
-  duration: 1000,
+    duration: 1000,
 })
 
 
 
 $(function() {
-  $('#circle-progress').circliful();
+    $('#circle-progress').circliful();
 });
 
 
 /* PROGRESS CIRCLE COMPONENT */
-(function ($) {
+(function($) {
 
-    $.fn.circliful = function (options, callback) {
+    $.fn.circliful = function(options, callback) {
 
         var settings = $.extend({
             // These are the defaults.
@@ -704,7 +717,7 @@ $(function() {
             bordersize: 10
         }, options);
 
-        return this.each(function () {
+        return this.each(function() {
 
             var customSettings = ["fgcolor", "bgcolor", "fill", "width", "dimension", "fontsize", "animationstep", "endPercent", "icon", "iconcolor", "iconsize", "border", "startdegree", "bordersize"];
 
@@ -850,7 +863,7 @@ $(function() {
              * @param obj
              */
             function checkDataAttributes(obj) {
-                $.each(customSettings, function (index, attribute) {
+                $.each(customSettings, function(index, attribute) {
                     if (obj.data(attribute) != undefined) {
                         customSettingsObj[attribute] = obj.data(attribute);
                     } else {
@@ -898,7 +911,7 @@ $(function() {
 
                 if (curPerc < endPercent) {
                     curPerc += curStep;
-                    requestAnimationFrame(function () {
+                    requestAnimationFrame(function() {
                         animate(Math.min(curPerc, endPercent) / 100);
                     }, obj);
                 }
@@ -920,59 +933,59 @@ $(function() {
 
 // Classmate Cards
 var Flipper = (function() {
-  var card = $('.card');
-  var flipper = card.find('.card__flipper');
-  var win = $(window);
+    var card = $('.card');
+    var flipper = card.find('.card__flipper');
+    var win = $(window);
 
-  var flip = function() {
-    var thisCard = $(this);
-    var thisFlipper = thisCard.find('.card__flipper');
-    var offset = thisCard.offset();
-    var xc = win.width() / 2;
-    var yc = win.height() / 2;
-    var docScroll = $(document).scrollTop();
-    var cardW = thisCard.outerWidth() / 2;
-    var cardH = thisCard.height() / 2;
+    var flip = function() {
+        var thisCard = $(this);
+        var thisFlipper = thisCard.find('.card__flipper');
+        var offset = thisCard.offset();
+        var xc = win.width() / 2;
+        var yc = win.height() / 2;
+        var docScroll = $(document).scrollTop();
+        var cardW = thisCard.outerWidth() / 2;
+        var cardH = thisCard.height() / 2;
 
-    var transX = xc - offset.left - cardW;
-    var transY = docScroll + yc - offset.top - cardH;
-//     if (offset.top > card.height()) transY = docScroll - offset.top + cardH;
-    if (win.width() <= 700) transY = 0;
+        var transX = xc - offset.left - cardW;
+        var transY = docScroll + yc - offset.top - cardH;
+        //     if (offset.top > card.height()) transY = docScroll - offset.top + cardH;
+        if (win.width() <= 700) transY = 0;
 
-    if (card.hasClass('active')) unflip();
+        if (card.hasClass('active')) unflip();
 
-    thisCard.css({'z-index': '3'}).addClass('active');
+        thisCard.css({ 'z-index': '3' }).addClass('active');
 
-    thisFlipper.css({
-      'transform': 'translate3d(' + transX + 'px,' + transY + 'px, 0) rotateY(180deg) scale(1)',
-      '-webkit-transform': 'translate3d(' + transX + 'px,' + transY + 'px, 0) rotateY(180deg) scale(1)',
-      '-ms-transform': 'translate3d(' + transX + 'px,' + transY + 'px, 0) rotateY(180deg) scale(1)'
-    }).addClass('active');
+        thisFlipper.css({
+            'transform': 'translate3d(' + transX + 'px,' + transY + 'px, 0) rotateY(180deg) scale(1)',
+            '-webkit-transform': 'translate3d(' + transX + 'px,' + transY + 'px, 0) rotateY(180deg) scale(1)',
+            '-ms-transform': 'translate3d(' + transX + 'px,' + transY + 'px, 0) rotateY(180deg) scale(1)'
+        }).addClass('active');
 
-    return false;
-  };
+        return false;
+    };
 
-  var unflip = function(e) {
-    card.css({'z-index': '1'}).removeClass('active');
-    flipper.css({
-      'transform': 'none',
-      '-webkit-transform': 'none',
-      '-ms-transform': 'none'
-    }).removeClass('active');
-  };
+    var unflip = function(e) {
+        card.css({ 'z-index': '1' }).removeClass('active');
+        flipper.css({
+            'transform': 'none',
+            '-webkit-transform': 'none',
+            '-ms-transform': 'none'
+        }).removeClass('active');
+    };
 
-  var bindActions = function() {
-    card.on('click', flip);
-    win.on('click', unflip);
-  }
+    var bindActions = function() {
+        card.on('click', flip);
+        win.on('click', unflip);
+    }
 
-  var init = function() {
-    bindActions();
-  };
+    var init = function() {
+        bindActions();
+    };
 
-  return {
-    init: init
-  };
+    return {
+        init: init
+    };
 
 }());
 
@@ -981,7 +994,7 @@ Flipper.init();
 
 // Tabs
 jQuery(document).ready(function() {
-    jQuery('.tabs .tab-links a').on('click', function(e)  {
+    jQuery('.tabs .tab-links a').on('click', function(e) {
         var currentAttrValue = jQuery(this).attr('href');
 
         // Show/Hide Tabs
@@ -995,6 +1008,6 @@ jQuery(document).ready(function() {
 });
 
 // Modal
-$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').focus()
+$('#myModal').on('shown.bs.modal', function() {
+    $('#myInput').focus()
 })

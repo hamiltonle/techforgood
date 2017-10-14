@@ -9,14 +9,32 @@
 // TAB CONTAINERS
 .lesson-tab {
   background: #FFFFFF;
-  border-bottom: 1px solid #EDEDED;
-  border-right: 3px solid white;
+}
 
+.lesson-tab h5 {
+  border-left: 3px solid #fff;
 }
-.lesson-tab:hover {
-  opacity: 1;
-  border-left: 3px solid $blue7;
+// .lesson-tab:hover {
+//   opacity: 1;
+//   border-left: 3px solid $blue7;
+//   text-decoration: none;
+// }
+
+.lesson-tab:focus {
+    border-left: 3px solid #4990e2;
+    width: 45%;
+    margin: 11px auto;
+    text-align: center;
+    transition-duration: 0.3s ease;
 }
+
+.lesson-tab a:hover {
+  text-decoration: none !important;
+}
+
+
+
+
 .position-relative {
   position: relative;
 }
@@ -123,8 +141,11 @@
 
 // tab text
 
-.lesson-text h6 {
-  color: #566b78;
+.lesson-text h5 {
+  color: #787878;
+  font-family: 'PingFangSC-Regular';
+  width: 240px;
+  text-align: center;
 }
 
 
@@ -301,19 +322,29 @@ iframe {
 
 }
 //This is the sidebar that shows up in the course show page
-#course_sidebar {
+.course_sidebar {
+  width: 300px;
+  background-color: white;
+  position: absolute;
+  overflow-y: hidden;
+  height: auto;
+  left: 0;
+  border-right: 1px solid #f0f0f0;
+  top: 50vh;
+  margin-top: 60px;
+}
 
-  // justify-content: space-between;
-  // align-items: center;
+.course_sidebar_fixed {
   width: 300px;
   background-color: white;
   position: fixed;
-  // overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
   height: auto;
-  bottom: 0;
   left: 0;
   border-right: 1px solid #f0f0f0;
+  top: 70px;
+  padding-bottom: 20px;
+  margin-top: 0px !important;
 }
 
 // Course Sidebar Tabs CSS
@@ -327,8 +358,34 @@ iframe {
   align-items: center;
   padding-right: 10px;
   padding-left: 10px;
+  border-left: 3px solid #fff;
 }
 
+.course_sidebar_tab_active {
+  border-left: 3px solid $blue6;
+  width: 45%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.sidebar-items h5 a{
+  font-size: 20px;
+  font-family: 'PingFangSC-Regular';
+  color:#7f7f7f;
+  text-align:left;
+}
+
+.org-name {
+  width: 224px;
+  text-align: center;
+  border-bottom: 2px solid #e6e6e6;
+  padding-bottom: 20px;
+}
+
+.org-logo {
+  display: flex;
+  margin: 0 auto;
+}
 
 
 
