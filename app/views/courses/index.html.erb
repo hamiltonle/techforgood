@@ -8,11 +8,6 @@
       <% end %>
     </a>
 
-    <!-- We can use this to add the logo image when we have a proper one -->
-    <%#= link_to root_path, class: "navbar-techforgood-brand" do %>
-      <%#= image_tag "handson-logo.png" %>
-    <%# end %>
-
     <!-- Right Navigation -->
     <div id="nav" class="navbar-techforgood-right hidden-xs hidden-sm">
 
@@ -101,8 +96,9 @@
 
 <!-- Banner -->
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,101,168,0.3) 50%), url(<%= image_path('homepage_banner.png') %>);">
-  <div class="text-left text-50px padding-left-120">
+  <div class="text-50px">
     <h1>学习创新技术<br>为你的社区创造积极影响力</h1>
+    <a class="btn btn-lg btn-primary homepage-btn" href="#courses" role="button ">开始学习</a>
   </div>
 </div>
 

@@ -70,6 +70,11 @@
 
 $neon: #00FFF8;
 
+.homepage-btn {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
 /* Mixins */
 @mixin gradientBg($direction, $startColor, $endColor) {
   background: $startColor;
