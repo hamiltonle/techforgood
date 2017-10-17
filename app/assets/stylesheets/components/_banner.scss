@@ -6,19 +6,18 @@
   background-size: cover !important;
   display: flex;
   align-items: center;
-  // justify-content: center;
+  justify-content: center;
   background-position: center;
-  // h1 {
-  // font-size: 70px;
-  // font-weight: bold;
-  // text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  h1 {
+    font-weight: bold;
+    }
+  // p {
+  // font-size: 30px;
+  // font-weight: lighter;
+  // color: rgba(255, 255, 255, 0.7);
+  // margin-bottom: 20px;
   // }
-  p {
-  font-size: 30px;
-  font-weight: lighter;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 20px;
-  }
 }
 
 .banner-why {
@@ -27,7 +26,6 @@
   justify-content: center;
   background-position: center;
   height: 70vh;
-
 }
 
 .top-margin {
@@ -54,8 +52,6 @@
   padding: 0px;
   margin-top: 70px;
 }
-
-
 
 // COURSE SHOW PAGE
 .course-banner {
