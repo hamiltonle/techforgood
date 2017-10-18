@@ -8,6 +8,13 @@
 $header-font: "Montserrat", "Helvetica", "sans-serif";
 $base-font: "Roboto", "Helvetica", "sans-serif";
 
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('bebasneue.otf');
+}
+
+$my-font: "BebasNeue";
+
 // Local fonts (uncomment following lines)
 // @font-face {
 //   font-family: "Font Name";
