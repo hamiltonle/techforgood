@@ -73,6 +73,23 @@ $neon: #00FFF8;
 .homepage-btn {
   padding-left: 60px;
   padding-right: 60px;
+  background-color: #4990e2;
+}
+
+.login-button {
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #4990e2;
+  border: 2px solid #4990e2;
+}
+
+.register-button {
+  color: #4990e2;
+  background: none;
+  margin-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 2px solid #4990e2;
 }
 
 /* Mixins */
