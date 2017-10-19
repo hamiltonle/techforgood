@@ -127,20 +127,6 @@ student.photo_url = url
 student.save!
 
 student = User.new(
-  first_name: 'Thibault',
-  last_name: 'Genaitay',
-  group: 'LeWagon',
-  email: "thibault@gmail.com",
-  password: 'techforgood',
-  password_confirmation: 'techforgood',
-  bio: 'Thibault founded Le Wagon in Shanghai to support creative entrepreneurs build amazing products in China!'
-  )
-puts "saved a student user"
-url = "https://res.cloudinary.com/wagon/image/upload/c_fill,h_100,w_100/v1475007353/yzza4gmf7ktqsnzsun2x.jpg"
-student.photo_url = url
-student.save!
-
-student = User.new(
   first_name: 'Forrest',
   last_name: 'Ye',
   group: 'LeWagon',
