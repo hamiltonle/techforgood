@@ -1,25 +1,60 @@
+<div>
 
-<div class="align-center height-80vh bg-blue">
-  <div class="width-960 bg-blue6 ">
-    <div class="text-right col-xs-12 col-sm-4 text-white ">
-      <h2 class="fredoka">Log in</h2>
-    </div>
+  <div class="align-center height-80vh col-xs-12 col-md-6">
+    <div style="margin-left: 50px">
+        <%= image_tag "footer_heading.png" %>
+        <h4>学习创新技术与设计，给世界带来一点点的改变</h4>
 
-    <div class="text-left col-xs-12 col-sm-8 text-white bg-blue form-border slightly_padded link-white">
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-inputs text-white">
-          <%= f.input :email, required: false, autofocus: true %>
-          <%= f.input :password, required: false %>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>登陆</th>
+                <th>注册</th>
+              </tr>
+            </thead>
+          </table>
         </div>
 
-        <div class="form-actions ">
-          <%= f.button :submit, "Log in", class: "fredoka text-blue6 btn-round btn-white btn-block" %>
+        <div>
+          <ul class="list-inline">
+            <li><h4>第三方账登陆:</h4></li>
+            <li><i class="fa fa-weixin" aria-hidden="true" style="font-size: 26px; margin-left: 40px;"></i></li>
+            <li><i class="fa fa-qq" aria-hidden="true" style="font-size: 26px; margin-left: 40px;"></i></li>
+          </ul>
         </div>
-      <% end %>
 
-      <%= render "devise/shared/links" %>
+      <div style="width: 70%;">
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, label: false, placeholder: '由箱／手机', required: false, autofocus: true; %>
+            <div style="margin-top: -16px;">
+              <%= f.input :password, label: false, placeholder: '密码', required: false %>
+            </div>
+            <div>
+              <ul class="list-inline">
+              <li><%= f.input :remember_me, label: '在这台电脑上记住我', as: :boolean if devise_mapping.rememberable? %></li>
+              <li style="margin-left: 40px;"><%= link_to "忘记密码", new_password_path(resource_name) %><br /></li>
+              </ul>
+            </div>
+          </div>
+
+          <%#= render "devise/shared/links" %>
+
+          <div class="form-actions ">
+            <%= f.button :submit, "登陆", class: "btn btn-primary btn-login", style: "padding-left: 130px; padding-right: 130px;" %>
+          </div>
+        <% end %>
+
+
+      </div>
+
     </div>
-
   </div>
+
+  <div class="text-center height-80vh col-xs-12 col-md-6">
+    <%= image_tag "loginpage_image.png", style: "
+    margin-top: 120px;"%>
+  </div>
+
 </div>
