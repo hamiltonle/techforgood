@@ -25,15 +25,22 @@
             <div style="margin-top: -16px;">
               <%= f.input :password, label: false, placeholder: '密码', required: false %>
             </div>
-            <%= f.input :remember_me, label: '在这台电脑上记住我', as: :boolean if devise_mapping.rememberable? %>
+            <div>
+              <ul class="list-inline">
+              <li><%= f.input :remember_me, label: '在这台电脑上记住我', as: :boolean if devise_mapping.rememberable? %></li>
+              <li style="margin-left: 40px;"><%= link_to "忘记密码", new_password_path(resource_name) %><br /></li>
+              </ul>
+            </div>
           </div>
+
+          <%#= render "devise/shared/links" %>
 
           <div class="form-actions ">
             <%= f.button :submit, "登陆", class: "btn btn-primary btn-login", style: "padding-left: 130px; padding-right: 130px;" %>
           </div>
         <% end %>
 
-        <%= render "devise/shared/links" %>
+
       </div>
 
     </div>
