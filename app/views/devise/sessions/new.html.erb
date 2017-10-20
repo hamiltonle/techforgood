@@ -3,7 +3,7 @@
   <div class="align-center height-80vh col-xs-12 col-md-6">
     <div style="margin-left: 50px">
         <%= image_tag "footer_heading.png" %>
-        <h4>学习创新技术与设计,給世界带来一点点的改变</h4>
+        <h4>学习创新技术与设计，给世界带来一点点的改变</h4>
         <div>
           <ul class="list-inline text-center" style="display: flex; justify-content: space-around;">
             <li><h4>登陆</h4></li>
@@ -22,14 +22,14 @@
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
             <%= f.input :email, label: false, placeholder: '由箱／手机', required: false, autofocus: true; %>
-            <div style="margin-top: -20px;">
+            <div style="margin-top: -16px;">
               <%= f.input :password, label: false, placeholder: '密码', required: false %>
             </div>
             <%= f.input :remember_me, label: '在这台电脑上记住我', as: :boolean if devise_mapping.rememberable? %>
           </div>
 
           <div class="form-actions ">
-            <%= f.button :submit, "登陆", class: "btn btn-primary btn-lg btn-login" %>
+            <%= f.button :submit, "登陆", class: "btn btn-primary btn-login", style: "padding-left: 130px; padding-right: 130px;" %>
           </div>
         <% end %>
 
