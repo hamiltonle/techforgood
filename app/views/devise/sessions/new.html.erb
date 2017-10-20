@@ -1,36 +1,47 @@
-<div class="align-center height-80vh">
-  <div class="width-960">
-      <%= image_tag "footer_heading.png"%>
-      <h3>学习创新技术与设计,給世界带来一点点的改变</h3>
-      <div>
-        <ul class="list-inline text-center" style="display: flex; justify-content: space-around;">
-          <li><h3>登陆</h3></li>
-          <li><h3>注册</h3></li>
-        </ul>
-      </div>
-      <div>
-        <ul class="list-inline">
-          <li><h4>第三方账登陆:</h4></li>
-          <li><i class="fa fa-weixin" aria-hidden="true" style="font-size: 24px; margin-left: 40px;"></i></li>
-          <li><i class="fa fa-qq" aria-hidden="true" style="font-size: 24px; margin-left: 40px;"></i></li>
-        </ul>
-      </div>
+<div>
 
-    <div style="width: 70%;">
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-inputs">
-          <%= f.input :email, label: false, placeholder: '由箱／手机', required: false, autofocus: true; %>
-          <%= f.input :password, label: false, placeholder: '密码', required: false %>
-          <%= f.input :remember_me, label: '在这台电脑上记住我', as: :boolean if devise_mapping.rememberable? %>
+  <div class="align-center height-80vh col-xs-12 col-md-6">
+    <div style="margin-left: 50px">
+        <%= image_tag "footer_heading.png" %>
+        <h4>学习创新技术与设计,給世界带来一点点的改变</h4>
+        <div>
+          <ul class="list-inline text-center" style="display: flex; justify-content: space-around;">
+            <li><h4>登陆</h4></li>
+            <li><h4>注册</h4></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="list-inline">
+            <li><h4>第三方账登陆:</h4></li>
+            <li><i class="fa fa-weixin" aria-hidden="true" style="font-size: 26px; margin-left: 40px;"></i></li>
+            <li><i class="fa fa-qq" aria-hidden="true" style="font-size: 26px; margin-left: 40px;"></i></li>
+          </ul>
         </div>
 
-        <div class="form-actions ">
-          <%= f.button :submit, "登陆", class: "btn btn-primary btn-lg btn-login" %>
-        </div>
-      <% end %>
+      <div style="width: 70%;">
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, label: false, placeholder: '由箱／手机', required: false, autofocus: true; %>
+            <div style="margin-top: -20px;">
+              <%= f.input :password, label: false, placeholder: '密码', required: false %>
+            </div>
+            <%= f.input :remember_me, label: '在这台电脑上记住我', as: :boolean if devise_mapping.rememberable? %>
+          </div>
 
-      <%= render "devise/shared/links" %>
+          <div class="form-actions ">
+            <%= f.button :submit, "登陆", class: "btn btn-primary btn-lg btn-login" %>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+      </div>
+
     </div>
-
   </div>
+
+  <div class="text-center height-80vh col-xs-12 col-md-6">
+    <%= image_tag "loginpage_image.png", style: "
+    margin-top: 100px;"%>
+  </div>
+
 </div>
