@@ -1,20 +1,31 @@
+<div class="align-center height-80vh">
+  <div class="width-960">
+      <%= image_tag "footer_heading.png"%>
+      <h3>学习创新技术与设计,給世界带来一点点的改变</h3>
+      <div>
+        <ul class="list-inline text-center" style="display: flex; justify-content: space-around;">
+          <li><h3>登陆</h3></li>
+          <li><h3>注册</h3></li>
+        </ul>
+      </div>
+      <div>
+        <ul class="list-inline">
+          <li><h4>第三方账登陆:</h4></li>
+          <li><i class="fa fa-weixin" aria-hidden="true" style="font-size: 24px; margin-left: 40px;"></i></li>
+          <li><i class="fa fa-qq" aria-hidden="true" style="font-size: 24px; margin-left: 40px;"></i></li>
+        </ul>
+      </div>
 
-<div class="align-center height-80vh bg-blue">
-  <div class="width-960 bg-blue6 ">
-    <div class="text-right col-xs-12 col-sm-4 text-white ">
-      <h2 class="fredoka">Log in</h2>
-    </div>
-
-    <div class="text-left col-xs-12 col-sm-8 text-white bg-blue form-border slightly_padded link-white">
+    <div style="width: 70%;">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-inputs text-white">
-          <%= f.input :email, required: false, autofocus: true %>
-          <%= f.input :password, required: false %>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <div class="form-inputs">
+          <%= f.input :email, label: false, placeholder: '由箱／手机', required: false, autofocus: true; %>
+          <%= f.input :password, label: false, placeholder: '密码', required: false %>
+          <%= f.input :remember_me, label: '在这台电脑上记住我', as: :boolean if devise_mapping.rememberable? %>
         </div>
 
         <div class="form-actions ">
-          <%= f.button :submit, "Log in", class: "fredoka text-blue6 btn-round btn-white btn-block" %>
+          <%= f.button :submit, "登陆", class: "btn btn-primary btn-lg btn-login" %>
         </div>
       <% end %>
 
