@@ -179,23 +179,30 @@
               <% course_photo_path = ('madi-robson-113926_wqpmaf') %>
             <% end %>
 
-            <div class="course-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+            <div class="course-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)),
 
             url('<%= cl_image_path course_photo_path %>');">
+            <div>
+              <h3 class="course-card-title">
+                <%= course.title %>
+              </h3>
+            </div>
 
             </div>
 
           <div class="course-card-description">
             <!-- <h2 class="course-card-mission text-left"></h2> -->
-            <div class="height-80 text-reading-gray text-smooth">
+            <div class="height-100 text-reading-gray text-smooth">
               <h4>
                 <%= course.tagline %>
               </h4>
             </div>
             <div>
               <div class="flexbox">
-                <p class="tag-flex text-reading-gray"><i class="fa fa-tag text-blue7"></i><em> <%= course.title %></em></p>
-                <%= cl_image_tag course_company_logo, height: '20px' %>
+                <p class="tag-flex" style="color: #767676;"><i class="fa fa-tag text-blue7"></i> <%= course.title %></p>
+                <p style="color: #767676;"><%= image_tag('globe.png') %><%#= course.issue %> Test</p>
+                </%>
+                <%#= cl_image_tag course_company_logo, height: '20px' %>
               </div>
             </div>
           </div>
