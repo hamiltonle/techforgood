@@ -1,23 +1,45 @@
-
-<div class="align-center height-80vh bg-blue">
+<!--
+<div class="align-center height-80vh col-xs-12 col-md-6">
   <div class="width-960 bg-blue6 ">
     <div class="text-right col-xs-12 col-sm-4 text-white ">
       <h2 class="fredoka">Sign up</h2>
     </div>
+ -->
 
-    <div class="text-left col-xs-12 col-sm-8 text-white bg-blue form-border slightly_padded link-white shape-slight">
+<div>
 
+  <div class="align-center height-80vh col-xs-12 col-md-6">
+    <div style="margin-left: 50px">
+        <%= image_tag "footer_heading.png" %>
+        <h4>学习创新技术与设计，给世界带来一点点的改变</h4>
+
+        <div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="text-decoration: none; color:  #a1a1a1;><a href="/users/sign_in">登陆</a></th>
+                <th style="*/ text-decoration: none; color: #4990e2;><a href="/users/sign_up">注册</a></th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+
+
+
+    <!-- <div class="text-left col-xs-12 col-sm-8 text-white bg-blue form-border slightly_padded link-white shape-slight"> -->
+
+    <div style="width: 70%;">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true %>
-          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-          <%= f.input :password_confirmation, required: true %>
+          <%= f.input :email, label: false, required: true, autofocus: true, placeholder: '填写常用手机作为登陆账号'; %>
+          <%= f.input :password, label: false, placeholder: '用户名（4-10位字符)', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+          <%= f.input :password_confirmation, label: false, placeholder: '密码（6-14位英文或数字', required: true %>
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Sign up", class: "fredoka text-blue6 btn-round btn-white btn-block" %>
+          <%= f.button :submit, "注册", class: "btn btn-primary btn-login", style: "padding-left: 130px; padding-right: 130px;" %>
         </div>
       <% end %>
 
@@ -29,3 +51,9 @@
   </div>
 </div>
 
+  <div class="text-center height-80vh col-xs-12 col-md-6">
+    <%= image_tag "loginpage_image.png", style: "
+    margin-top: 120px;"%>
+  </div>
+
+</div>
