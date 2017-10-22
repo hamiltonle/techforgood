@@ -20,7 +20,7 @@
       <a href="#faq" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>FAQ</span></a>
 
 Example of how to update this page for Gene
-ham is good --> 
+ham is good -->
 
       <!-- Different navigation if login or not -->
       <% if user_signed_in? %>
@@ -56,7 +56,7 @@ ham is good -->
 
         <%= link_to t(".sign_in", default: "登陆"), new_user_session_path, class: "btn btn-sm btn-primary login-button" %>
 
-        <%= link_to t(".sign_up", default: "注册"), new_user_session_path, class: "btn btn-sm btn-primary register-button" %>
+        <%= link_to t(".sign_up", default: "注册"), new_user_registration_path, class: "btn btn-sm btn-primary register-button" %>
 
       <% end %>
     </div>
