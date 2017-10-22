@@ -136,14 +136,15 @@
   right: 0;
   height: 100%;
   width: 100%;
-  opacity: 0;
   transition: .5s ease;
   background-color: black;
+  opacity: 0.8;
 }
 
 .text {
   color: white;
-  font-size: 20px;
+  font-weight: bold;
+  font-size: 24px;
   position: absolute;
   top: 50%;
   left: 50%;
