@@ -210,6 +210,9 @@
           <%= link_to "", course_path(course), class: "course-card-link" %>
           <% else %>
           <%= link_to "", course_path(course), class: "upcoming-course-card-link"%>
+          <div class="overlay">
+            <div class="text">— 即将推出 —</div>
+          </div>
           <% end %>
         </div>
       </div>
