@@ -91,3 +91,83 @@
 
     </div>
   </div>
+
+<div class="wrapper-learning-process parallax" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path('zi-jian-lim-227847_j6rckn', height: 1082, width: 1624, crop: :lfill) %>);" id="how_does_it_work">
+  <div class="container padded">
+    <div class="row">
+    <h3 align="center">How does it work?</h3>
+
+      <% @steps.each do |step, icon| %>
+      <div class="col-xs-12 col-md-4">
+        <div class=" learning-process-card">
+          <div class="learning-process-description text-center">
+            <h2><%= step %></h2>
+            <h1><i class="fa fa-<%= icon %>" aria-hidden="true"></i></h1>
+          </div>
+        </div>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<!-- Banner -->
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,101,168,0.3) 50%), url(<%= image_path('homepage_banner.png') %>);">
+  <div class="text-50px">
+    <h1>学习创新技术<br>为你的社区创造积极影响力</h1>
+    <a class="btn btn-lg btn-primary homepage-btn" href="#courses" role="button ">开始学习</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<div id="footer">
+  <div class="container">
+    <div class="row footer-content text-center">
+
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <ul class="list-inline">
+          <li><a href=""><i class="fa fa-weixin" aria-hidden="true"></i></a></li>
+          <li><a href=""><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <p>沪ICP备17006075号-1</p>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <p>Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by Project Elon</p>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Login -->
+<div class="align-center height-80vh bg-blue">
+  <div class="width-960 bg-blue6 ">
+    <div class="text-right col-xs-12 col-sm-4">
+      <%= image_tag "footer_heading.png", class: ""%>
+      <h2>学习创新技术与设计,給世界带来一点点的改变</h2>
+    </div>
+
+    <div class="text-left col-xs-12 col-sm-8 text-white bg-blue form-border slightly_padded link-white">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs text-white">
+          <%= f.input :email, required: false, autofocus: true %>
+          <%= f.input :password, required: false %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
+
+        <div class="form-actions ">
+          <%= f.button :submit, "Log in", class: "fredoka text-blue6 btn-round btn-white btn-block" %>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+
+  </div>
+</div>

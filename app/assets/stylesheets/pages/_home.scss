@@ -16,25 +16,46 @@
   border-bottom: 1px solid rgba(0,0,0,0.1)
 }
 
+.second-row {
+  margin-top: 20px;
+}
+
 // Courses Section on Home Page
+.courses-heading {
+  color: white;
+  font-weight: bold;
+  text-shadow: #000 0px 0px 2px;
+  margin-bottom: 40px;
+  margin-top: -20px;
+}
+
 .course-card {
-  height: 400px;
+  height: 340px;
   color: black;
   position: relative;
   border-radius: 3px;
   margin-bottom: 20px;
   box-shadow: 2px 2px 5px lightgray;
+  margin: 20px;
 }
 
 .course-card-image {
   position: absolute;
-  height: 70%;
+  height: 50%;
   background-size: cover !important;
   top: 0;
   right: 0;
   left: 0;
   bottom: 20px;
   vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.course-card-title {
+  color: white;
+  font-weight: bold;
 }
 
 .course-card-mission {
@@ -46,11 +67,14 @@
 .course-card-description {
   position: absolute;
   bottom: 0px;
-  padding: 10px;
+  padding: 25px;
+  background-color: white;
+  height: 170px;
+  width: 100%;
 }
 
-.height-80 {
-  height: 80px;
+.height-100 {
+  height: 100px;
 }
 
 
@@ -74,6 +98,10 @@
   opacity: 0;
 }
 
+.upcoming-course-card-link:hover {
+  opacity: 0.6;
+  color: white;
+}
 
 .course-card {
   transition: transform .5s;
@@ -99,6 +127,30 @@
       opacity: 1;
     }
   }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  transition: .5s ease;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.text {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
 // Learning Process Section on Home Page
@@ -145,6 +197,11 @@
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
 }
 
+.upcoming-course-card-link:hover{
+  background-color: black;
+  opacity: 0.6;
+  color: white;
+}
 
 #globe-image {
   margin-top: 30px;
@@ -152,3 +209,13 @@
 }
 
 
+// Parallax Section
+.parallax-logo {
+  margin-bottom: 40px;
+}
+
+.parallax-text {
+  color: white;
+  font-weight: bold;
+  text-shadow: #000 0px 0px 2px;
+}

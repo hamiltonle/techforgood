@@ -1,41 +1,14 @@
 #footer {
-  background: $blue6;
-  padding: 20px 0;
-  color: white;
-
+  color: #4a4a4a;
 }
 
-#footer p {
-  margin-top: 22px;
+.social {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  margin-left: 30px;
 }
 
-#footer ul {
-  margin-top: 10px;
-}
-
-#footer a {
-  color: white;
-  font-size: 30px;
-  transition: color 0.5s ease;
-}
-
-#footer a:hover{
-  color: $blue2;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-
-#socials {
-  flex: 1 1;
-  margin-right: 200px;
-}
-
-#made-by {
-  flex: 1 1;
-  margin-top: 5px;
+.socials {
+  font-size: 14px;
 }
