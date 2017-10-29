@@ -24,7 +24,7 @@
 .courses-heading {
   color: white;
   font-weight: bold;
-  text-shadow: #000 0px 0px 2px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
   margin-bottom: 40px;
   margin-top: -20px;
 }
@@ -215,7 +215,9 @@
 }
 
 .parallax-text {
-  color: white;
+  color: #ffffff;
   font-weight: bold;
-  text-shadow: #000 0px 0px 2px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+  margin-left: 165px;
+  margin-right: 165px;
 }
