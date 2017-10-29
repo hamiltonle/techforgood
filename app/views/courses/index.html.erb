@@ -214,7 +214,7 @@ ham is good -->
           <%= link_to "", course_path(course), class: "course-card-link" %>
           <% else %>
           <%= link_to "", course_path(course), class: "upcoming-course-card-link"%>
-          <div class="overlay">
+          <div>
             <div class="text">— 即将推出 —</div>
           </div>
           <% end %>
@@ -232,9 +232,11 @@ ham is good -->
   <h2 class="text-center" style="color: #797979;">给心怀天下的梦想家配备技能<br>为脚踏实地的践行者赋予情怀</h2>
 </div>
 
-<div class="wrapper-learning-process parallax-homepage" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('workshop_image.png') %>);"" id="how_does_it_work">
-  <div class="text-center">
+<div class="wrapper-learning-process parallax-homepage" style="background-image: url(<%= image_path('workshop_image.png') %>); position: relative"" id="how_does_it_work">
+  <div class="triangle">
     <%= image_tag "triangle.png"%>
+  </div>
+  <div class="text-center">
     <div class="parallax-logo">
       <%= image_tag "logo_white.png"%>
     </div>
