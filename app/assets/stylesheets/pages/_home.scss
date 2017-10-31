@@ -106,11 +106,6 @@ html,body
   opacity: 0;
 }
 
-.upcoming-course-card-link:hover {
-  opacity: 0.6;
-  color: white;
-}
-
 .course-card {
   transition: transform .5s;
 
@@ -148,6 +143,7 @@ html,body
   transition: .5s ease;
   background-color: black;
   opacity: 0.8;
+  display: none;
 }
 
 .text {
@@ -203,12 +199,6 @@ html,body
 
 .course-card-link:hover{
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-}
-
-.upcoming-course-card-link:hover{
-  background-color: black;
-  opacity: 0.6;
-  color: white;
 }
 
 #globe-image {
