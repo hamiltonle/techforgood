@@ -211,12 +211,13 @@ ham is good -->
             </div>
           </div>
           <% if course.id == 1 %>
-          <%= link_to "", course_path(course), class: "course-card-link" %>
+            <%= link_to "", course_path(course), class: "course-card-link" %>
           <% else %>
-          <%= link_to "", course_path(course), class: "upcoming-course-card-link"%>
-          <div>
-            <div class="text">— 即将推出 —</div>
-          </div>
+            <div class="upcoming-course">
+              <div class="overlay"> <%= link_to "", course_path(course) %>
+                <span class="text">— 即将推出 —</span>
+              </div>
+            </div>
           <% end %>
         </div>
       </div>
