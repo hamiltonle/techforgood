@@ -1,3 +1,107 @@
+<!-- Navbar -->
+<div class="navbar-fixed-top">
+  <div id="navbar" class="navbar-techforgood">
+    <!-- Logo -->
+    <a href="#top" class="page-scroll">
+      <%= link_to root_path, class: "navbar-techforgood-brand" do %>
+        <%= image_tag "techforgood logo.png" %>
+      <% end %>
+    </a>
+
+    <!-- Right Navigation -->
+    <div id="nav" class="navbar-techforgood-right hidden-xs hidden-sm">
+
+<!--       <a href="#how_does_it_work" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>How does it work?</span></a>
+
+
+
+<a href="#courses" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>Courses</span></a>
+
+      <a href="#faq" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>FAQ</span></a>
+
+Example of how to update this page for Gene
+ham is good -->
+
+      <!-- Different navigation if login or not -->
+      <% if user_signed_in? %>
+
+        <!-- Profile picture and dropdown -->
+        <div class="navbar-techforgood-item">
+          <div class="dropdown">
+            <% if current_user.photo? %>
+              <%= cl_image_tag current_user.photo.path, height: 50, width: 50, class: "img-circle", crop: :thumb, gravity: :face, "data-toggle" => "dropdown" %>
+            <% else %>
+              <%= image_tag "avatar_placeholder.png", class: "avatar-large dropdown-toggle", id: "navbar-techforgood-menu", "data-toggle" => "dropdown" %>
+            <% end %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
+              <li>
+                <%= link_to dashboard_users_path do %>
+                  <i class="fa fa-user fa-fw text-blue7"></i> <%= t(".profile", default: "Dashboard") %>
+                <% end %>
+              </li>
+
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out fa-fw text-blue7"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      <% else %>
+
+        <!-- Login text link -->
+      <%#= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-techforgood-item navbar-techforgood-link" %>
+
+        <%= link_to t(".sign_in", default: "登陆"), new_user_session_path, class: "btn btn-sm btn-primary login-button" %>
+
+        <%= link_to t(".sign_up", default: "注册"), new_user_registration_path, class: "btn btn-sm btn-primary register-button" %>
+
+      <% end %>
+    </div>
+
+    <!-- Dropdown list appearing on mobile only -->
+    <% if user_signed_in? %>
+      <div class="navbar-techforgood-item hidden-md hidden-lg">
+        <div class="dropdown">
+          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+          <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
+            <li>
+              <%= link_to dashboard_users_path do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Dashboard") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+<!--
+    <div class="navbar-techforgood-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
+
+          <li>
+            <a href="#steps" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>How does it work?</span></a>
+          </li>
+          <li>
+            <a href="#courses" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>Courses</span></a>
+          </li>
+          <li>
+            <a href="#faq" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>FAQ</span></a>
+          </li>
+        </ul>
+      </div>
+    </div> -->
+  </div>
+</div>
+
 <!--
 <div class="align-center height-80vh col-xs-12 col-md-6">
   <div class="width-960 bg-blue6 ">
@@ -8,17 +112,17 @@
 
 <div>
 
-  <div class="align-center height-80vh col-xs-12 col-md-6">
+  <div class="align-center col-xs-12 col-md-6" style="margin-top: 170px;">
     <div style="margin-left: 50px">
         <%= image_tag "footer_heading.png" %>
-        <h4>学习创新技术与设计，给世界带来一点点的改变</h4>
+        <h4 style="font-size: 22px;">学习创新技术与设计，给世界带来一点点的改变</h4>
 
         <div>
           <table class="table">
             <thead>
               <tr>
-                <th style="text-decoration: none; color:  #a1a1a1;><a href="/users/sign_in">登陆</a></th>
-                <th style="*/ text-decoration: none; color: #4990e2;><a href="/users/sign_up">注册</a></th>
+                <th style="text-decoration: none; font-size: 22px; color:  #a1a1a1;><a href="/users/sign_in">登陆</a></th>
+                <th style="*/ text-decoration: none; font-size: 22px; color: #4990e2;><a href="/users/sign_up">注册</a></th>
               </tr>
             </thead>
           </table>
@@ -43,7 +147,7 @@
         </div>
       <% end %>
 
-      <%= render "devise/shared/links" %>
+      <div style="font-size: 16px;"><%= render "devise/shared/links" %></div>
 
 
     </div>
@@ -51,8 +155,8 @@
   </div>
 </div>
 
-  <div class="text-center height-80vh col-xs-12 col-md-6">
-    <div style="background-image: linear-gradient(-225deg, rgba(0,75,162,0.3) 0%, rgba(0,75,162,0.3) 50%), url(<%= image_path('loginpage_image.png') %>); margin-top: 120px; background-position: top; height: 50vh; background-size: cover !important;">
+  <div class="text-center col-xs-12 col-md-6">
+    <div class="login-image", style="background-image: linear-gradient(-225deg, rgba(0,75,162,0.3) 0%, rgba(0,75,162,0.3) 50%), url(<%= image_path('loginpage_image.png') %>); margin-top: 170px; background-position: top; height: 404px; background-size: cover !important; margin-right: -20px;">
     </div>
   </div>
 
