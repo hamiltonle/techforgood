@@ -25,7 +25,10 @@ class EnrollmentsController < ApplicationController
     @enrollment.max_course_score = max_course_score(@course)
 
     # assigning due dates for modules
-    due_dates = @course.module_duration.split(",").map(&:to_i)
+    # due_dates commented out to trouble-shoot
+    # due_dates = @course.module_duration.split(",").map(&:to_i)
+    # set due_dates to 1 to trouble-shoot
+    due_dates = 1
     @enrollment.why_module_due_date = @course.start_date + (due_dates[0] * 7)
     @enrollment.what_module_due_date = @course.start_date + ((due_dates[0] + due_dates[1]) * 7)
     @enrollment.how_module_due_date = @course.start_date + ((due_dates[0] + due_dates[1] + due_dates[2]) * 7)
@@ -44,7 +47,10 @@ class EnrollmentsController < ApplicationController
   def max_course_score(course)
     max_score = 0
     course.lessons.each do |lesson|
-      max_score += lesson.score
+      # Commented out for trouble-shooting
+      # max_score += lesson.score
+      # max_score = 0 for trouble-shooting
+      max_score += 0
     end
     max_score
   end
