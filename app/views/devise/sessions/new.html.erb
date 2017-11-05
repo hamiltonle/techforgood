@@ -113,8 +113,12 @@ ham is good -->
           <table class="table">
             <thead>
               <tr>
-                <th style="text-decoration: none; font-size: 22px; color: #4990e2;><a href="/users/sign_in">登陆</a></th>
-                <th style="*/ text-decoration: none; font-size: 22px; color: #a1a1a1;><a href="/users/sign_up">注册</a></th>
+                <th style="text-decoration: none; font-size: 22px; color: #4990e2;>
+                  <a href="/users/sign_in">登陆</a>
+                </th>
+                <th style="text-decoration: none; font-size: 22px; color: #a1a1a1;>
+                  <a href="/users/sign_up">注册</a>
+                </th>
               </tr>
             </thead>
           </table>
@@ -122,7 +126,7 @@ ham is good -->
 
         <div>
           <ul class="list-inline">
-            <li><h4 style="font-size: 22px;">第三方账登陆:</h4></li>
+            <li><h4 style="font-size: 18px;">第三方账登陆:</h4></li>
             <li><i class="fa fa-weixin" aria-hidden="true" style="font-size: 26px; margin-left: 40px;"></i></li>
             <li><i class="fa fa-qq" aria-hidden="true" style="font-size: 26px; margin-left: 40px;"></i></li>
           </ul>
@@ -131,7 +135,7 @@ ham is good -->
       <div style="width: 70%;">
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
-            <%= f.input :email, label: false, placeholder: '由箱／手机', required: false, autofocus: true; %>
+            <%= f.input :email, label: false, placeholder: '由箱', required: false, autofocus: true; %>
             <div style="margin-top: -16px;">
               <%= f.input :password, label: false, placeholder: '密码', required: false %>
             </div>
