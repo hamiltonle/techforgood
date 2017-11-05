@@ -194,31 +194,35 @@ ham is good -->
 
             </div>
 
-          <div class="course-card-description">
-            <!-- <h2 class="course-card-mission text-left"></h2> -->
-            <div class="height-100 text-reading-gray text-smooth">
-              <h4>
-                <%= course.tagline %>
-              </h4>
+            <div class="course-card-description">
+              <!-- <h2 class="course-card-mission text-left"></h2> -->
+              <div class="height-100 text-reading-gray text-smooth">
+                <h4>
+                  <%= course.tagline %>
+                </h4>
+              </div>
+              <div>
+                <div class="flexbox">
+                  <p class="tag-flex" style="color: #767676;"><i class="fa fa-tag text-blue7"></i> <%= course.title %></p>
+                  <p style="color: #767676;"><%= image_tag('globe.png') %><%#= course.issue %> Test</p>
+                  </%>
+                  <%#= cl_image_tag course_company_logo, height: '20px' %>
+                </div>
+              </div>
             </div>
+
             <div>
-              <div class="flexbox">
-                <p class="tag-flex" style="color: #767676;"><i class="fa fa-tag text-blue7"></i> <%= course.title %></p>
-                <p style="color: #767676;"><%= image_tag('globe.png') %><%#= course.issue %> Test</p>
-                </%>
-                <%#= cl_image_tag course_company_logo, height: '20px' %>
-              </div>
+              <% if %>
+                <% course.title == "3D Printing" %>
+                <%= link_to "", course_path(course), class: "current-course-link" %>
+              <% else %>
+                <div class="overlay">
+                  <%= link_to "", course_path(course), class: "course-card-link" %>
+                  <span class="text">— 即将推出 —</span>
+                </div>
+              <% end %>
             </div>
-          </div>
-          <% if course.id == 1 %>
-            <%= link_to "", course_path(course), class: "course-card-link" %>
-          <% else %>
-            <div class="upcoming-course">
-              <div class="overlay"> <%= link_to "", course_path(course) %>
-                <span class="text">— 即将推出 —</span>
-              </div>
-            </div>
-          <% end %>
+
         </div>
       </div>
     <% end %>

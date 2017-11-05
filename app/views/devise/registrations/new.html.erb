@@ -137,9 +137,9 @@ ham is good -->
         <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :email, label: false, required: true, autofocus: true, placeholder: '填写常用手机作为登陆账号'; %>
-          <%= f.input :password, label: false, placeholder: '用户名（4-10位字符)', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-          <%= f.input :password_confirmation, label: false, placeholder: '密码（6-14位英文或数字', required: true %>
+          <%= f.input :email, label: false, required: true, autofocus: true, placeholder: '填写常用邮箱作为登陆账号'; %>
+          <%= f.input :password, label: false, placeholder: '密码（6-14位英文或数字）', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+          <%= f.input :password_confirmation, label: false, placeholder: '填写验证码', required: true %>
         </div>
 
         <div class="form-actions">
