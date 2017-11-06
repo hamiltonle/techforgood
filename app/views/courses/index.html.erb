@@ -13,10 +13,14 @@
 
 <!--       <a href="#how_does_it_work" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>How does it work?</span></a>
 
-      <a href="#courses" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>Courses</span></a>
+
+
+<a href="#courses" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>Courses</span></a>
 
       <a href="#faq" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>FAQ</span></a>
- -->
+
+Example of how to update this page for Gene
+ham is good -->
 
       <!-- Different navigation if login or not -->
       <% if user_signed_in? %>
@@ -52,7 +56,7 @@
 
         <%= link_to t(".sign_in", default: "登陆"), new_user_session_path, class: "btn btn-sm btn-primary login-button" %>
 
-        <%= link_to t(".sign_up", default: "注册"), new_user_session_path, class: "btn btn-sm btn-primary register-button" %>
+        <%= link_to t(".sign_up", default: "注册"), new_user_registration_path, class: "btn btn-sm btn-primary register-button" %>
 
       <% end %>
     </div>
@@ -100,10 +104,10 @@
 
 
 <!-- Banner -->
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,101,168,0.3) 50%), url(<%= image_path('homepage_banner.png') %>);">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,75,162,0.3) 0%, rgba(0,75,162,0.3) 50%), url(<%= image_path('homepage_banner.png') %>);">
   <div class="text-50px">
-    <h1>学习创新技术<br>为你的社区创造积极影响力</h1>
-    <a class="btn btn-lg btn-primary homepage-btn" href="#courses" role="button ">开始学习</a>
+    <h1 style="font-size: 50px">学习创新技术<br>为你的社区创造积极影响力</h1>
+    <a class="btn btn-lg btn-primary homepage-btn" href="#courses" role="button" style="margin-top: 60px; font-size: 28px; width: 283px; padding: 15px;">开始学习</a>
   </div>
 </div>
 
@@ -113,8 +117,8 @@
   <div class="padded text-center characteristics">
     <div class="row">
 
-      <div class="">
-        <h2>聚焦在产生积极社会影响力的STEAM教育<br>学习如何通过技术帮助自己身边的社区</h2>
+      <div>
+        <h2 style="color: #797979; font-size: 36px; line-height: 56px;">聚焦在产生积极社会影响力的STEAM教育<br>学习如何通过技术帮助自己身边的社区</h2>
       </div>
 
       <div class="padded">
@@ -148,15 +152,12 @@
   </div>
 </div>
 
-
-
-
 <!-- Courses -->
-<div class="row no-y-padding text-smooth background_gray">
-  <div class="text-center " id="courses">
-    <h3 class="courses-heading">推荐课程</h3>
+<div class="padded row text-smooth" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 0%), url(/assets/user_dashboard_banner-d234d87f9b7112f19b26c3f39617985cc2bb099b519f69a856ecb9ecc58d1163.png);">
+  <div class="text-center" id="courses">
+    <h2 class="courses-heading">推荐课程</h2>
   </div>
-</div>
+
 
 <!--     <h3><span class="row">Courses developed with:
       <%= image_tag "microsoft_sd.png", class: "img-height-30"%>
@@ -172,7 +173,7 @@
 
     <% @courses.each do |course| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="course-card">
+        <div class="course-card" style="font-smooth: always;">
 
             <% if course.photos? %>
               <% course_photo_path = course.photos.first.path %>
@@ -182,31 +183,46 @@
               <% course_photo_path = ('madi-robson-113926_wqpmaf') %>
             <% end %>
 
-            <div class="course-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+            <div class="course-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)),
 
             url('<%= cl_image_path course_photo_path %>');">
-
-            </div>
-
-          <div class="course-card-description">
-            <!-- <h2 class="course-card-mission text-left"></h2> -->
-            <div class="height-80 text-reading-gray text-smooth">
-              <h4>
-                <%= course.tagline %>
-              </h4>
-            </div>
             <div>
-              <div class="flexbox">
-                <p class="tag-flex text-reading-gray"><i class="fa fa-tag text-blue7"></i><em> <%= course.title %></em></p>
-                <%= cl_image_tag course_company_logo, height: '20px' %>
+              <h3 class="course-card-title">
+                <%= course.title %>
+              </h3>
+            </div>
+
+            </div>
+
+            <div class="course-card-description">
+              <!-- <h2 class="course-card-mission text-left"></h2> -->
+              <div class="height-100 text-reading-gray text-smooth">
+                <h4>
+                  <%= course.tagline %>
+                </h4>
+              </div>
+              <div>
+                <div class="flexbox">
+                  <p class="tag-flex" style="color: #767676;"><i class="fa fa-tag text-blue7"></i> <%= course.title %></p>
+                  <p style="color: #767676;"><%= image_tag('globe.png') %><%#= course.issue %> Test</p>
+                  </%>
+                  <%#= cl_image_tag course_company_logo, height: '20px' %>
+                </div>
               </div>
             </div>
-          </div>
-          <% if course.id == 1 %>
-          <%= link_to "", course_path(course), class: "course-card-link" %>
-          <% else %>
-          <%= link_to "", course_path(course), class: "upcoming-course-card-link"%>
-          <% end %>
+
+            <div>
+              <% if %>
+                <% course.title == "3D Printing" %>
+                <%= link_to "", course_path(course), class: "current-course-link" %>
+              <% else %>
+                <div class="overlay">
+                  <%= link_to "", course_path(course), class: "course-card-link" %>
+                  <span class="text">— 即将推出 —</span>
+                </div>
+              <% end %>
+            </div>
+
         </div>
       </div>
     <% end %>
@@ -214,19 +230,23 @@
   </div>
 </div>
 
+</div>
 
 <!-- Learning Process -->
 <div class="padded">
-  <h2 class="text-center">给心怀天下的梦想家配备技能<br>为脚踏实地的践行者赋予情怀</h2>
+  <h2 class="text-center" style="color: #797979; line-height: 56px; font-size: 36px;">给心怀天下的梦想家配备技能<br>为脚踏实地的践行者赋予情怀</h2>
 </div>
 
-<div class="wrapper-learning-process parallax-homepage" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('workshop_image.png') %>);"" id="how_does_it_work">
+<div class="wrapper-learning-process parallax-homepage" style="background-image: url(<%= image_path('workshop_image.png') %>); position: relative"" id="how_does_it_work">
+  <div class="triangle">
+    <%= image_tag "triangle.png"%>
+  </div>
   <div class="text-center">
     <div class="parallax-logo">
       <%= image_tag "logo_white.png"%>
     </div>
     <div class="parallax-text text-50px">
-      <h3>Tech for good 与展翼计划合作的3D打印机械义肢课程在2017年培训了超过100名来自全国20多所高中的学生，制作并寄送出义肢17例给手掌残疾的儿童</h3>
+      <h3 style="font-size: 24px">Tech for good 与展翼计划合作的3D打印机械义肢课程在2017年培训了超过100名来自全国20多所高中的学生，制作并寄送出义肢17例给手掌残疾的儿童</h3>
     </div>
   </div>
 </div>
