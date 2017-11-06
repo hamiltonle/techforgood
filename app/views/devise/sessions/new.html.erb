@@ -135,9 +135,9 @@ ham is good -->
       <div style="width: 70%;">
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
-            <%= f.input :email, label: false, placeholder: '由箱', required: false, autofocus: true; %>
+            <%= f.input :email, label: false, placeholder: '由箱', autofocus: true %>
             <div style="margin-top: -16px;">
-              <%= f.input :password, label: false, placeholder: '密码', required: false %>
+              <%= f.input :password, label: false, placeholder: '密码' %>
             </div>
             <div>
               <ul class="list-inline">
@@ -150,7 +150,7 @@ ham is good -->
           <%#= render "devise/shared/links" %>
 
           <div class="form-actions ">
-            <%= f.button :submit, "登陆", class: "btn btn-primary btn-login", style: "padding-left: 130px; padding-right: 130px;" %>
+            <%= f.button :submit, "登陆", class: "btn btn-lg btn-primary btn-login", style: "padding-left: 140px; padding-right: 140px;" %>
           </div>
         <% end %>
 
