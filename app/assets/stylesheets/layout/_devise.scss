@@ -22,3 +22,13 @@
 .help-block {
   color: white;
 }
+
+@media (max-width: 1170px) {
+  .login-image {
+    display: none;
+  }
+}
+
+#footer {
+  display: none;
+}
