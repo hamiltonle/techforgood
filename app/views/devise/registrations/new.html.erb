@@ -121,8 +121,12 @@ ham is good -->
           <table class="table">
             <thead>
               <tr>
-                <th style="text-decoration: none; font-size: 22px; color:  #a1a1a1; font-weight: normal;"><a href="/users/sign_in">登陆</a></th>
-                <th style="*/ text-decoration: none; font-size: 22px; color: #4990e2;font-weight: normal;"><a href="/users/sign_up">注册</a></th>
+                <th>
+                  <a href="/users/sign_in" style="text-decoration: none; font-size: 22px; color:  #a1a1a1; font-weight: normal;">登陆</a>
+                </th>
+                <th style="border-bottom-color: #4990e2">
+                  <a href="/users/sign_up" style="text-decoration: none; font-size: 22px; color: #4990e2;font-weight: normal; border-bottom-color: #4990e2">注册</a>
+                </th>
               </tr>
             </thead>
           </table>
@@ -136,7 +140,7 @@ ham is good -->
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 
-        <div class="form-inputs">
+        <div class="form-inputs" style="border-radius: 4px;">
           <%= f.input :email, label: false, required: true, autofocus: true, placeholder: '填写常用邮箱作为登陆账号'; %>
           <div style="margin-top: -16px;">
             <%= f.input :password, label: false, placeholder: '密码（6-14位英文或数字）', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
@@ -160,3 +164,5 @@ ham is good -->
   </div>
 
 </div>
+
+<div id="footer" style="display: none;">
