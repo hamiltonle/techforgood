@@ -92,6 +92,11 @@ $neon: #00FFF8;
   border: 2px solid #4990e2;
 }
 
+.btn-login {
+  padding-left: 140px;
+  padding-right: 140px;
+}
+
 /* Mixins */
 @mixin gradientBg($direction, $startColor, $endColor) {
   background: $startColor;

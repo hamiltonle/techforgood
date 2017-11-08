@@ -110,14 +110,14 @@ ham is good -->
         <h4 style="font-size: 22px;">学习创新技术与设计，给世界带来一点点的改变</h4>
 
         <div>
-          <table class="table">
+          <table class="table" style="width: 70%;">
             <thead>
               <tr>
-                <th style="text-decoration: none; font-size: 22px; color: #4990e2; font-weight: normal;">
-                  <a href="/users/sign_in">登陆</a>
+                <th style="border-bottom-color: #4990e2">
+                  <a href="/users/sign_in" style="text-decoration: none; font-size: 22px; color: #4990e2; font-weight: normal;">登陆</a>
                 </th>
-                <th style="text-decoration: none; font-size: 22px; color: #a1a1a1; font-weight: normal;">
-                  <a href="/users/sign_up">注册</a>
+                <th>
+                  <a href="/users/sign_up" style="text-decoration: none; font-size: 22px; color: #a1a1a1; font-weight: normal;">注册</a>
                 </th>
               </tr>
             </thead>
@@ -149,7 +149,7 @@ ham is good -->
 
           <%#= render "devise/shared/links" %>
 
-          <div class="form-actions ">
+          <div class="form-actions">
             <%= f.button :submit, "登陆", class: "btn btn-lg btn-primary btn-login", style: "padding-left: 140px; padding-right: 140px;" %>
           </div>
         <% end %>
@@ -166,3 +166,5 @@ ham is good -->
   </div>
 
 </div>
+
+<div id="footer" style="display: none;">
