@@ -100,22 +100,22 @@
 </div>
 
 
-<div>
+<div class="login-container">
 
-  <div class="align-center col-xs-12 col-md-6" style="margin-top: 170px;">
-    <div style="margin-left: 50px">
+  <div class="login-left align-center col-xs-12 col-md-6">
+    <div>
         <%= image_tag "footer_heading.png" %>
-        <h4 style="font-size: 22px;">学习创新技术与设计，给世界带来一点点的改变</h4>
-        <h4 style="font-size: 22px; color: #4990e2; margin-top: 30px; margin-bottom: 30px;">重设密码</h4>
+        <h4 class="font-22px">学习创新技术与设计，给世界带来一点点的改变</h4>
+        <h4 class="font-22px" style="color: #4990e2; margin-top: 30px; margin-bottom: 30px;">重设密码</h4>
 
 
-    <div style="width: 70%;">
+    <div class="width-70">
       <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= f.error_notification %>
 
         <div class="form-inputs">
           <%= f.input :email, label: false, required: true, autofocus: true, placeholder: '填写已注册邮箱'; %>
-          <div style="margin-top: -16px;">
+          <div class="form-condense">
             <%= f.input :password, label: false, placeholder: '新密码（6-14位英文或数字）', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
           </div>
           <%= f.input :password_confirmation, label: false, placeholder: '填写验证码', required: true %>
@@ -131,10 +131,10 @@
 </div>
 
   <div class="text-center col-xs-12 col-md-6">
-    <div class="login-image", style="background-image: linear-gradient(-225deg, rgba(0,75,162,0.3) 0%, rgba(0,75,162,0.3) 50%), url(<%= image_path('loginpage_image.png') %>); margin-top: 170px; background-position: top; height: 404px; background-size: cover !important; margin-right: -20px;">
+    <div class="login-image", style="background-image: linear-gradient(-225deg, rgba(0,75,162,0.3) 0%, rgba(0,75,162,0.3) 50%), url(<%= image_path('loginpage_image.png') %>); margin-top: 170px; background-position: top; height: 404px; width: 543px; background-size: cover !important; margin-left: 10px;">
     </div>
   </div>
 
 </div>
 
-<div id="footer" style="display: none;">
+<div id="footer" class="hide-footer">

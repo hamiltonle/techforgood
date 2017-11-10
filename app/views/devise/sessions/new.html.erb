@@ -102,22 +102,22 @@ ham is good -->
   </div>
 </div>
 
-<div>
+<div class="login-container">
 
-  <div class="align-center col-xs-12 col-md-6" style="margin-top: 170px;">
-    <div style="margin-left: 50px">
+  <div class="login-left align-center col-xs-12 col-md-6">
+    <div>
         <%= image_tag "footer_heading.png" %>
-        <h4 style="font-size: 22px;">学习创新技术与设计，给世界带来一点点的改变</h4>
+        <h4 class="font-22px">学习创新技术与设计，给世界带来一点点的改变</h4>
 
         <div>
-          <table class="table" style="width: 70%;">
+          <table class="table width-70">
             <thead>
               <tr>
-                <th style="border-bottom-color: #4990e2">
-                  <a href="/users/sign_in" style="text-decoration: none; font-size: 22px; color: #4990e2; font-weight: normal;">登陆</a>
+                <th class="active-cell">
+                  <a href="/users/sign_in" class="active-link">登陆</a>
                 </th>
                 <th>
-                  <a href="/users/sign_up" style="text-decoration: none; font-size: 22px; color: #a1a1a1; font-weight: normal;">注册</a>
+                  <a href="/users/sign_up" class="inactive-link">注册</a>
                 </th>
               </tr>
             </thead>
@@ -126,23 +126,23 @@ ham is good -->
 
         <div>
           <ul class="list-inline">
-            <li><h4 style="font-size: 18px;">第三方账登陆:</h4></li>
-            <li><i class="fa fa-weixin" aria-hidden="true" style="font-size: 26px; margin-left: 40px;"></i></li>
-            <li><i class="fa fa-qq" aria-hidden="true" style="font-size: 26px; margin-left: 40px;"></i></li>
+            <li><h4 class="font-18px">第三方账登陆:</h4></li>
+            <li><i class="fa fa-weixin login-socials" aria-hidden="true"></i></li>
+            <li><i class="fa fa-qq login-socials" aria-hidden="true"></i></li>
           </ul>
         </div>
 
-      <div style="width: 70%;">
+      <div class="width-70">
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
             <%= f.input :email, label: false, placeholder: '由箱', autofocus: true %>
-            <div style="margin-top: -16px;">
+            <div class="form-condense">
               <%= f.input :password, label: false, placeholder: '密码' %>
             </div>
             <div>
               <ul class="list-inline">
-              <li style="font-size: 12px;"><%= f.input :remember_me, label: '在这台电脑上记住我', as: :boolean if devise_mapping.rememberable? %></li>
-              <li style="margin-left: 40px; font-size: 12px;"><%= link_to "忘记密码", new_password_path(resource_name) %><br /></li>
+              <li class="font-12px"><%= f.input :remember_me, label: '在这台电脑上记住我', as: :boolean if devise_mapping.rememberable? %></li>
+              <li class="font-12px" style="margin-left: 40px;"><%= link_to "忘记密码", new_password_path(resource_name) %><br /></li>
               </ul>
             </div>
           </div>
@@ -161,10 +161,10 @@ ham is good -->
   </div>
 
   <div class="text-center col-xs-12 col-md-6">
-    <div class="login-image", style="background-image: linear-gradient(-225deg, rgba(0,75,162,0.3) 0%, rgba(0,75,162,0.3) 50%), url(<%= image_path('loginpage_image.png') %>); margin-top: 170px; background-position: top; height: 404px; background-size: cover !important; margin-right: -20px;">
+    <div class="login-image", style="background-image: linear-gradient(-225deg, rgba(0,75,162,0.3) 0%, rgba(0,75,162,0.3) 50%), url(<%= image_path('loginpage_image.png') %>); margin-top: 170px; background-position: top; height: 404px; width: 543px; background-size: cover !important; margin-left: 10px;">
     </div>
   </div>
 
 </div>
 
-<div id="footer" style="display: none;">
+<div id="footer" class="hide-footer">

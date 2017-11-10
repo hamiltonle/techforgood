@@ -28,3 +28,58 @@
     display: none;
   }
 }
+
+.login-container {
+  margin-left: 150px;
+}
+
+.login-left {
+  margin-top: 170px;
+}
+
+.font-22px {
+  font-size: 22px;
+}
+
+.font-18px {
+  font-size: 18px;
+}
+
+.font-12px {
+  font-size: 12px;
+}
+
+.inactive-link {
+  text-decoration: none;
+  font-size: 22px;
+  color: #a1a1a1;
+  font-weight: normal;
+}
+
+.active-link {
+  text-decoration: none;
+  font-size: 22px;
+  color: #4990e2;
+  font-weight: normal;
+}
+
+.active-cell {
+  border-bottom-color: #4990e2;
+}
+
+.login-socials {
+  font-size: 26px;
+  margin-left: 40px;
+}
+
+.width-70 {
+  width: 70%;
+}
+
+.form-condense {
+  margin-top: -16px;
+}
+
+.hide-footer {
+  display: none;
+}
