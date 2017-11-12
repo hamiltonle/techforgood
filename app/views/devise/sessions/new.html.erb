@@ -107,10 +107,10 @@ ham is good -->
   <div class="login-left align-center col-xs-12 col-md-6">
     <div>
         <%= image_tag "footer_heading.png", class: "login-logo"  %>
-        <h4 class="font-22px">学习创新技术与设计，给世界带来一点点的改变</h4>
+        <h4 class="login-h2">学习创新技术与设计，给世界带来一点点的改变</h4>
 
         <div>
-          <table class="table width-70">
+          <table class="table login-table">
             <thead>
               <tr>
                 <th class="active-cell">
@@ -126,7 +126,7 @@ ham is good -->
 
         <div>
           <ul class="list-inline">
-            <li><h4 class="font-18px">第三方账登陆:</h4></li>
+            <li><h4 class="font-18px" style="margin-left: 10px">第三方账登陆:</h4></li>
             <li><i class="fa fa-weixin login-socials" aria-hidden="true"></i></li>
             <li><i class="fa fa-qq login-socials" aria-hidden="true"></i></li>
           </ul>
@@ -135,14 +135,14 @@ ham is good -->
       <div class="width-70">
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
-            <%= f.input :email, label: false, placeholder: '由箱', autofocus: true %>
-            <div class="form-condense">
+            <%= f.input :email, label: false, placeholder: '由箱', autofocus: true, class: "top-input" %>
+            <div class="form-condense" style="margin-bottom: -10px;">
               <%= f.input :password, label: false, placeholder: '密码' %>
             </div>
             <div>
               <ul class="list-inline">
               <li class="font-12px"><%= f.input :remember_me, label: '在这台电脑上记住我', as: :boolean if devise_mapping.rememberable? %></li>
-              <li class="font-12px" style="margin-left: 40px;"><%= link_to "忘记密码", new_password_path(resource_name) %><br /></li>
+              <li class="font-12px" style="margin-left: 120px;"><%= link_to "忘记密码", new_password_path(resource_name) %><br /></li>
               </ul>
             </div>
           </div>
@@ -150,7 +150,7 @@ ham is good -->
           <%#= render "devise/shared/links" %>
 
           <div class="form-actions">
-            <%= f.button :submit, "登陆", class: "btn btn-lg btn-primary btn-login", style: "padding-left: 140px; padding-right: 140px;" %>
+            <%= f.button :submit, "登陆", class: "btn btn-lg btn-primary btn-login", style: "padding-left: 140px; padding-right: 140px; margin-top: -20px;}" %>
           </div>
         <% end %>
 
