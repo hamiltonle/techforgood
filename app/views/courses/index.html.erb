@@ -158,78 +158,75 @@ ham is good -->
     <h2 class="courses-heading">推荐课程</h2>
   </div>
 
-
 <!--     <h3><span class="row">Courses developed with:
       <%= image_tag "microsoft_sd.png", class: "img-height-30"%>
       <%= image_tag "JohnsonandJohnson.jpg", class: "img-height-30"%>
       <%= image_tag "stratasys_sd.png", class: "img-height-30"%>
     </span></h3> -->
 
+  <div class="container" id="courses">
 
-<div class="container" id="courses">
+    <div class="row">
+      <br>
 
-  <div class="row">
-    <br>
+      <% @courses.each do |course| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="course-card" style="font-smooth: always;">
 
-    <% @courses.each do |course| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="course-card" style="font-smooth: always;">
-
-            <% if course.photos? %>
-              <% course_photo_path = course.photos.first.path %>
-              <% course_company_logo = course.photos.last.path %>
-            <% else %>
-              <% course_photo_path = ('madi-robson-113926_wqpmaf') %>
-              <% course_photo_path = ('madi-robson-113926_wqpmaf') %>
-            <% end %>
-
-            <div class="course-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)),
-
-            url('<%= cl_image_path course_photo_path %>');">
-            <div>
-              <h3 class="course-card-title">
-                <%= course.title %>
-              </h3>
-            </div>
-
-            </div>
-
-            <div class="course-card-description">
-              <!-- <h2 class="course-card-mission text-left"></h2> -->
-              <div class="height-100 text-reading-gray text-smooth">
-                <h4>
-                  <%= course.tagline %>
-                </h4>
-              </div>
-              <div>
-                <div class="flexbox">
-                  <p class="tag-flex" style="color: #767676;"><i class="fa fa-tag text-blue7"></i> <%= course.title %></p>
-                  <p style="color: #767676;"><%= image_tag('globe.png') %><%#= course.issue %> Test</p>
-                  </%>
-                  <%#= cl_image_tag course_company_logo, height: '20px' %>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <% if %>
-                <% course.title == "3D Printing" %>
-                <%= link_to "", course_path(course), class: "current-course-link" %>
+              <% if course.photos? %>
+                <% course_photo_path = course.photos.first.path %>
+                <% course_company_logo = course.photos.last.path %>
               <% else %>
-                <div class="overlay">
-                  <%= link_to "", course_path(course), class: "course-card-link" %>
-                  <span class="text">— 即将推出 —</span>
-                </div>
+                <% course_photo_path = ('madi-robson-113926_wqpmaf') %>
+                <% course_photo_path = ('madi-robson-113926_wqpmaf') %>
               <% end %>
-            </div>
 
+              <div class="course-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)),
+
+              url('<%= cl_image_path course_photo_path %>');">
+              <div>
+                <h3 class="course-card-title">
+                  <%= course.title %>
+                </h3>
+              </div>
+
+              </div>
+
+              <div class="course-card-description">
+                <!-- <h2 class="course-card-mission text-left"></h2> -->
+                <div class="height-100 text-reading-gray text-smooth">
+                  <h4>
+                    <%= course.tagline %>
+                  </h4>
+                </div>
+                <div>
+                  <div class="flexbox">
+                    <p class="tag-flex" style="color: #767676;"><i class="fa fa-tag text-blue7"></i> <%= course.title %></p>
+                    <p style="color: #767676;"><%= image_tag('globe.png') %><%#= course.issue %> Test</p>
+                    </%>
+                    <%#= cl_image_tag course_company_logo, height: '20px' %>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <% if %>
+                  <% course.title == "3D Printing" %>
+                  <%= link_to "", course_path(course), class: "current-course-link" %>
+                <% else %>
+                  <div class="overlay">
+                    <%= link_to "", course_path(course), class: "course-card-link" %>
+                    <span class="text">— 即将推出 —</span>
+                  </div>
+                <% end %>
+              </div>
+
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
 
+    </div>
   </div>
-</div>
-
 </div>
 
 <!-- Learning Process -->
