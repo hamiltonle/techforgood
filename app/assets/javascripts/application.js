@@ -18,6 +18,24 @@ please make a specific require like above */
 
 
 
+// For fixed/scrolling side bar on course show page
+
+$(function () {
+    var sidebar = $('.sidebar');
+    var top = sidebar.offset().top - parseFloat(sidebar.css('margin-top'));
+
+    $(window).scroll(function (event) {
+      var y = $(this).scrollTop();
+      if (y >= top) {
+        sidebar.addClass('fixed');
+      } else {
+        sidebar.removeClass('fixed');
+      }
+    });
+});
+
+
+
 // for tabs in user dashboard
 
 $('#myTabs a').click(function (e) {

@@ -14,7 +14,42 @@
 <!-- url(<%= image_path('loginpage_image.png') %>); margin-top: 170px; background-position: top; height: 404px; width: 543px; background-size: cover !important; margin-left: 10px;"> -->
 
   <div class="course_container">
-    <%= render "courses/sidebar"%>
+
+    <!-- Sidebar -->
+    <div id="course_sidebar" class="text-center sidebar">
+      <div class="text-left lesson-tab div-relative course_sidebar_tab padded_tab">
+        <div class="lesson-text flex-item-lesson-title slightly_padded">
+          <h5>Brought To You By</h5>
+          <h5><%= @course.organization.name %></h5>
+          <%= image_tag("JohnsonandJohnsonLogo.svg.png", height: '30px') %>
+        </div>
+      </div>
+      <div class="text-left lesson-tab div-relative course_sidebar_tab">
+        <h5><a href="#overview">Overview</a></h5>
+      </div>
+      <div class="text-left lesson-tab div-relative course_sidebar_tab">
+        <h5><a href="#syllabus">Curriculum</a></h5>
+      </div>
+      <div class="text-left lesson-tab div-relative course_sidebar_tab">
+        <h5><a href="#project">Practical Project</a></h5>
+      </div>
+      <div class="text-left lesson-tab div-relative course_sidebar_tab">
+        <h5><a href="#tutors">Tutor Team</a></h5>
+      </div>
+      <div class="text-left lesson-tab div-relative course_sidebar_tab">
+        <h5><a href="#faqs">FAQ</a></h5>
+      </div>
+
+      <div class="padded_tab">
+        <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+        <h6>Course Starts: <%= @course.start_date %></h6>
+        <h6><%= @course_enrollments.count %> Students</h6>
+      </div>
+    </div>
+
+
+    <!-- End of sidebar -->
+
       <div class="left_padding">
         <div class="course-content" id="intro">
           <div class="row background_white slightly_padded">
