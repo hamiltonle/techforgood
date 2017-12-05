@@ -20,6 +20,14 @@
   width: 100px;
   color: white !important;
 }
+
+.box-blue {
+  background: $blue;
+  padding: 5px;
+  width: 70px;
+  color: white !important;
+}
+
 .green_grey_hr {
   width: 25%;
   height:2px;
@@ -168,7 +176,7 @@
 
 .review_box {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border: solid 1px #f0f0f0;
   align-content: center;

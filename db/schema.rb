@@ -29,6 +29,23 @@ ActiveRecord::Schema.define(version: 20171106093538) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
+  create_table "admin_users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
   create_table "assignments", force: :cascade do |t|
     t.bigint "lesson_id"
     t.bigint "session_id"
@@ -122,7 +139,9 @@ ActiveRecord::Schema.define(version: 20171106093538) do
     t.text "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "session_id"
     t.index ["lesson_id"], name: "index_questions_on_lesson_id"
+    t.index ["session_id"], name: "index_questions_on_session_id"
   end
 
   create_table "quizzes", force: :cascade do |t|
@@ -196,6 +215,7 @@ ActiveRecord::Schema.define(version: 20171106093538) do
   add_foreign_key "enrollments", "users"
   add_foreign_key "lessons", "courses"
   add_foreign_key "questions", "lessons"
+  add_foreign_key "questions", "sessions"
   add_foreign_key "quizzes", "lessons"
   add_foreign_key "quizzes", "sessions"
   add_foreign_key "sessions", "enrollments"
