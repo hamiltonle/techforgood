@@ -45,7 +45,7 @@ GIT
       rails (>= 3.2)
 
 GEM
-  remote: https://rubygems.org/
+  remote: https://ruby.taobao.org/
   specs:
     actioncable (5.1.1)
       actionpack (= 5.1.1)
@@ -344,4 +344,4 @@ RUBY VERSION
    ruby 2.3.3p222
 
 BUNDLED WITH
-   1.15.1
+   1.16.0
