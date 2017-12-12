@@ -19,12 +19,14 @@ please make a specific require like above */
 
 
 // For fixed/scrolling side bar on course show page
+/* JavaScript from: http://jqueryfordesigners.com/fixed-floating-elements/ */
 
 $(function () {
     var sidebar = $('.sidebar');
     var top = sidebar.offset().top - parseFloat(sidebar.css('margin-top'));
 
     $(window).scroll(function (event) {
+      console.log('scrolled');
       var y = $(this).scrollTop();
       if (y >= top) {
         sidebar.addClass('fixed');
@@ -33,7 +35,6 @@ $(function () {
       }
     });
 });
-
 
 
 // for tabs in user dashboard
