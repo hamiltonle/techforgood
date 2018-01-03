@@ -160,7 +160,6 @@
 
     <div class="row">
       <br>
-
       <% @courses.each do |course| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="course-card" style="font-smooth: always;">
@@ -177,7 +176,7 @@
 
               url('<%= cl_image_path course_photo_path %>');">
               <div>
-                <h3 class="course-card-title">
+                <h3 class="course-card-title margin-1em-allsides text-center">
                   <%= course.title %>
                 </h3>
               </div>
@@ -187,20 +186,17 @@
               <div class="course-card-description">
                 <!-- <h2 class="course-card-mission text-left"></h2> -->
                 <div class="height-100 text-reading-gray text-smooth">
-                  <h4>
-                    <%= course.tagline %>
-                  </h4>
+                  <h4><%= course.tagline %></h4>
                 </div>
                 <div>
                   <div class="flexbox">
-                    <p class="tag-flex" style="color: #767676;"><i class="fa fa-tag text-blue7"></i> <%= course.title %></p>
-                    <p style="color: #767676;"><%= image_tag('globe.png') %><%#= course.issue %> Test</p>
+                    <p class="tag-flex" style="color: #767676;"><i class="fa fa-tag text-blue7"></i><%= course.tech_solution %></p>
+                    <p style="color: #767676;"><%= image_tag('globe.png') %><%= course.issue %></p>
                     </%>
                     <%#= cl_image_tag course_company_logo, height: '20px' %>
                   </div>
                 </div>
               </div>
-
               <div>
                 <% if %>
                   <% course.id == 1 %>
@@ -212,7 +208,6 @@
                   </div>
                 <% end %>
               </div>
-
           </div>
         </div>
       <% end %>
