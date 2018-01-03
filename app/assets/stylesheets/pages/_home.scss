@@ -20,13 +20,33 @@ html,body
 //   height: 25vh;
 // }
 
-.characteristics {
+.border-bottom-thin {
   border-bottom: 1px solid rgba(0,0,0,0.1)
 }
 
 .second-row {
   margin-top: 20px;
 }
+
+// Steps section on home page
+.step-card {
+  height: 340px;
+  color: black;
+  position: relative;
+  border:1px solid #c5c5c5;
+  border-radius: 1px;
+  margin-bottom: 20px;
+  margin: 20px;
+}
+
+.step-card-description {
+  position: absolute;
+  bottom: 0px;
+  padding: 25px;
+  height: 170px;
+  width: 100%;
+}
+
 
 // Courses Section on Home Page
 .courses-heading {

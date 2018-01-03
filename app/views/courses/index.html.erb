@@ -4,7 +4,7 @@
     <!-- Logo -->
     <a href="#top" class="page-scroll">
       <%= link_to root_path, class: "navbar-techforgood-brand" do %>
-        <%= image_tag "techforgood logo.png" %>
+        <%= image_tag "logo_lg.png", height: "55px" %>
       <% end %>
     </a>
 
@@ -111,44 +111,191 @@
 
 
 <!-- Characteristics -->
-<div class="wrapper" id="steps">
-  <div class="padded text-center characteristics">
+<div class="container" id="steps">
+  <div class="padding-top text-center">
     <div class="row">
 
       <div>
-        <h2 style="color: #797979; font-size: 36px; line-height: 56px;">聚焦在产生积极社会影响力的STEAM教育<br>学习如何通过技术帮助自己身边的社区</h2>
+        <h2 style="color: #797979; font-size: 36px; line-height: 56px;">聚焦在产生积极社会影响力的 STEAM 教育</h2>
       </div>
 
       <div class="padded">
         <div class="col-sm-4" >
           <%= image_tag "info1.png", class: ""%>
-          <h4>在线学习系统<br>摆脱时间与地点的限制</h4>
+          <h4>线上课程让你随时随地零基础入门<br>线下训练营手把手和你一起搭建原型</h4>
         </div>
         <div class="col-sm-4"  >
           <%= image_tag "info2.png", class: ""%>
-          <h4>知名企业，大学，NGO共同开发课程<br>提供专业权威的课程认证</h4>
+          <h4>行业专家，大学，NGO 共同开发课程<br>提供专业权威的课程内容</h4>
         </div>
         <div class="col-sm-4" >
           <%= image_tag "info3.png", class: ""%>
           <h4>导师全程监督与辅导<br>在互助的学习社区里共同进步</h4>
         </div>
-        <div class="col-sm-4 second-row" >
-          <%= image_tag "info4.png", class: ""%>
+<!--         <div class="col-sm-4 second-row" >
+          <%#= image_tag "info4.png", class: ""%>
           <h4>了解具体技术方案在社会创新<br>中的应用案例</h4>
         </div>
         <div class="col-sm-4 second-row"  >
-          <%= image_tag "info5.png", class: ""%>
+          <%#= image_tag "info5.png", class: ""%>
           <h4>亲自动手实践具体解决方案</h4>
         </div>
         <div class="col-sm-4 second-row" >
-          <%= image_tag "info6.png", class: ""%>
+          <%#= image_tag "info6.png", class: ""%>
           <h4>学以致用，用创新科技帮助<br>自己身边的社区</h4>
-        </div>
+        </div> -->
       </div>
-
     </div>
   </div>
 </div>
+
+<!-- 3 Steps -->
+<div class="container" id="">
+  <div class="padded text-center border-bottom-thin">
+    <div class="row">
+
+      <div>
+        <h2 style="color: #797979; font-size: 36px; line-height: 56px;">3 步走，学习如何通过技术帮助自己身边的社区</h2>
+      </div>
+
+      <div class="padded flexbox hidden-sm hidden-xs">
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="step-card" style="font-smooth: always;">
+            <div class="" style="">
+              <h3 class="course-card-title margin-1em-allsides text-center">
+                <%= image_tag "flame.png", height: "96px" %>
+              </h3>
+            </div>
+            <div class="step-card-description step_background_blue ">
+              <div class="flexbox items-center">
+                <div class="height-100 text-white text-smooth step-num flexbox">
+                  <h4 class="text-36px">1</h4>
+                </div>
+                <div class="height-100 text-white text-smooth flexbox">
+                  <h4>在导师的辅导下，在接下来的六个月用所学技术设计一个解决方案，帮助自己身边的社区</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <%= image_tag "arrow.png", height: "63px" %>
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="step-card" style="font-smooth: always;">
+            <div class="" style="">
+              <h3 class="course-card-title margin-1em-allsides text-center">
+                <%= image_tag "wrench.png", height: "96px" %>
+              </h3>
+            </div>
+            <div class="step-card-description step_background_red">
+              <div class="flexbox items-center">
+                <div class="height-100 text-white text-smooth step-num flexbox">
+                  <h4 class="text-36px">2</h4>
+                </div>
+                <div class="height-100 text-white text-smooth flexbox">
+                  <h4>在两个月的时间里，学习实践具体解决方案，打造第一版原型</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <%= image_tag "arrow.png", height: "63px" %>
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="step-card" style="font-smooth: always;">
+            <div class="" style="">
+              <h3 class="course-card-title margin-1em-allsides text-center">
+                <%= image_tag "heart.png", height: "96px" %>
+              </h3>
+            </div>
+            <div class="step-card-description step_background_yellow">
+              <div class="flexbox items-center">
+                <div class="height-100 text-white text-smooth step-num flexbox">
+                  <h4 class="text-36px">3</h4>
+                </div>
+                <div class="height-100 text-white text-smooth flexbox">
+                  <h4>在导师的辅导下，在接下来的六个月用所学技术设计一个解决方案，帮助自己身边的社区</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="padded hidden-lg hidden-md">
+
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="step-card" style="font-smooth: always;">
+              <div class="" style="">
+                <h3 class="course-card-title margin-1em-allsides text-center">
+                  <%= image_tag "flame.png", height: "96px" %>
+                </h3>
+              </div>
+              <div class="step-card-description step_background_blue ">
+                <div class="flexbox items-center">
+                  <div class="height-100 text-white text-smooth step-num flexbox">
+                    <h4 class="text-36px">1</h4>
+                  </div>
+                  <div class="height-100 text-white text-smooth flexbox">
+                    <h4>在导师的辅导下，在接下来的六个月用所学技术设计一个解决方案，帮助自己身边的社区</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="step-card" style="font-smooth: always;">
+              <div class="" style="">
+                <h3 class="course-card-title margin-1em-allsides text-center">
+                  <%= image_tag "wrench.png", height: "96px" %>
+                </h3>
+              </div>
+              <div class="step-card-description step_background_red">
+                <div class="flexbox items-center">
+                  <div class="height-100 text-white text-smooth step-num flexbox">
+                    <h4 class="text-36px">2</h4>
+                  </div>
+                  <div class="height-100 text-white text-smooth flexbox">
+                    <h4>在两个月的时间里，学习实践具体解决方案，打造第一版原型</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="step-card" style="font-smooth: always;">
+              <div class="" style="">
+                <h3 class="course-card-title margin-1em-allsides text-center">
+                  <%= image_tag "heart.png", height: "96px" %>
+                </h3>
+              </div>
+              <div class="step-card-description step_background_yellow">
+                <div class="flexbox items-center">
+                  <div class="height-100 text-white text-smooth step-num flexbox">
+                    <h4 class="text-36px">3</h4>
+                  </div>
+                  <div class="height-100 text-white text-smooth flexbox">
+                    <h4>在导师的辅导下，在接下来的六个月用所学技术设计一个解决方案，帮助自己身边的社区</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- Courses -->
 <div class="padded row text-smooth" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 0%), url(/assets/user_dashboard_banner-d234d87f9b7112f19b26c3f39617985cc2bb099b519f69a856ecb9ecc58d1163.png);">
@@ -198,12 +345,10 @@
                 </div>
               </div>
               <div>
-                <% if %>
-                  <% course.id == 1 %>
-                  <%= link_to "", course_path(course), class: "current-course-link" %>
+                <% if course.id == 1%>
+                  <%= link_to "", course_path(course), class: "course-card-link" %>
                 <% else %>
                   <div class="overlay">
-                    <%= link_to "", course_path(course), class: "course-card-link" %>
                     <span class="text">— 即将推出 —</span>
                   </div>
                 <% end %>

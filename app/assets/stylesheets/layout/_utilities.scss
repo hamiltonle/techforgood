@@ -6,6 +6,10 @@
 
 
 
+
+
+
+
 // Borders
 .bottom-border {
   border-bottom: 1px solid $slightlightgray;
@@ -43,6 +47,9 @@
     overflow:hidden;
 }
 
+.step-num {
+  flex: 0 0 15%;
+}
 
 .items-center {
   align-items:center;
@@ -56,6 +63,10 @@
 
 .height-80vh {
   height: 90vh;
+}
+
+.height-55 {
+  height: 55px;
 }
 
 // margins
@@ -180,6 +191,18 @@
 }
 .bg-white {
   background: white;
+}
+
+.step_background_blue {
+  background-color: rgb(48, 129, 163);
+}
+
+.step_background_red {
+  background-color: rgba(245, 68, 69,.8);
+}
+
+.step_background_yellow {
+  background-color: rgb(245, 201, 74);
 }
 
 // DIV Background
