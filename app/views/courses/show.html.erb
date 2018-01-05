@@ -17,33 +17,39 @@
 
     <!-- Sidebar -->
     <div id="course_sidebar" class="text-center sidebar">
-      <div class="text-left lesson-tab div-relative course_sidebar_tab padded_tab">
-        <div class="lesson-text flex-item-lesson-title slightly_padded">
-          <h5>Brought To You By</h5>
-          <h5><%= @course.organization.name %></h5>
-          <%= image_tag("JohnsonandJohnsonLogo.svg.png", height: '30px') %>
+      <div class="text-left div-relative course_sidebar_tab padded_tab">
+        <div class="lesson-text text-center">
+          <h5>此课程由以下机构联合开发授课</h5>
+          <!-- <h5><%#= @course.organization.name %></h5> -->
+          <%= image_tag("handson-logo.png", height: '64px') %>
+          <h5 class="bottom-border-thick padded-bottom-1em">(清华大学XLAB入驻项目)</h5>
         </div>
       </div>
-      <div class="text-left lesson-tab div-relative course_sidebar_tab">
-        <h5><a href="#overview">Overview</a></h5>
-      </div>
-      <div class="text-left lesson-tab div-relative course_sidebar_tab">
-        <h5><a href="#syllabus">Curriculum</a></h5>
-      </div>
-      <div class="text-left lesson-tab div-relative course_sidebar_tab">
-        <h5><a href="#project">Practical Project</a></h5>
-      </div>
-      <div class="text-left lesson-tab div-relative course_sidebar_tab">
-        <h5><a href="#tutors">Tutor Team</a></h5>
-      </div>
-      <div class="text-left lesson-tab div-relative course_sidebar_tab">
-        <h5><a href="#faqs">FAQ</a></h5>
+      <div>
+        <div>
+          <div class="div-relative text-center">
+            <h5><a href="#overview" class="sidebar-menu-padding course-sidebar-tab">关于议题</a></h5>
+          </div>
+          <div class="div-relative text-center">
+            <h5><a href="#syllabus" class="sidebar-menu-padding course-sidebar-tab">课程大纲</a></h5>
+          </div>
+          <div class="div-relative text-center">
+            <h5><a href="#project" class="sidebar-menu-padding course-sidebar-tab">实践项目</a></h5>
+          </div>
+          <div class="div-relative text-center">
+            <h5><a href="#tutors" class="sidebar-menu-padding course-sidebar-tab">讲师团队</a></h5>
+          </div>
+          <div class="div-relative text-center">
+            <h5><a href="#faqs" class="sidebar-menu-padding course-sidebar-tab">常见疑问</a></h5>
+          </div>
+        </div>
       </div>
 
       <div class="padded_tab">
         <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
-        <h6>Course Starts: <%= @course.start_date %></h6>
-        <h6><%= @course_enrollments.count %> Students</h6>
+        <div id="enroll-btn2" class="btn btn-default text-white disabled padded-vertical-15px margin-y-1em">开始上课</div>
+<!--         <h6>Course Starts: <%= @course.start_date %></h6>
+        <h6><%= @course_enrollments.count %> Students</h6> -->
       </div>
     </div>
 
