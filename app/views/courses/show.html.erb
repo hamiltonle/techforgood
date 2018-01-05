@@ -47,8 +47,9 @@
 
       <div class="padded_tab">
         <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
-        <h6>Course Starts: <%= @course.start_date %></h6>
-        <h6><%= @course_enrollments.count %> Students</h6>
+        <div id="enroll-btn2" class="btn btn-default text-white disabled padded-vertical-15px margin-y-1em">开始上课</div>
+<!--         <h6>Course Starts: <%= @course.start_date %></h6>
+        <h6><%= @course_enrollments.count %> Students</h6> -->
       </div>
     </div>
 
