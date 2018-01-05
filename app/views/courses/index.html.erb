@@ -1,108 +1,22 @@
-<!-- Navbar -->
+<!-- Temporary Navbar...original navbar can be found in shared/navbar.html.erb -->
 <div class="navbar-fixed-top">
-  <div id="navbar" class="navbar-techforgood">
+  <div id="navbar" class="navbar-techforgood flexbox space-around">
     <!-- Logo -->
     <a href="#top" class="page-scroll">
       <%= link_to root_path, class: "navbar-techforgood-brand" do %>
         <%= image_tag "logo_lg.png", height: "55px" %>
       <% end %>
     </a>
-
-    <!-- Right Navigation -->
-    <div id="nav" class="navbar-techforgood-right hidden-xs hidden-sm">
-
-<!--       <a href="#how_does_it_work" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>How does it work?</span></a>
-
-
-
-<a href="#courses" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>Courses</span></a>
-
-      <a href="#faq" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>FAQ</span></a>
--->
-
-      <!-- Different navigation if login or not -->
-      <% if user_signed_in? %>
-
-        <!-- Profile picture and dropdown -->
-        <div class="navbar-techforgood-item">
-          <div class="dropdown">
-            <% if current_user.photo? %>
-              <%= cl_image_tag current_user.photo.path, height: 50, width: 50, class: "img-circle", crop: :thumb, gravity: :face, "data-toggle" => "dropdown" %>
-            <% else %>
-              <%= image_tag "avatar_placeholder.png", class: "avatar-large dropdown-toggle", id: "navbar-techforgood-menu", "data-toggle" => "dropdown" %>
-            <% end %>
-            <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
-              <li>
-                <%= link_to dashboard_users_path do %>
-                  <i class="fa fa-user fa-fw text-blue7"></i> <%= t(".profile", default: "Dashboard") %>
-                <% end %>
-              </li>
-
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out fa-fw text-blue7"></i>  <%= t(".sign_out", default: "Log out") %>
-                <% end %>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-      <% else %>
-
-        <!-- Login text link -->
-      <%#= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-techforgood-item navbar-techforgood-link" %>
-
-        <%= link_to t(".sign_in", default: "登陆"), new_user_session_path, class: "btn btn-sm btn-primary login-button" %>
-
-        <%= link_to t(".sign_up", default: "注册"), new_user_registration_path, class: "btn btn-sm btn-primary register-button" %>
-
-      <% end %>
-    </div>
-
-    <!-- Dropdown list appearing on mobile only -->
-    <% if user_signed_in? %>
-      <div class="navbar-techforgood-item hidden-md hidden-lg">
-        <div class="dropdown">
-          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-          <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
-            <li>
-              <%= link_to dashboard_users_path do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Dashboard") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    <% end %>
-<!--
-    <div class="navbar-techforgood-item hidden-md hidden-lg">
-      <div class="dropdown">
-        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
-
-          <li>
-            <a href="#steps" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>How does it work?</span></a>
-          </li>
-          <li>
-            <a href="#courses" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>Courses</span></a>
-          </li>
-          <li>
-            <a href="#faq" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>FAQ</span></a>
-          </li>
-        </ul>
-      </div>
-    </div> -->
   </div>
 </div>
 
 
+
+
+
+
 <!-- Banner -->
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,75,162,0.3) 0%, rgba(0,75,162,0.3) 50%), url(<%= image_path('homepage_banner.png') %>);">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,75,162,0.3) 0%, rgba(0,75,162,0.3) 50%), url(<%= image_path('homebanner.jpg') %>);">
   <div class="text-50px">
     <h1 style="font-size: 50px">学习创新技术<br>为你的社区创造积极影响力</h1>
     <a class="btn btn-lg btn-primary homepage-btn" href="#courses" role="button" style="margin-top: 60px; font-size: 28px; width: 283px; padding: 15px;">开始学习</a>
@@ -172,8 +86,8 @@
                 <div class="height-100 text-white text-smooth step-num flexbox">
                   <h4 class="text-36px">1</h4>
                 </div>
-                <div class="height-100 text-white text-smooth flexbox">
-                  <h4>在导师的辅导下，在接下来的六个月用所学技术设计一个解决方案，帮助自己身边的社区</h4>
+                <div class="height-100 text-white text-smooth flexbox text-left">
+                  <h4>了解具体技术方案在社会创新中的实际应用案例</h4>
                 </div>
               </div>
             </div>
@@ -194,7 +108,7 @@
                 <div class="height-100 text-white text-smooth step-num flexbox">
                   <h4 class="text-36px">2</h4>
                 </div>
-                <div class="height-100 text-white text-smooth flexbox">
+                <div class="height-100 text-white text-smooth flexbox text-left">
                   <h4>在两个月的时间里，学习实践具体解决方案，打造第一版原型</h4>
                 </div>
               </div>
@@ -216,7 +130,7 @@
                 <div class="height-100 text-white text-smooth step-num flexbox">
                   <h4 class="text-36px">3</h4>
                 </div>
-                <div class="height-100 text-white text-smooth flexbox">
+                <div class="height-100 text-white text-smooth flexbox text-left">
                   <h4>在导师的辅导下，在接下来的六个月用所学技术设计一个解决方案，帮助自己身边的社区</h4>
                 </div>
               </div>
@@ -241,8 +155,8 @@
                   <div class="height-100 text-white text-smooth step-num flexbox">
                     <h4 class="text-36px">1</h4>
                   </div>
-                  <div class="height-100 text-white text-smooth flexbox">
-                    <h4>在导师的辅导下，在接下来的六个月用所学技术设计一个解决方案，帮助自己身边的社区</h4>
+                  <div class="height-100 text-white text-smooth flexbox text-left">
+                    <h4>了解具体技术方案在社会创新中的实际应用案例</h4>
                   </div>
                 </div>
               </div>
@@ -262,7 +176,7 @@
                   <div class="height-100 text-white text-smooth step-num flexbox">
                     <h4 class="text-36px">2</h4>
                   </div>
-                  <div class="height-100 text-white text-smooth flexbox">
+                  <div class="height-100 text-white text-smooth flexbox text-left">
                     <h4>在两个月的时间里，学习实践具体解决方案，打造第一版原型</h4>
                   </div>
                 </div>
@@ -283,7 +197,7 @@
                   <div class="height-100 text-white text-smooth step-num flexbox">
                     <h4 class="text-36px">3</h4>
                   </div>
-                  <div class="height-100 text-white text-smooth flexbox">
+                  <div class="height-100 text-white text-smooth flexbox text-left">
                     <h4>在导师的辅导下，在接下来的六个月用所学技术设计一个解决方案，帮助自己身边的社区</h4>
                   </div>
                 </div>
@@ -298,7 +212,7 @@
 
 
 <!-- Courses -->
-<div class="padded row text-smooth" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 0%), url(/assets/user_dashboard_banner-d234d87f9b7112f19b26c3f39617985cc2bb099b519f69a856ecb9ecc58d1163.png);">
+<div class="padded text-smooth" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 0%), url(/assets/user_dashboard_banner-d234d87f9b7112f19b26c3f39617985cc2bb099b519f69a856ecb9ecc58d1163.png);">
   <div class="text-center" id="courses">
     <h2 class="courses-heading">推荐课程</h2>
   </div>
@@ -337,8 +251,8 @@
                 </div>
                 <div>
                   <div class="flexbox">
-                    <p class="tag-flex" style="color: #767676;"><i class="fa fa-tag text-blue7"></i><%= course.tech_solution %></p>
-                    <p style="color: #767676;"><%= image_tag('globe.png') %><%= course.issue %></p>
+                    <p class="tag-flex" style="color: #767676;"><i class="fa fa-tag text-blue7"></i><%#= course.tech_solution %></p>
+                    <p style="color: #767676;"><%= image_tag('globe.png') %><%#= course.issue %></p>
                     </%>
                     <%#= cl_image_tag course_company_logo, height: '20px' %>
                   </div>
@@ -366,7 +280,7 @@
   <h2 class="text-center" style="color: #797979; line-height: 56px; font-size: 36px;">给心怀天下的梦想家配备技能<br>为脚踏实地的践行者赋予情怀</h2>
 </div>
 
-<div class="wrapper-learning-process parallax-homepage" style="background-image: url(<%= image_path('workshop_image.png') %>); position: relative"" id="how_does_it_work">
+<div class="wrapper-learning-process parallax-homepage" style="background-image: url(<%= image_path('homebanner2.jpg') %>); position: relative"" id="how_does_it_work">
   <div class="triangle">
     <%= image_tag "triangle.png"%>
   </div>

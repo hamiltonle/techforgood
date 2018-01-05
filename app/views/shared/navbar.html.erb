@@ -1,0 +1,183 @@
+<!-- Navbar of homepage -->
+<div class="navbar-fixed-top">
+  <div id="navbar" class="navbar-techforgood">
+    <!-- Logo -->
+    <a href="#top" class="page-scroll">
+      <%= link_to root_path, class: "navbar-techforgood-brand" do %>
+        <%= image_tag "logo_lg.png", height: "55px" %>
+      <% end %>
+    </a>
+
+    <!-- Right Navigation -->
+    <div id="nav" class="navbar-techforgood-right hidden-xs hidden-sm">
+
+<!--       <a href="#how_does_it_work" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>How does it work?</span></a>
+
+
+
+<a href="#courses" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>Courses</span></a>
+
+      <a href="#faq" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>FAQ</span></a>
+-->
+
+      <!-- Different navigation if login or not -->
+      <% if user_signed_in? %>
+
+        <!-- Profile picture and dropdown -->
+        <div class="navbar-techforgood-item">
+          <div class="dropdown">
+            <% if current_user.photo? %>
+              <%= cl_image_tag current_user.photo.path, height: 50, width: 50, class: "img-circle", crop: :thumb, gravity: :face, "data-toggle" => "dropdown" %>
+            <% else %>
+              <%= image_tag "avatar_placeholder.png", class: "avatar-large dropdown-toggle", id: "navbar-techforgood-menu", "data-toggle" => "dropdown" %>
+            <% end %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
+              <li>
+                <%= link_to dashboard_users_path do %>
+                  <i class="fa fa-user fa-fw text-blue7"></i> <%= t(".profile", default: "Dashboard") %>
+                <% end %>
+              </li>
+
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out fa-fw text-blue7"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      <% else %>
+
+        Login text link
+      <%#= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-techforgood-item navbar-techforgood-link" %>
+
+        <%= link_to t(".sign_in", default: "登陆"), new_user_session_path, class: "btn btn-sm btn-primary login-button" %>
+
+        <%= link_to t(".sign_up", default: "注册"), new_user_registration_path, class: "btn btn-sm btn-primary register-button" %>
+
+      <% end %>
+    </div>
+
+    <!-- Dropdown list appearing on mobile only -->
+    <% if user_signed_in? %>
+      <div class="navbar-techforgood-item hidden-md hidden-lg">
+        <div class="dropdown">
+          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+          <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
+            <li>
+              <%= link_to dashboard_users_path do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Dashboard") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+<!--
+    <div class="navbar-techforgood-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
+
+          <li>
+            <a href="#steps" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>How does it work?</span></a>
+          </li>
+          <li>
+            <a href="#courses" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>Courses</span></a>
+          </li>
+          <li>
+            <a href="#faq" class="navbar-techforgood-item navbar-techforgood-link page-scroll"><span>FAQ</span></a>
+          </li>
+        </ul>
+      </div>
+    </div> -->
+  </div>
+</div>
+
+
+<!-- Navbar of course show page -->
+<div class="navbar-fixed-top bottom-shadow">
+    <div id="navbar" class="navbar-techforgood">
+      <!-- Logo -->
+      <%= link_to root_path do %>
+        <%= image_tag("logo_lg.png", class: "navbar-techforgood-left", height: "55px") %>
+      <% end %>
+
+      <!-- Right Navigation -->
+      <div id="nav" class="navbar-techforgood-right hidden-xs hidden-sm">
+
+      <!-- Text links -->
+      <%= link_to "Courses", courses_path(:anchor => "courses"), class: "navbar-techforgood-item page-scroll navbar-techforgood-link" %>
+      <%= link_to "How does it work?", courses_path(:anchor => "how_does_it_work"), class: "navbar-techforgood-item page-scroll navbar-techforgood-link" %>
+      <%#= link_to "Tuition", courses_path(:anchor => "tuition"), class: "navbar-techforgood-item page-scroll navbar-techforgood-link" %>
+      <%= link_to "FAQ", courses_path(:anchor => "faq"), class: "navbar-techforgood-item navbar-techforgood-link" %>
+
+
+
+        <!-- Different navigation if login or not -->
+        <% if user_signed_in? %>
+
+          <!-- Profile picture and dropdown -->
+          <div class="navbar-techforgood-item">
+            <div class="dropdown">
+
+
+                  <% if current_user.photo? %>
+                    <%= cl_image_tag current_user.photo.path, height: 50, width: 50, class: "img-circle", crop: :thumb, gravity: :face, "data-toggle" => "dropdown" %>
+                  <% else %>
+                    <%= image_tag "avatar_placeholder.png", class: "avatar-large dropdown-toggle", id: "navbar-techforgood-menu", "data-toggle" => "dropdown" %>
+                  <% end %>
+
+                  <span data-toggle="dropdown"><%= current_user.first_name %><i class="fa fa-caret-down fa-fw text-blue7"></i></span>
+
+              <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
+                <li>
+                  <%= link_to dashboard_users_path do %>
+                    <i class="fa fa-user fa-fw text-blue7"></i> <%= t(".profile", default: "Dashboard") %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                    <i class="fa fa-sign-out fa-fw text-blue7"></i>  <%= t(".sign_out", default: "Log out") %>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        <% else %>
+
+          <!-- Login text link -->
+          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-techforgood-item navbar-techforgood-link" %>
+
+        <% end %>
+      </div>
+
+      <!-- Dropdown list appearing on mobile only -->
+      <div class="navbar-techforgood-item hidden-md hidden-lg">
+        <div class="dropdown">
+          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+          <ul class="dropdown-menu dropdown-menu-right navbar-techforgood-dropdown-menu">
+            <li>
+              <%= link_to dashboard_users_path do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Dashboard") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
