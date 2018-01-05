@@ -127,6 +127,9 @@
   color: #566b78;
 }
 
+.lesson-text {
+  color: #566b78;
+}
 
 // MODULE FLEXBOX
 .flexbox {
@@ -321,7 +324,7 @@ iframe {
 
 // top margin on sidebar needed for JS to parse
 .sidebar {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 // fixed sidebar applied dynamtically with JS
@@ -347,6 +350,16 @@ iframe {
   padding-left: 10px;
 }
 
+
+.course-sidebar-tab {
+  background: #FFFFFF;
+  border-left: 3px solid white;
+
+}
+.course-sidebar-tab:hover {
+  opacity: 1;
+  border-left: 3px solid $blue7;
+}
 
 
 
