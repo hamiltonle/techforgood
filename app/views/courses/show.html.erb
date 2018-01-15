@@ -25,32 +25,36 @@
           <h5>此课程由以下机构联合开发授课</h5>
           <!-- <h5><%#= @course.organization.name %></h5> -->
           <%= image_tag("handson-logo.png", height: '64px') %>
-          <h5 class="bottom-border-thick padded-bottom-1em">(清华大学XLAB入驻项目)</h5>
+          <h5 class="padded-bottom-1em">(清华大学XLAB入驻项目)</h5>
+          <%= image_tag("asdan.png", height: '40px') %>
+          <h5 class="bottom-border-thick padded-bottom-1em">(英国素质教育发展认证中心)</h5>
         </div>
       </div>
       <div>
         <div>
           <div class="div-relative text-center">
-            <h5><a href="#overview" class="sidebar-menu-padding course-sidebar-tab">关于议题</a></h5>
+            <h5><a href="#overview" class="sidebar-menu-padding course-sidebar-tab text-reading-gray text-24px text-no-underline">关于议题</a></h5>
           </div>
           <div class="div-relative text-center">
-            <h5><a href="#syllabus" class="sidebar-menu-padding course-sidebar-tab">课程大纲</a></h5>
+            <h5><a href="#syllabus" class="sidebar-menu-padding course-sidebar-tab text-reading-gray text-24px text-no-underline">课程大纲</a></h5>
           </div>
           <div class="div-relative text-center">
-            <h5><a href="#project" class="sidebar-menu-padding course-sidebar-tab">实践项目</a></h5>
+            <h5><a href="#project" class="sidebar-menu-padding course-sidebar-tab text-reading-gray text-24px text-no-underline">实践项目</a></h5>
           </div>
           <div class="div-relative text-center">
-            <h5><a href="#tutors" class="sidebar-menu-padding course-sidebar-tab">讲师团队</a></h5>
+            <h5><a href="#tutors" class="sidebar-menu-padding course-sidebar-tab text-reading-gray text-24px text-no-underline">讲师团队</a></h5>
           </div>
           <div class="div-relative text-center">
-            <h5><a href="#faqs" class="sidebar-menu-padding course-sidebar-tab">常见疑问</a></h5>
+            <h5><a href="#faqs" class="sidebar-menu-padding course-sidebar-tab text-reading-gray text-24px text-no-underline">常见疑问</a></h5>
           </div>
         </div>
       </div>
 
-      <div class="padded_tab">
-        <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
-        <div id="enroll-btn2" class="btn btn-default text-white disabled padded-vertical-15px margin-y-1em">开始上课</div>
+      <div class="">
+        <%#= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+        <a id="enroll-btn2" href="http://www.seedasdan.org/Asdan3D.jsp
+" class="btn btn-default text-white padded-vertical-15px margin-y-1em">了解更多</a>
+       <!--  <div id="enroll-btn2" class="btn btn-default text-white disabled padded-vertical-15px margin-y-1em">开始上课</div> -->
 <!--         <h6>Course Starts: <%= @course.start_date %></h6>
         <h6><%= @course_enrollments.count %> Students</h6> -->
       </div>
@@ -82,7 +86,7 @@
               <h4 class= "text-blue7 text-left">课程大纲</h4>
               <div class="heading-top-blue-border"></div>
               <div class="heading-botton-gray-border margin-bottom-34px"></div>
-              <div class="syllabus_box">
+              <div class="syllabus_box info-card">
                 <p class="box-blue text-center">课程信息</p>
                 <ul class="text-left">
 
@@ -96,10 +100,12 @@
                   </li>
  -->
 
-                  <p class="text-smooth"><span class="text-blue7">课程长度:</span> 6-8 周 (线上课程) + 6日线下特训营 (单独文档介绍)</p>
-                  <p class="text-smooth"><span class="text-blue7">课程证书:</span> 展翼计划/美国e-NABLE 社区创始人联名感谢信</p>
-                  <p class="text-smooth"><span class="text-blue7">结业条件:</span> 课完成所有线上与线下课程，线上课程程得分 >= 80 分</p>
-                  <p class="text-smooth"><span class="text-blue7">预备知识:</span> 无必须预备知识，有 3D 建模软件操作经验更佳</p>
+
+                  <p class="text-smooth"><span class="text-blue7">课程长度：</span>6-8 周 (线上课程) + 6日线下特训营</p>
+                  <p class="text-smooth"><span class="text-blue7">课程证书：</span>展翼计划/美国e-NABLE 社区创始人联名感谢信
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 英国教育部认证的 ASDAN 公益志愿者 (Volunteer) 证书</p>
+                  <p class="text-smooth"><span class="text-blue7">结业条件：</span>课完成所有线上与线下课程，产出产品原型</p>
+                  <p class="text-smooth"><span class="text-blue7">预备知识：</span>无必须预备知识，有 3D 建模软件操作经验更佳</p>
                 </ul>
               </div>
             </div>
@@ -108,8 +114,8 @@
 
     <div class="slightly_padded">
       <div class="course_intro width-720">
-      <div class="syllabus_box">
-      <p class="box-blue">课程表</p>
+      <div class="syllabus_box info-card">
+      <p class="box-blue-lg">课程内容概览</p>
         <div class="course_syllabus">
           <div class="">
             <ul class="text-left">
@@ -152,13 +158,23 @@
         <h4 class="text-blue7 text-left">实践项目</h4>
         <div class="heading-top-blue-border"></div>
         <div class="heading-botton-gray-border margin-bottom-34px"></div>
-        <div class="syllabus_box flexbox">
-          <%= image_tag("3d_course_image2.png", class: "img-rounded", height: '100') %>
+
+        <div class="flexbox info-card info-card margin-bottom-34px">
+          <%= image_tag("3d_course_image2.png", height: '100') %>
           <div>
             <p class="padding-left-20">线上课程结业项目 ：<span class="text-blue7">通过三维建模设计组装一只义肢 </span></p>
             <p class="padding-left-20 text-smooth">综合之前课程学习到的三维建模技术，从零开始设计并组装一只简化版的 phoenix hand 义肢</p>
           </div>
         </div>
+
+        <div class="flexbox info-card info-card">
+          <%= image_tag("arms.png", height: '100') %>
+          <div>
+            <p class="padding-left-20">Hackathon：<span class="text-blue7">利用3D打印设计残疾人辅具 </span></p>
+            <p class="padding-left-20 text-smooth">与你的团队一起，通过黑客马拉松的形式，针对某个受助者需求，用3D打印技术快速设计一个解决方案的原型</p>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -168,7 +184,7 @@
         <h4 class="text-blue7 text-left"> 讲师团队</h4>
         <div class="heading-top-blue-border"></div>
         <div class="heading-botton-gray-border margin-bottom-34px"></div>
-        <div class="syllabus_box flexbox margin-bottom-15px">
+        <div class="flexbox margin-bottom-15px info-card">
           <%= image_tag("review1.png", class: "img-circle margin-1em-allsides", height: '100') %>
           <div>
             <p class="padding-left-20">苏江舟</span></p>
@@ -176,7 +192,7 @@
 Autodesk 认证学生专家；Autodesk Panorama 设计竞赛中国区第一名。</p>
           </div>
         </div>
-        <div class="syllabus_box flexbox margin-bottom-15px">
+        <div class="flexbox margin-bottom-15px info-card">
           <%= image_tag("review2.png", class: "img-circle margin-1em-allsides", height: '100') %>
           <div>
             <p class="padding-left-20">祁繁</span></p>
@@ -200,30 +216,29 @@ Autodesk 认证学生专家；Autodesk Panorama 设计竞赛中国区第一名�
             <%= image_tag("faq2.png", class: "") %>
           </div>
           <div class="padding-left-20">
-            <h4 class="text-blue"><em>1. 你们这个义肢能实现什么功能？对小朋友有什么实际帮助？</em></h4>
+            <h4><span  class="text-blue">我是受助方家长：</span><strong>你们这个义肢对小朋友有什么实际帮助？</strong></h4>
             <p class="text-reading-gray">
               我们的机械义肢主要实现的是抓握功能。 3D打印机械义胜作为手部輔助工具，并非为了完全实现真手的功能。但是对于手部残疾的小朋友来说，我们这款义肢的意义主要体现在︰
-              - 生活中场景式的双手配合活动
-              - 鍛炼残肢手部肌肉，促进正常发育
-              - 将”双手配合使用"变成一个没有那么沮丧的学习过程，減少双手不能 - 配合时的焦虑，有助于心理健康成长。
-              更多信息请参考展翼计划：http://www.zhanyijihua.com/
+            <br>- 生活中场景式的双手配合活动
+            <br>- 鍛炼残肢手部肌肉，促进正常发育
+            <br>- 将”双手配合使用"变成一个没有那么沮丧的学习过程，減少双手不能配合时的焦虑，有助于心理健康成长。
+            <br>更多信息请参考展翼计划：<a target="blank" href="http://www.zhanyijihua.com/">http://www.zhanyijihua.com/</a>
+            <br>和我们的义肢使用教学视频：<a target="blank" href="https://v.qq.com/x/page/u0509i1syx8.html">https://v.qq.com/x/page/u0509i1syx8.html</a>
             </p><br>
 
-            <h4 class="text-blue"><em>2. 线下特训营的具体内容是什么？时间地点是怎样安排？</em></h4>
+            <h4><span  class="text-blue">我是学生：</span><strong>课程结束之后，如何继续我的技术社会创新项目？</strong></h4>
             <p class="text-reading-gray">
-              线下特训营一般为期 5-6 日，紧接在线上课程之后，在寒假/暑假期间举办。具体内容涉及 3D 打印机 DIY 组装与调试，设计思维课程，3D 建模设计与机械结构设计进阶课程，3D 打印基地参观，义肢打印及实物组装调试，义肢设计黑客马拉松等环节。具体信息请参考：
+              课程结束之后，我们会为参加培训的学生队伍对接由一初教育主办，由联合国开发计划署（UNDP）官方指导的社会创新比赛，并辅导队伍在接下来的6-8个月内，应用课程中学到的技术，深入地针对某个社会议题设计创新的解决方案。优胜项目还有机会入驻全球最大的社会企业孵化器Impact Hub，并得到种子基金进行进一步孵化。
+            <br>大赛官网：<a target="blank" href="http://www.jointhemomentum.org">www.jointhemomentum.org</a>
             </p><br>
 
-            <h4 class="text-blue"><em>3. 具体费用包含哪些内容？</em></h4>
+            <h4><span  class="text-blue">我是老师：</span><strong>我可以把这个课程引入我们的学校/机构进行授课吗？</strong></h4>
             <p class="text-reading-gray">
-              课程费用包括6-8周的线上课程内容与导师辅导费用，6天线下特训营的所有课程费用。材料工具费用包括每个小组（3-5 人）共同分担的工具材料包与 3D 打印机的费用。具体费用清单请参考：
-              注：参加线下特训营的交通与食宿需要另行自付。
+              可以的。除了针对学生的课程，我们也有针对学校（中学，小学）的课程设计/咨询/教师培训，帮助学校/机构建立起可以长期执行的Tech for Good STEAM课程。
+详细合作方式请通过邮件垂询：<a target="blank" href="mailto:techforgood.china@gmail.com" >techforgood.china@gmail.com</a>
             </p><br>
-
-            <h4 class="text-blue"><em>更多课程项目相关咨询，请电话咨询：1234567 或添加公众号并留言：XXX</em></h4>
           </div>
         </div>
-
       </div>
     </div>
   </div>
