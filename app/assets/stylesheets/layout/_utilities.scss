@@ -24,6 +24,16 @@
 
 
 // Borders
+
+.info-card {
+  // color: black;
+  // position: relative;
+  border-radius: 3px;
+  // margin-bottom: 20px;
+  box-shadow: 2px 2px 5px lightgray;
+  // margin: 20px;
+}
+
 .bottom-border {
   border-bottom: 1px solid $slightlightgray;
 }
