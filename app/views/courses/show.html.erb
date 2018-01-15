@@ -33,26 +33,28 @@
       <div>
         <div>
           <div class="div-relative text-center">
-            <h5><a href="#overview" class="sidebar-menu-padding course-sidebar-tab">关于议题</a></h5>
+            <h5><a href="#overview" class="sidebar-menu-padding course-sidebar-tab text-reading-gray text-24px text-no-underline">关于议题</a></h5>
           </div>
           <div class="div-relative text-center">
-            <h5><a href="#syllabus" class="sidebar-menu-padding course-sidebar-tab">课程大纲</a></h5>
+            <h5><a href="#syllabus" class="sidebar-menu-padding course-sidebar-tab text-reading-gray text-24px text-no-underline">课程大纲</a></h5>
           </div>
           <div class="div-relative text-center">
-            <h5><a href="#project" class="sidebar-menu-padding course-sidebar-tab">实践项目</a></h5>
+            <h5><a href="#project" class="sidebar-menu-padding course-sidebar-tab text-reading-gray text-24px text-no-underline">实践项目</a></h5>
           </div>
           <div class="div-relative text-center">
-            <h5><a href="#tutors" class="sidebar-menu-padding course-sidebar-tab">讲师团队</a></h5>
+            <h5><a href="#tutors" class="sidebar-menu-padding course-sidebar-tab text-reading-gray text-24px text-no-underline">讲师团队</a></h5>
           </div>
           <div class="div-relative text-center">
-            <h5><a href="#faqs" class="sidebar-menu-padding course-sidebar-tab">常见疑问</a></h5>
+            <h5><a href="#faqs" class="sidebar-menu-padding course-sidebar-tab text-reading-gray text-24px text-no-underline">常见疑问</a></h5>
           </div>
         </div>
       </div>
 
       <div class="padded_tab">
-        <%= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
-        <div id="enroll-btn2" class="btn btn-default text-white disabled padded-vertical-15px margin-y-1em">开始上课</div>
+        <%#= render :partial => 'enrollments/form', locals: {course: @course, enrollment: Enrollment.new } %>
+        <a id="enroll-btn2" href="http://www.seedasdan.org/Asdan3D.jsp
+" class="btn btn-default text-white padded-vertical-15px margin-y-1em">了解更多</a>
+       <!--  <div id="enroll-btn2" class="btn btn-default text-white disabled padded-vertical-15px margin-y-1em">开始上课</div> -->
 <!--         <h6>Course Starts: <%= @course.start_date %></h6>
         <h6><%= @course_enrollments.count %> Students</h6> -->
       </div>
