@@ -28,13 +28,39 @@ $(function () {
     $(window).scroll(function (event) {
       console.log('scrolled');
       var y = $(this).scrollTop();
-      if (y >= top) {
+      // console.log(y)
+      if (y > 2937) {
+        sidebar.addClass('fixedbottom');
+        sidebar.removeClass('fixed');
+      } else if (y >= top) {
         sidebar.addClass('fixed');
+        sidebar.removeClass('fixedbottom');
       } else {
         sidebar.removeClass('fixed');
+        sidebar.removeClass('fixedbottom');
       }
     });
 });
+
+
+// $(function () {
+//     var sidebar = $('.sidebar');
+//     var top = sidebar.offset().top - parseFloat(sidebar.css('margin-top'));
+
+//     $(window).scroll(function (event) {
+//       // console.log('scrolled');
+//       var y = $(this).scrollTop();
+//       console.log(y);
+//       if (y >= top) && (y < 2937) {
+//         sidebar.addClass('fixed');
+//       } else if (y > 2937) {
+//         sidebar.addClass('fixedbottom');
+//         sidebar.removeClass('fixed');
+//       } else {
+//         sidebar.removeClass('fixed');
+//       }
+//     });
+// });
 
 
 // for tabs in user dashboard
