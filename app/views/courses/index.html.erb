@@ -248,8 +248,8 @@
                 </div>
                 <div>
                   <div class="flexbox">
-                    <p class="tag-flex" style="color: #767676;"><i class="fa fa-tag text-blue7"></i><%#= course.tech_solution %></p>
-                    <p style="color: #767676;"><%= image_tag('globe.png') %><%#= course.issue %></p>
+                    <p class="tag-flex" style="color: #767676;"><i class="fa fa-tag text-blue7"></i><%= course.tech_solution %></p>
+                    <p style="color: #767676;"><%= image_tag('globe.png') %><%= course.issue %></p>
                     </%>
                     <%#= cl_image_tag course_company_logo, height: '20px' %>
                   </div>
