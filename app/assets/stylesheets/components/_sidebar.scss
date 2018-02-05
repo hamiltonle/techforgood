@@ -335,6 +335,15 @@ iframe {
   top: 0;
 }
 
+.fixedbottom {
+  bottom: 360px;
+  position: absolute;
+}
+
+.position_relative {
+  position: relative;
+}
+
 
 // Course Sidebar Tabs CSS
 .padded_tab {
